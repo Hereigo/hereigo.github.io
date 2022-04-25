@@ -52,6 +52,8 @@ npm install -g angular-cli-ghpages
 
 ng build --base-href "https://Hereigo.github.io/CheatsSheet/"
 
+mv dist/cheats-sheet/* ../
+
 ```
 
 #### Publishing to GH-Pages.
