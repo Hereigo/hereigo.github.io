@@ -38,6 +38,7 @@ export class AaaFirstComponent {
 
   _numberInChild: number = 0;
 
+  // Using Setters to Limit @Input parameters from Parent:
   @Input()
   set childGetSetter(age: number) {
     if (age < 0)
@@ -47,6 +48,8 @@ export class AaaFirstComponent {
     else
       this._numberInChild = age;
   }
-  get childGetSetter() { return this._numberInChild; }
+  get childGetSetter() { 
+    return this._numberInChild;
+  }
 
 }

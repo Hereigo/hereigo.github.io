@@ -87,7 +87,7 @@ export class AppComponent {
 someClick($event : any) : void { console.log($event); }
 ```
 
-#### Pass Parametersto Child Components:
+#### Passing Parameters to Child Components:
 
 ```ts
 import { Input } from '@angular/core'; // need for @Input() Decorator
@@ -104,10 +104,10 @@ export class ParentComponent {
 <app-child [valueInChild]="valueInParent"></app-child>
 ```
 
-#### Use Setter to Limit @Input parameters from Parent:
+#### Using Setters to Limit @Input parameters from Parent:
 
 ```html
-<app-child [childGetSetter]="ageDefault"></app-child>
+<app-child [childGetSetter]="valueFromParent"></app-child>
 <!--
 Inside Child Component: -->
 <input type="number" [(ngModel)]="childGetSetter" />
@@ -118,15 +118,15 @@ export class ChildComponent {
   _numberInChild: number = 0;
 
   @Input()
-  set childGetSetter(age: number) {
-    if (age < 0)
+  set childGetSetter(num: number) {
+    if (num < 0)
       this._numberInChild = 0;
-    else if (age > 10)
-      this._numberInChild = 10;
     else
-      this._numberInChild = age;
+      this._numberInChild = num;
   }
-  get childGetSetter() { return this._numberInChild; }
+  get childGetSetter() { 
+    return this._numberInChild;
+  }
 ```
 
 
