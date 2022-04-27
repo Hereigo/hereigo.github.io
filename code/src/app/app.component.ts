@@ -9,4 +9,6 @@ export class AppComponent {
 
   isBlueDefault: boolean = true;
 
+  ageDefault: number = 5;
+
 }

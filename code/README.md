@@ -104,3 +104,29 @@ export class ParentComponent {
 <app-child [valueInChild]="valueInParent"></app-child>
 ```
 
+#### Use Setter to Limit @Input parameters from Parent:
+
+```html
+<app-child [childGetSetter]="ageDefault"></app-child>
+<!--
+Inside Child Component: -->
+<input type="number" [(ngModel)]="childGetSetter" />
+```
+```ts
+export class ChildComponent {
+
+  _numberInChild: number = 0;
+
+  @Input()
+  set childGetSetter(age: number) {
+    if (age < 0)
+      this._numberInChild = 0;
+    else if (age > 10)
+      this._numberInChild = 10;
+    else
+      this._numberInChild = age;
+  }
+  get childGetSetter() { return this._numberInChild; }
+```
+
+
