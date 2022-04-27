@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 class Item {
   txt: string;
@@ -48,8 +48,18 @@ export class AaaFirstComponent {
     else
       this._numberInChild = age;
   }
-  get childGetSetter() { 
+  get childGetSetter() {
     return this._numberInChild;
+  }
+
+  // Dual-Direction Binding:
+  @Input() childString: string = "";
+
+  @Output() childStringChange = new EventEmitter<string>();
+  
+  onChildStringChange(model: string) {
+    this.childString = model;
+    this.childStringChange.emit(model);
   }
 
 }

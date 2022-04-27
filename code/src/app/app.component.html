@@ -1,10 +1,15 @@
 <div id="appComp">
 
-    <h4>App Component</h4>
+    <h4>App Component :</h4>
 
     <aaa-first
-        [thisIsBlue]="isBlueDefault" 
-        [childGetSetter]="ageDefault">
+        [thisIsBlue]="isBlueDefault"
+        [childGetSetter]="ageDefault"
+        [(childString)]="parentString">
     </aaa-first>
+
+    <p>
+        <input [(ngModel)]="parentString" />
+    </p>
 
 </div>

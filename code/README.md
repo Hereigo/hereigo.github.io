@@ -129,4 +129,24 @@ export class ChildComponent {
   }
 ```
 
+#### Dual-Direction Binding:
+```html
+<!-- Parent : -->
+<input [(ngModel)]="parentString" />
+<app-child [(childString)]="parentString"></app-child>
+<!-- Child : -->
+<input [ngModel]="childString" (ngModelChange)="onChildStringChange($event)" />
+```
+```ts
+@Input() childString: string = "";
+
+@Output() childStringChange = new EventEmitter<string>();
+
+onChildStringChange(model: string){
+  this.childString = model;
+  this.childStringChange.emit(model);
+}
+```
+
+
 

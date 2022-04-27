@@ -1,3 +1,13 @@
+table, hr {
+margin: 1em 0;
+}
+
+#appComp {
+    background-color: beige;
+    border: solid 1px grey;
+    padding: 0 1em 1em;
+}
+
 .isBlue {
     background-color: aquamarine;
 }

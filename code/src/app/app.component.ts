@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   isBlueDefault: boolean = true;
-
   ageDefault: number = 5;
+  parentString: string = "Parent Default";
 
 }
