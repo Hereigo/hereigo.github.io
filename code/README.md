@@ -59,7 +59,7 @@ class Item {
   }
 }
 
-@Component({/*....*/})
+@Component({ /*....*/ })
 export class AppComponent {
   items: Item[] = [
     { txt: 'aaaa', selected: false },
@@ -76,6 +76,7 @@ export class AppComponent {
 ```
 ```ts
 export class AppComponent {
+
   thisIsBlue: boolean = false;
   btnName: string = "Click Me!";
 
@@ -85,3 +86,21 @@ export class AppComponent {
 // Also allowed to sent Events:
 someClick($event : any) : void { console.log($event); }
 ```
+
+#### Pass Parametersto Child Components:
+
+```ts
+import { Input } from '@angular/core'; // need for @Input() Decorator
+
+@Component({ /*...*/ })
+export class ChildComponent {
+  @Input() valueInChild: boolean = false; // with Default value
+
+@Component({ /*...*/ })
+export class ParentComponent {
+  valueInParent: boolean = true;
+```
+```html
+<app-child [valueInChild]="valueInParent"></app-child>
+```
+
