@@ -65,3 +65,23 @@ export class AppComponent {
     { txt: 'aaaa', selected: false },
     { txt: 'bbbb', selected: false },
 ```
+
+#### Binding html-tags:
+
+```html
+<style>
+    .isBlue{ background-color:aquamarine; }
+</style>
+<input type="button" [class.isBlue]="thisIsBlue" [value]="btnName" (click)="chngName()" />
+```
+```ts
+export class AppComponent {
+  thisIsBlue: boolean = false;
+  btnName: string = "Click Me!";
+
+  chngName(): void {
+    this.btnName = "New Btn Name";
+
+// Also allowed to sent Events:
+someClick($event : any) : void { console.log($event); }
+```
