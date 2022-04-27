@@ -1,41 +1,6 @@
-<div class="content" role="main">
-
-  <!-- Resources -->
-  <h2>App Component here:</h2>
-
-  <p>What do you want to do next with your app?</p>
-
-  <input type="hidden" #selection>
-
-  <div class="card-container">
-    <button class="card" (click)="selection.value = 'material'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Angular Material</span>
-    </button>
-
-    <button class="card" (click)="selection.value = 'pwa'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add PWA Support</span>
-    </button>
-
-    <button class="card" (click)="selection.value = 'dependency'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-      </svg>
-      <span>Add Dependency</span>
-    </button>
-  </div>
-
-  <!-- Terminal -->
-  <div class="terminal" [ngSwitch]="selection.value">
-    <pre *ngSwitchDefault><app-test></app-test></pre>
-    <pre *ngSwitchCase="'material'"><app-test2></app-test2></pre>
-    <pre *ngSwitchCase="'pwa'"><app-test></app-test></pre>
-    <pre *ngSwitchCase="'dependency'"><app-test2></app-test2></pre>
-  </div>
-
-</div>
+<table>
+    <tr *ngFor="let item of items">
+        <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
+        <td>{{item.txt}}</td>
+    </tr>
+</table>

@@ -14,14 +14,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
@@ -39,27 +31,37 @@ ng serve -o
 # or
 npm start
 
-ng g c root
-
-```
-
-To simplify firstly should edit  - `src/app/app.component.html`
-
-#### Prepare to publish on GH-Pages and build for it.
-
-```sh
-npm install -g angular-cli-ghpages
-
-ng build --base-href "https://Hereigo.github.io/CheatsSheet/"
-
+# To Move built to root path for GH-Pages:
 mv dist/cheats-sheet/* ../
-
 ```
 
-#### Publishing to GH-Pages.
+#### *ngFor
 
-```sh
-ngh --dir dist/cheats-sheet
-# or
-npx angular-cli-ghpages --dir=dist/cheats-sheet
+```html
+<table>
+    <tr *ngFor="let item of items">
+        <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
+        <td>{{item.txt}}</td>
+<!--
+To use [(ngModel)] is required - 
+import { FormsModule } from '@angular/forms';
+-->        
+```
+
+```ts
+class Item {
+  txt: string;
+  selected: boolean;
+
+  constructor(txt: string) {
+    this.txt = txt;
+    this.selected = false;
+  }
+}
+
+@Component({/*....*/})
+export class AppComponent {
+  items: Item[] = [
+    { txt: 'aaaa', selected: false },
+    { txt: 'bbbb', selected: false },
 ```
