@@ -1,0 +1,27 @@
+sudo dnf update
+sudo dnf upgrade
+
+sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-35.noarch.rpm
+sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-35.noarch.rpm
+# OR for any release:
+sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+sudo dnf install gnome-tweak-tool ffmpeg dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
+
+sudo systemctl enable tlp
+
+
+# Set XORG as Default in Gnome (if Login-Manager doesn't switch).
+
+loginctl  # - See login SESSION Number.
+
+loginctl show-session [YOUR SESSION Number] -p Type  # - See type
+
+nano /etc/gdm/custom.conf
+# Change config like this :
+[daemon]
+WaylandEnable=false
+DefaultSession=gnome-xorg.desktop
+
+Reboot.
