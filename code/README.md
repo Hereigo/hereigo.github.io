@@ -104,7 +104,7 @@ export class ParentComponent {
 <app-child [valueInChild]="valueInParent"></app-child>
 ```
 
-#### Using Setters to Limit @Input parameters from Parent:
+#### Using Setters to process @Input parameters from Parent:
 
 ```html
 <app-child [childGetSetter]="valueFromParent"></app-child>
@@ -129,24 +129,29 @@ export class ChildComponent {
   }
 ```
 
-#### Dual-Direction Binding:
+#### Bi-Direction Binding:
 ```html
-<!-- Parent : -->
+<!-- Use in Parent : -->
 <input [(ngModel)]="parentString" />
+<!-- Pass into Child : -->
 <app-child [(childString)]="parentString"></app-child>
-<!-- Child : -->
+
+<!-- Use in Child : -->
 <input [ngModel]="childString" (ngModelChange)="onChildStringChange($event)" />
 ```
 ```ts
-@Input() childString: string = "";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-@Output() childStringChange = new EventEmitter<string>();
+@Component({ /* ... */ })
+export class ChildComponent
+{
+  @Input() childString: string = "";
+  @Output() childStringChange = new EventEmitter<string>();
 
-onChildStringChange(model: string){
-  this.childString = model;
-  this.childStringChange.emit(model);
-}
+  onChildStringChange(model: string){
+    this.childString = model;
+    this.childStringChange.emit(model);
+  }
 ```
-
 
 
