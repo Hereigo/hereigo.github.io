@@ -1,9 +1,3 @@
-input{
+input {
     margin: 0 1.1em;
-}
-
-#appComp {
-    background-color: aliceblue;
-    border: solid 1px grey;
-    padding: 0 1em 1em;
 }
