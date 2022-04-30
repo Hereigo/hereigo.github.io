@@ -59,5 +59,16 @@ sudo nano /etc/security/faillock.conf
 sudo gedit /usr/share/X11/xkb/rules/evdev.xml
 # 1. Find such ">en<" or ">uk<"
 # 2. Change to ">EN<" or ">UK<"
-
+```
+##### Gnome-Extensions:
+https://extensions.gnome.org/extension/1160/dash-to-panel/
+https://extensions.gnome.org/extension/615/appindicator-support/
+https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/
+https://extensions.gnome.org/extension/4684/useless-gaps/
+https://extensions.gnome.org/extension/1462/panel-date-format/
+```sh
+# Panel-Date-Format adjustment:
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b %d,   %A,   %X'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %H:%M %p'"
+# More formats here - https://docs.gtk.org/glib/method.DateTime.format.html
 ```
