@@ -12,6 +12,7 @@ https://itsfoss.com
 https://komyounity.com
 https://linux.com
 https://linuxandubuntu.com
+https://linuxcapable.com
 https://linuxcompatible.org/news
 https://linuxfoundation.org/blog
 https://linuxhandbook.com
