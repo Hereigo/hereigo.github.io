@@ -1,6 +1,4 @@
-#### Do First after install :
-
-##### SpeedUp DNF:
+#### SpeedUp DNF:
 ```sh
 sudo nano /etc/dnf/dnf.conf
 
@@ -27,7 +25,7 @@ sudo dnf install gnome-tweak-tool ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd
 sudo systemctl enable tlp
 ```
 
-##### Extend Multimedia ability:
+#### Extend Multimedia ability:
 ```sh
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-
 libav --exclude=gstreamer1-plugins-bad-free-devel
@@ -36,23 +34,3 @@ sudo dnf install lame\* --exclude=lame-devel
 
 sudo dnf group upgrade --with-optional Multimedia
 ```
-
-##### Set XORG as Default in Gnome (if Login-Manager doesn't switch).
-```sh
-# To see login SESSION NUMBER:
-loginctl
-
-# To see type:
-loginctl show-session [YOUR SESSION NUMBER] -p Type
-
-# Modify GDM Config:
-nano /etc/gdm/custom.conf
-```
-
-##### Change config like this :
-```sh
-[daemon]
-WaylandEnable=false
-DefaultSession=gnome-xorg.desktop
-```
-- Reboot.
