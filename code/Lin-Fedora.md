@@ -1,3 +1,9 @@
+#### Grub:
+```sh
+sudo nano /etc/default/grub
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
 #### SpeedUp DNF:
 ```sh
 sudo nano /etc/dnf/dnf.conf
@@ -33,4 +39,22 @@ libav --exclude=gstreamer1-plugins-bad-free-devel
 sudo dnf install lame\* --exclude=lame-devel
 
 sudo dnf group upgrade --with-optional Multimedia
+```
+
+### Development:
+
+```sh
+sudo dnf upgrade --refresh -y
+sudo nano /etc/yum.repos.d/vscode.repo
+```
+[vscode]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode 
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+```sh
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo dnf update
+sudo dnf install code
 ```
