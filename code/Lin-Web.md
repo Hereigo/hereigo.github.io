@@ -22,6 +22,7 @@ https://www.geeksforgeeks.org
 https://www.linux-magazine.com/online/news
 https://www.linux.com
 https://www.linux.com/
+https://www.linuxadictos.com/en/
 https://www.linuxandubuntu.com
 https://www.linuxcapable.com
 https://www.linuxcompatible.org/news
