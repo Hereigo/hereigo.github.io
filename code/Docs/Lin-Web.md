@@ -1,3 +1,5 @@
+
+http://linuxveda.com
 http://lxer.com
 https://9to5linux.com
 https://archlinux.org/news
@@ -18,6 +20,7 @@ https://ubuntu.com/blog/desktop
 https://www.bleepingcomputer.com
 https://www.debugpoint.com
 https://www.fosslinux.com/category/news
+https://www.freecodecamp.org/news/search?query=linux
 https://www.geeksforgeeks.org
 https://www.linux-magazine.com/online/news
 https://www.linux.com
@@ -35,4 +38,3 @@ https://www.phoronix.com
 https://www.techrepublic.com/search/?q=linux
 https://www.tecmint.com
 https://www.zdnet.com/blog/open-source
-https://zdnet.com/blog/open-source
