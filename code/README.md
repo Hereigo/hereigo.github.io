@@ -18,6 +18,14 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## Useful links :
+
+- [To learn about tsconfig.json file.](https://angular.io/config/tsconfig.)
+
+- [Angular security best practices.](https://snyk.io/blog/angular-security-best-practices)
+
+- [DON'T Call Functions Inside The Template Anymore.](https://javascript.plainenglish.io/angular-dont-call-a-function-inside-the-template-anymore-e74ebf499bb8)
+
 ## Simple starting a project
 
 #### Just create and first run.
@@ -25,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ```sh
 npm install -g @angular/cli
 
-ng new CheatsSheet
+ng new [NewAppName]
 
 ng serve -o
 # or
@@ -33,6 +41,29 @@ npm start
 
 # To Move built to root path for GH-Pages:
 mv dist/cheats-sheet/* ../
+```
+
+#### Startup Module - main.ts
+```ts
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+```
+
+#### app.module.ts
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
 ```
 
 #### *ngFor
@@ -154,4 +185,24 @@ export class ChildComponent
   }
 ```
 
+#### app-Routing.module.ts
+```ts
+import { Routes, RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+```
+```html
+<nav>
+  <a routerLink="/" routerLinkActive="active home" [routerLinkActiveOptions]="{exact:true}">HOME</a>
+  <a routerLink="/about" routerLinkActive="active about">ABOUT</a>
+</nav>
+<router-outlet></router-outlet>
+```
