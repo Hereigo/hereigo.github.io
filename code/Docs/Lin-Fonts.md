@@ -10,6 +10,8 @@ sudo apt install -y ttf-mscorefonts-installer
 ```sh
 wget https://fonts.google.com/download?family=PT%20Mono -O ~/Desktop/PT_Mono.zip
 unzip ~/Desktop/PT_Mono.zip
+
+yay -S --needed ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g noto-fonts adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
 ```
 
 ##### To update FONTS CACHE:

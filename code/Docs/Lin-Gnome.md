@@ -51,6 +51,8 @@ https://extensions.gnome.org/extension/1462/panel-date-format/
 # Panel-Date-Format adjustment:
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b %d,   %A,   %X'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %H:%M %p'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %H:%M %p'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %R'"
 # More formats here - https://docs.gtk.org/glib/method.DateTime.format.html
 ```
 

@@ -34,6 +34,8 @@ sudo systemctl start tlp.service
 sudo systemctl status tlp.service
 ```
 
+WPS Office Dictionaries - https://github.com/HoLuLuLu/wps-office-multilang/tree/master/wps-office-bin/opt/kingsoft/wps-office/office6/dicts/spellcheck
+
 AppImagePool - https://github.com/prateekmedia/appimagepool/releases
 AppImagesHub - https://www.appimagehub.com/
 Audio Focus - https://github.com/rafaelmardojai/blanket
