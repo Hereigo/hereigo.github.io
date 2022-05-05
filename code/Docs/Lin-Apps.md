@@ -4,7 +4,7 @@ sudo apt purge -y mono-runtime-common libreoffice-base* openjdk*
 
 ```sh
 gnome-system-monitor chrome-gnome-shell 
-p7zip unrar dropbox fbreader pinta nomacs deepin-screenshot remmina doublecmd-gtk2 vlc ffmpeg kooha shortwave
+p7zip unrar dropbox fbreader pinta nomacs deepin-screenshot remmina doublecmd-gtk2 vlc ffmpeg kooha shortwave geany geany-plugins
 ```
 
 ### Optional additional packages:

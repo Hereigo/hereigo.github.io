@@ -31,6 +31,9 @@ sudo dnf install gnome-tweak-tool ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd
 sudo systemctl enable tlp
 ```
 
+#### NVidia Drivers:
+https://itsfoss.com/install-nvidia-drivers-fedora/
+
 #### Extend Multimedia ability:
 ```sh
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-
@@ -41,7 +44,7 @@ sudo dnf install lame\* --exclude=lame-devel
 sudo dnf group upgrade --with-optional Multimedia
 ```
 
-### Development:
+#### Development:
 
 ```sh
 sudo dnf upgrade --refresh -y

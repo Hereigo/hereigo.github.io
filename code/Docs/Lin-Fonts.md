@@ -8,8 +8,11 @@ sudo apt install -y ttf-mscorefonts-installer
 ##### For a single user, install fonts to : ~/.local/share/fonts/
 
 ```sh
-wget https://fonts.google.com/download?family=PT%20Mono -O ~/Desktop/PT_Mono.zip
-unzip ~/Desktop/PT_Mono.zip
+wget https://fonts.google.com/download?family=PT%20Mono -O ~/Desktop/pt_mono.zip
+unzip ~/Desktop/pt_mono.zip
+
+wget https://www.fontsquirrel.com/fonts/download/liberation-mono  -O ~/Desktop/liberation-mono.zip
+unzip ~/Desktop/liberation-mono.zip
 
 yay -S --needed ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g noto-fonts adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts
 ```
