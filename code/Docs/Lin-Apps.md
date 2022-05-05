@@ -33,6 +33,33 @@ sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 sudo systemctl status tlp.service
 ```
+### Rclone:
+```sh
+rclone config
+rclone --vfs-cache-mode writes mount YourNameOfOneDriveProfileWHileConfig: ~/OneDrive
+```
+##### 1Drive.desktop
+```sh
+[Desktop Entry]
+# The type as listed above
+Type=Application
+# The version of the desktop entry specification to which this file complies
+Version=1.0
+# The name of the application
+Name=1Drive
+# A comment which can/will be used as a tooltip
+Comment=1Drive Mounter
+# The path to the folder in which the executable is run
+Path=/opt/rsync
+# The executable of the application, possibly with arguments.
+Exec=sh -c "rclone --vfs-cache-mode writes mount AaaOneDrive: ~/OneDrive"
+# The name of the icon that will be used to display this entry
+Icon=rclone
+# Describes whether this application needs to be run in a terminal or not
+Terminal=false
+# Describes the categories in which this entry should be shown
+Categories=Rclone;Drive;
+```
 
 WPS Office Dictionaries - https://github.com/HoLuLuLu/wps-office-multilang/tree/master/wps-office-bin/opt/kingsoft/wps-office/office6/dicts/spellcheck
 
