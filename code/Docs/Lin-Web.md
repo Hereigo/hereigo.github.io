@@ -1,4 +1,3 @@
-
 http://linuxveda.com
 http://lxer.com
 https://9to5linux.com
@@ -38,3 +37,4 @@ https://www.phoronix.com
 https://www.techrepublic.com/search/?q=linux
 https://www.tecmint.com
 https://www.zdnet.com/blog/open-source
+https://www.zdnet.com/topic/linux/

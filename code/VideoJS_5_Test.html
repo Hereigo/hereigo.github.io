@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VideoJS 5 Test</title>
+        <link href="//vjs.zencdn.net/5.7/video-js.min.css" rel="stylesheet">
+        <script src="//vjs.zencdn.net/5.7/video.min.js"></script>
+    </head>
+
+    <body>
+        <video class="video-js vjs-default-skin" preload="auto" width="460" height="264"
+            poster="https://i.stack.imgur.com/yUYbP.png" data-setup='{}'>
+            <!-- <source src="/video/aaa.webm" type="video/webm"> -->
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser
+                that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+        <script>
+            (function () {
+                let video = document.querySelector(".video-js");
+                video.type = "video/mp4";
+                let req = new XMLHttpRequest();
+                req.open('GET', 'http://127.0.0.1:5500/video/596.mp4', true);
+                // req.open('GET', 'http://aii.somee.com/98.mp4', true);
+                // req.setRequestHeader('Access-Control-Allow-Origin','http://aii.somee.com');
+                req.responseType = 'blob';
+                req.onload = function () {
+                    // Onload is triggered even on 404 so need to check the status code
+                    if (this.status === 200) {
+                        var videoBlob = this.response;
+                        var vid = URL.createObjectURL(videoBlob); // IE10+
+                        // Video is now downloaded and we can set it as source on the video element
+                        video.src = vid;
+                        console.log('OK');
+                    }
+                }
+                req.onerror = function () {
+                    console.log(req.responseText);
+                }
+                req.send();
+            })();
+        </script>
+
+    </body>
+
+</html>
