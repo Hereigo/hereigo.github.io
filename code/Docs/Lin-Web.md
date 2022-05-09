@@ -7,6 +7,7 @@ https://averagelinuxuser.com
 https://distrocrunch.com
 https://distrowatch.com
 https://fedoramagazine.org
+https://fossbytes.com/?s=linux
 https://foundation.gnome.org/news
 https://itsfoss.com
 https://komyounity.com
@@ -15,6 +16,7 @@ https://linuxhandbook.com
 https://linuxiac.com/category/news
 https://linuxize.com
 https://linuxseb.hashnode.dev
+https://linuxstoney.com
 https://opensource.com/tags/linux
 https://osel.pp.ua
 https://ubuntu.com/blog/desktop
@@ -23,6 +25,7 @@ https://www.debugpoint.com
 https://www.fosslinux.com/category/news
 https://www.freecodecamp.org/news/search?query=linux
 https://www.geeksforgeeks.org
+https://www.infoworld.com/category/linux
 https://www.linux-magazine.com/online/news
 https://www.linux.com
 https://www.linuxadictos.com/en/
