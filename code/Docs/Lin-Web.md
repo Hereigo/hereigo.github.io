@@ -3,6 +3,7 @@ http://lxer.com
 https://9to5linux.com
 https://archlinux.org/news
 https://archlinux.org/planet
+https://averagelinuxuser.com
 https://distrocrunch.com
 https://distrowatch.com
 https://fedoramagazine.org
@@ -14,6 +15,7 @@ https://linuxhandbook.com
 https://linuxiac.com/category/news
 https://linuxize.com
 https://linuxseb.hashnode.dev
+https://opensource.com/tags/linux
 https://osel.pp.ua
 https://ubuntu.com/blog/desktop
 https://www.bleepingcomputer.com
@@ -23,7 +25,6 @@ https://www.freecodecamp.org/news/search?query=linux
 https://www.geeksforgeeks.org
 https://www.linux-magazine.com/online/news
 https://www.linux.com
-https://www.linux.com/
 https://www.linuxadictos.com/en/
 https://www.linuxandubuntu.com
 https://www.linuxcapable.com
@@ -37,4 +38,4 @@ https://www.phoronix.com
 https://www.techrepublic.com/search/?q=linux
 https://www.tecmint.com
 https://www.zdnet.com/blog/open-source
-https://www.zdnet.com/topic/linux/
+https://www.zdnet.com/topic/linux
