@@ -26,13 +26,23 @@ sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-re
 sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf install gnome-tweak-tool ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
+sudo dnf install gnome-tweak-tool gnome-tweaks gnome-extensions-app ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
 
 sudo systemctl enable tlp
 ```
 
+#### Change Hostname After Installation
+```sh
+sudo hostnamectl set-hostname "New_Custom_Name"
+```
+
 #### NVidia Drivers:
 https://itsfoss.com/install-nvidia-drivers-fedora/
+
+#### Adding the Flathub Repository:
+```sh
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
 
 #### Extend Multimedia ability:
 ```sh

@@ -11,6 +11,7 @@ https://fossbytes.com/?s=linux
 https://foundation.gnome.org/news
 https://itsfoss.com
 https://komyounity.com
+https://linuxconfig.org
 https://linuxfoundation.org/blog
 https://linuxhandbook.com
 https://linuxiac.com/category/news
@@ -22,6 +23,7 @@ https://osel.pp.ua
 https://ubuntu.com/blog/desktop
 https://www.bleepingcomputer.com
 https://www.debugpoint.com
+https://www.fosslife.org/news
 https://www.fosslinux.com/category/news
 https://www.freecodecamp.org/news/search?query=linux
 https://www.geeksforgeeks.org
@@ -34,8 +36,9 @@ https://www.linuxcapable.com
 https://www.linuxcompatible.org/news
 https://www.linuxinsider.com
 https://www.linuxtoday.com
+https://www.makeuseof.com/category/linux
 https://www.makeuseof.com/tag/linux-news
-https://www.newsnow.co.uk/h/Technology/Software/Linux
+https://www.newsnow.co.uk/h/technology/software/linux
 https://www.omgubuntu.co.uk
 https://www.phoronix.com
 https://www.techrepublic.com/search/?q=linux
