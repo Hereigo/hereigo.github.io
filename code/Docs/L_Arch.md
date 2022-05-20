@@ -15,7 +15,11 @@ yay -Rns $(yay -Qtdq)
 # Remove useless Packages:
 yay -Yc
 
-# See Installed Apps:
+# List of installed packages
+yay -Qqen > pkglist_repos.txt
+yay -Qqem > pkglist_aur.txt
+
+# Search in the installed packages:
 yay -Qe | grep abc
 
 # If necessary to test Microphone and Camera:
