@@ -1,3 +1,8 @@
+#### Remember default monitor on boot:
+```sh
+sudo cp ~/.config/monitors.xml ~gdm/.config/
+```
+
 #### Set XORG as Default in Gnome (if Login-Manager doesn't switch).
 ```sh
 # To see login SESSION NUMBER:
