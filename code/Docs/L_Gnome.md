@@ -50,6 +50,7 @@ https://extensions.gnome.org/extension/2087/desktop-icons-ng-ding/
 https://extensions.gnome.org/extension/3010/system-monitor-next/
 https://extensions.gnome.org/extension/4684/useless-gaps/
 https://extensions.gnome.org/extension/615/appindicator-support/
+https://extensions.gnome.org/extension/2986/runcat/
 
 https://extensions.gnome.org/extension/1462/panel-date-format/
 ```sh

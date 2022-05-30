@@ -51,6 +51,7 @@ Categories=Rclone;Drive;
 
 WPS Office Dictionaries - https://github.com/HoLuLuLu/wps-office-multilang/tree/master/wps-office-bin/opt/kingsoft/wps-office/office6/dicts/spellcheck
 
+- Apps Flatpak Permissions - Flatseal
 - AppImagePool - https://github.com/prateekmedia/appimagepool/releases
 - AppImagesHub - https://www.appimagehub.com/
 - Apps Packages manager GUI - bauh
