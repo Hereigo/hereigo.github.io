@@ -20,6 +20,18 @@ sudo tlp start
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 sudo systemctl status tlp.service
+
+sudo nano /etc/tlp.conf
+# STOP_CHARGE_THRESH_BAT0: 0(off), 1(on) -- battery conservation mode
+# - BAT0 because conservation mode applies to all batteries regardless of their name.
+# START_CHARGE_THRESH_BAT1="70"
+# STOP_CHARGE_THRESH_BAT1="80"
+
+# Then use the terminal command
+sudo tlp setcharge
+
+# Check:
+sudo tlp-stat -b
 ```
 ### Rclone:
 ```sh
