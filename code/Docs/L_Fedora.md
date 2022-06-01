@@ -25,37 +25,26 @@ sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-re
 # OR for any release:
 sudo rpm -Uvh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-sudo dnf install gnome-tweak-tool gnome-tweaks gnome-extensions-app ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
-
-sudo systemctl enable tlp
 ```
-
-#### Change Hostname After Installation
-```sh
-sudo hostnamectl set-hostname "New_Custom_Name"
-```
-
-#### NVidia Drivers:
-https://itsfoss.com/install-nvidia-drivers-fedora/
 
 #### Adding the Flathub Repository:
 ```sh
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
+
+####################################
+sudo dnf install gnome-tweak-tool gnome-tweaks gnome-extensions-app ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
+
+sudo systemctl enable tlp
 
 #### Extend Multimedia ability:
-```sh
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-
-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
 
 sudo dnf install lame\* --exclude=lame-devel
 
 sudo dnf group upgrade --with-optional Multimedia
 ```
 
-#### Development:
-
+#### VSCode:
 ```sh
 sudo dnf upgrade --refresh -y
 sudo nano /etc/yum.repos.d/vscode.repo
@@ -71,3 +60,11 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo dnf update
 sudo dnf install code
 ```
+
+#### Change Hostname After Installation
+```sh
+sudo hostnamectl set-hostname "New_Custom_Name"
+```
+
+#### NVidia Drivers:
+https://itsfoss.com/install-nvidia-drivers-fedora/
