@@ -33,9 +33,11 @@ sudo tlp setcharge
 # Check:
 sudo tlp-stat -b
 ```
-### Rclone:
+### UnoDisco:
 ```sh
+install rclone
 rclone config
+# ...
 rclone --vfs-cache-mode writes mount YourNameOfOneDriveProfileWHileConfig: ~/OneDrive
 ```
 ##### 1Drive.desktop
