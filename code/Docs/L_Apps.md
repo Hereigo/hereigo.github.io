@@ -65,9 +65,9 @@ Categories=Rclone;Drive;
 
 WPS Office Dictionaries - https://github.com/HoLuLuLu/wps-office-multilang/tree/master/wps-office-bin/opt/kingsoft/wps-office/office6/dicts/spellcheck
 
-- Apps Flatpak Permissions - Flatseal
 - AppImagePool - https://github.com/prateekmedia/appimagepool/releases
 - AppImagesHub - https://www.appimagehub.com/
+- Apps Flatpak Permissions - Flatseal
 - Apps Packages manager GUI - bauh
 - Balena Etcher - https://www.balena.io/etcher/
 - Battery SlimBookBattry - https://github.com/slimbook/slimbookbattery/releases
@@ -97,6 +97,7 @@ WPS Office Dictionaries - https://github.com/HoLuLuLu/wps-office-multilang/tree/
 - ScreenRecord 4 Wayland - kooha
 - SysMonCenter - https://sourceforge.net/projects/system-monitoring-center/files/latest/download
 - Ungoogled-Chromium - https://ungoogled-software.github.io/ungoogled-chromium-binaries/
+- Video Amazing Player Haruna - flatpak install flathub org.kde.haruna
 - Video Combine - https://mpv.io
 - Video Converter FlowBlade - https://jliljebl.github.io/flowblade/download.html
 - Video Converter WinFF (GUI 4 FFmpeg) - https://github.com/WinFF/winff

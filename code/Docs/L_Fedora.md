@@ -31,6 +31,7 @@ sudo rpm -Uvh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-re
 ```sh
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+flatpak install flathub org.kde.haruna # Amazing Player Haruna
 ####################################
 sudo dnf install gnome-tweak-tool gnome-tweaks gnome-extensions-app ffmpeg neofetch dropbox fedy ttf-ms-fonts nerd-fonts-complete shrome-gnome-shell gdm-settings tlp tlp-rdw -y
 
