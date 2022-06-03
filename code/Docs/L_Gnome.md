@@ -30,17 +30,43 @@ fc-cache -fvh
 # -v     Display status information while busy.
 # -h     Show summary of options.
 ```
+
+#### Gtk3-Gtk4 UX smoothing differences:
+
+https://github.com/lassekongo83/adw-gtk3
+
+
 #### Disable 10 min. lock after 3 FAILED LOGIN.
 ```sh
 sudo nano /etc/security/faillock.conf
 # SET -> deny = 0
 ```
+
 #### Change LANGUAGE BAR Displaying sign.
 ```sh
 sudo gedit /usr/share/X11/xkb/rules/evdev.xml
 # 1. Find such ">en<" or ">uk<"
 # 2. Change to ">EN<" or ">UK<"
 ```
+#### Gnome-Panel FONT change:
+```sh
+https://extensions.gnome.org/extension/19/user-themes/
+
+mkdir -p ~/.local/share/themes/pragmalin/gnome-shell/
+touch ~/.local/share/themes/pragmalin/gnome-shell/gnome-shell.css
+
+```
+#### Import everything from the default Gnome Adwaita theme
+#### Then - Customize:
+```css
+@import url("resource:///org/gnome/theme/gnome-shell.css");
+
+stage {
+    font-family: Noto Sans Mono;
+    font-size: 10px;
+}
+```
+##### After Theme Customized - Tweaks - Appearance - Shell - (switch to Pragmalin)
 
 #### Gnome-Extensions:
 ##### https://www.omgubuntu.co.uk/best-gnome-shell-extensions
