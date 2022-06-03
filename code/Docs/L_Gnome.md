@@ -62,8 +62,8 @@ touch ~/.local/share/themes/pragmalin/gnome-shell/gnome-shell.css
 @import url("resource:///org/gnome/theme/gnome-shell.css");
 
 stage {
-    font-family: Noto Sans Mono;
-    font-size: 10px;
+    font-family: Comfortaa;
+    font-size: 14px;
 }
 ```
 ##### After Theme Customized - Tweaks - Appearance - Shell - (switch to Pragmalin)

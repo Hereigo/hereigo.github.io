@@ -27,6 +27,7 @@ https://www.fosslife.org/news
 https://www.fosslinux.com/category/news
 https://www.freecodecamp.org/news/search?query=linux
 https://www.geeksforgeeks.org
+https://www.if-not-true-then-false.com
 https://www.infoworld.com/category/linux
 https://www.linux-magazine.com/online/news
 https://www.linux.com
@@ -45,3 +46,4 @@ https://www.techrepublic.com/search/?q=linux
 https://www.tecmint.com
 https://www.zdnet.com/blog/open-source
 https://www.zdnet.com/topic/linux
+
