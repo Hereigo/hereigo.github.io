@@ -3,7 +3,7 @@ sudo apt purge -y mono-runtime-common libreoffice-base* openjdk*
 ```
 
 ```sh
-gnome-system-monitor chrome-gnome-shell p7zip dropbox fbreader pinta nomacs deepin-screenshot simplescreenrecorder remmina doublecmd-gtk2 vlc ffmpeg shortwave geany geany-plugins
+yay -S gnome-system-monitor chrome-gnome-shell dropbox fbreader pinta nomacs simplescreenrecorder remmina freerdp ffmpeg shortwave geany geany-plugins megasync-bin microsoft-edge-stable-bin skypeforlinux-preview-bin viber visual-studio-code-bin qmmp rclone keepassxc evolution
 ```
 
 ### UFW:

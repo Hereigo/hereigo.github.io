@@ -15,9 +15,15 @@ yay -Rns $(yay -Qtdq)
 # Remove useless Packages:
 yay -Yc
 
+# System info:
+yay -Ps
+
+# Info of package
+yay -Si
+
 # List of installed packages
-yay -Qqen > pkglist_repos.txt
-yay -Qqem > pkglist_aur.txt
+yay -Qqen > ~/Desktop/pkglist_repos.txt
+yay -Qqem > ~/Desktop/pkglist_aur.txt
 
 # Search in the installed packages:
 yay -Qe | grep abc
