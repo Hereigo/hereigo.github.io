@@ -53,8 +53,7 @@ sudo gedit /usr/share/X11/xkb/rules/evdev.xml
 https://extensions.gnome.org/extension/19/user-themes/
 
 mkdir -p ~/.local/share/themes/pragmalin/gnome-shell/
-touch ~/.local/share/themes/pragmalin/gnome-shell/gnome-shell.css
-
+nano ~/.local/share/themes/pragmalin/gnome-shell/gnome-shell.css
 ```
 #### Import everything from the default Gnome Adwaita theme
 #### Then - Customize:
