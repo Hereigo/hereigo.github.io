@@ -38,7 +38,8 @@ sudo tlp-stat -b
 install rclone
 rclone config
 # ...
-rclone --vfs-cache-mode writes mount YourNameOfOneDriveProfileWHileConfig: ~/OneDrive
+mkdir ~/UnoDisco
+rclone --vfs-cache-mode writes mount UnoDisco: ~/UnoDisco
 ```
 ##### 1Drive.desktop
 ```sh
