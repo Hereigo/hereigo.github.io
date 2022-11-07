@@ -10,11 +10,13 @@
     <title>Bootstrap v5.1 Dashboard</title>
 
     <link rel="stylesheet" href="/libs/bootstrap.min.css">
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="/libs/atom-one-light.min.css" />
-    <link rel="stylesheet" href="/libs/github-markdown.min.css" />
+    <link rel="stylesheet" href="/libs/app.css">
 
-    <script src="/libs/jquery-3.6.1.min.js"></script>
+    <script type="module" src="/libs/zero-md.min.js"></script>
+    <!-- REALLY NECESSARY ??? -->
+    <link rel="stylesheet" href="/libs/github-markdown.min.css" />
+    <link rel="stylesheet" href="/libs/prism.min.css" />
+
   </head>
 
   <body>
@@ -124,27 +126,12 @@
           <!---------------- MAIN BLOCK ---------------->
 
 
-          <template type="markdown">
 
-            ### Read a local text file using JavaScript:
+          <zero-md src="/pages/Power_Shell.md"></zero-md>
+          <hr />
+          <zero-md src="/pages/Lin_Arch_Gnome.md"></zero-md>
 
-            ```javascript
-            document.getElementById('inputfile')
-            .addEventListener('change', function() {
 
-            var fr=new FileReader();
-            fr.onload=function(){
-            document.getElementById('output').textContent = fr.result;
-            }
-
-            fr.readAsText(this.files[0]);
-            })
-            ```
-            ### ...
-            ```
-            ```
-
-          </template>
 
 
           <!---------------- MAIN BLOCK ENDED ---------------->
@@ -153,7 +140,7 @@
     </div>
     <script src="/libs/bootstrap.bundle.min.js"></script>
     <script src="/libs/feather.min.js"></script>
-    <script src="dashboard.js"></script>
+    <script src="/libs/app.js"></script>
 
     <script>
       function includeHTML() {
@@ -185,13 +172,7 @@
       }
     </script>
 
-    <script src="/libs/marked.min.js" charset="utf-8"></script>
-    <script src="/libs/highlight.min.js" charset="utf-8"></script>
-    <script src="/libs/highlight-javascript.min.js" charset="utf-8"></script>
-    <script src="/libs/md_html.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      markedInHtml.init();
-    </script>
+
   </body>
 
 </html>
