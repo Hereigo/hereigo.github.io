@@ -1,5 +1,6 @@
-```powershell
+### PowerShell Tips & Tricks :
 
+```powershell
 # WRITE FILENAME AS A COMMENT INTO EVERY FILE.SQL IN THE DIRECTORY :
 
 #@("--nameofSP","") +  (Get-Content -path .\procAcquisitionsCampaignsSet.proc.sql) | Set-Content -path.\procAcquisitionsCampaignsSet.proc.sql
@@ -19,17 +20,14 @@ Get-ChildItem $Directory -Filter "*.sql" `
 
 cd Cert:\LocalMachine\Root
 
-C:\Setup\makecert -pe -is Root -ir LocalMachine -in "Certificate-Issuer-Name-Here" -n CN="Cert-Issued-To-Name" -eku 1.3.6.1.5.5.7.3.1 -ss Root -sr localmachine -sky exchange -sp "Microsoft RSA SChannel Cryptographic Provider" -sy 12 
-echo "."
+C:\Setup\makecert -pe -is Root -ir LocalMachine -in "Certificate-Issuer-Name-Here" -n CN="Cert-Issued-To-Name" -eku 1.3.6.1.5.5.7.3.1 -ss Root -sr localmachine -sky exchange -sp "Microsoft RSA SChannel Cryptographic Provider" -sy 12
 echo ". Certificate Cert-Issued-To-Name added."
 
 # ... CERTIFICATE REMOVE :
 
 cd Cert:\LocalMachine\Root
 
-Get-ChildItem | Where Subject -like "*CN=Cert-Issued-To-Name"
+Get-ChildItem | Where Subject -like "*CN=Cert-Issued-To-Name" # -- just for logging name to console
 Get-ChildItem | Where Subject -like "*CN=Cert-Issued-To-Name" | Remove-Item
-echo "."
 echo ". Certificate Cert-Issued-To-Name removed."
-
 ```
