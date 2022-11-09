@@ -18,5 +18,8 @@ dbus-launch /opt/viber/Viber
 cd /usr/share/applications/ && ls *Optional-Part-Of-Name-Of-Needed-App*
 # and for Snap-Apps:
 cd /var/lib/snapd/desktop/applications/ && ls
+# after find your app:
+cp Your-App-Name.desktop ~/Desktop/
+# don't forget to allow to execute the link on desktop.
 
 ```
