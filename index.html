@@ -10,12 +10,16 @@
     <title>Bootstrap v5.1 Dashboard</title>
 
     <link rel="stylesheet" href="/libs/bootstrap.min.css">
-    <link rel="stylesheet" href="/libs/app.css">
+    <link rel="stylesheet" href="/app.css">
 
+    <script type="module" src="/libs/prism.min.js"></script>
+    
     <script type="module" src="/libs/zero-md.min.js"></script>
     <!-- REALLY NECESSARY ??? -->
     <link rel="stylesheet" href="/libs/github-markdown.min.css" />
     <link rel="stylesheet" href="/libs/prism.min.css" />
+
+    
 
   </head>
 
@@ -126,7 +130,8 @@
           <!---------------- MAIN BLOCK ---------------->
 
 
-
+          <zero-md src="/pages/JS_Simple.md"></zero-md>
+          <hr />
           <zero-md src="/pages/Lin_Aaa_Tips.md"></zero-md>
           <hr />
           <zero-md src="/pages/Lin_Arch.md"></zero-md>
@@ -144,9 +149,14 @@
         </main>
       </div>
     </div>
+
+
+
+
+
     <script src="/libs/bootstrap.bundle.min.js"></script>
     <script src="/libs/feather.min.js"></script>
-    <script src="/libs/app.js"></script>
+    <script src="/app.js"></script>
 
     <script>
       function includeHTML() {
