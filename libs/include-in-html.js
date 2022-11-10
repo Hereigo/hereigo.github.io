@@ -1,28 +1,6 @@
-### JavaScript base:
-
-```typescript
-// Function as parameter:
-var arr = ['aaa','bbb','ccc'];
-
-function arrModify(arr, fn){
-  var arrNew = [];
-  for(var i=0;i<arr.length;i++){
-    arrNew.push(fn(arr[i]));
-  }
-  return arrNew;
-}
-
-function toUp(x){
-  return x.toUpperCase();
-}
-
-var rez = arrModify(arr, toUp);
-
-// --------------------------------------------------------
-// Include Html as part of another.
 // using:  -  <div include-html="a-content.html"></div>
-//            <script>includeHTML();</script>
-function includeHTML() {
+
+(function includeHTML() {
       var z, i, elmnt, file, xhttp;
       /* Loop through a collection of all HTML elements: */
       z = document.getElementsByTagName("*");
@@ -48,5 +26,4 @@ function includeHTML() {
                   return;
             }
       }
-}
-```
+})();
