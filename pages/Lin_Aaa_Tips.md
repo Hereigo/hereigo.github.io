@@ -1,5 +1,10 @@
 ### Linux tips.
 ```sh
+# APT main command))
+sudo sh -c "apt -y update;apt -y dist-upgrade;apt -y autoremove;apt -y autoclean"
+```
+
+```sh
 # Battery: Conservation Mode:
 sudo su
 # then Activate
