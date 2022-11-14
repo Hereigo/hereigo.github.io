@@ -1,5 +1,8 @@
 ### Gnome tips :
 
+**LockScreen** : Ctrl+Alt+F1
+(it looks for screensaver processes running ps -aux | grep screen and kill them all).
+
 ```sh
 # Disable 10 min. lock after 3 failed login:
 sudo nano /etc/security/faillock.conf
