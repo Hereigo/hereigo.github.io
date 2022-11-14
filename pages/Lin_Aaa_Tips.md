@@ -1,7 +1,9 @@
 ### Linux tips.
 ```sh
-# APT main command))
+# APT main commands))
 sudo sh -c "apt -y update;apt -y dist-upgrade;apt -y autoremove;apt -y autoclean"
+#
+alias foo='flatpak update && sudo apt update && sudo apt full-upgrade -y'
 ```
 
 ```sh
