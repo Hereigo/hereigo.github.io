@@ -1,7 +1,7 @@
 ### JavaScript base:
 
 ```typescript
-// Function as parameter:
+// Function as parameter: ---------------------
 var arr = ['aaa','bbb','ccc'];
 
 function arrModify(arr, fn){
@@ -17,6 +17,20 @@ function toUp(x){
 }
 
 var rez = arrModify(arr, toUp);
+
+// Function as parameter (Closures): ---------------------
+function createRepeater(countNum) {
+  var insideDelimiter = '-';
+  return function (charToRepeat) {
+    console.log( // Array Filled and Joined to single String:
+      Array(countNum).fill(charToRepeat).join(insideDelimiter));
+  }
+}
+var sevenRepeaterFor = createRepeater(7);
+sevenRepeaterFor('A');
+createRepeater(5)('B');
+// insideDelimiter - is still accessible here!
+// ...
 
 // --------------------------------------------------------
 // Include Html as part of another.

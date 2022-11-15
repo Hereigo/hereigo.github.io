@@ -10,8 +10,10 @@
     <title>Bootstrap v5.1 Dashboard</title>
     <link rel="stylesheet" href="/libs/bootstrap.min.css">
     <link rel="stylesheet" href="/app.css">
-
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    <!--
+    <script type="module" 
+    src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    -->
   </head>
 
   <body>
@@ -127,10 +129,29 @@
       </div>
     </div>
 
+    <!--
     <script src="/libs/bootstrap.bundle.min.js"></script>
-    <script src="/libs/feather.min.js"></script>
     <script src="/libs/include-in-html.js"></script>
+
+    <script src="/libs/feather.min.js"></script>
     <script src="/app.js"></script>
+    -->
+
+    <script>
+
+      function createRepeater(countNum) {
+        var insideDelimiter = '-';
+        return function (charToRepeat) {
+          // Filled Array To Joined String:
+          console.log(Array(countNum).fill(charToRepeat).join(insideDelimiter));
+        }
+      }
+      var sevenRepeaterFor = createRepeater(7);
+      sevenRepeaterFor('A');
+      createRepeater(5)('B');
+      // insideDelimiter - is still accessible here!
+
+    </script>
 
   </body>
 

@@ -11,6 +11,9 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
 - [**Battery Life**](https://www.maketecheasier.com/increase-linux-laptop-battery-life/)
 
 **Other Tools:**
+
+ - [**FLAMESHOT**]()
+
  - [**Abricotine**](https://www.linuxlinks.com/excellent-utilities-abricotine-open-source-markdown-editor/)  - - Markdown editor with inline preview functionality
  - [**Ananicy**](https://www.linuxlinks.com/excellent-utilities-ananicy-auto-nice-daemon/)  - - Shell daemon created to manage processes’ IO and CPU priorities
  - [**broot**](https://www.linuxlinks.com/excellent-utilities-broot-next-gen-tree-explorer/)  - - Next gen tree explorer and customizable launcher
