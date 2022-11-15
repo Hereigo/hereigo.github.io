@@ -4,6 +4,13 @@
 ```sh
 flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
 ```
+**Battery Tools:**
+- [**Powertop**](https://medium.com/geekculture/how-to-increase-battery-life-time-on-linux-laptops-7c15383a19a5)
+- [**Laptop Mode Tools**](https://wiki.archlinux.org/title/Laptop_Mode_Tools)
+- [**Optimize Battery**](https://trisquel.info/en/wiki/optimizing-battery-time)
+- [**Battery Life**](https://www.maketecheasier.com/increase-linux-laptop-battery-life/)
+
+**Other Tools:**
  - [**Abricotine**](https://www.linuxlinks.com/excellent-utilities-abricotine-open-source-markdown-editor/)  - - Markdown editor with inline preview functionality
  - [**Ananicy**](https://www.linuxlinks.com/excellent-utilities-ananicy-auto-nice-daemon/)  - - Shell daemon created to manage processes’ IO and CPU priorities
  - [**broot**](https://www.linuxlinks.com/excellent-utilities-broot-next-gen-tree-explorer/)  - - Next gen tree explorer and customizable launcher
@@ -37,3 +44,6 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**Ulauncher**](https://www.linuxlinks.com/excellent-utilities-ulauncher-application-launcher-linux/)  - - Sublime application launcher
  - [**Watson**](https://www.linuxlinks.com/excellent-utilities-watson-cli-tool-track-time/)  - - Track the time spent on projects
  - [**Whoogle Search**](https://www.linuxlinks.com/excellent-utilities-whoogle-search-self-hosted-metasearch-engine/)  - - Self-hosted and privacy-focused metasearch engine
+
+**Much More Recommended Software**
+https://www.linuxlinks.com/best-free-open-source-software/

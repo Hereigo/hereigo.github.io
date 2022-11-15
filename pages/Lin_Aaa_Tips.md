@@ -17,10 +17,14 @@ echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 
 ```sh
 # TLP:
-sudo tlp start
+sudo apt install tlp tlp-rdw
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
-sudo systemctl status tlp.servicey
+sudo systemctl status tlp.service
+sudo tlp start
+sudo tlp-stat
+# config file:
+/etc/default/tlp
 ```
 
 ```sh
