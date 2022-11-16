@@ -135,17 +135,20 @@
 
     <script>
 
-      function createRepeater(countNum) {
-        var insideDelimiter = '-';
-        return function (charToRepeat) {
-          // Filled Array To Joined String:
-          console.log(Array(countNum).fill(charToRepeat).join(insideDelimiter));
+      var objOne = {
+        name: 'Alex',
+        age: 35,
+        greeting: function(helloWord){
+          console.log(helloWord + '! My name is ' + this.name + '. I\'am ' + this.age);
         }
+      };
+      objOne.greeting('hi');
+
+      var objTwo = {
+        name: 'Sandra',
+        age: 22
       }
-      var sevenRepeaterFor = createRepeater(7);
-      sevenRepeaterFor('A');
-      createRepeater(5)('B');
-      // insideDelimiter - is still accessible here!
+      objOne.greeting.call(objTwo, 'hello');
 
     </script>
 
