@@ -1,7 +1,8 @@
-### JavaScript base:
+### JavaScript basics:
+-----------------------------------------------
 
+#### Function as a parameter:
 ```typescript
-// Function as parameter: ---------------------
 var arr = ['aaa','bbb','ccc'];
 
 function arrModify(arr, fn){
@@ -17,8 +18,11 @@ function toUp(x){
 }
 
 var rez = arrModify(arr, toUp);
+```
 
-// Function as parameter (Closures): ---------------------
+#### Function as parameter (Closures):
+```typescript
+
 function createRepeater(countNum) {
   var insideDelimiter = '-';
   return function (charToRepeat) {
@@ -30,9 +34,10 @@ var sevenRepeaterFor = createRepeater(7);
 sevenRepeaterFor('A');
 createRepeater(5)('B');
 // insideDelimiter - is still accessible here!
-// ...
+```
 
-// CALL, APPLY, BIND : -------------------------------------
+#### CALL, APPLY, BIND :
+```typescript
 var objAlex = {
   name: 'Alex',
   age: 35,
@@ -52,9 +57,10 @@ objAlex.alexFunc.apply(objNika, ['hello', '!']); // params as array
 var objNikaFirstParam = 
   objAlex.alexFunc.bind(objNika, 'hi'); // A param.
 objNikaFirstParam('$'); // B only needed.
+```
 
-// --------------------------------------------------------
-// Include Html as part of another.
+#### Include Html as part of another:
+```typescript
 // using:  -  <div include-html="a-content.html"></div>
 //            <script>includeHTML();</script>
 function includeHTML() {
