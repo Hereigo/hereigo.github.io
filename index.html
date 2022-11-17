@@ -129,29 +129,14 @@
 
     <script src="/libs/bootstrap.bundle.min.js"></script>
     <script src="/libs/include-in-html.js"></script>
-
     <script src="/libs/feather.min.js"></script>
-    <script src="/app.js"></script>
-
     <script>
-
-      var objA = {
-        name: 'Alex',
-        age: 35,
-        oaFunc: function (greeting) {
-          console.log(greeting + '! My name is ' + this.name + '. I\'am ' + this.age);
-        }
-      };
-      objA.oaFunc('hi');
-
-      var objB = {
-        name: 'Sandra',
-        age: 22
-      }
-      objA.oaFunc.call(objB, 'hello');
-
+      (function () {
+        'use strict'
+        /* globals Chart:false, feather:false */
+        feather.replace({ 'aria-hidden': 'true' })
+      })();
     </script>
-
   </body>
 
 </html>
