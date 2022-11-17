@@ -33,22 +33,25 @@ createRepeater(5)('B');
 // ...
 
 // CALL, APPLY, BIND : -------------------------------------
-      var objA = {
-        name: 'Alex',
-        age: 35,
-        oaFunc: function (greeting, mark) {
-          console.log(
-            greeting + mark +' My name is ' + this.name + '. I\'am ' + this.age);
-        }
-      };
-      var objB = {
-        name: 'Sandra',
-        age: 22
-      }
-      objA.oaFunc('hi all', '!');
-      objA.oaFunc.call(objB, 'whats up', '?');
-      objA.oaFunc.apply(objB, ['hello', '!']); // params as array
-      // BIND generates the copy of a function!
+var objAlex = {
+  name: 'Alex',
+  age: 35,
+  alexFunc: function (a, b) {
+    console.log(
+      a + b + ' My name is ' + this.name + '. I\'am ' + this.age);
+  }
+};
+var objNika = {
+  name: 'Nika',
+  age: 22
+}
+objAlex.alexFunc('hi all', '!');
+objAlex.alexFunc.call(objNika, 'whats up', '?');
+objAlex.alexFunc.apply(objNika, ['hello', '!']); // params as array
+// BIND generates the copy of a function with ability to store params!
+var objNikaFirstParam = 
+  objAlex.alexFunc.bind(objNika, 'hi'); // A param.
+objNikaFirstParam('$'); // B only needed.
 
 // --------------------------------------------------------
 // Include Html as part of another.
