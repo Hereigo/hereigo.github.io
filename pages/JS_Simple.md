@@ -32,6 +32,21 @@ createRepeater(5)('B');
 // insideDelimiter - is still accessible here!
 // ...
 
+// CALL:
+var objA = {
+  name: 'Alex',
+  age: 35,
+  oaFunc: function (greeting) {
+    console.log(greeting + '! My name is ' + this.name + '. I\'am ' + this.age);
+  }
+};
+objA.oaFunc('hi');
+var objB = {
+  name: 'Sandra',
+  age: 22
+}
+objA.oaFunc.call(objB, 'hello');
+
 // --------------------------------------------------------
 // Include Html as part of another.
 // using:  -  <div include-html="a-content.html"></div>

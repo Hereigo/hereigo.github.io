@@ -135,20 +135,20 @@
 
     <script>
 
-      var objOne = {
+      var objA = {
         name: 'Alex',
         age: 35,
-        greeting: function(helloWord){
-          console.log(helloWord + '! My name is ' + this.name + '. I\'am ' + this.age);
+        oaFunc: function (greeting) {
+          console.log(greeting + '! My name is ' + this.name + '. I\'am ' + this.age);
         }
       };
-      objOne.greeting('hi');
+      objA.oaFunc('hi');
 
-      var objTwo = {
+      var objB = {
         name: 'Sandra',
         age: 22
       }
-      objOne.greeting.call(objTwo, 'hello');
+      objA.oaFunc.call(objB, 'hello');
 
     </script>
 
