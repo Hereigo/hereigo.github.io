@@ -1,5 +1,8 @@
 ### JavaScript basics:
 -----------------------------------------------
+#### Standard ECMA-262 (1999):
+https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
+
 
 #### Function as a parameter:
 ```typescript

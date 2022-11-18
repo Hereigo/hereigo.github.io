@@ -39,27 +39,28 @@
                 <a class="nav-link active" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                   role="tab" aria-controls="nav-home" aria-selected="true">
                   <span data-feather="home"></span>
-                  Dashboard
+                  JavaScript
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
-                  role="tab" aria-controls="nav-profile" aria-selected="false">
+                <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab" data-bs-target="#nav-linux"
+                  role="tab" aria-controls="nav-linux" aria-selected="false">
                   <span data-feather="file"></span>
-                  Orders
+                  Linux
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
                   data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell" aria-selected="false">
                   <span data-feather="shopping-cart"></span>
-                  Products
+                  Power Shell
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python"
+                  role="tab" aria-controls="nav-python" aria-selected="false">
                   <span data-feather="users"></span>
-                  Customers
+                  Python
                 </a>
               </li>
               <li class="nav-item">
@@ -124,24 +125,24 @@
           </div>
           <!---------------- MAIN BLOCK ---------------->
 
-          <!-- <div include-html="pages.html"></div> -->
-
           <div class="tab-content" id="nav-tabContent">
+
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <zero-md src="/pages/JS_Simple.md"></zero-md>
+              <div include-html="./pages/JS.html"></div>
             </div>
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-              <zero-md src="/pages/Lin_Aaa_Tips.md"></zero-md>
-              <hr />
-              <zero-md src="/pages/Lin_Arch.md"></zero-md>
-              <hr />
-              <zero-md src="/pages/Lin_Gnome.md"></zero-md>
-              <hr />
-              <zero-md src="/pages/Lin_Utilities.md"></zero-md>
+
+            <div class="tab-pane fade" id="nav-linux" role="tabpanel" aria-labelledby="nav-linux-tab">
+              <div include-html="./pages/LN.html"></div>
             </div>
+
             <div class="tab-pane fade" id="nav-powershell" role="tabpanel" aria-labelledby="nav-powershell-tab">
-              <zero-md src="/pages/Power_Shell.md"></zero-md>
+              <div include-html="./pages/PS.html"></div>
             </div>
+
+            <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
+              <div include-html="./pages/PY.html"></div>
+            </div>
+
           </div>
 
           <!---------------- MAIN BLOCK ENDED ---------------->
