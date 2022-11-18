@@ -10,6 +10,11 @@ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 yay gnome-tweaks gnome-browser-connector gnome-system-monitor remmina freerdp simplescreenrecorder skypeforlinux-stable-bin deepin-screenshot visual-studio-code-bin nomacs viber snappy
 # - snappy - is needed for viber 18.2 on Arch.
 
+# FONTS:
+mkdir ~/.local/share/fonts/
+cp /MY_PATH/*.ttf ~/.local/share/fonts/
+fc-cache -f
+
 # Remove orphaned packages:
 yay -Rns $(yay -Qtdq)
 

@@ -47,6 +47,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**Ulauncher**](https://www.linuxlinks.com/excellent-utilities-ulauncher-application-launcher-linux/)  - - Sublime application launcher
  - [**Watson**](https://www.linuxlinks.com/excellent-utilities-watson-cli-tool-track-time/)  - - Track the time spent on projects
  - [**Whoogle Search**](https://www.linuxlinks.com/excellent-utilities-whoogle-search-self-hosted-metasearch-engine/)  - - Self-hosted and privacy-focused metasearch engine
+ - [**Lynis**](https://www.geeksforgeeks.org/lynis-security-tool-for-audit-and-hardening-linux-systems/) - - Secur Tool for Audit and Hardening Lin
 
 **Much More Recommended Software**
 https://www.linuxlinks.com/best-free-open-source-software/
