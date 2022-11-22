@@ -20,6 +20,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**cheat.sh**](https://www.linuxlinks.com/excellent-utilities-cheat-sh-community-driven-cheat-sheet/)  - - Community driven unified cheat sheet
  - [**CopyQ**](https://www.linuxlinks.com/excellent-utilities-copyq-advanced-clipboard-manager/)  - - Advanced clipboard manager
  - [**croc**](https://www.linuxlinks.com/excellent-utilities-croc-securely-transfer-files-folders/)  - - Securely transfer files and folders from the command-line
+ - [**Czkawka**](https://appimage.github.io/linux_czkawka_gui/) - - Anti-Duplicator
  - [**Deskreen**](https://www.linuxlinks.com/excellent-utilities-deskreen-live-streaming-desktop/)  - - Live streaming your desktop to a web browser
  - [**duf**](https://www.linuxlinks.com/excellent-utilities-duf-disk-usage-utility/)  - - Disk usage utility with more polished presentation than the classic df
  - [**exa**](https://www.linuxlinks.com/excellent-utilities-exa-replacement-ls/)  - - A turbo-charged alternative to the venerable ls command
@@ -41,6 +42,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**peco**](https://www.linuxlinks.com/excellent-utilities-peco-interactive-filtering-tool/)  - - Simple interactive filtering tool that's remarkably useful
  - [**ripgrep**](https://www.linuxlinks.com/excellent-utilities-ripgrep-recursively-search-directories-regex-pattern/)  - - Recursively search directories for a regex pattern
  - [**scrcpy**](https://www.linuxlinks.com/excellent-utilities-scrcpy-display-control-android-devices/)  - - Display and control Android devices
+ - [**slashbase**](https://github.com/slashbaseide/slashbase) - - Web-based DB IDE
  - [**tldr**](https://www.linuxlinks.com/excellent-utilities-tldr-simplified-community-driven-man-pages/)  - - Simplified and community-driven man pages
  - [**tmux**](https://www.linuxlinks.com/excellent-utilities-tmux-terminal-multiplexer-software/)  - - A terminal multiplexer that offers a massive boost to your workflow
  - [**Tusk**](https://www.linuxlinks.com/excellent-utilities-tusk-evernote-desktop-software/)  - - An unofficial Evernote client with bags of potential
