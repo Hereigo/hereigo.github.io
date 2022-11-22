@@ -9,12 +9,43 @@ journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 ```
 
 ```sh
+# Smart view Drives:
+lsblk
+```
+
+```sh
 # Battery: Conservation Mode:
 sudo su
 # then Activate
 echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 # or Diactivate
 echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+```
+
+#### AutoRun Script on Boot:
+```sh
+sudo bash
+
+# 1. Create Script:
+nano /usr/local/sbin/ABC-SCRIPT.sh
+#!/bin/bash
+# your script code here
+
+chmod 0700 /usr/local/sbin/ABC-SCRIPT.sh
+
+# 2. Create Service:
+nano /etc/systemd/system/ABC-SCRIPT.service
+#
+[Unit]
+Description=Your descripotion here...
+[Service]
+ExecStart=/usr/local/sbin/ABC-SCRIPT.sh
+[Install]
+WantedBy=multi-user.target
+
+# Enable Service:
+systemctl start ABC-SCRIPT.service
+systemctl enable ABC-SCRIPT.service
 ```
 
 ```sh

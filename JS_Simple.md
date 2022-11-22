@@ -4,6 +4,21 @@
 https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
 
 
+#### Subtract the numbers in the array, starting from the left:
+```typescript
+const numbers = [1, 5, 10, 33, 100];
+let x = 0;
+
+function myFunc(total, num) {
+	x++;
+	console.log('Cur:' + num + ' Total:' + total);
+	return total + num;
+}
+
+numbers.reduce(myFunc);
+```
+
+
 #### Function as a parameter:
 ```typescript
 var arr = ['aaa','bbb','ccc'];
