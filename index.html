@@ -159,6 +159,26 @@
         /* globals Chart:false, feather:false */
         feather.replace({ 'aria-hidden': 'true' })
       })();
+
+      // TESTING BELOW ...........
+
+      const numbers = [1, 2, 3, 4, 5];
+function myReduceFunc(rez, item, index, array) {
+  console.log(index + ' Sum=' + rez + ' and next=' + item);
+  return rez + item;
+}
+numbers.reduce(myReduceFunc);
+
+      
+      
+      
+      
+
+      
+      
+      
+      
+
     </script>
   </body>
 

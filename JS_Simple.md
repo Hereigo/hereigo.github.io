@@ -3,21 +3,20 @@
 #### Standard ECMA-262 (1999):
 https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
 
-
 #### Subtract the numbers in the array, starting from the left:
 ```typescript
-const numbers = [1, 5, 10, 33, 100];
-let x = 0;
-
-function myFunc(total, num) {
-	x++;
-	console.log('Cur:' + num + ' Total:' + total);
-	return total + num;
+const numbers = [1, 2, 3, 4, 5];
+function myReduceFunc(rez, item, index, array) {
+  console.log(index + '. Sum=' + rez + ' and next=' + item);
+  return rez + item;
 }
-
-numbers.reduce(myFunc);
+numbers.reduce(myReduceFunc);
+// 1. Sum=1 and next=2 
+// 2. Sum=3 and next=3 ...
+// or
+// Final result as a Summary:
+console.log(numbers.reduce((rez, item, index, array) => rez+item));
 ```
-
 
 #### Function as a parameter:
 ```typescript
@@ -74,6 +73,7 @@ objAlex.alexFunc.apply(objNika, ['hello', '!']); // params as array
 // BIND generates the copy of a function with ability to store params!
 var objNikaFirstParam = 
   objAlex.alexFunc.bind(objNika, 'hi'); // A param.
+  
 objNikaFirstParam('$'); // B only needed.
 ```
 
