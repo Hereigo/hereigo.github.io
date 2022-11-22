@@ -42,6 +42,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**peco**](https://www.linuxlinks.com/excellent-utilities-peco-interactive-filtering-tool/)  - - Simple interactive filtering tool that's remarkably useful
  - [**ripgrep**](https://www.linuxlinks.com/excellent-utilities-ripgrep-recursively-search-directories-regex-pattern/)  - - Recursively search directories for a regex pattern
  - [**scrcpy**](https://www.linuxlinks.com/excellent-utilities-scrcpy-display-control-android-devices/)  - - Display and control Android devices
+ - [**slashbase**](https://github.com/slashbaseide/slashbase) - - Web-based DB IDE
  - [**tldr**](https://www.linuxlinks.com/excellent-utilities-tldr-simplified-community-driven-man-pages/)  - - Simplified and community-driven man pages
  - [**tmux**](https://www.linuxlinks.com/excellent-utilities-tmux-terminal-multiplexer-software/)  - - A terminal multiplexer that offers a massive boost to your workflow
  - [**Tusk**](https://www.linuxlinks.com/excellent-utilities-tusk-evernote-desktop-software/)  - - An unofficial Evernote client with bags of potential
