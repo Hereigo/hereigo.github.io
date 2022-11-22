@@ -160,24 +160,43 @@
         feather.replace({ 'aria-hidden': 'true' })
       })();
 
-      // TESTING BELOW ...........
+      ///////////// TESTING BELOW /////////////////////////
 
-      const numbers = [1, 2, 3, 4, 5];
-function myReduceFunc(rez, item, index, array) {
-  console.log(index + ' Sum=' + rez + ' and next=' + item);
-  return rez + item;
-}
-numbers.reduce(myReduceFunc);
+      var logicController = (function () {
+        var x = 10;
+        var privateFn = function (a) {
+          return x + a;
+        }
+        return {
+          publicFn: function (a) {
+            return privateFn(a);
+          }
+        }
 
-      
-      
-      
-      
+        var uiController = (function () {
+        })();
 
-      
-      
-      
-      
+        var controller = (function (logic, ui) {
+          var y = logic.publicFn(22);
+          return {
+            publicFnTwo: function () {
+              console.log(y);
+            }
+          }
+        })(logicController, uiController);
+
+
+      })();
+
+
+
+
+
+
+
+
+
+
 
     </script>
   </body>
