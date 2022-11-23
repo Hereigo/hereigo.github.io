@@ -4,6 +4,9 @@
 ```sh
 flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
 ```
+
+ - [**Mutter-Rounded**](https://github.com/yilozt/mutter-rounded) - - Similar with "Rounded Window Corners" gnome-ext
+
 **Battery Tools:**
 - [**Powertop**](https://medium.com/geekculture/how-to-increase-battery-life-time-on-linux-laptops-7c15383a19a5)
 - [**Laptop Mode Tools**](https://wiki.archlinux.org/title/Laptop_Mode_Tools)
