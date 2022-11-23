@@ -159,49 +159,6 @@
         /* globals Chart:false, feather:false */
         feather.replace({ 'aria-hidden': 'true' })
       })();
-
-      ///////////// TESTING BELOW /////////////////////////
-
-      var logicController = (function () {
-        var x = 10;
-        var privateAddFunc = function (a) {
-          return x + a;
-        }
-        return {
-          publicFunc: function (b) {
-            return privateAddFunc(b);
-          }
-        }
-      })();
-
-      var uiController = (function () {
-      })();
-
-      var controller = (function (logic, ui) {
-
-        var y = logic.publicFunc(22);
-
-        return {
-          publicRunnerFunc: function () {
-            console.log(y);
-          }
-        }
-
-      })(logicController, uiController);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
   </body>
 

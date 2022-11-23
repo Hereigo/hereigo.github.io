@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+  </head>
+
+  <body>
+    <div>
+      <input id="myInp" type="text" />
+      <input id="myBtn" type="button" value="Button" />
+    </div>
+
+    <script>
+
+      var logicController = (function () {
+        var x = 10;
+        var privateAddFunc = function (a) {
+          return x + a;
+        }
+        return {
+          logicPublicFunc: function (b) {
+            return privateAddFunc(b);
+          }
+        }
+      })();
+
+      var uiController = (function () {
+        return {
+          getInputValue: function () {
+            return {
+              inpData: document.querySelector('#myInp').value
+            }
+          }
+        }
+      })();
+
+      var controller = (function (logic, ui) {
+        var y = logic.logicPublicFunc(22);
+        return {
+          mainPublicFunc: function () {
+
+            document.querySelector('#myBtn').addEventListener('click', tt); //getInputData);
+
+            console.log(y);
+          }
+        }
+        var getInputData = function () {
+          var x = ui.getInputValue();
+          console.log(x);
+        }
+        function tt() {
+          console.log('asd');
+        }
+        document.querySelector('#myBtn').addEventListener('click', tt); //getInputData);
+        document.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13 || event.witch === 13) {
+            alert('ENTER was pressed!')
+          }
+        });
+      })(logicController, uiController);
+
+      (function () {
+        controller.mainPublicFunc();
+      })();
+
+    </script>
+  </body>
+
+</html>

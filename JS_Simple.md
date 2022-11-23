@@ -77,6 +77,41 @@ var objNikaFirstParam =
 objNikaFirstParam('$'); // B only needed.
 ```
 
+#### Events:
+```typescript
+document.addEventListener('keypress', function (event) {
+  if (event.keyCode === 13 || event.witch === 13) {
+    alert('ENTER was pressed!')
+  }
+});
+```
+
+#### App Modules:
+```typescript
+var logicController = (function () {
+  var x = 10;
+  var privateAddFunc = function (a) {
+    return x + a;
+  }
+  return {
+    logicPublicFunc: function (b) {
+      return privateAddFunc(b);
+    }
+  }
+})();
+
+var uiController = (function () { })();
+
+var mainController = (function (logic, ui) {
+  var y = logic.logicPublicFunc(22);
+  return {
+    mainPublicFunc: function () {
+      console.log(y);
+    }
+  }
+})(logicController, uiController);
+```
+
 #### Include Html as part of another:
 ```typescript
 // using:  -  <div include-html="a-content.html"></div>
