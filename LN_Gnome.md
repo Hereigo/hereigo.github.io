@@ -18,6 +18,11 @@ sudo gedit /usr/share/X11/xkb/rules/evdev.xml
 # Viber launch with tray icon:
 dbus-launch /opt/viber/Viber
 
+# Check default file browser:
+xdg-mime query default inode/directory
+# Set Thunar as default file browser:
+xdg-mime default thunar.desktop inode/directory
+
 # Create Desktop link:
 cd /usr/share/applications/ && ls *Optional-Part-Of-Name-Of-Needed-App*
 # and for Snap-Apps:
