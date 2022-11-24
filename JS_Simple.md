@@ -89,10 +89,12 @@ document.addEventListener('keypress', function (event) {
 #### App Modules:
 ```typescript
 var logicController = (function () {
+  // Private members:
   var x = 10;
   var privateAddFunc = function (a) {
     return x + a;
   }
+  // Public members:
   return {
     logicPublicFunc: function (b) {
       return privateAddFunc(b);
@@ -100,16 +102,37 @@ var logicController = (function () {
   }
 })();
 
-var uiController = (function () { })();
-
-var mainController = (function (logic, ui) {
-  var y = logic.logicPublicFunc(22);
+var uiController = (function () {
   return {
-    mainPublicFunc: function () {
-      console.log(y);
+    getInputValue: function () {
+      return {
+        inpData: document.querySelector('#myInp').value
+      }
+    }
+  }
+})();
+
+var controller = (function (logic, ui) {
+  // Private members:
+  var getInputData = function () {
+    var x = ui.getInputValue();
+    console.log(x);
+  }
+  // Public members:
+  return {
+    init: function () {
+      document.querySelector('#myBtn').addEventListener('click', getInputData);
+      document.addEventListener('keypress', function (event) {
+        if (event.keyCode === 13 || event.witch === 13) {
+          alert('ENTER was pressed!')
+        }
+      });
+      console.log('Controller Initialized. ', logic.logicPublicFunc(22));
     }
   }
 })(logicController, uiController);
+
+(function () { controller.init(); })();
 ```
 
 #### Include Html as part of another:
