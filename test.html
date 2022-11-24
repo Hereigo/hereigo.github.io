@@ -18,50 +18,31 @@
     <script>
 
       var logicController = (function () {
-        // Private members:
-        var x = 10;
-        var privateAddFunc = function (a) {
-          return x + a;
-        }
-        // Public members:
-        return {
-          logicPublicFunc: function (b) {
-            return privateAddFunc(b);
-          }
-        }
       })();
 
       var uiController = (function () {
         return {
-          getInputValue: function () {
+          getInputData: function () {
             return {
-              inpData: document.querySelector('#myInp').value
+              data: document.querySelector('#myInp').value
             }
           }
         }
       })();
 
-      var controller = (function (logic, ui) {
-        // Private members:
-        var getInputData = function () {
-          var x = ui.getInputValue();
-          console.log(x);
+      var controller = (function (logic, uic) {
+        var ctrlAddItem = function () {
+          console.log('okkk');
+          var input = uic.getInputData();
+          console.log(input);
         }
-        // Public members:
-        return {
-          init: function () {
-            document.querySelector('#myBtn').addEventListener('click', getInputData);
-            document.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13 || event.witch === 13) {
-                alert('ENTER was pressed!')
-              }
-            });
-            console.log('Controller Initialized. ', logic.logicPublicFunc(22));
+        document.querySelector('#myBtn').addEventListener('click', ctrlAddItem);
+        document.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13 || event.witch === 13) {
+            alert('ENTER was pressed!')
           }
-        }
+        });
       })(logicController, uiController);
-
-      (function () { controller.init(); })();
 
     </script>
   </body>
