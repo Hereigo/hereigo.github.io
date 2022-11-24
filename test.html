@@ -18,10 +18,14 @@
     <script>
 
       var logicController = (function () {
+        var myData = function (data) {
+          this.data = data,
+            this.time = getDate()
+        }
       })();
 
       var uiController = (function () {
-        var DOMnames = {
+        var myDOM = {
           myInput: '#myInp',
           myButton: '#myBtn'
         }
@@ -29,28 +33,38 @@
         return {
           getInputData: function () {
             return {
-              data: document.querySelector(DOMnames.myInput).value
+              data: document.querySelector(myDOM.myInput).value
             }
           },
           getDOMnames: function () {
-            return DOMnames;
+            return myDOM;
           }
         }
       })();
 
       var controller = (function (logic, ui) {
-        var DOMnames = ui.getDOMnames();
+        var setupEventListeners = function () {
+          var DOMnames = ui.getDOMnames();
+          document.querySelector(DOMnames.myButton).addEventListener('click', ctrlAddItem);
+          document.addEventListener('keypress', function (event) {
+            if (event.keyCode === 13 || event.witch === 13) {
+              alert('ENTER was pressed!')
+            }
+          });
+        }
         var ctrlAddItem = function () {
           var input = ui.getInputData();
-          console.log(input);
         }
-        document.querySelector(DOMnames.myButton).addEventListener('click', ctrlAddItem);
-        document.addEventListener('keypress', function (event) {
-          if (event.keyCode === 13 || event.witch === 13) {
-            alert('ENTER was pressed!')
+        return {
+          init: function () {
+            var dt = getDate();
+            console.log('App started at ', dt);
+            setupEventListeners();
           }
-        });
+        }
       })(logicController, uiController);
+
+      controller.init();
 
     </script>
   </body>
