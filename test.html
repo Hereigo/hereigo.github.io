@@ -21,22 +21,30 @@
       })();
 
       var uiController = (function () {
+        var DOMnames = {
+          myInput: '#myInp',
+          myButton: '#myBtn'
+        }
+        // Public return of Func that returns data.
         return {
           getInputData: function () {
             return {
-              data: document.querySelector('#myInp').value
+              data: document.querySelector(DOMnames.myInput).value
             }
+          },
+          getDOMnames: function () {
+            return DOMnames;
           }
         }
       })();
 
-      var controller = (function (logic, uic) {
+      var controller = (function (logic, ui) {
+        var DOMnames = ui.getDOMnames();
         var ctrlAddItem = function () {
-          console.log('okkk');
-          var input = uic.getInputData();
+          var input = ui.getInputData();
           console.log(input);
         }
-        document.querySelector('#myBtn').addEventListener('click', ctrlAddItem);
+        document.querySelector(DOMnames.myButton).addEventListener('click', ctrlAddItem);
         document.addEventListener('keypress', function (event) {
           if (event.keyCode === 13 || event.witch === 13) {
             alert('ENTER was pressed!')
