@@ -22,6 +22,11 @@ dbus-launch /opt/viber/Viber
 xdg-mime query default inode/directory
 # Set Thunar as default file browser:
 xdg-mime default thunar.desktop inode/directory
+# or in
+/usr/share/applications/mimeapps.list 
+# setup (for example)
+[Default Applications]
+inode/directory=exfalso.desktop;nautilus.desktop;
 
 # Create Desktop link:
 cd /usr/share/applications/ && ls *Optional-Part-Of-Name-Of-Needed-App*
