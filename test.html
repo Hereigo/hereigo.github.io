@@ -4,9 +4,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
   </head>
 
   <body>
@@ -14,51 +11,51 @@
       <input id="myInp" type="text" />
       <input id="myBtn" type="button" value="Button" />
     </div>
-
     <script>
 
       var logicController = (function () {
+        // Constructor:
         var myData = function (data) {
           this.data = data;
           this.time = Date();
         }
+        return {
+          getMyData: function (dd) {
+            return new myData(dd);
+          }
+        }
       })();
 
       var uiController = (function () {
-        var myDOM = {
-          myInput: '#myInp',
-          myButton: '#myBtn'
-        }
-        // Public return of Func that returns data.
         return {
-          getInputData: function () {
+          getInputValue: function () {
             return {
-              data: document.querySelector(myDOM.myInput).value
+              inpData: document.querySelector('#myInp').value
             }
-          },
-          getDOMnames: function () {
-            return myDOM;
           }
         }
       })();
 
       var controller = (function (logic, ui) {
-        var setupEventListeners = function () {
-          var DOMnames = ui.getDOMnames();
-          document.querySelector(DOMnames.myButton).addEventListener('click', ctrlAddItem);
-          document.addEventListener('keypress', function (event) {
-            if (event.keyCode === 13 || event.witch === 13) {
-              alert('ENTER was pressed!')
-            }
-          });
+        // Private members:
+        var getInputData = function () {
+          var x = ui.getInputValue();
+          console.log(x);
         }
-        var ctrlAddItem = function () {
-          var input = ui.getInputData();
+        var getLogicData = function (dt) {
+          var y = logic.getMyData(dt);
+          console.log(y);
         }
+        // Public members:
         return {
           init: function () {
-            console.log('App started at ', Date());
-            setupEventListeners();
+            document.querySelector('#myBtn').addEventListener('click', getInputData);
+            document.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13 || event.witch === 13) {
+                alert('ENTER was pressed!');
+                getLogicData('asdfgh');
+              }
+            });
           }
         }
       })(logicController, uiController);

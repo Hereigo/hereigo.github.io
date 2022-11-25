@@ -89,15 +89,14 @@ document.addEventListener('keypress', function (event) {
 #### App Modules:
 ```typescript
 var logicController = (function () {
-  // Private members:
-  var x = 10;
-  var privateAddFunc = function (a) {
-    return x + a;
+  // Constructor:
+  var myData = function (data) {
+    this.data = data;
+    this.time = Date();
   }
-  // Public members:
   return {
-    logicPublicFunc: function (b) {
-      return privateAddFunc(b);
+    getMyData: function (dd) {
+      return new myData(dd);
     }
   }
 })();
@@ -118,21 +117,24 @@ var controller = (function (logic, ui) {
     var x = ui.getInputValue();
     console.log(x);
   }
+  var getLogicData = function (dt) {
+    var y = logic.getMyData(dt);
+    console.log(y);
+  }
   // Public members:
   return {
     init: function () {
       document.querySelector('#myBtn').addEventListener('click', getInputData);
       document.addEventListener('keypress', function (event) {
         if (event.keyCode === 13 || event.witch === 13) {
-          alert('ENTER was pressed!')
+          alert('ENTER was pressed!');
+          getLogicData('asdfgh');
         }
       });
-      console.log('Controller Initialized. ', logic.logicPublicFunc(22));
     }
   }
 })(logicController, uiController);
-
-(function () { controller.init(); })();
+controller.init();
 ```
 
 #### Include Html as part of another:
