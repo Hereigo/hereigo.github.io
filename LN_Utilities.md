@@ -43,6 +43,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**Paperwork**](https://www.linuxlinks.com/excellent-utilities-paperwork-personal-document-manager/)  - - Designed to simplify the management of your paperwork
  - [**PDF Mix Tool**](https://www.linuxlinks.com/excellent-utilities-pdf-mix-tool/)  - - Perform common editing operations on PDF files
  - [**peco**](https://www.linuxlinks.com/excellent-utilities-peco-interactive-filtering-tool/)  - - Simple interactive filtering tool that's remarkably useful
+ - [**Rembg**](https://github.com/danielgatis/rembg) - - remove images background.
  - [**ripgrep**](https://www.linuxlinks.com/excellent-utilities-ripgrep-recursively-search-directories-regex-pattern/)  - - Recursively search directories for a regex pattern
  - [**scrcpy**](https://www.linuxlinks.com/excellent-utilities-scrcpy-display-control-android-devices/)  - - Display and control Android devices
  - [**slashbase**](https://github.com/slashbaseide/slashbase) - - Web-based DB IDE
