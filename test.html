@@ -27,10 +27,17 @@
       })();
 
       var uiController = (function () {
+        var DOM = {
+          myButton: '#myBtn',
+          myInput: '#myInp'
+        }
         return {
+          getDOMnames: function () {
+            return { DOM }
+          },
           getInputValue: function () {
             return {
-              inpData: document.querySelector('#myInp').value
+              inpData: document.querySelector(DOM.myInput).value
             }
           }
         }
@@ -46,16 +53,20 @@
           var y = logic.getMyData(dt);
           console.log(y);
         }
+        var setEventListeners = function () {
+          var DOM = ui.getDOMnames();
+          document.querySelector('#myBtn').addEventListener('click', getInputData);
+          document.addEventListener('keypress', function (event) {
+            if (event.keyCode === 13 || event.witch === 13) {
+              alert('ENTER was pressed!');
+              getLogicData('asdfgh');
+            }
+          });
+        }
         // Public members:
         return {
           init: function () {
-            document.querySelector('#myBtn').addEventListener('click', getInputData);
-            document.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13 || event.witch === 13) {
-                alert('ENTER was pressed!');
-                getLogicData('asdfgh');
-              }
-            });
+            setEventListeners();
           }
         }
       })(logicController, uiController);
