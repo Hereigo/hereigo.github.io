@@ -27,17 +27,18 @@
       })();
 
       var uiController = (function () {
-        var DOM = {
+
+        var DOMnames = {
           myButton: '#myBtn',
           myInput: '#myInp'
         }
         return {
           getDOMnames: function () {
-            return { DOM }
+            return DOMnames;
           },
           getInputValue: function () {
             return {
-              inpData: document.querySelector(DOM.myInput).value
+              inpData: document.querySelector(DOMnames.myInput).value
             }
           }
         }
@@ -55,7 +56,7 @@
         }
         var setEventListeners = function () {
           var DOM = ui.getDOMnames();
-          document.querySelector('#myBtn').addEventListener('click', getInputData);
+          document.querySelector(DOM.myButton).addEventListener('click', getInputData);
           document.addEventListener('keypress', function (event) {
             if (event.keyCode === 13 || event.witch === 13) {
               alert('ENTER was pressed!');
