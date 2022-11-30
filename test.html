@@ -36,15 +36,12 @@
         return {
           insertToMyDiv: function (myObj) {
             var newDiv = document.createElement('div');
-            newDiv.innerText = 'myObj.data';
-
-            console.log(newDiv)
-
+            newDiv.innerText = myObj.time;
+            var newHead = document.createElement('h2');
+            newHead.innerText = myObj.data;
+            newDiv.appendChild(newHead);
             var mySrc = document.querySelector(DOMnames.myDiv);
-
-            console.log(mySrc)
-
-            mySrc.appendChild = newDiv;
+            mySrc.appendChild(newDiv);
           },
           getDOMnames: function () {
             return DOMnames;
@@ -73,7 +70,7 @@
             if (event.keyCode === 13 || event.witch === 13) {
               alert('ENTER was pressed!');
               var newData = getLogicData('ASDFGH');
-              console.log(newData);
+              //console.log(newData);
               ui.insertToMyDiv(newData);
             }
           });
