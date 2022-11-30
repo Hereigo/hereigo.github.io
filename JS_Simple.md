@@ -102,10 +102,17 @@ var logicController = (function () {
 })();
 
 var uiController = (function () {
+  var DOMnames = {
+    myButton: '#myBtn',
+    myInput: '#myInp'
+  }
   return {
+    getDOMnames: function () {
+      return DOMnames;
+    },
     getInputValue: function () {
       return {
-        inpData: document.querySelector('#myInp').value
+        inpData: document.querySelector(DOMnames.myInput).value
       }
     }
   }
@@ -121,19 +128,24 @@ var controller = (function (logic, ui) {
     var y = logic.getMyData(dt);
     console.log(y);
   }
+  var setEventListeners = function () {
+    var DOM = ui.getDOMnames();
+    document.querySelector(DOM.myButton).addEventListener('click', getInputData);
+    document.addEventListener('keypress', function (event) {
+      if (event.keyCode === 13 || event.witch === 13) {
+        alert('ENTER was pressed!');
+        getLogicData('asdfgh');
+      }
+    });
+  }
   // Public members:
   return {
     init: function () {
-      document.querySelector('#myBtn').addEventListener('click', getInputData);
-      document.addEventListener('keypress', function (event) {
-        if (event.keyCode === 13 || event.witch === 13) {
-          alert('ENTER was pressed!');
-          getLogicData('asdfgh');
-        }
-      });
+      setEventListeners();
     }
   }
 })(logicController, uiController);
+
 controller.init();
 ```
 

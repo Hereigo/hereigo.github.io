@@ -10,6 +10,7 @@
     <div>
       <input id="myInp" type="text" />
       <input id="myBtn" type="button" value="Button" />
+      <div id="myDiv" style="border:solid 1px;padding:1em;margin:1em 0;"></div>
     </div>
     <script>
 
@@ -27,12 +28,24 @@
       })();
 
       var uiController = (function () {
-
         var DOMnames = {
           myButton: '#myBtn',
-          myInput: '#myInp'
+          myInput: '#myInp',
+          myDiv: '#myDiv'
         }
         return {
+          insertToMyDiv: function (myObj) {
+            var newDiv = document.createElement('div');
+            newDiv.innerText = 'myObj.data';
+
+            console.log(newDiv)
+
+            var mySrc = document.querySelector(DOMnames.myDiv);
+
+            console.log(mySrc)
+
+            mySrc.appendChild = newDiv;
+          },
           getDOMnames: function () {
             return DOMnames;
           },
@@ -51,8 +64,7 @@
           console.log(x);
         }
         var getLogicData = function (dt) {
-          var y = logic.getMyData(dt);
-          console.log(y);
+          return logic.getMyData(dt);
         }
         var setEventListeners = function () {
           var DOM = ui.getDOMnames();
@@ -60,7 +72,9 @@
           document.addEventListener('keypress', function (event) {
             if (event.keyCode === 13 || event.witch === 13) {
               alert('ENTER was pressed!');
-              getLogicData('asdfgh');
+              var newData = getLogicData('ASDFGH');
+              console.log(newData);
+              ui.insertToMyDiv(newData);
             }
           });
         }
