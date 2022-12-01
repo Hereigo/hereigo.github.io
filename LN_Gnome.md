@@ -7,6 +7,16 @@
 
 - [**metaGEDIT**](https://github.com/pedrovernetti/metagedit) -- Gedit extra plugins
 
+- [**Panel Date Format**](https://extensions.gnome.org/extension/1462/panel-date-format/)
+```sh
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b %d,   %A,   %X'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %H:%M %p'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %H:%M %p'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %R'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A    ·    %R    ·    %B  %e'"
+# More formats here - https://docs.gtk.org/glib/method.DateTime.format.html
+```
+
 ```sh
 # Disable 10 min. lock after 3 failed login:
 sudo nano /etc/security/faillock.conf
