@@ -4,25 +4,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #myDiv {
+        border: solid 1px blueviolet;
+        padding: 1em;
+        margin: 1em 0;
+      }
+
+    </style>
   </head>
 
   <body>
+
     <div>
       <input id="myInp" type="text" />
       <input id="myBtn" type="button" value="Button" />
-      <div id="myDiv" style="border:solid 1px;padding:1em;margin:1em 0;"></div>
+      <div id="myDiv"></div>
     </div>
     <script>
 
       var logicController = (function () {
         // Constructor:
-        var myData = function (data) {
-          this.data = data;
-          this.time = Date();
+        var nameDTimeObj = function (name) {
+          this.name = name;
+          this.time = (new Date()).toLocaleTimeString();
         }
         return {
           getMyData: function (dd) {
-            return new myData(dd);
+            return new nameDTimeObj(dd);
           }
         }
       })();
@@ -34,12 +43,9 @@
           myDiv: '#myDiv'
         }
         return {
-          insertToMyDiv: function (myObj) {
+          insertToMyDiv: function (nmDtObj) {
             var newDiv = document.createElement('div');
-            newDiv.innerText = myObj.time;
-            var newHead = document.createElement('h2');
-            newHead.innerText = myObj.data;
-            newDiv.appendChild(newHead);
+            newDiv.innerText = nmDtObj.name + ' - ' + nmDtObj.time;
             var mySrc = document.querySelector(DOMnames.myDiv);
             mySrc.appendChild(newDiv);
           },
@@ -56,6 +62,7 @@
 
       var controller = (function (logic, ui) {
         // Private members:
+        var inputData = 'ASDFGH'
         var getInputData = function () {
           var x = ui.getInputValue();
           console.log(x);
@@ -69,8 +76,7 @@
           document.addEventListener('keypress', function (event) {
             if (event.keyCode === 13 || event.witch === 13) {
               alert('ENTER was pressed!');
-              var newData = getLogicData('ASDFGH');
-              //console.log(newData);
+              var newData = getLogicData(inputData);
               ui.insertToMyDiv(newData);
             }
           });

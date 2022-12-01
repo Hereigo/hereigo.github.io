@@ -90,13 +90,13 @@ document.addEventListener('keypress', function (event) {
 ```typescript
 var logicController = (function () {
   // Constructor:
-  var myData = function (data) {
-    this.data = data;
-    this.time = Date();
+  var nameDTimeObj = function (name) {
+    this.name = name;
+    this.time = (new Date()).toLocaleTimeString();
   }
   return {
     getMyData: function (dd) {
-      return new myData(dd);
+      return new nameDTimeObj(dd);
     }
   }
 })();
@@ -104,9 +104,16 @@ var logicController = (function () {
 var uiController = (function () {
   var DOMnames = {
     myButton: '#myBtn',
-    myInput: '#myInp'
+    myInput: '#myInp',
+    myDiv: '#myDiv'
   }
   return {
+    insertToMyDiv: function (nmDtObj) {
+      var newDiv = document.createElement('div');
+      newDiv.innerText = nmDtObj.name + ' - ' + nmDtObj.time;
+      var mySrc = document.querySelector(DOMnames.myDiv);
+      mySrc.appendChild(newDiv);
+    },
     getDOMnames: function () {
       return DOMnames;
     },
@@ -120,13 +127,13 @@ var uiController = (function () {
 
 var controller = (function (logic, ui) {
   // Private members:
+  var inputData = 'ASDFGH'
   var getInputData = function () {
     var x = ui.getInputValue();
     console.log(x);
   }
   var getLogicData = function (dt) {
-    var y = logic.getMyData(dt);
-    console.log(y);
+    return logic.getMyData(dt);
   }
   var setEventListeners = function () {
     var DOM = ui.getDOMnames();
@@ -134,7 +141,8 @@ var controller = (function (logic, ui) {
     document.addEventListener('keypress', function (event) {
       if (event.keyCode === 13 || event.witch === 13) {
         alert('ENTER was pressed!');
-        getLogicData('asdfgh');
+        var newData = getLogicData(inputData);
+        ui.insertToMyDiv(newData);
       }
     });
   }
