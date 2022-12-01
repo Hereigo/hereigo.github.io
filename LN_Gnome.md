@@ -5,6 +5,8 @@
 
 - [**Libadwaita Dark Theme**](https://t.me/addtheme/libadwaita_dark)
 
+- [**metaGEDIT**](https://github.com/pedrovernetti/metagedit) -- Gedit extra plugins
+
 ```sh
 # Disable 10 min. lock after 3 failed login:
 sudo nano /etc/security/faillock.conf
