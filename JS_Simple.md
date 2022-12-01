@@ -95,7 +95,7 @@ var logicController = (function () {
     this.time = (new Date()).toLocaleTimeString();
   }
   return {
-    getMyData: function (dd) {
+    generateNmDtObj: function (dd) {
       return new nameDTimeObj(dd);
     }
   }
@@ -127,22 +127,18 @@ var uiController = (function () {
 
 var controller = (function (logic, ui) {
   // Private members:
-  var inputData = 'ASDFGH'
-  var getInputData = function () {
-    var x = ui.getInputValue();
-    console.log(x);
-  }
-  var getLogicData = function (dt) {
-    return logic.getMyData(dt);
+  var generateDataFromInput = function () {
+    var inputData = ui.getInputValue();
+    var newData = logic.generateNmDtObj(inputData.inpData);
+    ui.insertToMyDiv(newData);
   }
   var setEventListeners = function () {
     var DOM = ui.getDOMnames();
-    document.querySelector(DOM.myButton).addEventListener('click', getInputData);
+    document.querySelector(DOM.myButton).addEventListener('click', generateDataFromInput);
     document.addEventListener('keypress', function (event) {
       if (event.keyCode === 13 || event.witch === 13) {
         alert('ENTER was pressed!');
-        var newData = getLogicData(inputData);
-        ui.insertToMyDiv(newData);
+        generateDataFromInput();
       }
     });
   }
