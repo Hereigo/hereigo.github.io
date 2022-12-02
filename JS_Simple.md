@@ -89,72 +89,84 @@ document.addEventListener('keypress', function (event) {
 #### App Modules:
 ```typescript
 var logicController = (function () {
-  // Constructor:
-  var myObj = function (name) {
-    this.name = name;
-    this.time = (new Date()).toLocaleTimeString();
-  }
-  return {
-    generateMyObj: function (dd) {
-      return new myObj(dd);
+    // Constructor:
+    var myObj = function (name) {
+        this.name = name;
+        this.time = (new Date()).toLocaleTimeString();
     }
-  }
+    return {
+        generateMyObj: function (dd) {
+            return new myObj(dd);
+        }
+    }
 })();
 
 var uiController = (function () {
-  var DOMnames = {
-    myButton: '#myBtn',
-    myInput: '#myInp',
-    myDiv: '#myDiv'
-  }
-  return {
-    insertToMyDiv: function (myObj) {
-      var mySrc, htmlTempl, finalHtml;
-      htmlTempl = '<b>%NAME%</b> - %TIME% <hr/>';
-      finalHtml = htmlTempl.replace('%NAME%', myObj.name).replace('%TIME%', myObj.
-      mySrc = document.querySelector(DOMnames.myDiv);
-      mySrc.insertAdjacentHTML('beforeend', finalHtml);
-    },
-    getDOMnames: function () {
-      return DOMnames;
-    },
-    getInputValue: function () {
-      return {
-        inpData: document.querySelector(DOMnames.myInput).value
-      }
+    var DOMnames = {
+        myButton: '#myBtn',
+        myInput: '#myInp',
+        myDiv: '#myDiv'
     }
-  }
+    return {
+        insertToMyDiv: function (myObj) {
+            var mySrc, htmlTempl, finalHtml;
+            htmlTempl = '<div class="c1 c2"><b>%NAME%</b> - %TIME%.</div> <hr/>';
+            finalHtml = htmlTempl.replace('%NAME%', myObj.name).replace('%TIME%', myObj.time);
+            mySrc = document.querySelector(DOMnames.myDiv);
+            mySrc.insertAdjacentHTML('beforeend', finalHtml);
+        },
+        getDOMnames: function () {
+            return DOMnames;
+        },
+        getInputValue: function () {
+            return {
+                inpData: document.querySelector(DOMnames.myInput).value
+            }
+        }
+    }
 })();
 
 var controller = (function (logic, ui) {
-  // Private members:
-  var internalStore = {
-    rec1: [],
-    rec2: []
-  };
-  var insertGeneratedData = function () {
-    var inputData = ui.getInputValue();
-    var newData = logic.generateMyObj(inputData.inpData);
-    ui.insertToMyDiv(newData);
-    // additional save:
-    internalStore['rec1'].push(newData.name);
-    console.log(internalStore['rec1']);
-  };
-  var setEventListeners = function () {
-    var DOM = ui.getDOMnames();
-    document.querySelector(DOM.myButton).addEventListener('click', GeneratedData);
-    document.addEventListener('keypress', function (event) {
-      if (event.keyCode === 13 || event.witch === 13) { // ENTER pressed.
-        insertGeneratedData();
-      }
-    });
-  }
-  // Public members:
-  return {
-    init: function () {
-      setEventListeners();
+    // Private members:
+    var internalStore = {
+        rec1: [],
+        rec2: []
+    };
+    var insertGeneratedData = function () {
+        var inputData = ui.getInputValue();
+        var newData = logic.generateMyObj(inputData.inpData);
+        ui.insertToMyDiv(newData);
+        // additional save:
+        internalStore['rec1'].push(newData.name);
+        console.log(internalStore['rec1']);
+    };
+    var processInputs = function () {
+        var fields, fieldsArr;
+        fields = document.querySelectorAll('.c1, c2');
+        // fields.slice(); - TypeError: slice is not a on! so:
+        fieldsArr = Array.prototype.slice.call(fields);
+        fieldsArr.forEach(function (curr, ind, arr) {
+            console.log(curr.innerText);
+        });
     }
-  }
+    var setEventListeners = function () {
+        var DOM = ui.getDOMnames();
+        document.querySelector(DOM.myButton).addEventListener('click', processInputs);
+        document.addEventListener('keypress', function (event) {
+            // ENTER is pressed.
+            if (event.keyCode === 13 || event.witch === 13) {
+                insertGeneratedData();
+                // Switch Focus todesired input.
+                document.querySelector(DOM.myInput).focus();
+            }
+        });
+    }
+    // Public members:
+    return {
+        init: function () {
+            setEventListeners();
+        }
+    }
 })(logicController, uiController);
 
 controller.init();
