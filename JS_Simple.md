@@ -90,13 +90,13 @@ document.addEventListener('keypress', function (event) {
 ```typescript
 var logicController = (function () {
   // Constructor:
-  var nameDTimeObj = function (name) {
+  var myObj = function (name) {
     this.name = name;
     this.time = (new Date()).toLocaleTimeString();
   }
   return {
-    generateNmDtObj: function (dd) {
-      return new nameDTimeObj(dd);
+    generateMyObj: function (dd) {
+      return new myObj(dd);
     }
   }
 })();
@@ -108,11 +108,10 @@ var uiController = (function () {
     myDiv: '#myDiv'
   }
   return {
-    insertToMyDiv: function (nmDtObj) {
-      var newDiv = document.createElement('div');
-      newDiv.innerText = nmDtObj.name + ' - ' + nmDtObj.time;
+    insertToMyDiv: function (myObj) {
       var mySrc = document.querySelector(DOMnames.myDiv);
-      mySrc.appendChild(newDiv);
+      mySrc.insertAdjacentHTML('beforeend',
+        '<b>' + myObj.name + '</b> - ' + myObj.time + '<hr/>')
     },
     getDOMnames: function () {
       return DOMnames;
@@ -127,18 +126,24 @@ var uiController = (function () {
 
 var controller = (function (logic, ui) {
   // Private members:
-  var generateDataFromInput = function () {
+  var internalStore = {
+    rec1: [],
+    rec2: []
+  };
+  var insertGeneratedData = function () {
     var inputData = ui.getInputValue();
-    var newData = logic.generateNmDtObj(inputData.inpData);
+    var newData = logic.generateMyObj(inputData.inpData);
     ui.insertToMyDiv(newData);
-  }
+    // additional save:
+    internalStore['rec1'].push(newData.name);
+    console.log(internalStore['rec1']);
+  };
   var setEventListeners = function () {
     var DOM = ui.getDOMnames();
-    document.querySelector(DOM.myButton).addEventListener('click', generateDataFromInput);
+    document.querySelector(DOM.myButton).addEventListener('click', insertGeneratedData);
     document.addEventListener('keypress', function (event) {
-      if (event.keyCode === 13 || event.witch === 13) {
-        alert('ENTER was pressed!');
-        generateDataFromInput();
+      if (event.keyCode === 13 || event.witch === 13) { // ENTER pressed.
+        insertGeneratedData();
       }
     });
   }

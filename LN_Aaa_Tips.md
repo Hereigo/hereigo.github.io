@@ -86,6 +86,6 @@ fc-cache -fvh
 
 #### Celluloid (MPV) save video position on close:
 ```sh
-echo "save-position-on-quit" >> ~/.config/mpv/mpv.conf
+mkdir ~/.config/mpv/ && echo "save-position-on-quit" >> ~/.config/mpv/mpv.conf
 # Then select this file in the Celluloid menu.
 ```
