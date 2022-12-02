@@ -109,9 +109,11 @@ var uiController = (function () {
   }
   return {
     insertToMyDiv: function (myObj) {
-      var mySrc = document.querySelector(DOMnames.myDiv);
-      mySrc.insertAdjacentHTML('beforeend',
-        '<b>' + myObj.name + '</b> - ' + myObj.time + '<hr/>')
+      var mySrc, htmlTempl, finalHtml;
+      htmlTempl = '<b>%NAME%</b> - %TIME% <hr/>';
+      finalHtml = htmlTempl.replace('%NAME%', myObj.name).replace('%TIME%', myObj.
+      mySrc = document.querySelector(DOMnames.myDiv);
+      mySrc.insertAdjacentHTML('beforeend', finalHtml);
     },
     getDOMnames: function () {
       return DOMnames;
@@ -140,7 +142,7 @@ var controller = (function (logic, ui) {
   };
   var setEventListeners = function () {
     var DOM = ui.getDOMnames();
-    document.querySelector(DOM.myButton).addEventListener('click', insertGeneratedData);
+    document.querySelector(DOM.myButton).addEventListener('click', GeneratedData);
     document.addEventListener('keypress', function (event) {
       if (event.keyCode === 13 || event.witch === 13) { // ENTER pressed.
         insertGeneratedData();
