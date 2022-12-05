@@ -46,7 +46,8 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**Rembg**](https://github.com/danielgatis/rembg) - - remove images background.
  - [**ripgrep**](https://www.linuxlinks.com/excellent-utilities-ripgrep-recursively-search-directories-regex-pattern/)  - - Recursively search directories for a regex pattern
  - [**scrcpy**](https://www.linuxlinks.com/excellent-utilities-scrcpy-display-control-android-devices/)  - - Display and control Android devices
- - [**slashbase**](https://github.com/slashbaseide/slashbase) - - Web-based DB IDE
+ - [**shutterEncoder**](https://www.shutterencoder.com/en/) - - Conversion tool between video, audio and image formats.
+ - [**slashbase**](https://github.com/slashbaseide/slashbase) - - Web-based DB IDE.
  - [**tldr**](https://www.linuxlinks.com/excellent-utilities-tldr-simplified-community-driven-man-pages/)  - - Simplified and community-driven man pages
  - [**tmux**](https://www.linuxlinks.com/excellent-utilities-tmux-terminal-multiplexer-software/)  - - A terminal multiplexer that offers a massive boost to your workflow
  - [**Tusk**](https://www.linuxlinks.com/excellent-utilities-tusk-evernote-desktop-software/)  - - An unofficial Evernote client with bags of potential
