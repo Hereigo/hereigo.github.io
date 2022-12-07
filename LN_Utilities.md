@@ -16,7 +16,8 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
 **Other Tools:**
 
  - [**FLAMESHOT**]()
-
+ - [**Foliate**](https://github.com/johnfactotum/foliate) - - Epub, Fb2, Mobi, Awz Viewer.
+ 
  - [**Abricotine**](https://www.linuxlinks.com/excellent-utilities-abricotine-open-source-markdown-editor/)  - - Markdown editor with inline preview functionality
  - [**Ananicy**](https://www.linuxlinks.com/excellent-utilities-ananicy-auto-nice-daemon/)  - - Shell daemon created to manage processes’ IO and CPU priorities
  - [**broot**](https://www.linuxlinks.com/excellent-utilities-broot-next-gen-tree-explorer/)  - - Next gen tree explorer and customizable launcher
