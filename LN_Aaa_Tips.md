@@ -1,10 +1,6 @@
 ### Linux tips.
+
 ```sh
-# APT main commands))
-sudo sh -c "apt -y update;apt -y dist-upgrade;apt -y autoremove;apt -y autoclean"
-#
-flatpak update && sudo apt update && sudo apt full-upgrade -y
-#
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 ```
 

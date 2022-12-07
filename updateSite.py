@@ -13,8 +13,9 @@ pyRezFile = open(aPath + '/pages/PY.html', 'w')
 xzRezFile = open(aPath + '/pages/XZ.html', 'w')
 
 for f in aFiles:
-    if f.startswith('JS'): jsRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
-    elif f.startswith('LN'): lnRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
-    elif f.startswith('PS'): psRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
-    elif f.startswith('PY'): pyRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
-    else: xzRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
+    if f.endswith('.md'):
+        if f.startswith('JS'): jsRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
+        elif f.startswith('LN'): lnRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
+        elif f.startswith('PS'): psRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
+        elif f.startswith('PY'): pyRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
+        else: xzRezFile.write('<zero-md src="/' + f + '"></zero-md><hr />' + os.linesep)
