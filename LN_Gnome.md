@@ -14,6 +14,7 @@ dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %H:%M %p'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %R'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A    ·    %R    ·    %B  %e'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A     ·     %H : %M     ·     %B  %e'"
 # More formats here - https://docs.gtk.org/glib/method.DateTime.format.html
 ```
 

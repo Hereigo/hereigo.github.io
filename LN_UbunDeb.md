@@ -21,5 +21,5 @@ curl -fsSL https://download.opensuse.org/repositories/home:Alexx2000/xUbuntu_22.
 sudo add-apt-repository ppa:apandada1/foliate
 
 # Most useful apps:
-sudo apt install -y remmina simplescreenrecorder deepin-screenshot nomacs 7-zip-full foliate cmus doublecmd-gtk
+sudo apt install -y remmina simplescreenrecorder deepin-screenshot nomacs 7-zip-full foliate qmmp doublecmd-gtk
 ```
