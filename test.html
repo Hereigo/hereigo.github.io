@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             #myDiv {
+                border: solid 1px red;
+                padding: 1em;
+                margin: 1em 0;
+            }
+
+            .parentNode {
                 border: solid 1px blueviolet;
                 padding: 1em;
                 margin: 1em 0;
@@ -20,7 +26,25 @@
             <input id="myBtn" type="button" value="Button" />
             <div id="myDiv"></div>
         </div>
+
+
+        <div id="Target" class="parentNode">
+            <p class="parentNode">
+                <input id="childNodeInput" type="text">
+            </p>
+        </div>
+
         <script>
+
+            var theChildClick = function (event) {
+                console.log(event.target.parentNode.parentNode.id);
+                // Target will removed with ALL Childs!
+                event.target.parentNode.parentNode.remove();
+            }
+
+            document.querySelector('#childNodeInput').addEventListener('click', theChildClick);
+
+
 
             var logicController = (function () {
                 // Constructor:

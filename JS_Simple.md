@@ -86,6 +86,24 @@ document.addEventListener('keypress', function (event) {
 });
 ```
 
+#### Event Bubbling
+```typescript
+<div id="Target">
+    <p>
+        <input id="childInput" type="text">
+    </p>
+</div>
+
+document.querySelector('#childInput').addEventListener('click', theChildClick);
+
+var theChildClick = function (event) {
+  // 'parentNode' TWICE included! (like xml) 
+  console.log(event.target.parentNode.parentNode.id);
+  // Target will removed with ALL Childs!
+  event.target.parentNode.parentNode.remove();
+}
+```
+
 #### App Modules:
 ```typescript
 var logicController = (function () {
