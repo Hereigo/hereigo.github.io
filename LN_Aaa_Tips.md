@@ -27,9 +27,10 @@ nano /usr/local/sbin/ABC-SCRIPT.sh
 #!/bin/bash
 # your script code here
 
+# 2. Allow to Owner to read-write and Execute.
 chmod 0700 /usr/local/sbin/ABC-SCRIPT.sh
 
-# 2. Create Service:
+# 3. Create Service:
 nano /etc/systemd/system/ABC-SCRIPT.service
 #
 [Unit]
@@ -39,7 +40,7 @@ ExecStart=/usr/local/sbin/ABC-SCRIPT.sh
 [Install]
 WantedBy=multi-user.target
 
-# Enable Service:
+# 4. Enable Service:
 systemctl start ABC-SCRIPT.service
 systemctl enable ABC-SCRIPT.service
 ```
@@ -80,8 +81,49 @@ fc-cache -fvh
 # -h     Show summary of options.
 ```
 
+#### Dfault file browser
+```sh
+# Check default file browser:
+xdg-mime query default inode/directory
+# Set Thunar as default file browser:
+xdg-mime default thunar.desktop inode/directory
+# or in
+/usr/share/applications/mimeapps.list
+```
+
 #### Celluloid (MPV) save video position on close:
 ```sh
 mkdir ~/.config/mpv/ && echo "save-position-on-quit" >> ~/.config/mpv/mpv.conf
 # Then select this file in the Celluloid menu.
+```
+
+#### Viber launch with tray icon:
+```sh
+dbus-launch /opt/viber/Viber
+```
+
+#### Create Desktop link:
+```sh
+# Find *.desktop first.
+cd /usr/share/applications/ && ls (*AAAA-Part-Of-App-Name-Optionally*)
+# same for Snap-Apps:
+cd /var/lib/snapd/desktop/applications/ && ls
+
+# Copy to Desktop:
+cp /usr/share/applications/AAAA.desktop ~/Desktop/
+# Allow to execute:
+chmod 0700 ~/Desktop/AAAA.desktop
+```
+
+#### Default File browser:
+```sh
+# Check default file browser:
+xdg-mime query default inode/directory
+# Set Thunar as default file browser:
+xdg-mime default thunar.desktop inode/directory
+# or in
+/usr/share/applications/mimeapps.list 
+# setup (for example)
+[Default Applications]
+inode/directory=exfalso.desktop;nautilus.desktop;
 ```

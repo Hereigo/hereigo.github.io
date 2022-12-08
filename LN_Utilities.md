@@ -22,7 +22,8 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**cheat.sh**](https://www.linuxlinks.com/excellent-utilities-cheat-sh-community-driven-cheat-sheet/) --- Community driven unified cheat sheet
  - [**CopyQ**](https://www.linuxlinks.com/excellent-utilities-copyq-advanced-clipboard-manager/) --- Advanced clipboard manager
  - [**croc**](https://www.linuxlinks.com/excellent-utilities-croc-securely-transfer-files-folders/) --- Securely transfer files and folders from the command-line
- - [**Czkawka**](https://appimage.github.io/linux_czkawka_gui/) - - Anti-Duplicator
+ - [**Czkawka**](https://github.com/qarmin/czkawka) - - Anti-Duplicator
+ - [**CzkawkaGUI**](https://appimage.github.io/linux_czkawka_gui/)
  - [**Deskreen**](https://www.linuxlinks.com/excellent-utilities-deskreen-live-streaming-desktop/) --- Live streaming your desktop to a web browser
  - [**duf**](https://www.linuxlinks.com/excellent-utilities-duf-disk-usage-utility/) --- Disk usage utility with more polished presentation than the classic df
  - [**exa**](https://www.linuxlinks.com/excellent-utilities-exa-replacement-ls/) --- A turbo-charged alternative to the venerable ls command
