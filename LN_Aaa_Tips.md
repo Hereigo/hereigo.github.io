@@ -4,6 +4,11 @@
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 ```
 
+#### Locale Cfg:
+```sh
+sudo nano /etc/locale.conf
+```
+
 #### Smart view Drives:
 ```sh
 lsblk
