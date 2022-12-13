@@ -3,11 +3,13 @@
 **LockScreen** : Ctrl+Alt+F1
 (it looks for screensaver processes running ps -aux | grep screen and kill them all).
 
-- [**Libadwaita Dark Theme**](https://t.me/addtheme/libadwaita_dark)
+--> <u> ***[**Libadwaita Dark Theme**](https://t.me/addtheme/libadwaita_dark)*** </u>
 
-- [**metaGEDIT**](https://github.com/pedrovernetti/metagedit) -- Gedit extra plugins
+--> <u> ***[**metaGEDIT**](https://github.com/pedrovernetti/metagedit)*** </u> -- Gedit extra plugins
 
-- [**Panel Date Format**](https://extensions.gnome.org/extension/1462/panel-date-format/)
+--> <u> ***[**Firefox Gnome Theme**](https://github.com/rafaelmardojai/firefox-gnome-theme)*** </u>
+
+--> <u> ***[**Panel Date Format**](https://extensions.gnome.org/extension/1462/panel-date-format/)*** </u>
 ```sh
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b %d,   %A,   %X'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %H:%M %p'"
