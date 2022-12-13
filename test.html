@@ -46,6 +46,14 @@
 
 
 
+            var myArrReducer = function (buffer, n, i, arr) {
+                // init : buffer = arr[0];
+                return buffer + n;
+            }
+            var myArr = [1, 2, 3, 4, 5];
+            var summary = myArr.reduce(myArrReducer);
+            console.log(summary);
+
             var logicController = (function () {
                 // Constructor:
                 var myObj = function (name) {
