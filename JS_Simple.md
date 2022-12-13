@@ -3,19 +3,15 @@
 #### Standard ECMA-262 (1999):
 https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
 
-#### Subtract the numbers in the array, starting from the left:
+#### someArray.reduce(someFunc) - Subtract the numbers in the array:
 ```typescript
-const numbers = [1, 2, 3, 4, 5];
-function myReduceFunc(rez, item, index, array) {
-  console.log(index + '. Sum=' + rez + ' and next=' + item);
-  return rez + item;
+var myArrReducer = function (buffer, n, idx, arr) {
+    // init : buffer = arr[0];
+    return buffer + n;
 }
-numbers.reduce(myReduceFunc);
-// 1. Sum=1 and next=2 
-// 2. Sum=3 and next=3 ...
-// or
-// Final result as a Summary:
-console.log(numbers.reduce((rez, item, index, array) => rez+item));
+var myArr = [1, 2, 3, 4, 5];
+var summary = myArr.reduce(myArrReducer);
+console.log(summary); // 15
 ```
 
 #### Function as a parameter:
