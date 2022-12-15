@@ -17,17 +17,26 @@
 
         <script>
 
-            var myArr = [2, 4, 6, 8, 10];
+            var myObj = function (id, name) {
+                this.id = id;
+                this.name = name;
+            }
+            var myArr = new Array();
+            for (var i = 0; i < 3; i++) {
+                myArr.push(new myObj(i, 'A' + i + i));
+            }
 
-            var ids = myArr.map(function (item) {
+            console.log(myArr[2]); // { id: 2, name: "A22" }
+            myArr.splice(2, 0, new myObj(77, 'B77'));
+            console.log(myArr[2]); // { id: 77, name: "B77" }
+
+            var objIds = myArr.map(function (item) {
                 return item.id;
-            })
+            });
+            console.log(objIds); // [ 0, 1, 77, 2 ]
+            console.log('Obj with ID=77 is here:');
+            console.log('-> myArray[', objIds.indexOf(77), ']');
 
-            var rez = ids.indexOf(8);
-
-            console.log(ids);
-
-            console.log(rez);
 
         </script>
     </body>
