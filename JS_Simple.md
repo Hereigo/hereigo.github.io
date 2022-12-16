@@ -25,9 +25,11 @@ var objIds = myArr.map(function (item) {
     return item.Id;
 });
 console.log(objIds); // [ 0, 1, 77, 2 ]
-
-// Find myObj by Id:
+// ... and than - Find myObj by Id:
 console.log('Obj.Id=77 is -> myArray[', objIds.indexOf(77), ']')
+
+// OR just FIND(elem, [idx, arr]);
+console.log(myArr.find((elem) => elem.Id === 77));
 ```
 
 #### someArray.reduce(someFunc) - Subtract the numbers in the array:
