@@ -14,6 +14,11 @@ sudo nano /etc/locale.conf
 lsblk
 ```
 
+#### TouchPad disable on boot:
+```sh
+synclient TouchpadOff=1
+```
+
 #### Battery: Conservation Mode:
 ```sh
 sudo su
