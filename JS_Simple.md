@@ -15,14 +15,17 @@ for (var i = 0; i < 3; i++) {
     myArr.push(new myObj(i, 'A' + i + i));
 }
 console.log(myArr[2]); // { id: 2, name: "A22" }
-// Splice inside Array:
+
+// SPLICE into Array:
 myArr.splice(2, 0, new myObj(77, 'B77'));
 console.log(myArr[2]); // { id: 77, name: "B77" }
+
 // Get IDs of Objects by MAP():
 var objIds = myArr.map(function (item) {
     return item.Id;
 });
 console.log(objIds); // [ 0, 1, 77, 2 ]
+
 // Find myObj by Id:
 console.log('Obj.Id=77 is -> myArray[', objIds.indexOf(77), ']')
 ```
