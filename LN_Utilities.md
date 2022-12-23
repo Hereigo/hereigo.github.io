@@ -1,5 +1,11 @@
 ﻿### Excellent Utilities
 
+#### ffmpeg :
+```sh
+# Crop Skype recorded call:
+ffmpeg -i INPUT.mkv -filter:v "crop=1500:900:170:145" OUTPUT.mkv
+```
+
 - [**Video Trimmer**](https://flathub.org/apps/details/org.gnome.gitlab.YaLTeR.VideoTrimmer)
 ```sh
 flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
