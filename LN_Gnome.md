@@ -1,5 +1,10 @@
 ### Gnome tips :
 
+#### Gnome necessary for Arch:
+```sh
+yay -S gnome-tweaks gnome-browser-connector gnome-system-monitor
+```
+
 **LockScreen** : Ctrl+Alt+F1
 (it looks for screensaver processes running ps -aux | grep screen and kill them all).
 
