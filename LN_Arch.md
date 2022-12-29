@@ -15,14 +15,20 @@ mkdir ~/.local/share/fonts/
 cp /MY_PATH/*.ttf ~/.local/share/fonts/
 fc-cache -f
 
-# Remove orphaned packages:
-yay -Rns $(yay -Qtdq)
+# Find Installed Apps:
+yay -Qe | grep abc
+
+# See Installed Packages:
+yay -Qe # Explicitly installed
+yay -Qm # Manually installed or Removed from Repo.
+yay -Qn # Native packages
 
 # Remove useless Packages:
 yay -Yc
-
-# See Installed Apps:
-yay -Qe | grep abc
+# Remove orphaned packages:
+yay -Rns $(yay -Qtdq)
+# Detecting more unneeded packages (dependency cycles, excessive dependencies, unexplicit optionals etc.
+yay -Qqd | pacman -Rsu --print -
 
 # If necessary to test Microphone and Camera:
 sudo pacman -S pavucontrol
