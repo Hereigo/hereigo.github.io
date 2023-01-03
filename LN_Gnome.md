@@ -8,6 +8,8 @@ yay -S gnome-tweaks gnome-browser-connector gnome-system-monitor
 **LockScreen** : Ctrl+Alt+F1
 (it looks for screensaver processes running ps -aux | grep screen and kill them all).
 
+--> <u> ***[**Graphite Theme for GNOME**](https://www.debugpoint.com/graphite-theme-gnome/)*** </u>
+
 --> <u> ***[**Libadwaita Dark Theme**](https://t.me/addtheme/libadwaita_dark)*** </u>
 
 --> <u> ***[**metaGEDIT**](https://github.com/pedrovernetti/metagedit)*** </u> -- Gedit extra plugins
