@@ -4,6 +4,9 @@
 ```sh
 # Crop Skype recorded call:
 ffmpeg -i INPUT.mkv -filter:v "crop=1500:900:170:145" OUTPUT.mkv
+
+# split mkv file into parts with duration of 1 hour:
+mkvmerge --split duration:01:00:00.000 input_file.mkv -o split.mkv
 ```
 
 - [**Video Trimmer**](https://flathub.org/apps/details/org.gnome.gitlab.YaLTeR.VideoTrimmer)
@@ -30,6 +33,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**croc**](https://www.linuxlinks.com/excellent-utilities-croc-securely-transfer-files-folders/) --- Securely transfer files and folders from the command-line
  - [**Czkawka**](https://github.com/qarmin/czkawka) - - Anti-Duplicator
  - [**CzkawkaGUI**](https://appimage.github.io/linux_czkawka_gui/)
+ - [**deDuplicator**](https://github.com/sreedevk/deduplicator) - - Anti-Duplicator 2
  - [**Deskreen**](https://www.linuxlinks.com/excellent-utilities-deskreen-live-streaming-desktop/) --- Live streaming your desktop to a web browser
  - [**duf**](https://www.linuxlinks.com/excellent-utilities-duf-disk-usage-utility/) --- Disk usage utility with more polished presentation than the classic df
  - [**exa**](https://www.linuxlinks.com/excellent-utilities-exa-replacement-ls/) --- A turbo-charged alternative to the venerable ls command
