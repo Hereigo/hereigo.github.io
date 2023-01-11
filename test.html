@@ -17,10 +17,10 @@
 
                 <!--------------- REGEXP - NUMBERS with DOT ONLY -------------------------------------------
 
-        <input type="text" id="salary" name="salary"
-            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                <input type="text" id="salary" name="salary"
+                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
 
-        --------------------------------------------------------------------------------------------->
+                --------------------------------------------------------------------------------------------->
 
 
                 <script>
@@ -53,6 +53,9 @@
                                 curr.doSometh();
                         });
 
+                        var doSometh = function () {
+                                console.log(this);
+                        }
                         var doSometh = function () {
                                 console.log(this);
                         }
