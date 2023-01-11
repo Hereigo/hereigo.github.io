@@ -1,55 +1,63 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-        </style>
-    </head>
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <style>
+                </style>
+        </head>
 
-    <body>
-        <div>
-            <input id="myInp" type="text" value="Asdfgh76544er" />
-            <input id="myBtn" type="button" value="Button" />
-            <div id="myDiv"></div>
-        </div>
+        <body>
+                <div>
+                        <input id="myInp" type="text" value="Asdfgh76544er" />
+                        <input id="myBtn" type="button" value="Button" />
+                        <div id="myDiv"></div>
+                </div>
 
-        <script>
+                <!--------------- REGEXP - NUMBERS with DOT ONLY -------------------------------------------
 
-            var myObj = function (id, name) {
-                this.Id = id;
-                this.name = name;
-            }
-            var myArr = new Array();
-            // Fill Array with myObjects:
-            for (var i = 0; i < 3; i++) {
-                myArr.push(new myObj(i, 'A' + i + i));
-            }
-            console.log(myArr[2]); // { id: 2, name: "A22" }
+        <input type="text" id="salary" name="salary"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
 
-            // SPLICE into Array:
-            myArr.splice(2, 0, new myObj(77, 'B77'));
+        --------------------------------------------------------------------------------------------->
 
-            console.log(myArr); // { id: 77, name: "B77" }
 
-            // Get IDs of Objects by MAP():
-            var objIds = myArr.map(function (item) {
-                return item.Id;
-            });
-            console.log(objIds); // [ 0, 1, 77, 2 ]
+                <script>
 
-            //////////////////////////////////////////////////////////////////
+                        var myObj = function (id, name) {
+                                this.Id = id;
+                                this.name = name;
+                        }
+                        var myArr = new Array();
+                        // Fill Array with myObjects:
+                        for (var i = 0; i < 3; i++) {
+                                myArr.push(new myObj(i, 'A' + i + i));
+                        }
+                        console.log(myArr[2]); // { id: 2, name: "A22" }
 
-            myArr.forEach(function (curr) {
-                curr.doSometh();
-            });
+                        // SPLICE into Array:
+                        myArr.splice(2, 0, new myObj(77, 'B77'));
 
-            var doSometh = function() {
-                console.log(this);
-            }
+                        console.log(myArr); // { id: 77, name: "B77" }
 
-        </script>
-    </body>
+                        // Get IDs of Objects by MAP():
+                        var objIds = myArr.map(function (item) {
+                                return item.Id;
+                        });
+                        console.log(objIds); // [ 0, 1, 77, 2 ]
+
+                        //////////////////////////////////////////////////////////////////
+
+                        myArr.forEach(function (curr) {
+                                curr.doSometh();
+                        });
+
+                        var doSometh = function () {
+                                console.log(this);
+                        }
+
+                </script>
+        </body>
 
 </html>

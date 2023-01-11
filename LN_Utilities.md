@@ -35,6 +35,7 @@ flatpak install org.gnome.gitlat.YaLTeR.VideoTrimmer
  - [**CzkawkaGUI**](https://appimage.github.io/linux_czkawka_gui/)
  - [**deDuplicator**](https://github.com/sreedevk/deduplicator) - - Anti-Duplicator 2
  - [**Deskreen**](https://www.linuxlinks.com/excellent-utilities-deskreen-live-streaming-desktop/) --- Live streaming your desktop to a web browser
+ - [**DicEngOffline**](https://www.debugpoint.com/wordbook-offline-dictionary/) --- WordBook - Offline English Dictionary App for GNOME
  - [**duf**](https://www.linuxlinks.com/excellent-utilities-duf-disk-usage-utility/) --- Disk usage utility with more polished presentation than the classic df
  - [**exa**](https://www.linuxlinks.com/excellent-utilities-exa-replacement-ls/) --- A turbo-charged alternative to the venerable ls command
  - [**Extension Manager**](https://www.linuxlinks.com/excellent-utilities-extension-manager-browse-install-manage-gnome-shell-extensions/) --- Browse, install and manage GNOME Shell Extensions
