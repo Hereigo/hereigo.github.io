@@ -6,9 +6,9 @@ aPath = os.path.dirname(os.path.abspath(__file__))
 aFiles = os.listdir(aPath + '/')
 aFiles.sort()
 
-os.system(f"rm -rf {aPath}/pages/*")
+os.system(f"rm -rf {aPath}/pages/*") # Deleting all files in pages
 
-corrects_shortnames = ["JS", "LN", "PS", "PY"] # list of "startswith" good files
+corrects_shortnames = ["JS", "LN", "PS", "PY"] # list of "startswith" good files. Here you should add new corrects_shortnames
 
 for file in aFiles:
     if file.endswith(".md"):
