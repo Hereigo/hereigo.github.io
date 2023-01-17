@@ -7,7 +7,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 
-yay skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full exaile smplayer flameshot vokoscreen remmina freerdp viber
+yay gnome-system-monitor skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full exaile smplayer flameshot vokoscreen remmina freerdp viber
 # + snappy - is viber dependency on Arch.
 
 # FONTS:
@@ -33,3 +33,5 @@ yay -Qqd | pacman -Rsu --print -
 # If necessary to test Microphone and Camera:
 sudo pacman -S pavucontrol
 ```
+
+ + [Arch tweaks](https://gist.github.com/lbrame/1678c00213c2bd069c0a59f8733e0ee6)
