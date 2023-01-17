@@ -15,7 +15,7 @@ for file in aFiles:
         starts_with = file[:2] # 2 first letters of file
         if starts_with in corrects_shortnames:
             with open(f"{aPath}/pages/{starts_with}.html", "a") as f:
-                f.write(f'<zero-md src="/{file}"></zero-md><hr />' + os.linesep) 
+                f.write(f'<zero-md src="/{file}"></zero-md><hr /><hr />' + os.linesep) 
         else:
             with open(f"{aPath}/pages/XZ.html", "a") as f:
-                f.write(f'<zero-md src="/{file}"></zero-md><hr />' + os.linesep) 
+                f.write(f'<zero-md src="/{file}"></zero-md><hr /><hr />' + os.linesep) 

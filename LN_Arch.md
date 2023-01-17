@@ -7,8 +7,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 
-yay remmina freerdp simplescreenrecorder skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full qmmp clementine viber
-# + snappy - is needed for viber 18.2 on Arch.
+yay skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full exaile smplayer flameshot vokoscreen remmina freerdp viber
+# + snappy - is viber dependency on Arch.
 
 # FONTS:
 mkdir ~/.local/share/fonts/

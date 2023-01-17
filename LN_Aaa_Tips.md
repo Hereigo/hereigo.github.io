@@ -91,16 +91,6 @@ fc-cache -fvh
 # -h     Show summary of options.
 ```
 
-#### Dfault file browser
-```sh
-# Check default file browser:
-xdg-mime query default inode/directory
-# Set Thunar as default file browser:
-xdg-mime default thunar.desktop inode/directory
-# or in
-/usr/share/applications/mimeapps.list
-```
-
 #### Celluloid (MPV) save video position on close:
 ```sh
 mkdir ~/.config/mpv/ && echo "save-position-on-quit" >> ~/.config/mpv/mpv.conf
@@ -108,6 +98,7 @@ mkdir ~/.config/mpv/ && echo "save-position-on-quit" >> ~/.config/mpv/mpv.conf
 ```
 
 #### Viber launch with tray icon:
+(dbus-launch - Utility to start a message bus from a shell script)
 ```sh
 dbus-launch /opt/viber/Viber
 ```
