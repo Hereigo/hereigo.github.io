@@ -1,0 +1,47 @@
+{
+    "items": [
+        {
+            "amount": 0.8,
+            "qty": 1,
+            "reference": "",
+            "service": "5"
+        },
+        {
+            "amount": 111.999,
+            "qty": 1,
+            "reference": "",
+            "service": "8"
+        },
+        {
+            "amount": "123",
+            "qty": 1,
+            "reference": "AAA",
+            "service": "7"
+        },
+        {
+            "amount": 125,
+            "qty": 1,
+            "reference": "BBB bbbb",
+            "service": "7"
+        },
+        {
+            "amount": "10",
+            "qty": 1,
+            "reference": "",
+            "service": "6"
+        }
+    ],
+    "notes": "cqrty",
+    "notesOnReceipt": true,
+    "payments": [
+        {
+            "method": "C",
+            "amount": "367.8"
+        },
+        {
+            "method": "D",
+            "amount": "3.5"
+        }
+    ],
+    "token": null
+}
