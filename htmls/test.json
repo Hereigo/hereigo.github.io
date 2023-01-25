@@ -4,31 +4,36 @@
             "amount": 0.8,
             "qty": 1,
             "reference": "",
-            "service": "5"
+            "service": "5",
+            "isreadonly": false
         },
         {
             "amount": 111.999,
             "qty": 1,
             "reference": "",
-            "service": "8"
+            "service": "8",
+            "isreadonly": false
         },
         {
             "amount": "123",
             "qty": 1,
             "reference": "AAA",
-            "service": "7"
+            "service": "7",
+            "isreadonly": false
         },
         {
             "amount": 125,
             "qty": 1,
             "reference": "BBB bbbb",
-            "service": "7"
+            "service": "7",
+            "isreadonly": false
         },
         {
             "amount": "10",
             "qty": 1,
             "reference": "",
-            "service": "6"
+            "service": "6",
+            "isreadonly": true
         }
     ],
     "notes": "cqrty",
