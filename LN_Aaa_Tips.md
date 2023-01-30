@@ -4,6 +4,15 @@
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 ```
 
+### Check Temperatures:
+```sh
+sensors && sudo hddtemp /dev/sda && sudo hddtemp /dev/sdb
+# or
+ls /sys/class/hwmon/hwon2/
+cat /sys/class/hwmon/hwmon2/temp1_input
+```
+
+
 #### Locale Cfg:
 ```sh
 sudo nano /etc/locale.conf
