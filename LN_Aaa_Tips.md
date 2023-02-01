@@ -4,6 +4,14 @@
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 ```
 
+### AUR toggle (manjaro)
+```sh
+# to Comment:
+sudo sed -Ei '/EnableAUR/s/^/#/' /etc/pamac.conf
+# to UnComment:
+sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
+```
+
 ### Check Temperatures:
 ```sh
 sensors && sudo hddtemp /dev/sda && sudo hddtemp /dev/sdb
