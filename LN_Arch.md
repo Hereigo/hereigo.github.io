@@ -34,4 +34,11 @@ yay -Qqd | pacman -Rsu --print -
 sudo pacman -S pavucontrol
 ```
 
+#### Qemu + KVM
+```sh
+pacman -S virt-manager qemu-desktop vde2 ebtables dnsmasq bridge-utils openbsd-netcat
+# Activate and Launch KVM
+systemctl enable --now libvirtd.service
+```
+
  + [Arch tweaks](https://gist.github.com/lbrame/1678c00213c2bd069c0a59f8733e0ee6)
