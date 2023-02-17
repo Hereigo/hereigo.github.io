@@ -39,6 +39,10 @@ sudo pacman -S pavucontrol
 pacman -S virt-manager qemu-desktop vde2 ebtables dnsmasq bridge-utils openbsd-netcat
 # Activate and Launch KVM
 systemctl enable --now libvirtd.service
+# If Error: network 'default' is not active
+sudo virsh net-start default
+# to see networks:
+sudo virsh net-list --all
 ```
 
  + [Arch tweaks](https://gist.github.com/lbrame/1678c00213c2bd069c0a59f8733e0ee6)
