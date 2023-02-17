@@ -2,6 +2,10 @@ body {
   font-size: .875rem;
 }
 
+.markdown-body pre>code {
+  /* font-size: .5rem; */
+}
+
 .feather {
   width: 16px;
   height: 16px;
