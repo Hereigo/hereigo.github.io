@@ -3,7 +3,7 @@
 #### Standard ECMA-262 (1999):
 https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
 
-#### HTML input with only Numbers allowed.
+#### HTML input with only Float Numbers allowed.
 ```ts
 <input type="text" id="salary" name="salary" 
     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />

@@ -10,20 +10,51 @@
 
         <body>
                 <div>
-                        <input id="myInp" type="text" value="Asdfgh76544er" />
+                        <h3>List:</h3>
+                        <ul id="myList"></ul>
+                </div>
+                <div>
+                        <input id="myInp" type="text" />
                         <input id="myBtn" type="button" value="Button" />
                         <div id="myDiv"></div>
                 </div>
 
-                <!--------------- REGEXP - NUMBERS with DOT ONLY -------------------------------------------
-
-                <input type="text" id="salary" name="salary"
-                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
-
-                --------------------------------------------------------------------------------------------->
-
-
                 <script>
+                        let UIController = (function () {
+                                let DOM = {
+                                        list: "#myList",
+                                        inp: "#myInp",
+                                        btn: "#myBtn",
+                                };
+                                return {
+                                        getDOM: function () {
+                                                return DOM;
+                                        },
+
+                                        initialInput: function () {
+                                                document.querySelector(DOM.inp).value = 'Adsaghffjk654+';
+                                        },
+
+                                        addToList: function () {
+                                                return function () {
+                                                        let lst = document.querySelector(DOM.list);
+                                                        //let val = 
+                                                        let item = document.createElement('li');
+                                                        item.innerText = document.querySelector(DOM.inp).value;
+                                                        lst.appendChild(item);
+                                                }
+                                        },
+
+                                };
+                        })();
+
+                        let DOM = UIController.getDOM();
+
+                        UIController.initialInput();
+
+                        document.querySelector(DOM.btn).addEventListener('click', UIController.addToList());
+
+                        //////////////////////////////////////////////////////////////////
 
                         var myObj = function (id, name) {
                                 this.Id = id;
@@ -49,16 +80,14 @@
 
                         //////////////////////////////////////////////////////////////////
 
-                        myArr.forEach(function (curr) {
-                                curr.doSometh();
-                        });
+                        // myArr.forEach(function (curr) {
+                        //         curr.doSometh();
+                        // });
+                        //
+                        // var doSometh = function () {
+                        //         console.log(this);
+                        // }
 
-                        var doSometh = function () {
-                                console.log(this);
-                        }
-                        var doSometh = function () {
-                                console.log(this);
-                        }
 
                 </script>
         </body>
