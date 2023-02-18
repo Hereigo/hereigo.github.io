@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <title>Bootstrap v5.1 Dashboard</title>
+    <title>Calendarium</title>
     <link rel="stylesheet" href="/libs/bootstrap.min.css">
     <link rel="stylesheet" href="/app.css">
 
@@ -16,7 +16,7 @@
 
   <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Calendarium</a>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,8 +35,17 @@
           class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
+
               <li class="nav-item">
-                <a class="nav-link active" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab" data-bs-target="#nav-calend"
+                role="tab" aria-controls="nav-calend" aria-selected="true">
+                  <span data-feather="calendar"></span>
+                  Current month
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                   role="tab" aria-controls="nav-home" aria-selected="true">
                   <span data-feather="home"></span>
                   JavaScript
@@ -87,12 +96,6 @@
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="calendar"></span>
-                  Current month
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
                   Last quarter
                 </a>
@@ -114,7 +117,7 @@
         </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          <div
+          <!-- <div
             class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Tips & Tricks :</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -123,12 +126,16 @@
                 <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
               </div>
             </div>
-          </div>
+          </div> -->
           <!---------------- MAIN BLOCK ---------------->
 
           <div class="tab-content" id="nav-tabContent">
 
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="tab-pane fade show active" id="nav-calend" role="tabpanel" aria-labelledby="nav-calend-tab">
+              <div include-html="./calendar.html"></div>
+            </div>
+
+            <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div include-html="./pages/JS.html"></div>
             </div>
 
