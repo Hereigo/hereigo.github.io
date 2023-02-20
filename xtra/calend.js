@@ -1,8 +1,6 @@
 window.onload = function () {
 
-  alert('Welcome!');
-
-  const aData = [
+    const aData = [
   ];
 
   const aYear = new Date().getFullYear();

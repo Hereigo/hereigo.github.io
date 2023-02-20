@@ -1,0 +1,4 @@
+dotnet/Generator/bin
+dotnet/Generator/obj
+.vscode/launch.json
+.vscode/tasks.json

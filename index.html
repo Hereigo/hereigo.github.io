@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<!--AUTOGENERATOR-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./libs/bootstrap.min.css">
     <link rel="stylesheet" href="./xtra/app.css">
+
+    <link rel="stylesheet" href="./xtra/calend.css">
+
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 </head>
 
@@ -33,7 +36,7 @@
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" id="nav-tab" role="tablist"
-                class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
 
@@ -108,12 +111,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
-                                Social engagement
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
                                 Year-end sale
                             </a>
                         </li>
@@ -121,32 +118,152 @@
                 </div>
             </nav>
 
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <main class="col-md-10 ms-sm-auto col-lg-11 px-md-4">
                 <div
-            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <!-- <h1 class="h2">Tips & Tricks :</h1> -->
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-            </div>
-          </div>
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <!-- <h1 class="h2">Tips & Tricks :</h1> -->
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                    </div>
+                </div>
                 <!---------------- MAIN BLOCK ---------------->
 
                 <div class="tab-content" id="nav-tabContent">
 
                     <div class="tab-pane fade show active" id="nav-calend" role="tabpanel"
                         aria-labelledby="nav-calend-tab">
-                        <div include-html="./calendar.html"></div>
+                        <!-- <div include-html="./calendar.html"></div> -->
+
+                        <div class="row">
+
+                            <!-- CENTER ZONE -->
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-1"><button id="mon0" type="button"
+                                            class="btn btn-mon btn-light">Jan</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon1" type="button"
+                                            class="btn btn-mon btn-light">Feb</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon2" type="button"
+                                            class="btn btn-mon btn-light">Mar</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon3" type="button"
+                                            class="btn btn-mon btn-light">Apr</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon4" type="button"
+                                            class="btn btn-mon btn-light">May</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon5" type="button"
+                                            class="btn btn-mon btn-light">Jun</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon6" type="button"
+                                            class="btn btn-mon btn-light">Jul</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon7" type="button"
+                                            class="btn btn-mon btn-light">Aug</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon8" type="button"
+                                            class="btn btn-mon btn-light">Sep</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon9" type="button"
+                                            class="btn btn-mon btn-light">Oct</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon10" type="button"
+                                            class="btn btn-mon btn-light">Nov</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon11" type="button"
+                                            class="btn btn-mon btn-light">Dec</button>
+                                    </div>
+                                </div>
+                                <div class="grid-calendar">
+                                    <div class="row calendar-week-header">
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Monday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Tuesday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Wednesday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Thurthday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Friday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div class="holiHead">Saturday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div class="holiHead">Sunday</div>
+                                        </div>
+                                    </div>
+
+                                    <div id="calend">
+                                        <!-- --- C A L E N D A R - G R I D --- -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- RUGHT SIDE -->
+                            <div class="col-md-2" id="right-bar">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                        <h3>
+                                            Call-Stack below:
+                                        </h3>
+                                        </p>
+                                        <p>
+                                            2023-02-15.
+                                        </p>
+                                        <ul>
+                                            <li>META-LIFE-!!!</li>
+
+                                            <li>...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+<!--AUTOGENERATOR-->
+
                     <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <div include-html="./pages/JS.html"></div>
+                        <!-- <div include-html="./pages/JS.html"></div> -->
+                        <zero-md src="/JS_Simple.md"></zero-md>
+                        <hr />
+                        <hr />
                     </div>
 
                     <div class="tab-pane fade" id="nav-linux" role="tabpanel" aria-labelledby="nav-linux-tab">
-                        <div include-html="./pages/LN.html"></div>
+                        <!-- <div include-html="./pages/LN.html"></div> -->
+                        <zero-md src="/LN_Aaa_Tips.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Arch.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Bash.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Gnome.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_UbunDeb.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Utilities.md"></zero-md>
+                        <hr />
+                        <hr />
                     </div>
 
                     <div class="tab-pane fade" id="nav-powershell" role="tabpanel" aria-labelledby="nav-powershell-tab">

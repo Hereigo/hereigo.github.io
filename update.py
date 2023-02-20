@@ -6,7 +6,7 @@ aPath = os.path.dirname(os.path.abspath(__file__))
 aFiles = os.listdir(aPath + '/')
 aFiles.sort()
 
-os.system(f"rm -rf {aPath}/pages/*.html") # Deleting all pages for replace it
+os.system(f"rm -rf {aPath}/pages/*.html") # Remove all pages to replace them
 
 corrects_shortnames = ["JS", "LN", "PS", "PY"] # list of "startswith" good files
 
