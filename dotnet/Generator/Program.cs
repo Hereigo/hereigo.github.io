@@ -12,44 +12,77 @@ var files = new string[0];
 
 if (!File.Exists(htmlFile))
 {
-  System.Console.WriteLine("File Not Exists - " + htmlFile);
+    System.Console.WriteLine("File Not Exists - " + htmlFile);
 }
 else
 {
-  File.Move(htmlFile, htmlFileBak);
-  File.Create(htmlFile);
-  StringBuilder sb = new StringBuilder();
-  StringReader sr = new StringReader(htmlFileBak);
-  while (sr.Peek() > -1)
-  {
-    var tempStr = sr.ReadLine();
-    sb.AppendLine(tempStr);
-    if (tempStr?.Trim().Length == htmlMarker.Length && tempStr.Trim() == htmlMarker)
+    File.Create(htmlFileBak);
+
+    // File.Move(htmlFile, htmlFileBak);
+    // File.Create(htmlFile);
+
+    using (var sw = new StreamWriter(htmlFileBak))
     {
-      sb.AppendLine();
-      sb.AppendLine("AAAAAAAAAA");
-      sb.AppendLine();
+        foreach (var line in File.ReadLines(htmlFile))
+        {
+            if (line.Trim().Length == htmlMarker.Length && line.Trim() == htmlMarker)
+            {
+                sw.WriteLine();
+                sw.WriteLine("AAAAAAAAAA");
+                sw.WriteLine();
+            }
+        }
     }
-  }
-  StringWriter sw = new StringWriter(sb);
-  sw.Write(sb.ToString());
-  sw.Flush();
-  //using (var sw = new StreamWriter(htmlFile, 
-  //{
-  //  sw.Write(sb.ToString());
-  //}
+
+
+
+
+    //string line, buffer = null;
+    ////StringReader sr = new StringReader
+    //
+    //int TEST = 0;
+    //
+    //// https://learn.microsoft.com/ru-ru/dotnet/api/system.io.stringwriter?view=net-7.0
+    //
+    ////   StringBuilder sb = new StringBuilder();
+    //StringReader sr = new StringReader(htmlFile); // BAK !!!!!!!!!!!
+    //while (TEST < 4)
+    //{
+    //  TEST++;
+    //  var TEST2 = sr.ReadLine();
+    //  System.Console.WriteLine(TEST2);
+    //}
+
+    //   while (sr.Peek() > -1)
+    //   {
+    //     var tempStr = sr.ReadLine();
+    //     sb.AppendLine(tempStr);
+    //     if (tempStr?.Trim().Length == htmlMarker.Length && tempStr.Trim() == htmlMarker)
+    //     {
+    //       sb.AppendLine();
+    //       sb.AppendLine("AAAAAAAAAA");
+    //       sb.AppendLine();
+    //     }
+    //   }
+    //   StringWriter sw = new StringWriter();
+    //   sw.Write(sb.ToString());
+    //   sw.Flush();
+    //   //using (var sw = new StreamWriter(htmlFile, 
+    //   //{
+    //   //  sw.Write(sb.ToString());
+    //   //}
 
 }
 
 
 if (Directory.Exists(dirWork))
 {
-  files = Directory.GetFiles(dirWork, "*.md");
+    files = Directory.GetFiles(dirWork, "*.md");
 }
 
 foreach (var f in files)
 {
-  //System.Console.WriteLine(f);
+    //System.Console.WriteLine(f);
 }
 
 
