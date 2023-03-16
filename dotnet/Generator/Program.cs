@@ -1,48 +1,69 @@
-﻿using System.Text;
-// See https://aka.ms/new-console-template for more information
-System.Console.WriteLine("");
+﻿// See https://aka.ms/new-console-template for more information
+// using System.Text;
 
-
-var htmlMarker = "<!--AUTOGENERATOR-->";
-var dirStart = new DirectoryInfo(Directory.GetCurrentDirectory());
-var dirWork = dirStart.Parent?.Parent?.ToString();
-var htmlFile = dirWork + "/index.html";
-var htmlFileBak = htmlFile + ".bak";
-var filesWithPath = new string[0];
-
-if (!File.Exists(htmlFile))
+internal class Program
 {
-    System.Console.WriteLine("File Not Exists - " + htmlFile);
-}
-else
-{
-    File.Move(htmlFile, htmlFileBak);
+    const string htmlMarker = "<!--AUTOGENERATOR-->";
+    static readonly string dirWork = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent?.Parent?.FullName ?? "";
+    static readonly string htmlFile = dirWork + "/index.html";
+    static readonly string htmlFileBak = htmlFile + ".bak";
+    static string[] filesWithPath = new string[0];
 
-    if (Directory.Exists(dirWork))
+    static void Main(string[] args)
     {
-        filesWithPath = Directory.GetFiles(dirWork, "*.md");
+        if (!File.Exists(htmlFile))
+        {
+            System.Console.WriteLine("Html file Not Exists - " + htmlFile);
+        }
+        else
+        {
+            CreateBackup();
+
+            ParsingHtmlFile();
+
+            ParsingMDFolder();
+        }
+        Console.WriteLine("Done.");
     }
 
-    using StreamWriter sw = new(htmlFile);
-
-    foreach (var line in File.ReadLines(htmlFileBak))
+    static void CreateBackup()
     {
-        await sw.WriteLineAsync(line);
-
-        if (line.Trim().Length == htmlMarker.Length && line.Trim() == htmlMarker)
+        if (File.Exists(htmlFileBak))
         {
-            await sw.WriteLineAsync();
-            await sw.WriteLineAsync("BBBBBBBBBBBB");
-            await sw.WriteLineAsync();
+            File.Move(htmlFileBak, htmlFileBak + "." + DateTime.Now.ToString("MMDDHHmmss"));
+        }
+
+        File.Move(htmlFile, htmlFileBak);
+
+        if (Directory.Exists(dirWork))
+        {
+            filesWithPath = Directory.GetFiles(dirWork, "*.md");
         }
     }
+
+    static async void ParsingHtmlFile()
+    {
+        using StreamWriter sw = new(htmlFile);
+
+        foreach (var line in File.ReadLines(htmlFileBak))
+        {
+            await sw.WriteLineAsync(line);
+
+            if (line.Trim().Length == htmlMarker.Length && line.Trim() == htmlMarker)
+            {
+                await sw.WriteLineAsync();
+                await sw.WriteLineAsync("BBBBBBBBBBBBB");
+                await sw.WriteLineAsync();
+            }
+        }
+    }
+
+    static void ParsingMDFolder()
+    {
+        foreach (var f in filesWithPath)
+        {
+            //System.Console.WriteLine(f);
+        }
+    }
+
 }
-
-
-
-foreach (var f in filesWithPath)
-{
-    //System.Console.WriteLine(f);
-}
-
-
