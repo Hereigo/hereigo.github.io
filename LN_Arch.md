@@ -46,3 +46,13 @@ sudo virsh net-list --all
 ```
 
  + [Arch tweaks](https://gist.github.com/lbrame/1678c00213c2bd069c0a59f8733e0ee6)
+
+ #### EOS install DE like as from ISO:
+```sh
+# see available DEs\WMs
+eos-packagelist --list
+# See list of packages for any edition (ex. Openbox):
+eos-packagelist "Openbox Edition"
+# Install selected edition (ex. Openbox):
+eos-packagelist --install "Openbox Edition"
+```
