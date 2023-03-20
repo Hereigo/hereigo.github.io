@@ -36,7 +36,9 @@ window.onload = function () {
 		{ m: 10, d: 28, b: 000, c: "b", n: "Dzuba" },
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
-		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." }
+		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
+		{ m: 00, d: 18, b: 888, c: "x", n: "8k-Mon-Delon" },
+		{ m: 03, d: 22, b: 000, c: "x", n: "ItvdnPyTomorowEnd" },
 	];
 
 	const aYear = new Date().getFullYear();
