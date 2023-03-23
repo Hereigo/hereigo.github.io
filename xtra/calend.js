@@ -8,8 +8,9 @@ window.onload = function () {
 		{ m: 00, d: 13, b: 170, c: "x", n: "170 Voda" },
 		{ m: 00, d: 14, b: 299, c: "x", n: "299 Laner" },
 		{ m: 00, d: 15, b: 000, c: "x", n: "Flat Bills." },
-		{ m: 00, d: 23, b: 155, c: "x", n: "155 KS-U-28" },
-		{ m: 00, d: 23, b: 600, c: "x", n: "Troylana" },
+		{ m: 00, d: 18, b: 888, c: "x", n: "8k-Mon-Delon" },
+		{ m: 00, d: 20, b: 155, c: "x", n: "155 KSU +28" },
+		{ m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
 		{ m: 00, d: 24, b: 175, c: "x", n: "295 Dominiq." },
 		{ m: 00, d: 28, b: 165, c: "x", n: "160 iLanos" },
 		{ m: 01, d: 24, b: 000, c: "b", n: "Svyatna" },
@@ -37,8 +38,6 @@ window.onload = function () {
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
 		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
-		{ m: 00, d: 18, b: 888, c: "x", n: "8k-Mon-Delon" },
-		{ m: 03, d: 22, b: 000, c: "x", n: "ItvdnPyTomorowEnd" },
 	];
 
 	const aYear = new Date().getFullYear();
