@@ -7,7 +7,7 @@ window.onload = function () {
 		{ m: 00, d: 12, b: 160, c: "x", n: "160 (28) Life-M" },
 		{ m: 00, d: 13, b: 170, c: "x", n: "170 Voda" },
 		{ m: 00, d: 14, b: 299, c: "x", n: "299 Laner" },
-		{ m: 00, d: 15, b: 000, c: "x", n: "Flat Bills." },
+		{ m: 00, d: 15, b: 999, c: "x", n: "Flat Bills." },
 		{ m: 00, d: 18, b: 888, c: "x", n: "8k-Mon-Delon" },
 		{ m: 00, d: 20, b: 155, c: "x", n: "155 KSU +28" },
 		{ m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
@@ -23,7 +23,7 @@ window.onload = function () {
 		{ m: 03, d: 11, b: 000, c: "b", n: "Den4i BD." },
 		{ m: 03, d: 25, b: 000, c: "b", n: "Vlad's BD." },
 		{ m: 05, d: 15, b: 000, c: "b", n: "Subota" },
-		{ m: 05, d: 23, b: 000, c: "b", n: "Danyluk" },
+		{ m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
 		{ m: 06, d: 04, b: 000, c: "b", n: "Myroshnyk" },
 		{ m: 06, d: 24, b: 000, c: "b", n: "Koo" },
 		{ m: 07, d: 13, b: 000, c: "b", n: "Barno" },
@@ -38,6 +38,7 @@ window.onload = function () {
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
 		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
+		{ m: 04, d: 01, b: 000, c: "b", n: "PY Tomorrow End!" },
 	];
 
 	const aYear = new Date().getFullYear();
