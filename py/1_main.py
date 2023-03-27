@@ -17,13 +17,14 @@ class Parent2:
     def __init__(self):
         pass
 
-    def print_hi(self):
+    def parent2_print_hi(self):
         print('Hi!')
 
 
 class Child(Parent, Parent2):
     def __init__(self, age, name):
-        Parent.__init__(self, age, name, 'female')
+        super().__init__(age, name, 'female')  # First Parent init.
+        # Parent.__init__(self, age, name, 'female')
         Parent2.__init__(self)
 
 
@@ -31,6 +32,9 @@ child = Child(13, 'Jess')
 
 print('\r\nChild', child.get_name_and_age(), '\r\n')
 
-child.print_hi()
+child.parent2_print_hi()
+
+print(Child.__mro__)  # Method Resolution Order.
+# ( <class '__main__.Child'>, <class '__main__.Parent'>, <class '__main__.Parent2'>, <class 'object'> )
 
 print()
