@@ -2,6 +2,7 @@ window.onload = function () {
 
 	const aData = [
 		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
+		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon+Count." },
 		{ m: 00, d: 10, b: 000, c: "x", n: "Counters." },
 		{ m: 00, d: 10, b: 200, c: "x", n: "200 KS" },
 		{ m: 00, d: 12, b: 160, c: "x", n: "160 (28) Life-M" },

@@ -35,6 +35,7 @@ print('\r\nChild', child.get_name_and_age(), '\r\n')
 child.parent2_print_hi()
 
 print(Child.__mro__)  # Method Resolution Order.
+
 # ( <class '__main__.Child'>, <class '__main__.Parent'>, <class '__main__.Parent2'>, <class 'object'> )
 
 print()
