@@ -14,7 +14,7 @@ window.onload = function () {
 		{ m: 00, d: 23, b: 280, c: "x", n: "280 Dominiq." },
 		{ m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
 		{ m: 00, d: 28, b: 165, c: "x", n: "160 iLanos" },
-		{ m: 00, d: 29, b: 000, c: "x", n: "Ask Mo 4 Counts" },
+		{ m: 00, d: 30, b: 000, c: "x", n: "Ask Mo 4 Counts" },
 		{ m: 01, d: 24, b: 000, c: "b", n: "Svyatna" },
 		{ m: 01, d: 30, b: 000, c: "b", n: "Kostromin" },
 		{ m: 02, d: 14, b: 000, c: "x", n: "Valentine`s day." },
