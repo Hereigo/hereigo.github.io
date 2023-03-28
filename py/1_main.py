@@ -21,7 +21,7 @@ class Parent2:
         print('Hi!')
 
 
-class Child(Parent, Parent2):
+class Child(Parent, Parent2):  # ORDER matters!
     def __init__(self, age, name):
         super().__init__(age, name, 'female')  # First Parent init.
         # Parent.__init__(self, age, name, 'female')
