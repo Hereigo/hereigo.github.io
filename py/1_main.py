@@ -1,16 +1,17 @@
 class Parent:
     def __init__(self, age, name, gender):
         self.age = age
-        self.name = name
-        self.gender = gender
+        self._name = name
+        self.__gender = gender  # private but accesible as "parent_1._Parent__gender"
 
     def get_name_and_age(self):
-        return self.name, self.age
+        return self._name, self.age
 
 
 parent_1 = Parent(age=35, name='Jolie', gender='female')
 
-print('\r\nParent-1', parent_1.get_name_and_age(), 'gender =', parent_1.gender)
+print('\r\n Parent-1', parent_1.get_name_and_age(),
+      'gender =', parent_1._Parent__gender)
 
 
 class Parent2:
@@ -37,5 +38,7 @@ child.parent2_print_hi()
 print(Child.__mro__)  # Method Resolution Order.
 
 # ( <class '__main__.Child'>, <class '__main__.Parent'>, <class '__main__.Parent2'>, <class 'object'> )
+
+print(dir(Child))  # To see all PRIVATE and INHERITED members of CHILD.
 
 print()
