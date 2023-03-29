@@ -24,18 +24,27 @@ with open('files_list.txt', 'w') as aRezFile:
 ```python
 class Parent:
     def __init__(self, age, name, gender):
-        self.age = age
         self._name = name
-        self.__gender = gender  # private but accesible as "parent_1._Parent__gender"
+        self.gender = gender
+        self.__age = age  # is private but accesible as "parent_1._Parent__age"
+
+    def set_age(self, value):  # private fields should be set by "setters"
+        if not isinstance(value, (int, float)):
+            raise ValueError('Only numbers allowed!')
+        self.__age = self
+
+    def get_age(self):
+        return self.__age
+
+    age = property(fget=get_age, fset=set_age)
 
     def get_name_and_age(self):
-        return self._name, self.age
+        return self._name, self.__age
 
 
 parent_1 = Parent(age=35, name='Jolie', gender='female')
 
-print('\r\n Parent-1', parent_1.get_name_and_age(),
-      'gender =', parent_1._Parent__gender)
+print('\r\n Parent-1', parent_1.get_name_and_age(), 'gender =', parent_1.gender)
 
 
 class Parent2:
@@ -64,4 +73,9 @@ print(Child.__mro__)  # Method Resolution Order.
 # ( <class '__main__.Child'>, <class '__main__.Parent'>, <class '__main__.Parent2'>, <class 'object'> )
 
 print(dir(Child))  # To see all PRIVATE and INHERITED members of CHILD.
+
+# ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
+# '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__',
+# '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__','__sizeof__', '__str__',
+# '__subclasshook__', '__weakref__', 'age', 'get_age', 'get_name_and_age', 'parent2_print_hi', 'set_age']
 ```
