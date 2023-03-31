@@ -31,7 +31,7 @@ class Parent:
     def set_age(self, value):  # private fields should be set by "setters"
         if not isinstance(value, (int, float)):
             raise ValueError('Only numbers allowed!')
-        self.__age = self
+        self.__age = value
 
     def get_age(self):
         return self.__age
@@ -41,8 +41,11 @@ class Parent:
     def get_name_and_age(self):
         return self._name, self.__age
 
-
-parent_1 = Parent(age=35, name='Jolie', gender='female')
+ # Allowed!
+parent_1 = Parent(age='too Old!', name='Jolie', gender='female')
+parent_1.__age = '100'  # Allowed!
+parent_1._age = '100'  # Allowed!
+# parent_1.age = '100' - NOT Allowed!
 
 print('\r\n Parent-1', parent_1.get_name_and_age(), 'gender =', parent_1.gender)
 
@@ -68,7 +71,7 @@ print('\r\nChild', child.get_name_and_age(), '\r\n')
 
 child.parent2_print_hi()
 
-print(Child.__mro__)  # Method Resolution Order.
+print(Child.__mro__, '\r\n')  # Method Resolution Order.
 
 # ( <class '__main__.Child'>, <class '__main__.Parent'>, <class '__main__.Parent2'>, <class 'object'> )
 
