@@ -1,8 +1,8 @@
 window.onload = function () {
 
 	const aData = [
-		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
 		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon+Count." },
+		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
 		{ m: 00, d: 10, b: 000, c: "x", n: "Counters." },
 		{ m: 00, d: 10, b: 200, c: "x", n: "200 KS" },
 		{ m: 00, d: 12, b: 160, c: "x", n: "160 (28) Life-M" },
@@ -23,8 +23,8 @@ window.onload = function () {
 		{ m: 03, d: 07, b: 000, c: "b", n: "Kris BD." },
 		{ m: 03, d: 08, b: 000, c: "x", n: "Girls Day." },
 		{ m: 03, d: 11, b: 000, c: "b", n: "Den4i BD." },
+		{ m: 03, d: 20, b: 000, c: "b", n: "ECP (02.04) BD." },
 		{ m: 03, d: 25, b: 000, c: "b", n: "Vlad's BD." },
-		{ m: 04, d: 01, b: 000, c: "b", n: "PY Tomorrow End!" },
 		{ m: 05, d: 15, b: 000, c: "b", n: "Subota" },
 		{ m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
 		{ m: 06, d: 04, b: 000, c: "b", n: "Myroshnyk" },
@@ -41,9 +41,6 @@ window.onload = function () {
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
 		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
-		{ m: 04, d: 11, b: 000, c: "b", n: "ECP_!!! BD." },
-		{ m: 04, d: 03, b: 000, c: "b", n: "11 !!! ECP BD." },
-		{ m: 04, d: 01, b: 000, c: "b", n: "11 !!! ECP BD." },
 	];
 
 	const aYear = new Date().getFullYear();
