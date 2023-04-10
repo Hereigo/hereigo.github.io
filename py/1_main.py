@@ -59,3 +59,46 @@ print(dir(Child))  # To see all PRIVATE and INHERITED members of CHILD.
 # '__subclasshook__', '__weakref__', 'age', 'get_age', 'get_name_and_age', 'parent2_print_hi', 'set_age']
 
 print()
+
+# # # # # # Comlex Objects :
+
+user = {
+    "name": "John Doe",
+    "info": {
+        "basic": {
+            "age": 25,
+            "salary": 5000
+        },
+        "additional": {
+            "study": "mathematics",
+            "family": "married"
+        },
+        "special": {
+            "projects": [
+                {"name": "quantum computing", "stage": "in progress"},
+                {"name": "laser gun", "stage": "in production"}
+            ]
+        }
+    }
+}
+
+
+def get_data_from_dict(dict, keys):
+    data = dict
+    for key in keys:
+        data = data[key]
+    return data
+
+
+print(get_data_from_dict(user, ['info', 'special', 'projects']))
+print()
+
+
+def get_data_reccurin(dict, path_to_prop, idx=0):
+    if idx < len(path_to_prop):
+        return get_data_reccurin(dict[path_to_prop[idx]], path_to_prop, idx+1)
+    return dict
+
+
+print(get_data_reccurin(user, ['info', 'special', 'projects']))
+print()
