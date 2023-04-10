@@ -2,9 +2,9 @@ class Parent:
     def __init__(self, age, name, gender):
         self._name = name
         self.gender = gender
-        self.__age = age  # is private but accesible as "parent_1._Parent__age"
+        self.__age = age  # - is private but accesible as "parent_1._Parent__age"
 
-    def set_age(self, value):  # private fields should be set by "setters"
+    def set_age(self, value):  # - private fields should be set by "setters"
         if not isinstance(value, (int, float)):
             raise ValueError('Only numbers allowed!')
         self.__age = value
@@ -17,10 +17,10 @@ class Parent:
     def get_name_and_age(self):
         return self._name, self.__age
 
- # Allowed!
+ # Private is Accessible!
 parent_1 = Parent(age='too Old!', name='Jolie', gender='female')
-parent_1.__age = '100'  # Allowed!
-parent_1._age = '100'  # Allowed!
+parent_1.__age = '100'  # - Allowed!
+parent_1._age = '100'  # - Allowed!
 # parent_1.age = '100' - NOT Allowed!
 
 print('\r\n Parent-1', parent_1.get_name_and_age(), 'gender =', parent_1.gender)

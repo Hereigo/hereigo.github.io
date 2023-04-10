@@ -83,34 +83,37 @@ print(dir(Child))  # To see all PRIVATE and INHERITED members of CHILD.
 # '__subclasshook__', '__weakref__', 'age', 'get_age', 'get_name_and_age', 'parent2_print_hi', 'set_age']
 ```
 
-### Interfaces:
+### Interfaces (decoration):
 
 ```python
-class Core:
+class Core_Logic:
     def __init__(self):
         self._types = {
             "A": 3000,
             "B": 5000
         }
 
-    def get_salary(self, class_name):
-        return self._types.get(class_name, 0)
+    def get_salary_from_db(self, type_name):
+        return self._types.get(type_name, 0)  # Get by Property Name.
 
 
 class AccountingInterface:
     def __init__(self, data):
-        self._core = Core()
+        self._logic = Core_Logic()
         self._database = data
 
-    def get_salary(self, name):
-        employee_type = self._database.get(name)
-        employee_salary = self._core.get_salary(employee_type)
+    def get_salary_by_name(self, employee_name):
+        employee_type = self._database.get(employee_name)
+        employee_salary = self._logic.get_salary_from_db(employee_type)
         return employee_salary
 
 
 db_emul = {"John": "B", "Mike": "A"}
-interface = AccountingInterface(data=db_emul)
-johns_salary = interface.get_salary(name="John")
 
-print("John's salary is: ${}".format(johns_salary))
+# - Decorates the work of logic with db:
+interface = AccountingInterface(db_emul)
+
+johns_salary = interface.get_salary_by_name("John")
+
+print("\nJohn's salary is: ${}\n".format(johns_salary))
 ```
