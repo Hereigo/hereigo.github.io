@@ -156,3 +156,35 @@ def get_data_reccurin(dict, path_to_prop, idx=0):
 
 print(get_data_reccurin(user, ['info', 'special', 'projects']))
 ```
+
+### Comprehensions:
+
+```python
+# List Comprehensions:
+
+chars = [char for char in "qwerty"]  # ['q', 'w', 'e', 'r', 't', 'y']
+
+names = [n.capitalize() for n in ['mike', 'sally', 'jack']]  # ['Mike', ...
+
+even_nums = [x for x in [1, 2, 3, 4, 5, 6] if x % 2 == 0]  # [2,4,6]
+
+# Set Comprehensions:
+
+unique_set = {val for val in [8, 1, 3, 5, 5, 1, 7, 3]}  # {1,3,5,7,8}
+
+#      {(3, 1), (4, 0), (4, 1), (3, 0)}
+set1 = {(m, n) for n in range(2) for m in range(3, 5)}
+
+# Dictio Comprehensions:
+
+data = ["Alfa_10", "Beta_20", "Gamma_30"]
+dict = {v.split('_')[0]: v.split('_')[1] for v in data}  # {'Alfa': '10' , ...
+
+# Double Comprehension:
+
+matrix = [[j for j in range(2)] for i in range(3)]  # [[0, 1], [0, 1], [0, 1]]
+
+# Flattening:
+
+flatten_matrix = [v for sublist in matrix for v in sublist]  # [0,1,0,1,0,1]
+```
