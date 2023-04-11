@@ -255,8 +255,25 @@ y = [val for sublist in x for val in sublist['values']]
 # - ['0-0', '0-1', '0-2', '0-3', '1-0', '1-1', '1-2', '2-0', '2-1', '3-0']
 ```
 
-### ...
+### Collections:
 
 ```python
+import collections
+
+phrase = 'Helllo Anna'
+counts = collections.Counter(phrase)
+# Counter({'l': 3, 'n': 2, 'H': 1, 'e': 1, 'o': 1, ' ': 1, 'A': 1, 'a': 1})
+
+# 'defaultdict' - added default value if not exists.
+dict_of_lists = collections.defaultdict(list)
+
+for value in range(1, 11):
+    if value % 2 == 0:
+        dict_of_lists['even'].append(value)
+    else:
+        dict_of_lists['odd'].append(value)
+
+#   -   {'odd': [1, 3, 5, 7, 9], 'even': [2, 4, 6, 8, 10]}
+
 
 ```
