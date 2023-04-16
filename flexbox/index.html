@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:550px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .box-menu {
+                order: 3;
+            }
+
+            .box-calend {
+                order: 2;
+            }
+
+            .box-notes {
+                order: 1;
+            }
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+            /* align-items: stretch -> all items has height(if row) as maximal block */
+        }
+
+        .container div {
+            padding: 10px;
+            border: 1px solid silver;
+        }
+
+        .box-menu {
+            flex: 0;
+        }
+
+        .box-calend {
+            flex: 2;
+        }
+
+        .box-notes {
+            flex: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- /* div.box-$*3>h3{Box $} */ -->
+
+        <div class="box-menu">
+            <h3>Menu</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
+                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
+                deserunt temporibus?</p>
+        </div>
+        <div class="box-calend">
+            <h3>Calendar</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
+                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
+                deserunt temporibus?</p>
+        </div>
+        <div class="box-notes">
+            <h3>Notes</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
+                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
+                deserunt temporibus?</p>
+        </div>
+    </div>
+</body>
+
+</html>
