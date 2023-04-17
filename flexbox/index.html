@@ -7,12 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
         @media screen and (max-width:550px) {
             .container {
                 flex-direction: column;
             }
 
-            .box-menu {
+            .box-nav {
                 order: 3;
             }
 
@@ -32,7 +36,6 @@
         .container {
             display: flex;
             align-items: stretch;
-            /* align-items: stretch -> all items has height(if row) as maximal block */
         }
 
         .container div {
@@ -40,7 +43,7 @@
             border: 1px solid silver;
         }
 
-        .box-menu {
+        .box-nav {
             flex: 0;
         }
 
@@ -51,26 +54,190 @@
         .box-notes {
             flex: 0;
         }
+
+
+
+        .nav {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .nav-link.active {
+            color: #6da7ff;
+        }
+
+        .nav-link {
+            display: block;
+            padding: .5rem 1rem;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        header {
+            display: flex;
+            /* height: 2rem; */
+            /* background-color: #000; */
+            border: red 1px solid;
+        }
+
+        .hd-brand {
+            background-color: aqua;
+            padding: .9rem .5rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            /* vertical-align: top; */
+        }
+
+        .hd-brand a {
+            text-decoration: none;
+        }
+
+        .hd-search {
+            flex: 5;
+            background-color: burlywood;
+        }
+
+        .hd-search form {
+            width: 100%;
+            padding: .5rem;
+        }
+
+        .hd-search form input {
+            /* width: 90%; */
+        }
+
+        .form-control {
+            display: inline-block;
+            width: 90%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: .25rem;
+
+            margin: 0;
+            margin-right: .5rem !important;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            border-radius: .25rem;
+        }
     </style>
 </head>
 
 <body>
+
+    <header>
+        <div class="hd-brand">
+            <a href="#">Calendarium</a>
+        </div>
+
+        <div class="hd-search">
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Srch</button>
+                </form>
+            </div>
+
+        </div>
+    </header>
+
     <div class="container">
 
         <!-- Emmet example: /* div.box-$*3>h3{Box $} */ -->
 
-        <div class="box-menu">
-            <h3>Menu</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
-                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
-                deserunt temporibus?</p>
+        <div class="box-nav">
+            <ul class="nav">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
+                        <span data-feather="calendar"></span>
+                        Calend
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        role="tab" aria-controls="nav-home" aria-selected="true">
+                        <span data-feather="chrome"></span>
+                        JS
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab" data-bs-target="#nav-linux"
+                        role="tab" aria-controls="nav-linux" aria-selected="false">
+                        <span data-feather="monitor"></span>
+                        Linux
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell"
+                        aria-selected="false">
+                        <span data-feather="command"></span>
+                        PoSh
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python"
+                        role="tab" aria-controls="nav-python" aria-selected="false">
+                        <span data-feather="code"></span>
+                        Python
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span data-feather="database"></span>
+                        Database
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-reports-tab" data-bs-toggle="tab" data-bs-target="#nav-reports"
+                        role="tab" aria-controls="nav-reports" aria-selected="false">
+                        <span data-feather="bar-chart-2"></span>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+
         </div>
+
+        <!-- -------------------- -->
+
         <div class="box-calend">
             <h3>Calendar</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
                 reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
                 deserunt temporibus?</p>
         </div>
+
+        <!-- -------------------- -->
+
         <div class="box-notes">
             <h3>Notes</h3>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
