@@ -24,17 +24,23 @@
             flex: 0;
         }
 
-        .box-calend {
-            flex: 6;
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(7, 1fr);
-            grid-column-gap: 2px;
-            grid-row-gap: 4px;
-        }
-
         .box-notes {
             flex: 1;
+        }
+
+        .box-notes li {
+            list-style-type: none;
+            margin-left: -2rem;
+        }
+
+        .box-calend {
+            background-color: antiquewhite;
+            display: grid;
+            flex: 6;
+            grid-column-gap: 2px;
+            grid-row-gap: 4px;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(7, 1fr);
         }
 
         .nav {
@@ -93,14 +99,6 @@
             padding: .3rem;
         }
 
-        .calend-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(7, 1fr);
-            grid-column-gap: 2px;
-            grid-row-gap: 4px;
-        }
-
         .grids {
             border: 1px solid silver;
         }
@@ -112,6 +110,8 @@
         .weekday {
             font-weight: 600;
             text-align: center;
+            height: 1rem;
+            background-color: aliceblue;
         }
 
         @media screen and (max-width:550px) {
@@ -175,7 +175,7 @@
                     <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                         role="tab" aria-controls="nav-home" aria-selected="true">
                         <span data-feather="chrome"></span>
-                        JS
+                        JScript
                     </a>
                 </li>
                 <li class="nav-item">
@@ -190,7 +190,7 @@
                         data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell"
                         aria-selected="false">
                         <span data-feather="command"></span>
-                        PoSh
+                        PowShell
                     </a>
                 </li>
                 <li class="nav-item">
@@ -276,15 +276,15 @@
 
         <div class="box-notes">
             <ul>
-                <li>! iMPORTANT !</li>
+                <li>!iMPORTANT!</li>
                 <li>...</li>
                 <li>META-LIFE-!!!</li>
                 <li>...</li>
-                <li>ONLY MOST -RM !!!</li>
+                <li>ONLY MOST -RM</li>
                 <li>VOR-ZHE-VAN</li>
                 <li>Clean VIDEOS.</li>
                 <li>Clean xTra Drive.</li>
-                <li>Collect ALL senset anywhere!</li>
+                <li>RM ALL senset</li>
                 <li>Py or Vala ?</li>
                 <li>...</li>
                 <li>car 1.5 csh</li>
