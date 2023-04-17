@@ -10,6 +10,9 @@ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 yay gnome-system-monitor skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full exaile smplayer flameshot vokoscreen remmina freerdp viber
 # + snappy - is viber dependency on Arch.
 
+# EOS-Sendlog
+echo '..or any command..' | eos-sendlog
+
 # FONTS:
 mkdir ~/.local/share/fonts/
 cp /MY_PATH/*.ttf ~/.local/share/fonts/

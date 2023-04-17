@@ -2,7 +2,22 @@
 
 ```sh
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
+
+# -Reverse -Kernel0related -NumbersToShow
+journalctl -r -k -n 10
+
+journalctl --list-boots
+# Latest Boot.
+journalctl -b -0
+
+journalctl --since yesterday --until 2029-12-31 12:00:00
+
+journalctl --no-page # with no 'less' option
+
+journalctl -o json-pretty >> ~/Desktop/journalctl.json
+#
 ```
+
 
 ### AUR toggle (manjaro)
 ```sh
@@ -11,6 +26,7 @@ sudo sed -Ei '/EnableAUR/s/^/#/' /etc/pamac.conf
 # to UnComment:
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 ```
+
 
 ### Check Temperatures:
 ```sh
@@ -31,6 +47,11 @@ sudo nano /etc/locale.conf
 lsblk
 ```
 
+#### Network devices:
+```sh
+inxi -Naz
+```
+
 #### TouchPad disable on boot:
 ```sh
 synclient TouchpadOff=1
@@ -47,27 +68,29 @@ echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 
 #### AutoRun Script on Boot:
 ```sh
-sudo bash
-
-# 1. Create Script:
 nano /usr/local/sbin/ABC-SCRIPT.sh
-#!/bin/bash
-# your script code here
 
-# 2. Allow to Owner to read-write and Execute.
+#!/bin/bash
+# Battery Conservation Activate
+echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+# or Diactivate
+echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+
+# Allow to Owner to read-write and Execute.
 chmod 0700 /usr/local/sbin/ABC-SCRIPT.sh
 
-# 3. Create Service:
+# Create Service:
 nano /etc/systemd/system/ABC-SCRIPT.service
 #
 [Unit]
-Description=Your descripotion here...
+Description=Battery Conservation Mode On.
 [Service]
 ExecStart=/usr/local/sbin/ABC-SCRIPT.sh
 [Install]
 WantedBy=multi-user.target
 
-# 4. Enable Service:
+# Enable Service:
 systemctl start ABC-SCRIPT.service
 systemctl enable ABC-SCRIPT.service
 ```
@@ -144,4 +167,31 @@ xdg-mime default thunar.desktop inode/directory
 # setup (for example)
 [Default Applications]
 inode/directory=exfalso.desktop;nautilus.desktop;
+```
+
+#### GREP - Global Regular Expression Print
+```sh
+# Syntax    : grep [option] [pattern] [files]
+# [options] :
+-A num -> print num lines After Matching
+-B num -> print num lines Before Matching
+-L -----> List files that do NOT match the pattern
+-c -----> Count total matched lines
+-i -----> insensitive case
+-l -----> List Files that match the pattern
+-n -----> Number of output line
+-r,-R --> Recursive search
+-v -----> inVert match
+# ----------------------------------------
+grep ^[pattern] [files] # Lines that START with the pattern
+grep [pattern]$ [files] # Lines that END with the pattern
+grep -i ['pattern1\|pattern2'] [files] # Use of OR to check either of two patterns
+grep -i ['pattern1.*pattern2'] [files] # Use of AND to check both two patterns
+```
+
+#### SED - Stream EDitor
+```sh
+sed 's/pattern/replacement/g' [file] # Substitute text 
+sed 's/\bapple\b/orange/g' [file] > [new_file] # \b = Boundaries (only absolute! match)
+sed '/pattern/d' [file] # Delete lines
 ```
