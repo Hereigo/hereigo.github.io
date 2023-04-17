@@ -11,6 +11,86 @@
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
+        .container {
+            align-items: stretch;
+            display: flex;
+        }
+
+        .container div {
+            border: 1px solid silver;
+            padding: 10px;
+        }
+
+        .box-nav {
+            flex: 0;
+        }
+
+        .box-calend {
+            flex: 6;
+        }
+
+        .box-notes {
+            flex: 1;
+        }
+
+        .nav {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .nav-link.active {
+            color: #6da7ff;
+        }
+
+        .nav-link {
+            color: #0d6efd;
+            display: block;
+            padding: .5rem 1rem;
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #000;
+            display: flex;
+        }
+
+        .hd-brand {
+            padding: .5rem 1rem;
+        }
+
+        .hd-brand a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hd-search {
+            flex: 5;
+        }
+
+        .hd-search form {
+            margin: .3rem;
+            width: 100%;
+        }
+
+        .hd-search form input {
+            background-color: #fff;
+            border-radius: .25rem;
+            border: 1px solid #ced4da;
+            display: inline-block;
+            padding: .375rem .75rem;
+            width: 93.4%;
+        }
+
+        .btn {
+            border-radius: .25rem;
+            color: #212529;
+            cursor: pointer;
+            display: inline-block;
+            padding: .3rem;
+        }
+
+        .container-calend {}
+
         @media screen and (max-width:550px) {
             .container {
                 flex-direction: column;
@@ -27,122 +107,11 @@
             .box-notes {
                 order: 1;
             }
-        }
 
-        h3 {
-            text-align: center;
-        }
-
-        .container {
-            display: flex;
-            align-items: stretch;
-        }
-
-        .container div {
-            padding: 10px;
-            border: 1px solid silver;
-        }
-
-        .box-nav {
-            flex: 0;
-        }
-
-        .box-calend {
-            flex: 2;
-        }
-
-        .box-notes {
-            flex: 0;
-        }
-
-
-
-        .nav {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .nav-link.active {
-            color: #6da7ff;
-        }
-
-        .nav-link {
-            display: block;
-            padding: .5rem 1rem;
-            color: #0d6efd;
-            text-decoration: none;
-        }
-
-        header {
-            display: flex;
-            /* height: 2rem; */
-            /* background-color: #000; */
-            border: red 1px solid;
-        }
-
-        .hd-brand {
-            background-color: aqua;
-            padding: .9rem .5rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            /* vertical-align: top; */
-        }
-
-        .hd-brand a {
-            text-decoration: none;
-        }
-
-        .hd-search {
-            flex: 5;
-            background-color: burlywood;
-        }
-
-        .hd-search form {
-            width: 100%;
-            padding: .5rem;
-        }
-
-        .hd-search form input {
-            /* width: 90%; */
-        }
-
-        .form-control {
-            display: inline-block;
-            width: 90%;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            background-color: #fff;
-            background-clip: padding-box;
-            border: 1px solid #ced4da;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: .25rem;
-
-            margin: 0;
-            margin-right: .5rem !important;
-        }
-
-        .btn {
-            display: inline-block;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #212529;
-            text-align: center;
-            text-decoration: none;
-            vertical-align: middle;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-            background-color: transparent;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            border-radius: .25rem;
+            .hd-search form input {
+                display: inline-block;
+                width: 76%;
+            }
         }
     </style>
 </head>
@@ -172,7 +141,6 @@
 
         <div class="box-nav">
             <ul class="nav">
-
                 <li class="nav-item">
                     <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
                         data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
@@ -180,7 +148,6 @@
                         Calend
                     </a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
                         role="tab" aria-controls="nav-home" aria-selected="true">
@@ -224,16 +191,15 @@
                     </a>
                 </li>
             </ul>
-
         </div>
 
         <!-- -------------------- -->
 
         <div class="box-calend">
-            <h3>Calendar</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
-                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
-                deserunt temporibus?</p>
+            <div class="container-calend">
+
+            </div>
+
         </div>
 
         <!-- -------------------- -->
