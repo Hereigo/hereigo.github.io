@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendarium</title>
+    <link rel="icon" href="./favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabs {
+            display: block;
+            margin: 40px auto;
+            position: relative;
+            width: 600px;
+        }
+
+        .tabs .tab {
+            display: block;
+            float: left;
+        }
+
+        .tabs .tab>input[type="radio"] {
+            left: -9999px;
+            position: absolute;
+            top: -9999px;
+        }
+
+        .tabs .tab>label {
+            background: #4A83FD;
+            color: #FFF;
+            cursor: pointer;
+            display: block;
+            font-size: 12px;
+            padding: 6px 21px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .tabs .content {
+            background: #303030;
+            color: #DFDFDF;
+            left: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding: 25px;
+            position: absolute;
+            top: 27px;
+            transition: opacity 400ms ease-out;
+            width: 600px;
+            z-index: 0;
+            /* or display: none; */
+        }
+
+        .tabs>.tab>[id^="tab"]:checked+label {
+            background: #303030;
+            color: #F5F5F5;
+            top: 0;
+        }
+
+        .tabs>.tab>[id^="tab"]:checked~[id^="tab-content"] {
+            opacity: 1;
+            transition: opacity 400ms ease-out;
+            z-index: 1;
+            /* or display: block; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="tabs">
+
+        <li class="tab">
+            <input type="radio" name="tabs" checked="checked" id="tab1" />
+            <label for="tab1">One</label>
+            <div class="content" id="tab-content1">
+                <p>AAAAAAAAAA</p>
+                <p>AAAAAAAAAA</p>
+                <p>AAAAAAAAAA</p>
+            </div>
+        </li>
+
+        <li class="tab">
+            <input type="radio" name="tabs" id="tab2" />
+            <label for="tab2">Two</label>
+            <div class="content" id="tab-content2">
+                <p>BBBBBBBBBBBB</p>
+                <p>BBBBBBBBBBBB</p>
+                <p>BBBBBBBBBBBB</p>
+            </div>
+        </li>
+
+        <li class="tab">
+            <input type="radio" name="tabs" id="tab3" />
+            <label for="tab3">Three</label>
+            <div class="content" id="tab-content3">
+                <p>CCCCCCCCCCCC</p>
+                <p>CCCCCCCCCCCC</p>
+                <p>CCCCCCCCCCCC</p>
+            </div>
+        </li>
+
+    </ul>
+
+</body>
+
+</html>
