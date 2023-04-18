@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        @media screen and (max-width:550px) {}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hd-brand">
+            <a href="#">Calendarium</a>
+        </div>
+        <div class="hd-search">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Srch</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- -------------------- -->
+
+    <!-- -------------------- -->
+
+    <div class="container">
+
+        <!-- Emmet example: /* div.box-$*3>h3{Box $} */ -->
+
+        <div class="box-nav">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
+                        <span data-feather="calendar"></span>
+                        Calend
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                        role="tab" aria-controls="nav-home" aria-selected="true">
+                        <span data-feather="chrome"></span>
+                        JS
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab" data-bs-target="#nav-linux"
+                        role="tab" aria-controls="nav-linux" aria-selected="false">
+                        <span data-feather="monitor"></span>
+                        Linux
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell"
+                        aria-selected="false">
+                        <span data-feather="command"></span>
+                        PoSh
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python"
+                        role="tab" aria-controls="nav-python" aria-selected="false">
+                        <span data-feather="code"></span>
+                        Python
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span data-feather="database"></span>
+                        Database
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="nav-reports-tab" data-bs-toggle="tab" data-bs-target="#nav-reports"
+                        role="tab" aria-controls="nav-reports" aria-selected="false">
+                        <span data-feather="bar-chart-2"></span>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- -------------------- -->
+        <!-- -------------------- -->
+
+        <div class="box-calend">
+            <h3>Calend</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
+                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
+                deserunt temporibus?</p>
+        </div>
+
+        <!-- -------------------- -->
+        <!-- -------------------- -->
+
+        <div class="box-notes">
+            <h3>Notes</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
+                reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
+                deserunt temporibus?</p>
+        </div>
+    </div>
+</body>
+
+</html>
