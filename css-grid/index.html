@@ -8,8 +8,8 @@
     <title>Document</title>
     <style>
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             display: grid;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             grid-template-columns: repeat(9, 1fr);
             grid-template-rows: repeat(9, 2rem 2rem 7rem);
         }
@@ -52,6 +52,16 @@
             padding: 0 10px;
         }
 
+        .container-notes ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .container-menu ul {
+            padding-left: 10px;
+            list-style-type: none;
+        }
+
         .weekday {
             background-color: ghostwhite;
         }
@@ -71,6 +81,22 @@
 
         .hd-search {
             float: right;
+            width: 88%;
+        }
+
+        input[type="search"] {
+            width: 95%;
+        }
+
+        .nav-link.active {
+            color: #6da7ff;
+        }
+
+        .nav-link {
+            color: #0d6efd;
+            display: block;
+            /* padding: .5rem 1rem; */
+            text-decoration: none;
         }
 
         @media screen and (max-width:550px) {
@@ -93,6 +119,15 @@
                 grid-column: 5/10;
                 grid-row: 10;
             }
+
+            .hd-search {
+                float: right;
+                width: 70%;
+            }
+
+            input[type="search"] {
+                width: 81%;
+            }
         }
     </style>
 </head>
@@ -107,12 +142,10 @@
             <a href="#">Calendarium</a>
         </div>
         <div class="hd-search">
-            <div>
-                <form role="search">
-                    <input type="search" placeholder="Search" aria-label="Search">
-                    <button type="submit">Srch</button>
-                </form>
-            </div>
+            <form role="search">
+                <input type="search" placeholder="Search" aria-label="Search">
+                <button type="submit">Srch</button>
+            </form>
         </div>
 
 
@@ -252,9 +285,32 @@
     <div class="container-notes">
 
 
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga adipisci possimus ab nam ex delectus
-            reprehenderit accusamus, incidunt suscipit! Pariatur obcaecati soluta ipsam enim quam eius quod, cumque
-            deserunt temporibus?</p>
+        <ul>
+            <li>!..iMPORTANT..!</li>
+            <li>...</li>
+            <li>META-LIFE-!!!</li>
+            <li>...</li>
+            <li>ONLY MOST -RM</li>
+            <li>VOR-ZHE-VAN</li>
+            <li>Clean VIDEOS.</li>
+            <li>Clean xTra Drive.</li>
+            <li>RM ALL senset</li>
+            <li>Py or Vala ?</li>
+            <li>...</li>
+            <li>car 1.5 csh</li>
+            <li>flat 2 mon</li>
+            <li>food 7 mon</li>
+            <li>honey 8 csh</li>
+            <li>...</li>
+            <li>car 1.5 csh</li>
+            <li>flat 1.5 mon</li>
+            <li>food 9 mix</li>
+            <li>honey 8 csh</li>
+            <li>...</li>
+            <li>car 1 mo</li>
+            <li>fla 1 mo</li>
+            <li>foo 8 mix</li>
+        </ul>
 
 
     </div>
