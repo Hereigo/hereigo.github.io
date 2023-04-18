@@ -1,0 +1,122 @@
+body {
+    display: grid;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 2rem 2rem 7rem);
+}
+
+header {
+    background-color: bisque;
+    grid-column: 1/10;
+    grid-row: 1;
+    padding: 5px 5px 5px 15px;
+}
+
+.container-menu {
+    background-color: azure;
+    grid-column: 1;
+    grid-row: 2/10;
+}
+
+.container-weekdays {
+    background-color: aquamarine;
+    display: grid;
+    grid-column: 2/9;
+    grid-row: 2;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.container-calend {
+    background-color: cornsilk;
+    display: grid;
+    grid-column: 2/9;
+    grid-row: 3/10;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.container-notes {
+    background-color: gainsboro;
+    grid-column: 9;
+    grid-row: 2/10;
+    padding: 0 10px;
+}
+
+.container-notes ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.container-menu ul {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.weekday {
+    background-color: ghostwhite;
+}
+
+.cal-day {
+    border: 1px black solid;
+    margin: 1px;
+}
+
+.cal-day:hover {
+    background-color: gainsboro;
+}
+
+.hd-brand {
+    float: left;
+}
+
+.hd-search {
+    float: right;
+    width: 88%;
+}
+
+input[type="search"] {
+    width: 95%;
+}
+
+.nav-link.active {
+    color: #6da7ff;
+}
+
+.nav-link {
+    color: #0d6efd;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+@media screen and (max-width:550px) {
+    .container-menu {
+        grid-column: 1/4;
+        grid-row: 10;
+    }
+
+    .container-weekdays {
+        grid-column: 1/10;
+        grid-row: 2;
+    }
+
+    .container-calend {
+        grid-column: 1/10;
+        grid-row: 3/10;
+    }
+
+    .container-notes {
+        grid-column: 5/10;
+        grid-row: 10;
+    }
+
+    .hd-search {
+        float: right;
+        width: 70%;
+    }
+
+    input[type="search"] {
+        width: 81%;
+    }
+}
