@@ -21,6 +21,10 @@ journalctl -o json-pretty >> ~/Desktop/journalctl.json
 ### Fonts
 ```sh
 apt install fonts-cantarel fonts-cascadia-code
+
+curl https://fonts.google.com/download?family=JetBrains%20Mono
+
+curl https://fonts.google.com/download?family=PT%20Mono
 ```
 
 ### AUR toggle (manjaro)
