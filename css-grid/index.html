@@ -7,6 +7,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
+    <style>
+        body {
+            background-color: ghostwhite;
+            display: grid;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(9, 2.1rem 1.5rem 7rem);
+            margin: 0;
+        }
+
+        .container-header {
+            background-color: black;
+            grid-column: 1/10;
+            grid-row: 1;
+            padding: 5px 5px 5px 15px;
+        }
+
+        .container-menu {
+            grid-column: 1;
+            grid-row: 2/10;
+        }
+
+        .container-weekdays {
+            display: grid;
+            grid-column: 2/9;
+            grid-row: 2;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .weekday {
+            background-color: ghostwhite;
+        }
+
+        /* TABs-SWITCHER */
+        .container-main {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+            display: grid;
+            display: none;
+            grid-column: 2/9;
+            grid-row: 3/10;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+        }
+
+        .container-menu ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .container-notes {
+            grid-column: 9;
+            grid-row: 2/10;
+            padding: 0 10px;
+        }
+
+        .container-notes ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        .cal-day {
+            background-color: rgb(235, 235, 247);
+            border-radius: 4px;
+            border: 1px solid rgb(138, 137, 137);
+            margin: 1px;
+            padding: .1rem .3rem;
+        }
+
+        .cal-day:hover {
+            background-color: gainsboro;
+        }
+
+        .hd-brand {
+            float: left;
+        }
+
+        .hd-brand a {
+            color: aquamarine;
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        .hd-search {
+            float: right;
+            width: 88%;
+        }
+
+        input[type="search"] {
+            width: 95%;
+        }
+
+        .nav-item {
+            overflow: hidden;
+        }
+
+        .nav-item button {
+            background-color: inherit;
+            border: none;
+            color: #0d6efd;
+            display: block;
+            font-size: 16px;
+            outline: none;
+            padding: .5rem 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-item button:hover {
+            background-color: #ddd;
+        }
+
+        .nav-item button.active {
+            background-color: #ccc;
+        }
+
+        @media screen and (max-width:550px) {
+            .container-menu {
+                grid-column: 1/4;
+                grid-row: 10;
+            }
+
+            .container-weekdays {
+                grid-column: 1/10;
+                grid-row: 2;
+            }
+
+            .container-main {
+                grid-column: 1/10;
+                grid-row: 3/10;
+            }
+
+            .container-notes {
+                grid-column: 5/10;
+                grid-row: 10;
+            }
+
+            .hd-search {
+                float: right;
+                width: 70%;
+            }
+
+            input[type="search"] {
+                width: 81%;
+            }
+        }
+
+        /* Fade in tabs */
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>

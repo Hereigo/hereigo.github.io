@@ -1,17 +1,14 @@
-body {
+main {
     background-color: ghostwhite;
     display: grid;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 2.1rem 1.5rem 7rem);
-    margin: 0;
+    margin-top: 1.5rem;
 }
 
-.container-header {
-    background-color: black;
-    grid-column: 1/10;
-    grid-row: 1;
-    padding: 5px 5px 5px 15px;
+form[role="search"] {
+    width: 100%;
 }
 
 .container-menu {
@@ -71,25 +68,6 @@ body {
     background-color: gainsboro;
 }
 
-.hd-brand {
-    float: left;
-}
-
-.hd-brand a {
-    color: aquamarine;
-    font-size: 17px;
-    text-decoration: none;
-}
-
-.hd-search {
-    float: right;
-    width: 88%;
-}
-
-input[type="search"] {
-    width: 95%;
-}
-
 .nav-item {
     overflow: hidden;
 }
@@ -133,15 +111,6 @@ input[type="search"] {
     .container-notes {
         grid-column: 5/10;
         grid-row: 10;
-    }
-
-    .hd-search {
-        float: right;
-        width: 70%;
-    }
-
-    input[type="search"] {
-        width: 81%;
     }
 }
 
