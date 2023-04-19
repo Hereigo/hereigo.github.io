@@ -7,54 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
-    <style>
-        .nav-item {
-            overflow: hidden;
-        }
-
-        .nav-item button {
-            background-color: inherit;
-            border: none;
-            outline: none;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        .nav-item button:hover {
-            background-color: #ddd;
-        }
-
-        .nav-item button.active {
-            background-color: #ccc;
-        }
-
-        .container-calend {
-            display: none;
-            -webkit-animation: fadeEffect 1s;
-            animation: fadeEffect 1s;
-        }
-
-        /* Fade in tabs */
-        @-webkit-keyframes fadeEffect {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeEffect {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -103,9 +55,8 @@
     </div>
     <!-- ---------------------------------------- -->
     <!-- ---------------------------------------- -->
-    <div class="container-calend" id="Calendar">
+    <div class="container-main" id="Calendar">
 
-        <!-- <div id="Calendar" class="tabcontent"> -->
         <div class="cal-day">A</div>
         <div class="cal-day">A</div>
         <div class="cal-day">A</div>
@@ -155,36 +106,37 @@
         <div class="cal-day">A</div>
         <div class="cal-day">A</div>
         <div class="cal-day">A</div>
-        <!--  </div>
-
-         -->
-
-
-
     </div>
-    <div class="container-calend" id="JScript">
+    <!-- ---------------------------------------- -->
+    <!-- ---------------------------------------- -->
+    <div class="container-main" id="JScript">
+
         <h3>JScript</h3>
         <p>JScriptJScriptJScriptJScript.</p>
-    </div>
 
-    <div class="container-calend" id="Linux">
+    </div>
+    <!-- ---------------------------------------- -->
+    <!-- ---------------------------------------- -->
+    <div class="container-main" id="Linux">
+
         <h3>Linux</h3>
         <p>Linux Linux Linux Linux Linux .</p>
+
     </div>
     <!-- ---------------------------------------- -->
     <!-- ---------------------------------------- -->
     <div class="container-notes">
 
         <ul>
-            <li>!..iMPORTANT..!</li>
+            <li>!..important..!</li>
             <li>...</li>
-            <li>META-LIFE-!!!</li>
+            <li>Meta-Life-!!!</li>
             <li>...</li>
-            <li>ONLY MOST -RM</li>
-            <li>VOR-ZHE-VAN</li>
-            <li>Clean VIDEOS.</li>
-            <li>Clean xTra Drive.</li>
-            <li>RM ALL senset</li>
+            <li>Only Most -RM</li>
+            <li>Vor-Zhe-Van</li>
+            <li>Clear Videos.</li>
+            <li>Clear xTra Drive.</li>
+            <li>RM All Senset</li>
             <li>Py or Vala ?</li>
             <li>...</li>
             <li>car 1.5 csh</li>
@@ -214,7 +166,7 @@
 
         function openTab(evt, cityName) {
             var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("container-calend");
+            tabcontent = document.getElementsByClassName("container-main");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }

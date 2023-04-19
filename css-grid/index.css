@@ -1,25 +1,25 @@
 body {
+    background-color: ghostwhite;
     display: grid;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 2rem 2rem 7rem);
+    grid-template-rows: repeat(9, 2.1rem 1.5rem 7rem);
+    margin: 0;
 }
 
 .container-header {
-    background-color: bisque;
+    background-color: black;
     grid-column: 1/10;
     grid-row: 1;
     padding: 5px 5px 5px 15px;
 }
 
 .container-menu {
-    background-color: azure;
     grid-column: 1;
     grid-row: 2/10;
 }
 
 .container-weekdays {
-    background-color: aquamarine;
     display: grid;
     grid-column: 2/9;
     grid-row: 2;
@@ -27,18 +27,28 @@ body {
     text-align: center;
 }
 
-/* #Calendar, */
-.container-calend {
-    background-color: cornsilk;
+.weekday {
+    background-color: ghostwhite;
+}
+
+/* TABs-SWITCHER */
+.container-main {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+    display: grid;
+    display: none;
     grid-column: 2/9;
     grid-row: 3/10;
-    display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
 }
 
+.container-menu ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+
 .container-notes {
-    background-color: gainsboro;
     grid-column: 9;
     grid-row: 2/10;
     padding: 0 10px;
@@ -49,18 +59,12 @@ body {
     list-style-type: none;
 }
 
-.container-menu ul {
-    padding-left: 10px;
-    list-style-type: none;
-}
-
-.weekday {
-    background-color: ghostwhite;
-}
-
 .cal-day {
-    border: 1px black solid;
+    background-color: rgb(235, 235, 247);
+    border-radius: 4px;
+    border: 1px solid rgb(138, 137, 137);
     margin: 1px;
+    padding: .1rem .3rem;
 }
 
 .cal-day:hover {
@@ -69,6 +73,12 @@ body {
 
 .hd-brand {
     float: left;
+}
+
+.hd-brand a {
+    color: aquamarine;
+    font-size: 17px;
+    text-decoration: none;
 }
 
 .hd-search {
@@ -80,17 +90,28 @@ input[type="search"] {
     width: 95%;
 }
 
-.nav-link.active {
-    color: #6da7ff;
+.nav-item {
+    overflow: hidden;
 }
 
 .nav-item button {
+    background-color: inherit;
+    border: none;
     color: #0d6efd;
     display: block;
+    font-size: 16px;
+    outline: none;
     padding: .5rem 1rem;
     text-decoration: none;
-    /* border: 1px solid azure;
-    background: azure; */
+    transition: 0.3s;
+}
+
+.nav-item button:hover {
+    background-color: #ddd;
+}
+
+.nav-item button.active {
+    background-color: #ccc;
 }
 
 @media screen and (max-width:550px) {
@@ -104,7 +125,7 @@ input[type="search"] {
         grid-row: 2;
     }
 
-    .container-calend {
+    .container-main {
         grid-column: 1/10;
         grid-row: 3/10;
     }
@@ -121,5 +142,26 @@ input[type="search"] {
 
     input[type="search"] {
         width: 81%;
+    }
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
