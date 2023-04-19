@@ -7,11 +7,6 @@
     <title>Calendarium</title>
     <link rel="icon" href="./favicon.ico">
     <style>
-        /* * {
-            margin: 0;
-            padding: 0;
-        } */
-
         .tabs {
             display: block;
             position: relative;
@@ -30,21 +25,24 @@
 
         .tabs .tab>label {
             display: block;
-            padding: 6px 21px;
+            padding: 6px;
             position: relative;
         }
 
         .tabs .content {
+            background-color: rgb(235, 235, 235);
             left: 0;
             opacity: 0;
             overflow: hidden;
             position: absolute;
             transition: opacity 400ms ease-out;
+            width: 30%;
             z-index: 0;
             /* or display: none; */
         }
 
         .tabs>.tab>[id^="tab"]:checked+label {
+            background-color: rgb(235, 235, 235);
             top: 0;
         }
 
