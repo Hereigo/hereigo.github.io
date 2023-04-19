@@ -7,16 +7,14 @@
     <title>Calendarium</title>
     <link rel="icon" href="./favicon.ico">
     <style>
-        * {
+        /* * {
             margin: 0;
             padding: 0;
-        }
+        } */
 
         .tabs {
             display: block;
-            margin: 40px auto;
             position: relative;
-            width: 600px;
         }
 
         .tabs .tab {
@@ -31,34 +29,22 @@
         }
 
         .tabs .tab>label {
-            background: #4A83FD;
-            color: #FFF;
-            cursor: pointer;
             display: block;
-            font-size: 12px;
             padding: 6px 21px;
             position: relative;
-            text-transform: uppercase;
         }
 
         .tabs .content {
-            background: #303030;
-            color: #DFDFDF;
             left: 0;
             opacity: 0;
             overflow: hidden;
-            padding: 25px;
             position: absolute;
-            top: 27px;
             transition: opacity 400ms ease-out;
-            width: 600px;
             z-index: 0;
             /* or display: none; */
         }
 
         .tabs>.tab>[id^="tab"]:checked+label {
-            background: #303030;
-            color: #F5F5F5;
             top: 0;
         }
 

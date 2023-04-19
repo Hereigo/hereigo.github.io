@@ -7,19 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
+    <style>
+        .nav-item {
+            overflow: hidden;
+        }
+
+        .nav-item button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .nav-item button:hover {
+            background-color: #ddd;
+        }
+
+        .nav-item button.active {
+            background-color: #ccc;
+        }
+
+        .container-calend {
+            display: none;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        /* Fade in tabs */
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-header">
 
-        <div class="hd-brand">
-            <a href="#">Calendarium</a>
-        </div>
         <div class="hd-search">
             <form role="search">
                 <input type="search" placeholder="Search" aria-label="Search">
                 <button type="submit">Srch</button>
             </form>
+        </div>
+        <div class="hd-brand">
+            <a href="#">Calendarium</a>
         </div>
 
     </div>
@@ -29,52 +77,13 @@
 
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
-                    <span data-feather="calendar"></span>
-                    Calend
-                </a>
+                <button class="tablinks" onclick="openTab(event, 'Calendar')">Calendar</button>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
-                    role="tab" aria-controls="nav-home" aria-selected="true">
-                    <span data-feather="chrome"></span>
-                    JScript
-                </a>
+                <button class="tablinks" onclick="openTab(event, 'JScript')">JScript</button>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab" data-bs-target="#nav-linux"
-                    role="tab" aria-controls="nav-linux" aria-selected="false">
-                    <span data-feather="monitor"></span>
-                    Linux
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
-                    data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell" aria-selected="false">
-                    <span data-feather="command"></span>
-                    PowShell
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab" data-bs-target="#nav-python"
-                    role="tab" aria-controls="nav-python" aria-selected="false">
-                    <span data-feather="code"></span>
-                    Python
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="database"></span>
-                    Database
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="nav-reports-tab" data-bs-toggle="tab" data-bs-target="#nav-reports"
-                    role="tab" aria-controls="nav-reports" aria-selected="false">
-                    <span data-feather="bar-chart-2"></span>
-                    Reports
-                </a>
+                <button class="tablinks" onclick="openTab(event, 'Linux')">Linux</button>
             </li>
         </ul>
 
@@ -94,58 +103,73 @@
     </div>
     <!-- ---------------------------------------- -->
     <!-- ---------------------------------------- -->
-    <div class="container-calend">
+    <div class="container-calend" id="Calendar">
 
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
-        <div class="cal-day"></div>
+        <!-- <div id="Calendar" class="tabcontent"> -->
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <div class="cal-day">A</div>
+        <!--  </div>
 
+         -->
+
+
+
+    </div>
+    <div class="container-calend" id="JScript">
+        <h3>JScript</h3>
+        <p>JScriptJScriptJScriptJScript.</p>
+    </div>
+
+    <div class="container-calend" id="Linux">
+        <h3>Linux</h3>
+        <p>Linux Linux Linux Linux Linux .</p>
     </div>
     <!-- ---------------------------------------- -->
     <!-- ---------------------------------------- -->
@@ -181,6 +205,27 @@
     </div>
     <!-- ---------------------------------------- -->
     <!-- ---------------------------------------- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            let startTab = document.getElementById("Calendar");
+            startTab.style.display = "grid";
+            startTab.className += " active";
+        });
+
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("container-calend");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "grid";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 
 </html>

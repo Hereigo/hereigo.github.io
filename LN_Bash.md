@@ -1,5 +1,10 @@
 ### Bash tips :
 
+#### BKP Thunderbird
+```sh
+7z a -t7z -ms=on -m0=lzma2 -mx=9 -mhe -p ~/Desktop/Thunderbird.7z ~/.thunderbird/
+```
+
 #### Convert webp-images into files.png (libwebp is required)
 ```sh
 #!/bin/bash

@@ -27,11 +27,12 @@ body {
     text-align: center;
 }
 
+/* #Calendar, */
 .container-calend {
     background-color: cornsilk;
-    display: grid;
     grid-column: 2/9;
     grid-row: 3/10;
+    display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
 }
@@ -83,11 +84,13 @@ input[type="search"] {
     color: #6da7ff;
 }
 
-.nav-link {
+.nav-item button {
     color: #0d6efd;
     display: block;
     padding: .5rem 1rem;
     text-decoration: none;
+    /* border: 1px solid azure;
+    background: azure; */
 }
 
 @media screen and (max-width:550px) {
