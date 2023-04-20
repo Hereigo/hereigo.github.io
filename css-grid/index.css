@@ -2,7 +2,7 @@ main {
     background-color: ghostwhite;
     display: grid;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 8rem repeat(7, 1fr) 9rem;
     grid-template-rows: repeat(9, 2.1rem 1.5rem 12rem);
     margin-top: 2rem;
 }
@@ -41,6 +41,11 @@ form[role="search"] {
     grid-row: 2/10;
 }
 
+.container-menu ul {
+    list-style-type: none;
+    margin: 1em;
+}
+
 .container-weekdays {
     display: grid;
     grid-column: 2/9;
@@ -63,11 +68,6 @@ form[role="search"] {
     grid-row: 3/10;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
-}
-
-.container-menu ul {
-    list-style-type: none;
-    margin: 1em;
 }
 
 .container-notes {
