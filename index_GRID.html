@@ -66,8 +66,9 @@
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-main" id="Calendar">
+        <div class="container-main" id="calendar">
 
+            <!-- <div class="cal-day">A</div>
             <div class="cal-day">A</div>
             <div class="cal-day">A</div>
             <div class="cal-day">A</div>
@@ -115,8 +116,7 @@
             <div class="cal-day">A</div>
             <div class="cal-day">A</div>
             <div class="cal-day">A</div>
-            <div class="cal-day">A</div>
-            <div class="cal-day">A</div>
+            <div class="cal-day">A</div> -->
         </div>
 
         <!-- ------------------------------------------------------------- -->
@@ -180,7 +180,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", (event) => {
-            let startTab = document.getElementById("Calendar");
+            let startTab = document.getElementById("calendar");
             startTab.style.display = "grid";
             startTab.className += " active";
         });
@@ -199,6 +199,8 @@
             evt.currentTarget.className += " active";
         }
     </script>
+
+    <script src="./index_Calend.js"></script>
 
 </body>
 
