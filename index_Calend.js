@@ -84,16 +84,16 @@ window.onload = function () {
 
 		// TODO:
 		// MUST INSERT BY COLUMN !!!
-		for (let r = 0; r < 6; r++) {
-			let row = document.createElement('div');
-			row.classList.add('row');
-			row.classList.add('calendar-week');
+		for (let r = 0; r < 7; r++) {
+			// 	let row = document.createElement('div');
+			// 	row.classList.add('row');
+			// 	row.classList.add('calendar-week');
 
-			row.style.backgroundColor = (r % 2 == 0) ? '#000' : '#fff';
+			// 	row.style.backgroundColor = (r % 2 == 0) ? '#000' : '#fff';
 
-			calendar.append(row);
+			// 	calendar.append(row);
 
-			for (let col = 0; col < 7; col++) {
+			for (let col = 0; col < 6; col++) {
 				let cell = document.createElement('div');
 				cell.classList.add('cal-day');
 				// cell.classList.add('col-xs-1');
@@ -140,7 +140,8 @@ window.onload = function () {
 				colSub2.append(colSub3t);
 				colSub.append(colSub2);
 				cell.append(colSub);
-				row.append(cell);
+				//row.append(cell);
+				calendar.append(cell);
 			}
 		}
 	};
