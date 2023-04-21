@@ -15,6 +15,9 @@ journalctl --since yesterday --until 2029-12-31 12:00:00
 journalctl --no-page # with no 'less' option
 
 journalctl -o json-pretty >> ~/Desktop/journalctl.json
+
+# SERVICES:
+systemctl list-unit-files --type=service
 #
 ```
 
