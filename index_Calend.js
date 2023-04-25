@@ -42,7 +42,7 @@ window.onload = function () {
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
 		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
-		{ m: 04, d: 28, b: 000, c: "b", n: "TRAIN! BD." },
+		{ m: 04, d: 28, b: 000, c: "b", n: "TRAIN! BD." }
 	];
 
 	const aYear = new Date().getFullYear();
