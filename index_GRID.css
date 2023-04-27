@@ -98,11 +98,13 @@ form[role="search"] {
 }
 
 .dateText li {
+    font-size: xx-small;
     list-style-type: none;
 }
 
 .dateText ul {
     padding-left: 0;
+    margin-bottom: 0;
 }
 
 @media screen and (max-width:550px) {
