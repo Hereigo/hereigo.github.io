@@ -98,7 +98,6 @@ form[role="search"] {
 }
 
 .dateText li {
-    font-size: xx-small;
     list-style-type: none;
 }
 
@@ -110,6 +109,10 @@ form[role="search"] {
 @media screen and (max-width:550px) {
     main {
         margin-top: 4rem;
+    }
+
+    .dateText li {
+        font-size: xx-small;
     }
 
     .navbar-brand {

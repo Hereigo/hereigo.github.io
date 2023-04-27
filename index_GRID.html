@@ -36,13 +36,13 @@
         <div class="container-menu">
             <ul class="nav">
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'Calendar')">Calendar</button>
+                    <button class="tablinks" onclick="openTab(event, 'calendar')">Calendar</button>
                 </li>
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'JScript')">JScript</button>
+                    <button class="tablinks" onclick="openTab(event, 'jscript')">JScript</button>
                 </li>
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'Linux')">Linux</button>
+                    <button class="tablinks" onclick="openTab(event, 'linux')">Linux</button>
                 </li>
             </ul>
         </div>
@@ -51,7 +51,6 @@
         <!-- ------------------------------------------------------------- -->
 
         <div class="container-weekdays">
-
             <div class="weekday">Mon</div>
             <div class="weekday">Tue</div>
             <div class="weekday">Wed</div>
@@ -70,17 +69,17 @@
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-main" id="JScript">
-            <h3>JScript</h3>
-            <p>JScriptJScriptJScriptJScript.</p>
+        <div class="container-main" id="jscript">
+            <h3>jscript</h3>
+            <p>jscript jscript jscript jscript.</p>
         </div>
 
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-main" id="Linux">
-            <h3>Linux</h3>
-            <p>Linux Linux Linux Linux Linux .</p>
+        <div class="container-main" id="linux">
+            <h3>linux</h3>
+            <p>linux linux linux linux linux .</p>
         </div>
 
         <!-- ------------------------------------------------------------- -->
@@ -127,7 +126,7 @@
             startTab.className += " active";
         });
 
-        function openTab(evt, cityName) {
+        function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("container-main");
             for (i = 0; i < tabcontent.length; i++) {
@@ -137,7 +136,7 @@
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            document.getElementById(cityName).style.display = "grid";
+            document.getElementById(tabName).style.display = "grid";
             evt.currentTarget.className += " active";
         }
     </script>
