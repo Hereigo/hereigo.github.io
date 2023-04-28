@@ -1,11 +1,10 @@
 main {
-    background-color: azure;
-    /* background-color: ghostwhite; */
+    background-color: ghostwhite;
     display: grid;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     grid-template-columns: 8rem repeat(7, 1fr) 9rem;
     grid-template-rows: repeat(9, 2.1rem 1.5rem 12rem);
-    margin-top: 2rem;
+    margin-top: 1.4rem;
 }
 
 form[role="search"] {
@@ -80,7 +79,7 @@ form[role="search"] {
     padding-left: 0;
 }
 
-.cal-day {
+.calenDay-block {
     background-color: rgb(235, 235, 247);
     border-radius: 4px;
     border: 1px solid rgb(138, 137, 137);
@@ -88,30 +87,30 @@ form[role="search"] {
     padding: .1rem .3rem;
 }
 
-.cal-day:hover {
+.calenDay-block:hover {
     background-color: gainsboro;
 }
 
-.dateText {
+.dayRecord {
     color: #00f;
     font-size: 9pt;
 }
 
-.dateText li {
+.dayRecord li {
     list-style-type: none;
 }
 
-.dateText ul {
+.dayRecord ul {
     padding-left: 0;
     margin-bottom: 0;
 }
 
 @media screen and (max-width:550px) {
     main {
-        margin-top: 4rem;
+        margin-top: 2.2rem;
     }
 
-    .dateText li {
+    .dayRecord li {
         font-size: xx-small;
     }
 

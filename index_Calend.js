@@ -1,7 +1,7 @@
 window.onload = function () {
 
 	const aData = [
-		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon+Count." },
+		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon i Count." },
 		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
 		{ m: 00, d: 10, b: 000, c: "x", n: "Counters." },
 		{ m: 00, d: 10, b: 200, c: "x", n: "200 KS" },
@@ -19,7 +19,7 @@ window.onload = function () {
 		{ m: 01, d: 24, b: 000, c: "b", n: "Svyatno" },
 		{ m: 01, d: 30, b: 000, c: "b", n: "Kostromin" },
 		{ m: 02, d: 14, b: 000, c: "x", n: "Valentine`s day." },
-		{ m: 03, d: 01, b: 000, c: "x", n: "Chg-HLT-2-MailOnly" },
+		{ m: 03, d: 01, b: 000, c: "x", n: "Chg-HLT 2 MailOnly" },
 		{ m: 03, d: 01, b: 303, c: "x", n: "ML-13.03" },
 		{ m: 03, d: 07, b: 000, c: "b", n: "Kris BD." },
 		{ m: 03, d: 08, b: 000, c: "x", n: "Girls Day." },
@@ -95,7 +95,7 @@ window.onload = function () {
 
 			for (let col = 0; col < 6; col++) {
 				let cell = document.createElement('div');
-				cell.classList.add('cal-day');
+				cell.classList.add('calenDay-block');
 				// cell.classList.add('col-xs-1');
 				// cell.classList.add('grid-cell');
 				let colSub = document.createElement('div');
@@ -128,8 +128,8 @@ window.onload = function () {
 								element.n + '</li>';
 						});
 					notes += '</ul>';
-					colSub3t.classList.add('dateText');
-					colSub3d.classList.add('calDate');
+					colSub3t.classList.add('dayRecord');
+					colSub3d.classList.add('calenDay');
 					colSub3t.innerHTML = notes;
 					colSub3d.textContent = daysCounter;
 					daysCounter += 1;
