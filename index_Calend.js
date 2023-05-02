@@ -115,7 +115,7 @@ window.onload = function () {
 							element.n + '</li>';
 					});
 				notes += '</ul>';
-				colSub3t.classList.add('dayRecord');
+				colSub3t.classList.add('aDayList');
 				colSub3d.classList.add('calenDate');
 				colSub3t.innerHTML = notes;
 				colSub3d.textContent = daysCounter;
