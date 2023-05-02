@@ -11,24 +11,24 @@ main {
     margin-top: 1.4rem;
 }
 
-/* -- TABS-MENU */
+/* ---------- TABS-MENU ---------- */
 
-.container-menu {
+.box-menu {
     grid-column: 1;
     grid-row: 2/10;
 }
 
-.container-menu ul {
+.box-menu ul {
     list-style-type: none;
     margin: 1em;
 }
 
-.container-menu .nav-item {
+.box-menu .nav-item {
     overflow: hidden;
     width: 100%;
 }
 
-.container-menu .nav-item button {
+.box-menu .nav-item button {
     background-color: inherit;
     border-radius: 5px;
     border: none;
@@ -41,14 +41,14 @@ main {
     transition: 0.3s;
 }
 
-.container-menu .nav-item button.active,
-.container-menu .nav-item button:hover {
+.box-menu .nav-item button.active,
+.box-menu .nav-item button:hover {
     background-color: #ddd;
 }
 
-/* -- TABs-switcher -- */
+/* ---------- TABs-Switcher ---------- */
 
-.container-main {
+.box-pages {
     -webkit-animation: fadeEffect 1s;
     animation: fadeEffect 1s;
     display: grid;
@@ -59,9 +59,9 @@ main {
     grid-template-rows: repeat(7, 1fr);
 }
 
-/* -- CALENDAR -- */
+/* ---------- CALENDAR ---------- */
 
-.container-weekdays {
+.box-weekdays {
     display: grid;
     grid-column: 2/9;
     grid-row: 2;
@@ -69,7 +69,7 @@ main {
     text-align: center;
 }
 
-.container-weekdays .weekday {
+.box-weekdays .weekday {
     background-color: ghostwhite;
 }
 
@@ -128,19 +128,19 @@ main {
     font-weight: 700;
 }
 
-/* -- NOTES -- */
+/* ---------- NOTES ---------- */
 
-.container-notes {
+.box-notes {
     grid-column: 9;
     grid-row: 2/10;
     padding: 20px 10px;
 }
 
-.container-notes ul {
-    padding-left: .7rem;
+.box-notes ul {
+    padding-left: 1rem;
 }
 
-/* -- MEDIA --  */
+/* ---------- MEDIA ----------  */
 
 @media screen and (max-width:550px) {
     main {
@@ -157,22 +157,22 @@ main {
         padding: 0;
     }
 
-    .container-menu {
+    .box-menu {
         grid-column: 1/4;
         grid-row: 10;
     }
 
-    .container-weekdays {
+    .box-weekdays {
         grid-column: 1/10;
         grid-row: 2;
     }
 
-    .container-main {
+    .box-pages {
         grid-column: 1/10;
         grid-row: 3/10;
     }
 
-    .container-notes {
+    .box-notes {
         grid-column: 5/10;
         grid-row: 10;
     }

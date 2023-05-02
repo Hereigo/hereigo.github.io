@@ -33,7 +33,7 @@
 
     <main>
 
-        <div class="container-menu">
+        <div class="box-menu">
             <ul class="nav">
                 <li class="nav-item">
                     <button class="tablinks" onclick="openTab(event, 'calendar')">Calendar</button>
@@ -50,7 +50,7 @@
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-weekdays">
+        <div class="box-weekdays">
             <div class="weekday">Mon</div>
             <div class="weekday">Tue</div>
             <div class="weekday">Wed</div>
@@ -63,15 +63,15 @@
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-main" id="calendar">
+        <div class="box-pages" id="calendar">
         </div>
 
-        <div class="container-main" id="jscript">
+        <div class="box-pages" id="jscript">
             <h3>jscript</h3>
             <p>jscript jscript jscript jscript.</p>
         </div>
 
-        <div class="container-main" id="linux">
+        <div class="box-pages" id="linux">
             <h3>linux</h3>
             <p>linux linux linux linux linux .</p>
         </div>
@@ -79,7 +79,7 @@
         <!-- ------------------------------------------------------------- -->
         <!-- ------------------------------------------------------------- -->
 
-        <div class="container-notes">
+        <div class="box-notes">
             <ul>
                 <li>! iMportant !</li>
                 <hr />
@@ -124,7 +124,7 @@
 
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("container-main");
+            tabcontent = document.getElementsByClassName("box-pages");
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
