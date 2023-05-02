@@ -78,78 +78,58 @@ window.onload = function () {
 			b.classList.add('btn-light');
 		});
 
-		// let monBtnCurrent = document.querySelector('#mon' + MONTH);
-		// monBtnCurrent.classList.remove('btn-light');
-		// monBtnCurrent.classList.add('btn-primary');
-
-		// TODO:
-		// MUST INSERT BY COLUMN !!!
 		for (let col = 1; col < 43; col++) {
-			// 	let row = document.createElement('div');
-			// 	row.classList.add('row');
-			// 	row.classList.add('calendar-week');
 
-			// 	row.style.backgroundColor = (r % 2 == 0) ? '#000' : '#fff';
+			let cell = document.createElement('div');
+			cell.classList.add('calenDay-block');
 
-			// 	calendar.append(row);
-
-			//for (let col = 0; col < 6; col++) 
-			{
-				let cell = document.createElement('div');
-				cell.classList.add('calenDay-block');
-
-
-				if (col % 7 == 0 || (col + 1) % 7 == 0) {
-					cell.classList.add('calenDay-holyday');
-				}
-
-				// cell.classList.add('col-xs-1');
-				// cell.classList.add('grid-cell');
-				let colSub = document.createElement('div');
-				let colSub2 = document.createElement('div');
-				let colSub3t = document.createElement('span');
-				let colSub3d = document.createElement('span');
-
-				if (daysCounter > monLastDay) {
-					isNextMonth = true;
-					daysCounter = 1;
-				}
-
-				if (isRealMonth && !isNextMonth && daysCounter == monCurrDay) { cell.classList.add('today'); }
-
-				if (col > 4) { cell.classList.add('holyday') }
-
-				if (col < 7 && col < weekDay) {
-					cell.classList.add('prev-month');
-				}
-				else {
-					let monHumanNumber = isNextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
-					// TODO:
-					// Add importance marks for Celebrations...
-					let notes = '<ul>';
-					aData.filter(x =>
-						(x.d === daysCounter && x.m === 0) ||
-						(x.d === daysCounter && x.m === monHumanNumber)).forEach(element => {
-							notes +=
-								'<li' + (element.n.endsWith('BD.') ? ' class="BDay" ' : '') + '>' +
-								element.n + '</li>';
-						});
-					notes += '</ul>';
-					colSub3t.classList.add('dayRecord');
-					colSub3d.classList.add('calenDay');
-					colSub3t.innerHTML = notes;
-					colSub3d.textContent = daysCounter;
-					daysCounter += 1;
-					if (isNextMonth)
-						cell.classList.add('next-month');
-				}
-				colSub2.append(colSub3d);
-				colSub2.append(colSub3t);
-				colSub.append(colSub2);
-				cell.append(colSub);
-				//row.append(cell);
-				calendar.append(cell);
+			if (col % 7 == 0 || (col + 1) % 7 == 0) {
+				cell.classList.add('holyday');
 			}
+
+			let colSub = document.createElement('div');
+			let colSub2 = document.createElement('div');
+			let colSub3t = document.createElement('span');
+			let colSub3d = document.createElement('span');
+
+			if (daysCounter > monLastDay) {
+				isNextMonth = true;
+				daysCounter = 1;
+			}
+
+			if (isRealMonth && !isNextMonth && daysCounter == monCurrDay) { cell.classList.add('today'); }
+
+			if (col < 7 && col < weekDay) {
+				cell.classList.add('prev-month');
+			}
+			else {
+				let monHumanNumber = isNextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+				// TODO:
+				// Add importance marks for Celebrations...
+				let notes = '<ul>';
+				aData.filter(x =>
+					(x.d === daysCounter && x.m === 0) ||
+					(x.d === daysCounter && x.m === monHumanNumber)).forEach(element => {
+						notes +=
+							'<li' + (element.n.endsWith('BD.') ? ' class="BDay" ' : '') + '>' +
+							element.n + '</li>';
+					});
+				notes += '</ul>';
+				colSub3t.classList.add('dayRecord');
+				colSub3d.classList.add('calenDay');
+				colSub3t.innerHTML = notes;
+				colSub3d.textContent = daysCounter;
+				daysCounter += 1;
+				if (isNextMonth)
+					cell.classList.add('next-month');
+			}
+			colSub2.append(colSub3d);
+			colSub2.append(colSub3t);
+			colSub.append(colSub2);
+			cell.append(colSub);
+			//row.append(cell);
+			calendar.append(cell);
+
 		}
 	};
 }

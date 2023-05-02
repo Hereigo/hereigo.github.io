@@ -82,11 +82,21 @@ main {
 }
 
 .calenDay-block:hover {
-    background-color: gainsboro;
+    background-color: #fff;
 }
 
-.calenDay-holyday {
+.holyday {
     background-color: rgb(255, 230, 234);
+}
+
+.today {
+    background-color: azure;
+}
+
+.today .calenDay {
+    color: #00f;
+    font-size: larger;
+    font-weight: 700;
 }
 
 .dayRecord {
@@ -99,8 +109,8 @@ main {
 }
 
 .dayRecord ul {
-    padding-left: 0;
     margin-bottom: 0;
+    padding-left: 0;
 }
 
 /* -- NOTES -- */
