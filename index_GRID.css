@@ -67,9 +67,9 @@ main {
 .infoPage {
     border-radius: 15px;
     border: #0d6efd 1px solid;
-    margin: 1rem .5rem;
+    margin: 1rem 20rem 1rem 0;
     padding: 1rem;
-    width: 100%;
+    /* width: 83%; */
 }
 
 /* -------------------- CALENDAR -------------------- */
