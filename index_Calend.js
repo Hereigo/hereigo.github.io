@@ -126,9 +126,7 @@ window.onload = function () {
 			colSub2.append(colSub3t);
 			colSub.append(colSub2);
 			cell.append(colSub);
-			//row.append(cell);
 			calendar.append(cell);
-
 		}
 	};
 }

@@ -34,13 +34,19 @@
         <div class="box-menu">
             <ul class="nav">
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'calendar')">Calendar</button>
+                    <button class="tablinks" onclick="openTab(event, 'calendar')">
+                        <span data-feather="calendar"></span>&nbsp; Calendar
+                    </button>
                 </li>
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'jscript')">JScript</button>
+                    <button class="tablinks" onclick="openTab(event, 'jscript')">
+                        <span data-feather="chrome"></span>&nbsp; JScript
+                    </button>
                 </li>
                 <li class="nav-item">
-                    <button class="tablinks" onclick="openTab(event, 'linux')">Linux</button>
+                    <button class="tablinks" onclick="openTab(event, 'linux')">
+                        <span data-feather="monitor"></span>&nbsp; Linux
+                    </button>
                 </li>
             </ul>
         </div>
@@ -65,13 +71,17 @@
         </div>
 
         <div class="box-pages" id="jscript">
-            <h3>jscript</h3>
-            <p>jscript jscript jscript jscript.</p>
+            <div class="infoPage">
+                <h3>jscript</h3>
+                <p>jscript jscript jscript jscript.</p>
+            </div>
         </div>
 
         <div class="box-pages" id="linux">
-            <h3>linux</h3>
-            <p>linux linux linux linux linux .</p>
+            <div class="infoPage">
+                <h3>linux</h3>
+                <p>linux linux linux linux linux .</p>
+            </div>
         </div>
 
         <!-- ------------------------------------------------------------- -->
@@ -81,7 +91,7 @@
             <ul>
                 <li>! iMportant !</li>
                 <hr />
-                <li>2byu1kbux</li>
+                <li>2byu-1kbux</li>
                 <hr />
                 <li>Meta-Life-!!!</li>
                 <hr />
@@ -136,6 +146,19 @@
     </script>
 
     <script src="./index_Calend.js"></script>
+
+    <script src="./libs/feather.min.js"></script>
+
+    <script>
+        (function () {
+            'use strict'
+            /* globals Chart:false, feather:false */
+            feather.replace({ 'aria-hidden': 'true' });
+
+            // const codeTags = document.querySelectorAll('.markdown-body pre>code');
+            // codeTags.forEach(c => c.style.fontSize = '50%');
+        })();
+    </script>
 
 </body>
 

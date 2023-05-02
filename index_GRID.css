@@ -20,7 +20,7 @@ main {
 
 .box-menu ul {
     list-style-type: none;
-    margin: 1em;
+    margin: 2rem 1em;
 }
 
 .box-menu .nav-item {
@@ -46,6 +46,11 @@ main {
     background-color: #ddd;
 }
 
+.feather {
+    height: 18px;
+    width: 18px;
+}
+
 /* -------------------- TABs-Switcher -------------------- */
 
 .box-pages {
@@ -57,6 +62,14 @@ main {
     grid-row: 3/10;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(7, 1fr);
+}
+
+.infoPage {
+    border-radius: 15px;
+    border: #0d6efd 1px solid;
+    margin: 1rem .5rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 /* -------------------- CALENDAR -------------------- */
@@ -156,6 +169,10 @@ main {
 /* -------------------- MEDIA --------------------  */
 
 @media screen and (max-width:550px) {
+    #calendar {
+        margin-bottom: -110px;
+    }
+
     main {
         margin-top: 2.2rem;
     }
