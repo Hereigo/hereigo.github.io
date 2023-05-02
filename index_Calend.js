@@ -84,7 +84,7 @@ window.onload = function () {
 
 		// TODO:
 		// MUST INSERT BY COLUMN !!!
-		for (let r = 0; r < 7; r++) {
+		for (let col = 1; col < 43; col++) {
 			// 	let row = document.createElement('div');
 			// 	row.classList.add('row');
 			// 	row.classList.add('calendar-week');
@@ -93,9 +93,16 @@ window.onload = function () {
 
 			// 	calendar.append(row);
 
-			for (let col = 0; col < 6; col++) {
+			//for (let col = 0; col < 6; col++) 
+			{
 				let cell = document.createElement('div');
 				cell.classList.add('calenDay-block');
+
+
+				if (col % 7 == 0 || (col + 1) % 7 == 0) {
+					cell.classList.add('calenDay-holyday');
+				}
+
 				// cell.classList.add('col-xs-1');
 				// cell.classList.add('grid-cell');
 				let colSub = document.createElement('div');
@@ -112,7 +119,7 @@ window.onload = function () {
 
 				if (col > 4) { cell.classList.add('holyday') }
 
-				if (r === 0 && col < weekDay) {
+				if (col < 7 && col < weekDay) {
 					cell.classList.add('prev-month');
 				}
 				else {

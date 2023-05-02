@@ -1,15 +1,17 @@
+form[role="search"] {
+    width: 100%;
+}
+
 main {
     background-color: ghostwhite;
     display: grid;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    grid-template-columns: 8rem repeat(7, 1fr) 9rem;
+    grid-template-columns: 10rem repeat(7, 1fr) 11rem;
     grid-template-rows: repeat(9, 2.1rem 1.5rem 12rem);
     margin-top: 1.4rem;
 }
 
-form[role="search"] {
-    width: 100%;
-}
+/* -- TABS-MENU */
 
 .container-menu {
     grid-column: 1;
@@ -44,6 +46,21 @@ form[role="search"] {
     background-color: #ddd;
 }
 
+/* -- TABs-switcher -- */
+
+.container-main {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+    display: grid;
+    display: none;
+    grid-column: 2/9;
+    grid-row: 3/10;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+/* -- CALENDAR -- */
+
 .container-weekdays {
     display: grid;
     grid-column: 2/9;
@@ -56,29 +73,6 @@ form[role="search"] {
     background-color: ghostwhite;
 }
 
-/* TABs-SWITCHER */
-.container-main {
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s;
-    display: grid;
-    display: none;
-    grid-column: 2/9;
-    grid-row: 3/10;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-}
-
-.container-notes {
-    grid-column: 9;
-    grid-row: 2/10;
-    padding: 20px 10px;
-}
-
-.container-notes ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .calenDay-block {
     background-color: rgb(235, 235, 247);
     border-radius: 4px;
@@ -89,6 +83,10 @@ form[role="search"] {
 
 .calenDay-block:hover {
     background-color: gainsboro;
+}
+
+.calenDay-holyday {
+    background-color: rgb(255, 230, 234);
 }
 
 .dayRecord {
@@ -104,6 +102,20 @@ form[role="search"] {
     padding-left: 0;
     margin-bottom: 0;
 }
+
+/* -- NOTES -- */
+
+.container-notes {
+    grid-column: 9;
+    grid-row: 2/10;
+    padding: 20px 10px;
+}
+
+.container-notes ul {
+    padding-left: .7rem;
+}
+
+/* -- MEDIA --  */
 
 @media screen and (max-width:550px) {
     main {
