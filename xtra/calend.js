@@ -1,7 +1,7 @@
 window.onload = function () {
 
 	const aData = [
-		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon+Count." },
+		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon i Count." },
 		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
 		{ m: 00, d: 10, b: 000, c: "x", n: "Counters." },
 		{ m: 00, d: 10, b: 200, c: "x", n: "200 KS" },
@@ -19,7 +19,7 @@ window.onload = function () {
 		{ m: 01, d: 24, b: 000, c: "b", n: "Svyatno" },
 		{ m: 01, d: 30, b: 000, c: "b", n: "Kostromin" },
 		{ m: 02, d: 14, b: 000, c: "x", n: "Valentine`s day." },
-		{ m: 03, d: 01, b: 000, c: "x", n: "Chg-HLT-2-MailOnly" },
+		{ m: 03, d: 01, b: 000, c: "x", n: "Chg-HLT 2 MailOnly" },
 		{ m: 03, d: 01, b: 303, c: "x", n: "ML-13.03" },
 		{ m: 03, d: 07, b: 000, c: "b", n: "Kris BD." },
 		{ m: 03, d: 08, b: 000, c: "x", n: "Girls Day." },
@@ -41,8 +41,7 @@ window.onload = function () {
 		{ m: 10, d: 28, b: 000, c: "b", n: "Dzuba" },
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
-		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
-		{ m: 04, d: 28, b: 000, c: "b", n: "TRAIN! BD." }
+		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." }
 	];
 
 	const aYear = new Date().getFullYear();
