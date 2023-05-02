@@ -81,7 +81,7 @@ window.onload = function () {
 		for (let col = 1; col < 43; col++) {
 
 			let cell = document.createElement('div');
-			cell.classList.add('calenDay-block');
+			cell.classList.add('aDay');
 
 			if (col % 7 == 0 || (col + 1) % 7 == 0) {
 				cell.classList.add('holyday');
@@ -116,7 +116,7 @@ window.onload = function () {
 					});
 				notes += '</ul>';
 				colSub3t.classList.add('dayRecord');
-				colSub3d.classList.add('calenDay');
+				colSub3d.classList.add('calenDate');
 				colSub3t.innerHTML = notes;
 				colSub3d.textContent = daysCounter;
 				daysCounter += 1;

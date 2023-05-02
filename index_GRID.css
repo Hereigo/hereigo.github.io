@@ -73,7 +73,7 @@ main {
     background-color: ghostwhite;
 }
 
-.calenDay-block {
+.aDay {
     background-color: rgb(235, 235, 247);
     border-radius: 4px;
     border: 1px solid rgb(138, 137, 137);
@@ -81,22 +81,8 @@ main {
     padding: .1rem .3rem;
 }
 
-.calenDay-block:hover {
+.aDay:hover {
     background-color: #fff;
-}
-
-.holyday {
-    background-color: rgb(255, 230, 234);
-}
-
-.today {
-    background-color: azure;
-}
-
-.today .calenDay {
-    color: #00f;
-    font-size: larger;
-    font-weight: 700;
 }
 
 .dayRecord {
@@ -111,6 +97,35 @@ main {
 .dayRecord ul {
     margin-bottom: 0;
     padding-left: 0;
+}
+
+.next-month .dayRecord {
+    color: rgb(138, 137, 137);
+}
+
+.next-month {
+    color: rgb(138, 137, 137);
+    background-color: rgb(228, 228, 230);
+}
+
+.holyday {
+    color: #f00;
+    background-color: rgb(255, 230, 234);
+}
+
+.holyday.next-month {
+    color: rgb(138, 137, 137);
+    background-color: rgb(233, 217, 220);
+}
+
+.today {
+    background-color: azure;
+}
+
+.today .calenDate {
+    color: #00f;
+    font-size: larger;
+    font-weight: 700;
 }
 
 /* -- NOTES -- */
