@@ -104,10 +104,12 @@ main {
     padding-left: 0;
 }
 
+.prev-month .aDayList,
 .next-month .aDayList {
     color: rgb(138, 137, 137);
 }
 
+.prev-month,
 .next-month {
     color: rgb(138, 137, 137);
     background-color: rgb(228, 228, 230);
@@ -118,6 +120,7 @@ main {
     background-color: rgb(255, 230, 234);
 }
 
+.holyday.prev-month,
 .holyday.next-month {
     color: rgb(138, 137, 137);
     background-color: rgb(233, 217, 220);
