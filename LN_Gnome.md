@@ -22,10 +22,8 @@ yay -S gnome-tweaks gnome-browser-connector gnome-system-monitor
 ```sh
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b %d,   %A,   %X'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%d,   %A,   %H:%M %p'"
-dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %H:%M %p'"
 dconf write /org/gnome/shell/extensions/panel-date-format/format "'%b  %e  %a  %R'"
-dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A    ·    %R    ·    %B  %e'"
-dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A     ·     %H : %M     ·     %B  %e'"
+dconf write /org/gnome/shell/extensions/panel-date-format/format "'%A · %H : %M · %B %e'"
 # More formats here - https://docs.gtk.org/glib/method.DateTime.format.html
 ```
 

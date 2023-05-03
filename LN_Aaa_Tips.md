@@ -129,14 +129,15 @@ sudo systemctl status fstrim.timer
 ```sh
 sudo ufw enable
 sudo systemctl enable ufw # ... ->
-# Created symlink /etc/systemd/system/multi-user.target.wants/ufw.service → /usr/lib/systemd/system/ufw.service.
+# Created symlink 
+#/etc/systemd/system/multi-user.target.wants/ufw.service → /usr/lib/systemd/system/ufw.service
 sudo ufw status
 ```
 
 #### To update FONTS cache:
 ```sh
 fc-cache -fvh
-# -f     Force re-generation of apparently up-to-date cache files, overriding the  timestamp checking.
+# -f     Force re-generation of apparently up-to-date cache files, overriding timestamp
 # -r     Erase all existing cache files and rescan.
 # -v     Display status information while busy.
 # -h     Show summary of options.

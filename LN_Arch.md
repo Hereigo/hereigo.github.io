@@ -7,7 +7,8 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 
-yay gnome-system-monitor skypeforlinux-stable-bin visual-studio-code-bin nomacs 7-zip-full exaile smplayer flameshot vokoscreen remmina freerdp viber
+yay gnome-system-monitor skypeforlinux-stable-bin visual-studio-code-bin/
+nomacs p7zip-full exaile smplayer flameshot vokoscreen remmina freerdp
 # + snappy - is viber dependency on Arch.
 
 # EOS-Sendlog
@@ -30,7 +31,8 @@ yay -Qn # Native packages
 yay -Yc
 # Remove orphaned packages:
 yay -Rns $(yay -Qtdq)
-# Detecting more unneeded packages (dependency cycles, excessive dependencies, unexplicit optionals etc.
+# Detecting more unneeded packages
+# (dependency cycles, excessive dependencies, unexplicit optionals etc.)
 yay -Qqd | pacman -Rsu --print -
 
 # If necessary to test Microphone and Camera:
