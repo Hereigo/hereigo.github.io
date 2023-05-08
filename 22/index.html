@@ -47,6 +47,10 @@
 
         .menu {}
 
+        .menu ul {
+            padding-left: 0;
+        }
+
         .menu li {
             list-style-type: none;
             margin: .8rem 0;
@@ -70,6 +74,20 @@
             .aside {
                 flex: .4 0 0;
             }
+
+            /* .menu li {
+                font-size: small;
+            } */
+
+            /* .menu button {
+                padding: .3rem;
+                width: 6rem;
+            } */
+
+            /* .calenDay {
+                padding: .1rem .3rem;
+                font-size: 12px;
+            } */
         }
 
         @media all and (min-width: 800px) {
@@ -102,64 +120,24 @@
 
         <!---------------------------- CENTER ---------------------------->
 
-        <article id="calendar" class="center">
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
-            <div class="calenDay">A</div>
+        <article class="center" id="calendar">
         </article>
 
-        <article id="jscript" class="center">
+
+        <article class="center" id="jscript">
             <h3>JScript</h3>
             <p>JScript JScript JScript JScript JScript JScript JScript</p>
         </article>
 
-        <article id="linux" class="center">
+
+        <article class="center" id="linux">
             <h3>linux</h3>
             <p>linux linux linux linux linux linux linux linux</p>
         </article>
 
         <!---------------------------- MENU ---------------------------->
 
-        <aside class="aside menu">
+        <block class="aside menu">
             <ul>
                 <li>
                     <button onclick="openTab(event, 'calendar')">
@@ -177,11 +155,11 @@
                     </button>
                 </li>
             </ul>
-        </aside>
+        </block>
 
         <!---------------------------- NOTES ---------------------------->
 
-        <aside class="aside notes">
+        <block class="aside notes">
             <ul>
                 <li>! iMportant !</li>
                 <hr />
@@ -209,7 +187,7 @@
                 <li>fla 1 mo</li>
                 <li>foo 8 mix</li>
             </ul>
-        </aside>
+        </block>
 
         <!---------------------------- FOOTER ---------------------------->
 
@@ -225,9 +203,16 @@
         })();
 
         document.addEventListener("DOMContentLoaded", (event) => {
-            let startTab = document.getElementById("calendar");
-            startTab.style.display = "grid";
-            startTab.className += " active";
+            let calenTab = document.getElementById("calendar");
+            calenTab.style.display = "grid";
+            calenTab.className += " active";
+
+            for (i = 0; i < 42; i++) {
+                let div = document.createElement('div');
+                div.classList.add('calenDay');
+                div.innerHTML = '<span class="aDate">' + i + '</span>';
+                calenTab.insertAdjacentElement('beforeend', div);
+            }
         });
 
         function openTab(evt, tabName) {
