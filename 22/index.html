@@ -53,6 +53,7 @@
         }
 
         .menu button {
+            border-radius: 7px;
             padding: .3rem 1rem;
             text-align: left;
             width: 8rem;
@@ -161,17 +162,17 @@
         <aside class="aside menu">
             <ul>
                 <li>
-                    <button class="tablinks" onclick="openTab(event, 'calendar')">
+                    <button onclick="openTab(event, 'calendar')">
                         <span data-feather="calendar"></span>&nbsp; Calendar
                     </button>
                 </li>
                 <li>
-                    <button class="tablinks" onclick="openTab(event, 'jscript')">
+                    <button onclick="openTab(event, 'jscript')">
                         <span data-feather="chrome"></span>&nbsp; JScript
                     </button>
                 </li>
                 <li>
-                    <button class="tablinks" onclick="openTab(event, 'linux')">
+                    <button onclick="openTab(event, 'linux')">
                         <span data-feather="monitor"></span>&nbsp; Linux
                     </button>
                 </li>
@@ -230,20 +231,11 @@
         });
 
         function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-
+            var i, tabcontent;
             tabcontent = document.getElementsByClassName("center");
-
             for (i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
-            tablinks = document.getElementsByClassName("tablinks");
-
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
             document.getElementById(tabName).style.display = "grid";
             evt.currentTarget.className += " active";
         }
