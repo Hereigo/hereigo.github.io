@@ -155,17 +155,17 @@
         <block class="aside menu">
             <ul>
                 <li>
-                    <button onclick="openTab(event, 'calendar')">
+                    <button onclick="tabSwitch(event, 'calendar')">
                         <span data-feather="calendar"></span>&nbsp; Calendar
                     </button>
                 </li>
                 <li>
-                    <button onclick="openTab(event, 'jscript')">
+                    <button onclick="tabSwitch(event, 'jscript')">
                         <span data-feather="chrome"></span>&nbsp; JScript
                     </button>
                 </li>
                 <li>
-                    <button onclick="openTab(event, 'linux')">
+                    <button onclick="tabSwitch(event, 'linux')">
                         <span data-feather="monitor"></span>&nbsp; Linux
                     </button>
                 </li>
@@ -217,10 +217,33 @@
             feather.replace({ 'aria-hidden': 'true' });
         })();
 
+        function tabSwitch(evt, tabName) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("center");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "grid";
+            evt.currentTarget.className += " active";
+        }
+
         document.addEventListener("DOMContentLoaded", (event) => {
             let calenTab = document.getElementById("calendar");
             calenTab.style.display = "grid";
             calenTab.className += " active";
+
+            const aYear = new Date().getFullYear();
+            const MONTH = new Date().getMonth();
+
+            const monFirstDay = new Date(aYear, MONTH, 1);
+            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
+            const weekDay = monFirstDay.getDay() - 1;
+            let aToday = new Date();
+            let daysCounter = 1;
+            let monCurrDay = aToday.getDate();
+
+            alert(weekDay);
+
 
             for (i = 0; i < 42; i++) {
                 let div = document.createElement('div');
@@ -230,15 +253,7 @@
             }
         });
 
-        function openTab(evt, tabName) {
-            var i, tabcontent;
-            tabcontent = document.getElementsByClassName("center");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            document.getElementById(tabName).style.display = "grid";
-            evt.currentTarget.className += " active";
-        }
+
     </script>
 
     <!-- <script src="../xtra/search.js"></script> -->
