@@ -4,10 +4,10 @@ window.onload = function () {
 		{ m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon i Count." },
 		{ m: 00, d: 01, b: 000, c: "x", n: "MONY." },
 		{ m: 00, d: 10, b: 000, c: "x", n: "Counters" },
-		{ m: 00, d: 10, b: 200, c: "x", n: "200 KS" },
 		{ m: 00, d: 12, b: 160, c: "x", n: "160 (28) Life-M" },
 		{ m: 00, d: 13, b: 150, c: "x", n: "150 Penguin YT" },
 		{ m: 00, d: 13, b: 170, c: "x", n: "170 Voda" },
+		{ m: 00, d: 14, b: 200, c: "x", n: "200 KS" },
 		{ m: 00, d: 14, b: 299, c: "x", n: "299 Laner" },
 		{ m: 00, d: 15, b: 999, c: "x", n: "Flat Bills." },
 		{ m: 00, d: 18, b: 888, c: "x", n: "8k-Mon Delon" },
@@ -29,6 +29,7 @@ window.onload = function () {
 		{ m: 05, d: 15, b: 000, c: "b", n: "Subota" },
 		{ m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
 		{ m: 06, d: 04, b: 000, c: "b", n: "Miroshnik" },
+		{ m: 06, d: 05, b: 000, c: "b", n: "PASS chng!" },
 		{ m: 06, d: 24, b: 000, c: "b", n: "Koo" },
 		{ m: 07, d: 13, b: 000, c: "b", n: "Barno" },
 		{ m: 07, d: 14, b: 000, c: "b", n: "Panchen" },
@@ -41,7 +42,7 @@ window.onload = function () {
 		{ m: 10, d: 28, b: 000, c: "b", n: "Dzuba" },
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
-		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." }
+		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
 	];
 
 	const aYear = new Date().getFullYear();
