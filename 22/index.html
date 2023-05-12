@@ -55,7 +55,7 @@
             display: none;
             flex: 3 0px;
             grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(7, 1fr);
+            grid-template-rows: 1fr repeat(7, 5fr);
             padding: 0;
             text-align: left;
         }
@@ -65,6 +65,12 @@
             border: 1px grey solid;
             margin: 1px;
             padding: 0 .5rem;
+        }
+
+        .calenDayHeader {
+            border: 0;
+            font-weight: 600;
+            text-align: center;
         }
 
         .prevMonth,
@@ -130,6 +136,12 @@
             .footer {
                 order: 4;
             }
+        }
+
+        .TEST {
+            /* padding: 0;
+            margin: 0;
+            height: 10px; */
         }
     </style>
 </head>
@@ -225,6 +237,7 @@
             feather.replace({ 'aria-hidden': 'true' });
         })();
 
+
         function tabSwitch(evt, tabName) {
             var i, tabcontent;
             tabcontent = document.getElementsByClassName("center");
@@ -235,36 +248,34 @@
             evt.currentTarget.className += " active";
         }
 
+
         document.addEventListener("DOMContentLoaded", (event) => {
             let calenTab = document.getElementById("calendar");
             calenTab.style.display = "grid";
             calenTab.className += " active";
 
             const aYear = new Date().getFullYear();
-
-
             const MONTH = new Date().getMonth();
-
-
             const monFirstDay = new Date(aYear, MONTH, 1);
-            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate(); // 31
-
-            // Sunday = 0, Monday = 1, ...
-            const monStartWeekDay = monFirstDay.getDay(); // - 1;
-
+            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
+            const monStartWeekDay = monFirstDay.getDay();
+            const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
             //let aToday = new Date();
             //let monCurrDay = aToday.getDate();
-
             let daysCounter = 1;
             let monDate = null;
             let nextMonth = false;
 
-            for (i = 1; i < 43; i++) {
+            for (i = 1; i < 50; i++) {
                 let div = document.createElement('div');
                 div.classList.add('calenDay');
 
-                if (i < monStartWeekDay)
+                if (i <= 7) {
+                    div.classList.add('calenDayHeader');
+                    div.innerHTML = '<div>' + weekDays[i - 1] + '</span>';
+                } else if (i > 7 && i < monStartWeekDay + 7) {
                     div.classList.add('prevMonth');
+                }
                 else if (monDate >= monLastDay || nextMonth) {
                     div.classList.add('nextMonth');
                     monDate = null;
