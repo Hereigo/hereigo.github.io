@@ -26,6 +26,7 @@ window.onload = function () {
 		{ m: 03, d: 20, b: 000, c: "b", n: "ECP (02.04) BD." },
 		{ m: 03, d: 25, b: 000, c: "b", n: "Vlad's BD." },
 		{ m: 05, d: 15, b: 000, c: "b", n: "Subota" },
+		{ m: 05, d: 18, b: 000, c: "b", n: "Irin Day BD." },
 		{ m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
 		{ m: 06, d: 04, b: 000, c: "b", n: "Miroshnik" },
 		{ m: 06, d: 05, b: 000, c: "b", n: "PASS chng!" },

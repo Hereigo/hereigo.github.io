@@ -67,9 +67,17 @@
             padding: 0 .5rem;
         }
 
+        .prevMonth,
+        .nextMonth {
+            background-color: rgb(206, 226, 226);
+        }
+
+        .weekend {
+            color: red;
+        }
+
         .calenDay:hover {
             background-color: rgb(228, 252, 252);
-            color: red;
         }
 
         .aDate {
@@ -233,22 +241,45 @@
             calenTab.className += " active";
 
             const aYear = new Date().getFullYear();
+
+
             const MONTH = new Date().getMonth();
 
+
             const monFirstDay = new Date(aYear, MONTH, 1);
-            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
-            const weekDay = monFirstDay.getDay() - 1;
-            let aToday = new Date();
+            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate(); // 31
+
+            // Sunday = 0, Monday = 1, ...
+            const monStartWeekDay = monFirstDay.getDay(); // - 1;
+
+            //let aToday = new Date();
+            //let monCurrDay = aToday.getDate();
+
             let daysCounter = 1;
-            let monCurrDay = aToday.getDate();
+            let monDate = null;
+            let nextMonth = false;
 
-            alert(weekDay);
-
-
-            for (i = 0; i < 42; i++) {
+            for (i = 1; i < 43; i++) {
                 let div = document.createElement('div');
                 div.classList.add('calenDay');
-                div.innerHTML = '<div class="aDate">' + (i + 1) + '</span>';
+
+                if (i < monStartWeekDay)
+                    div.classList.add('prevMonth');
+                else if (monDate >= monLastDay || nextMonth) {
+                    div.classList.add('nextMonth');
+                    monDate = null;
+                    nextMonth = true;
+                } else if (!nextMonth) {
+                    if (monDate)
+                        monDate++;
+                    else
+                        monDate = 1;
+                    div.innerHTML = '<div class="aDate">' + (monDate) + '</span>';
+                }
+
+                if (i % 7 === 0 || (i + 1) % 7 === 0)
+                    div.classList.add('weekend');
+
                 calenTab.insertAdjacentElement('beforeend', div);
             }
         });
