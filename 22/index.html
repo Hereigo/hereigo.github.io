@@ -78,17 +78,32 @@
             background-color: rgb(206, 226, 226);
         }
 
+        .today {
+            background-color: blanchedalmond;
+        }
+
         .weekend {
             color: red;
+        }
+
+        .aDate {
+            font-weight: 700;
+            text-align: right;
         }
 
         .calenDay:hover {
             background-color: rgb(228, 252, 252);
         }
 
-        .aDate {
-            font-weight: 700;
-            text-align: right;
+        .calenDay>div>ul {
+            list-style-type: circle;
+            padding-left: .7rem;
+        }
+
+        .calenDay>div>ul>li {
+            font-size: medium;
+            font-weight: 600;
+            text-align: left;
         }
 
         .notes {}
@@ -114,8 +129,13 @@
                 flex: 1 400px;
             }
 
-            .calenDay {
+            .calenDay>div>ul {
+                padding-left: 0;
+            }
+
+            .calenDay>div>ul>li {
                 font-size: 12px;
+                list-style-type: none;
                 padding: .1rem .3rem;
             }
         }
@@ -242,6 +262,52 @@
             evt.currentTarget.className += " active";
         }
 
+        const aData = [
+            { m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon i Count." },
+            { m: 00, d: 01, b: 000, c: "x", n: "MONY." },
+            { m: 00, d: 10, b: 000, c: "x", n: "Counters" },
+            { m: 00, d: 12, b: 170, c: "x", n: "170 Voda" },
+            { m: 00, d: 13, b: 150, c: "x", n: "150 Penguin YT" },
+            { m: 00, d: 14, b: 200, c: "x", n: "200 KS" },
+            { m: 00, d: 14, b: 299, c: "x", n: "299 Laner" },
+            { m: 00, d: 15, b: 999, c: "x", n: "Flat Bills." },
+            { m: 00, d: 18, b: 888, c: "x", n: "8k-Mon Delon" },
+            { m: 00, d: 23, b: 280, c: "x", n: "280 Dominiq" },
+            { m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
+            { m: 00, d: 26, b: 155, c: "x", n: "155 U-KSU" },
+            { m: 00, d: 28, b: 165, c: "x", n: "160 iLanos" },
+            { m: 00, d: 30, b: 000, c: "x", n: "Ask Mo 4 Counts" },
+            { m: 01, d: 24, b: 000, c: "b", n: "Svyatno" },
+            { m: 01, d: 30, b: 000, c: "b", n: "Kostromin" },
+            { m: 02, d: 14, b: 000, c: "x", n: "Valentine`s day." },
+            { m: 03, d: 01, b: 000, c: "x", n: "Chg-HLT 2 MailOnly" },
+            { m: 03, d: 01, b: 303, c: "x", n: "ML-13.03" },
+            { m: 03, d: 07, b: 000, c: "b", n: "Kris BD." },
+            { m: 03, d: 08, b: 000, c: "x", n: "Girls Day." },
+            { m: 03, d: 11, b: 000, c: "b", n: "Den4i BD." },
+            { m: 03, d: 20, b: 000, c: "b", n: "ECP (02.04) BD." },
+            { m: 03, d: 25, b: 000, c: "b", n: "Vlad's BD." },
+            { m: 05, d: 15, b: 000, c: "b", n: "Subota" },
+            { m: 05, d: 18, b: 000, c: "b", n: "Irin Day BD." },
+            { m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
+            { m: 06, d: 04, b: 000, c: "b", n: "Miroshnik" },
+            { m: 06, d: 05, b: 000, c: "b", n: "PASS chng!" },
+            { m: 06, d: 08, b: 160, c: "x", n: "160 (28) Life-M" },
+            { m: 06, d: 08, b: 225, c: "b", n: "225 (28) Life-4g" },
+            { m: 06, d: 24, b: 000, c: "b", n: "Koo" },
+            { m: 07, d: 13, b: 000, c: "b", n: "Barno" },
+            { m: 07, d: 14, b: 000, c: "b", n: "Panchen" },
+            { m: 07, d: 15, b: 000, c: "b", n: "Lazareva BD." },
+            { m: 08, d: 13, b: 000, c: "b", n: "Ira's BD." },
+            { m: 08, d: 17, b: 000, c: "b", n: "Mom's BD." },
+            { m: 09, d: 07, b: 000, c: "b", n: "Alla BD." },
+            { m: 10, d: 04, b: 000, c: "b", n: "Koval-x2 BD." },
+            { m: 10, d: 14, b: 000, c: "b", n: "Draganchuk" },
+            { m: 10, d: 28, b: 000, c: "b", n: "Dzuba" },
+            { m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
+            { m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
+            { m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
+        ];
 
         document.addEventListener("DOMContentLoaded", (event) => {
             let calenTab = document.getElementById("calendar");
@@ -254,14 +320,17 @@
             const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
             const monStartWeekDay = monFirstDay.getDay();
             const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-            //let aToday = new Date();
+
+            // TODO:
+            // REFACTOR SEVEN!!!
+            let aToday = new Date().getDate() + 7;
+
             //let monCurrDay = aToday.getDate();
             let daysCounter = 1;
             let monDate = null;
             let nextMonth = false;
 
             for (i = 1; i < 50; i++) {
-
                 let div = document.createElement('div');
                 div.classList.add('calenDay');
 
@@ -280,7 +349,25 @@
                         monDate++;
                     else
                         monDate = 1;
-                    div.innerHTML = '<div class="aDate">' + (monDate) + '</span>';
+
+                    let list = '';
+                    let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+
+                    aData.filter(x =>
+                        (x.d === monDate && x.m === 0) ||
+                        (x.d === monDate && x.m === monHumanNumber)).forEach(element => {
+                            list +=
+                                '<li' + (element.n.endsWith('BD.') ? ' class="BDay" ' : '') + '>' +
+                                element.n + '</li>';
+                        });
+
+                    div.innerHTML = '<div class="aDate">' + (monDate) + '</span><ul>' + list + '</ul>';
+                }
+
+                console.log(aToday)
+
+                if (i === aToday) {
+                    div.classList.add('today');
                 }
 
                 if (i % 7 === 0 || (i + 1) % 7 === 0) {
