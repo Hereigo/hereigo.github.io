@@ -31,8 +31,6 @@
             flex: .4 0 0;
         }
 
-        .menu {}
-
         .menu li {
             list-style-type: none;
             margin: .8rem 0;
@@ -60,17 +58,23 @@
             text-align: left;
         }
 
+        .calenDay.calenDayHeader {
+            border: 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .aDate {
+            color: blue;
+            font-weight: 800;
+            text-align: right;
+        }
+
         .calenDay {
             border-radius: 4px;
             border: 1px grey solid;
             margin: 1px;
             padding: 0 .5rem;
-        }
-
-        .calenDayHeader {
-            border: 0;
-            font-weight: 600;
-            text-align: center;
         }
 
         .prevMonth,
@@ -80,33 +84,26 @@
 
         .today {
             background-color: blanchedalmond;
+            font-weight: 600;
         }
 
         .weekend {
             color: red;
         }
 
-        .aDate {
-            font-weight: 700;
-            text-align: right;
-        }
-
         .calenDay:hover {
             background-color: rgb(228, 252, 252);
         }
 
-        .calenDay>div>ul {
+        .calenDay>ul {
             list-style-type: circle;
             padding-left: .7rem;
         }
 
-        .calenDay>div>ul>li {
-            font-size: medium;
+        .calenDay>li {
             font-weight: 600;
             text-align: left;
         }
-
-        .notes {}
 
         .footer {
             background: lightgrey;
@@ -129,14 +126,33 @@
                 flex: 1 400px;
             }
 
-            .calenDay>div>ul {
-                padding-left: 0;
+            .aDate {
+                color: blue;
+                font-weight: 600;
+                padding-right: .4rem;
+                text-align: right;
             }
 
-            .calenDay>div>ul>li {
+            .calenDay.calenDayHeader {
+                border: 0;
                 font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .calenDay,
+            .calenDay>ul {
+                padding: 0;
+            }
+
+            .calenDay>ul>li {
+                font-size: 10px;
                 list-style-type: none;
-                padding: .1rem .3rem;
+                padding: .2rem;
+            }
+
+            .today {
+                font-weight: 700;
             }
         }
 
@@ -361,7 +377,8 @@
                                 element.n + '</li>';
                         });
 
-                    div.innerHTML = '<div class="aDate">' + (monDate) + '</span><ul>' + list + '</ul>';
+                    div.innerHTML = '<div class="aDate">' + (monDate) + '</div>' +
+                        '<ul>' + list + '</ul>';
                 }
 
                 console.log(aToday)
