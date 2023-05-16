@@ -28,6 +28,14 @@
             background: lightgrey;
         }
 
+        .header form {
+            text-align: center;
+        }
+
+        .header input[type="text"] {
+            width: 94%;
+        }
+
         .aside {
             flex: .4 0 0;
         }
@@ -93,6 +101,7 @@
         .weekend,
         .weekend .aDate {
             color: red;
+            background-color: bisque;
         }
 
         .calenDay:hover {
@@ -185,7 +194,12 @@
 
         <!---------------------------- HEADER ---------------------------->
 
-        <header class="header">Header</header>
+        <header class="header">
+            <form>
+                <input type="text">
+                <input type="submit">
+            </form>
+        </header>
 
         <!---------------------------- CENTER ---------------------------->
 
@@ -362,19 +376,22 @@
                 if (i <= 7) {
                     div.classList.add('calenDayHeader');
                     div.innerHTML = '<div>' + weekDays[i - 1] + '</span>';
-                } else if (i > 7 && i < monStartWeekDay + 7) {
-                    div.classList.add('prevMonth');
-                }
-                else if (monDate >= monLastDay || nextMonth) {
-                    div.classList.add('nextMonth');
-                    monDate = null;
-                    nextMonth = true;
-                } else if (!nextMonth) {
-                    if (monDate)
-                        monDate++;
-                    else
-                        monDate = 1;
+                } else {
 
+                    if (i > 7 && i < monStartWeekDay + 7) {
+                        div.classList.add('prevMonth');
+                    }
+                    else if (monDate >= monLastDay || nextMonth) {
+                        div.classList.add('nextMonth');
+                        nextMonth = true;
+                        if (monDate >= monLastDay) monDate = 0;
+                        monDate++;
+                    } else if (!nextMonth) {
+                        if (monDate)
+                            monDate++;
+                        else
+                            monDate = 1;
+                    }
                     let list = '';
                     let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
 
@@ -388,18 +405,15 @@
 
                     div.innerHTML = '<div class="aDate">' + (monDate) + '</div>' +
                         '<ul>' + list + '</ul>';
+
+                    if (i === aToday) {
+                        div.classList.add('today');
+                    }
+
+                    if (i % 7 === 0 || (i + 1) % 7 === 0) {
+                        div.classList.add('weekend');
+                    }
                 }
-
-                console.log(aToday)
-
-                if (i === aToday) {
-                    div.classList.add('today');
-                }
-
-                if (i % 7 === 0 || (i + 1) % 7 === 0) {
-                    div.classList.add('weekend');
-                }
-
                 calenTab.insertAdjacentElement('beforeend', div);
             }
         });
