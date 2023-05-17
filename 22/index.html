@@ -74,18 +74,18 @@
 
         .calenDay.calenDayHeader {
             border: 0;
-            font-weight: 600;
+            /* font-weight: 600; */
             text-align: center;
         }
 
         .aDate {
             color: blue;
-            font-weight: 700;
+            /* font-weight: 700; */
             text-align: right;
         }
 
         .calenDay {
-            font-weight: 600;
+            /* font-weight: 600; */
             border-radius: 4px;
             border: 1px rgb(189, 189, 189) solid;
             margin: 1px;
@@ -103,10 +103,17 @@
             font-size: 16px;
         }
 
-        .weekend,
+        .weekend {
+            background-color: #faeeee;
+        }
+
         .weekend .aDate {
             color: red;
-            background-color: bisque;
+        }
+
+        .BDay {
+            color: red;
+            font-weight: 600;
         }
 
         .calenDay:hover {
@@ -119,7 +126,6 @@
         }
 
         .calenDay>li {
-            font-weight: 600;
             text-align: left;
         }
 
