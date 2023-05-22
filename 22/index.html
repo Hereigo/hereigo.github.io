@@ -10,7 +10,6 @@
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     <style>
         body {
-            background-color: antiquewhite;
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             font-size: 14px;
         }
@@ -26,7 +25,7 @@
         }
 
         .header {
-            background: lightgrey;
+            background: lightgray
         }
 
         .header form {
@@ -64,7 +63,6 @@
         }
 
         .center {
-            background: azure;
             display: none;
             flex: 3 0px;
             grid-template-columns: repeat(7, 1fr);
@@ -75,22 +73,27 @@
 
         .calenDay.calenDayHeader {
             border: 0;
-            /* font-weight: 600; */
             text-align: center;
         }
 
         .aDate {
             color: blue;
-            /* font-weight: 700; */
             text-align: right;
         }
 
         .calenDay {
-            /* font-weight: 600; */
             border-radius: 4px;
             border: 1px rgb(189, 189, 189) solid;
             margin: 1px;
             padding: 0 .5rem;
+        }
+
+        .weekend {
+            background-color: #faeeee;
+        }
+
+        .weekend .aDate {
+            color: red;
         }
 
         .prevMonth,
@@ -102,14 +105,6 @@
             background-color: blanchedalmond;
             font-weight: 600;
             font-size: 16px;
-        }
-
-        .weekend {
-            background-color: #faeeee;
-        }
-
-        .weekend .aDate {
-            color: red;
         }
 
         .BDay {
