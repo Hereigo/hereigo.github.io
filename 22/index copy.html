@@ -63,7 +63,6 @@
         }
 
         .center {
-            background-color: azure;
             display: none;
             flex: 3 0px;
             grid-template-columns: repeat(7, 1fr);
@@ -128,6 +127,57 @@
 
         .footer {
             background: lightgrey;
+        }
+
+        @media all and (max-width: 799px) {
+            .header input[type="text"] {
+                width: 80%;
+            }
+
+            .aside {
+                flex: .4 0 0;
+            }
+
+            .menu ul {
+                padding-left: 0;
+            }
+
+            .menu li {
+                font-size: small;
+            }
+
+            .center {
+                flex: 1 400px;
+            }
+
+            .aDate {
+                color: blue;
+                font-weight: 600;
+                padding-right: .4rem;
+                text-align: right;
+            }
+
+            .calenDay.calenDayHeader {
+                border: 0;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .calenDay,
+            .calenDay>ul {
+                padding: 0;
+            }
+
+            .calenDay>ul>li {
+                font-size: 10px;
+                list-style-type: none;
+                padding: .2rem;
+            }
+
+            .today {
+                font-weight: 700;
+            }
         }
 
         @media all and (min-width: 800px) {
@@ -330,7 +380,7 @@
             let monDate = null;
             let nextMonth = false;
 
-            for (i = 1; i > 50; i++) {
+            for (i = 1; i < 50; i++) {
                 let div = document.createElement('div');
                 div.classList.add('calenDay');
 
