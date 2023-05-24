@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendarium</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./libs/bootstrap.min.css">
+    <link rel="stylesheet" href="./xtra/app.css">
+    <link rel="stylesheet" href="./xtra/calend.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Calendarium</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" id="nav-tab" role="tablist"
+                class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
+                                <span data-feather="calendar"></span>
+                                Calend
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                <span data-feather="chrome"></span>
+                                JS
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-linux" role="tab" aria-controls="nav-linux" aria-selected="false">
+                                <span data-feather="monitor"></span>
+                                Linux
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell"
+                                aria-selected="false">
+                                <span data-feather="command"></span>
+                                PoSh
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-python" role="tab" aria-controls="nav-python"
+                                aria-selected="false">
+                                <span data-feather="code"></span>
+                                Python
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="database"></span>
+                                Database
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="nav-reports-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-reports" role="tab" aria-controls="nav-reports"
+                                aria-selected="false">
+                                <span data-feather="bar-chart-2"></span>
+                                Reports
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+            <main class="col-md-10 ms-sm-auto col-lg-11 px-md-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <!-- <h1 class="h2">Tips & Tricks :</h1> -->
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                        </div>
+                    </div>
+                </div>
+                <!---------------- MAIN BLOCK ---------------->
+
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="nav-calend" role="tabpanel"
+                        aria-labelledby="nav-calend-tab">
+                        <!-- <div include-html="./calendar.html"></div> -->
+
+                        <div class="row">
+
+                            <!-- CENTER ZONE -->
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="col-1"><button id="mon0" type="button"
+                                            class="btn btn-mon btn-light">Jan</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon1" type="button"
+                                            class="btn btn-mon btn-light">Feb</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon2" type="button"
+                                            class="btn btn-mon btn-light">Mar</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon3" type="button"
+                                            class="btn btn-mon btn-light">Apr</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon4" type="button"
+                                            class="btn btn-mon btn-light">May</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon5" type="button"
+                                            class="btn btn-mon btn-light">Jun</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon6" type="button"
+                                            class="btn btn-mon btn-light">Jul</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon7" type="button"
+                                            class="btn btn-mon btn-light">Aug</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon8" type="button"
+                                            class="btn btn-mon btn-light">Sep</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon9" type="button"
+                                            class="btn btn-mon btn-light">Oct</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon10" type="button"
+                                            class="btn btn-mon btn-light">Nov</button>
+                                    </div>
+                                    <div class="col-1"><button id="mon11" type="button"
+                                            class="btn btn-mon btn-light">Dec</button>
+                                    </div>
+                                </div>
+                                <div class="grid-calendar">
+                                    <div class="row calendar-week-header">
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Monday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Tuesday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Wednesday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Thurthday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div>Friday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div class="holiHead">Saturday</div>
+                                        </div>
+                                        <div class="col-xs-1 grid-cell">
+                                            <div class="holiHead">Sunday</div>
+                                        </div>
+                                    </div>
+
+                                    <div id="calend">
+                                        <!-- --- C A L E N D A R - G R I D --- -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <!-- RUGHT SIDE -->
+                            <div class="col-md-2" id="right-bar">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                        <h3>
+                                            Call-Stack below:
+                                        </h3>
+                                        </p>
+                                        <ul>
+                                            <li>! iMportant !</li>
+                                            <hr />
+                                            <li>Meta-Life-!!!</li>
+                                            <hr />
+                                            <li>Only Most -RM</li>
+                                            <li>Vor-Zhe-Van</li>
+                                            <li>Clear Videos</li>
+                                            <li>Clear xTra Drive</li>
+                                            <li>RM All Senset</li>
+                                            <hr />
+                                            <li>car 1.5 csh</li>
+                                            <li>fla 2 mon</li>
+                                            <li>foo 7 mon</li>
+                                            <li>she 8 csh</li>
+                                            <hr />
+                                            <li>car 1.5 csh</li>
+                                            <li>flat 1.5 mon</li>
+                                            <li>food 9 mix</li>
+                                            <li>she 8 csh</li>
+                                            <hr />
+                                            <li>car 1 mo</li>
+                                            <li>fla 1 mo</li>
+                                            <li>foo 8 mix</li>
+                                            <hr />
+                                            <li>car 1 mo</li>
+                                            <li>fla 1 mo</li>
+                                            <li>foo 8 mix</li>
+                                            <li>she 8 csh</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--AUTOGENERATOR-->
+
+                    <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <!-- <div include-html="./pages/JS.html"></div> -->
+                        <zero-md src="/JS_Simple.md"></zero-md>
+                        <hr />
+                        <hr />
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-linux" role="tabpanel" aria-labelledby="nav-linux-tab">
+                        <!-- <div include-html="./pages/LN.html"></div> -->
+                        <zero-md src="/LN_Aaa_Tips.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Arch.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Bash.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Gnome.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_UbunDeb.md"></zero-md>
+                        <hr />
+                        <hr />
+                        <zero-md src="/LN_Utilities.md"></zero-md>
+                        <hr />
+                        <hr />
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-powershell" role="tabpanel" aria-labelledby="nav-powershell-tab">
+                        <div include-html="./pages/PS.html"></div>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
+                        <div include-html="./pages/PY.html"></div>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-reports" role="tabpanel" aria-labelledby="nav-reports-tab">
+                        <div include-html="./pages/XZ.html"></div>
+                    </div>
+
+                </div>
+                <!---------------- MAIN BLOCK ENDED ---------------->
+
+            </main>
+        </div>
+    </div>
+
+    <script src="./libs/bootstrap.bundle.min.js"></script>
+    <script src="./libs/include-in-html.js"></script>
+    <script src="./libs/feather.min.js"></script>
+    <script src="./xtra/calend.js"></script>
+    <script src="./xtra/search.js"></script>
+    <script>
+        (function () {
+            'use strict'
+            /* globals Chart:false, feather:false */
+            feather.replace({ 'aria-hidden': 'true' });
+
+            // const codeTags = document.querySelectorAll('.markdown-body pre>code');
+            // codeTags.forEach(c => c.style.fontSize = '50%');
+        })();
+    </script>
+
+</body>
+
+</html>

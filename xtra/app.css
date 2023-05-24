@@ -32,6 +32,16 @@ form[role="search"] {
   .sidebar {
     top: 5rem;
   }
+
+  .col-1 {
+    width: 7%;
+  }
+
+  .row .btn-mon {
+    font-size: xx-small;
+    margin: 2px;
+    padding: 5px;
+  }
 }
 
 .sidebar-sticky {
