@@ -32,6 +32,7 @@ window.onload = function () {
 		{ m: 06, d: 05, b: 000, c: "b", n: "PASS chng!" },
 		{ m: 06, d: 08, b: 160, c: "x", n: "160 (28) Life-M" },
 		{ m: 06, d: 08, b: 225, c: "b", n: "225 (28) Life-4g" },
+		{ m: 06, d: 13, b: 000, c: "b", n: "Weddin BD." },
 		{ m: 06, d: 24, b: 000, c: "b", n: "Koo" },
 		{ m: 07, d: 13, b: 000, c: "b", n: "Barno" },
 		{ m: 07, d: 14, b: 000, c: "b", n: "Panchen" },
@@ -45,6 +46,7 @@ window.onload = function () {
 		{ m: 10, d: 30, b: 000, c: "b", n: "Kelvich" },
 		{ m: 11, d: 30, b: 000, c: "b", n: "Davyd BD." },
 		{ m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
+
 		{ m: 05, d: 25, b: 000, c: "b", n: "18:00 School BD." },
 	];
 
