@@ -24,6 +24,8 @@
             padding: 10px;
         }
 
+        /* ----------------- HEADER ----------------- */
+
         .header {
             background: lightgray
         }
@@ -42,7 +44,9 @@
             border-radius: 5px;
         }
 
-        .aside {
+        /* ----------------- 2 SIDES ----------------- */
+
+        .sides {
             flex: .4 0 0;
         }
 
@@ -66,6 +70,16 @@
             height: 18px;
             width: 18px;
         }
+
+        .notes ul {
+            padding-left: 1rem;
+        }
+
+        .notes li:nth-child(-n+10) {
+            font-weight: 700;
+        }
+
+        /* ----------------- CENTER ----------------- */
 
         .center {
             display: none;
@@ -129,9 +143,7 @@
             text-align: left;
         }
 
-        .aside li:nth-child(-n+10) {
-            font-weight: 700;
-        }
+        /* ----------------- MOBILE ----------------- */
 
         @media all and (max-width: 799px) {
 
@@ -139,7 +151,7 @@
                 width: 80%;
             }
 
-            .aside {
+            .sides {
                 flex: .4 0 0;
             }
 
@@ -181,6 +193,8 @@
                 padding: .2rem;
             }
         }
+
+        /* ----------------- NOT MOBILE ----------------- */
 
         @media all and (min-width: 800px) {
             .menu {
@@ -231,9 +245,9 @@
             <!-- <zero-md src="/LN_Arch.md"></zero-md> -->
         </article>
 
-        <!---------------------------- MENU ---------------------------->
+        <!---------------------------- MENU (SIDES) ---------------------------->
 
-        <block class="aside menu">
+        <block class="sides menu">
             <ul>
                 <li>
                     <button onclick="tabSwitch(event, 'calendar')">
@@ -253,9 +267,9 @@
             </ul>
         </block>
 
-        <!---------------------------- NOTES ---------------------------->
+        <!---------------------------- NOTES (SIDES) ---------------------------->
 
-        <block class="aside notes">
+        <block class="sides notes">
             <ul>
                 <hr />
                 <li>! iMportant !</li>
@@ -298,6 +312,7 @@
             feather.replace({ 'aria-hidden': 'true' });
         })();
 
+        // =========================================================
 
         function tabSwitch(evt, tabName) {
             var i, tabcontent;
@@ -308,6 +323,8 @@
             document.getElementById(tabName).style.display = "grid";
             evt.currentTarget.className += " active";
         }
+
+        // =========================================================
 
         const aData = [
             { m: 00, d: 01, b: 000, c: "x", n: "Fastiv Mon i Count." },
@@ -359,6 +376,8 @@
             { m: 06, d: 05, b: 000, c: "b", n: "PASS chng! BD." },
             { m: 05, d: 30, b: 000, c: "b", n: "KnowB4 ends! BD." },
         ];
+
+        // =========================================================
 
         document.addEventListener("DOMContentLoaded", (event) => {
             let calenTab = document.getElementById("calendar");
