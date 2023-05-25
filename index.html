@@ -78,6 +78,7 @@
 
         .calenDay.calenDayHeader {
             border: 0;
+            font-weight: 600;
             text-align: center;
         }
 
@@ -386,7 +387,9 @@
 
                 if (i <= 7) {
                     div.classList.add('calenDayHeader');
-                    div.innerHTML = '<div>' + weekDays[i - 1] + '</span>';
+                    div.innerHTML = '<div>' + weekDays[i - 1] + '</div>';
+                    if (i > 5)
+                        div.classList.add('text-danger');
                 } else {
 
                     if (i > 7 && i < monStartWeekDay + 7) {
