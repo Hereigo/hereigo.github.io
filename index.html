@@ -108,8 +108,6 @@
 
         .today {
             background-color: blanchedalmond;
-            font-size: 16px;
-            font-weight: 600;
         }
 
         .BDay {
@@ -128,6 +126,10 @@
 
         .calenDay>li {
             text-align: left;
+        }
+
+        .aside li:nth-child(-n+10) {
+            font-weight: 700;
         }
 
         @media all and (max-width: 799px) {
@@ -176,10 +178,6 @@
                 font-size: 10px;
                 list-style-type: none;
                 padding: .2rem;
-            }
-
-            .today {
-                font-weight: 700;
             }
         }
 
@@ -258,6 +256,7 @@
 
         <block class="aside notes">
             <ul>
+                <hr />
                 <li>! iMportant !</li>
                 <hr />
                 <li>Meta-Life-!!!</li>
@@ -321,7 +320,7 @@
             { m: 00, d: 18, b: 888, c: "x", n: "8k-Mon Delon" },
             { m: 00, d: 23, b: 280, c: "x", n: "280 Dominiq" },
             { m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
-            { m: 00, d: 26, b: 155, c: "x", n: "155 U-KSU" },
+            { m: 00, d: 26, b: 155, c: "x", n: "155 KSU" },
             { m: 00, d: 28, b: 165, c: "x", n: "160 iLanos" },
             { m: 00, d: 30, b: 000, c: "x", n: "Ask Mo 4 Counts" },
             { m: 01, d: 24, b: 000, c: "b", n: "Svyatno" },
@@ -338,7 +337,6 @@
             { m: 05, d: 18, b: 000, c: "b", n: "Irin Day BD." },
             { m: 05, d: 25, b: 000, c: "b", n: "Danyluk" },
             { m: 06, d: 04, b: 000, c: "b", n: "Miroshnik" },
-            { m: 06, d: 05, b: 000, c: "b", n: "PASS chng!" },
             { m: 06, d: 08, b: 160, c: "x", n: "160 (28) Life-M" },
             { m: 06, d: 08, b: 225, c: "b", n: "225 (28) Life-4g" },
             { m: 06, d: 13, b: 000, c: "b", n: "Weddin BD." },
@@ -357,6 +355,8 @@
             { m: 12, d: 10, b: 000, c: "b", n: "Ula's BD." },
 
             { m: 05, d: 25, b: 000, c: "b", n: "18:00 School BD." },
+            { m: 06, d: 05, b: 000, c: "b", n: "PASS chng! BD." },
+            { m: 05, d: 30, b: 000, c: "b", n: "KnowB4 ends! BD." },
         ];
 
         document.addEventListener("DOMContentLoaded", (event) => {
