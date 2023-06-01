@@ -376,7 +376,7 @@
             { m: 00, d: 23, b: 300, c: "x", n: "300 Troylana" },
             { m: 00, d: 26, b: 155, c: "x", n: "155 U-KS" },
             { m: 00, d: 28, b: 165, c: "x", n: "160 iLanos" },
-            { m: 00, d: 30, b: 000, c: "x", n: "Ask Mo 4 Counts" },
+            { m: 00, d: 29, b: 000, c: "x", n: "Ask Mo 4 Counts" },
             { m: 01, d: 24, b: 000, c: "b", n: "Svyatno" },
             { m: 01, d: 30, b: 000, c: "b", n: "Kostromin" },
             { m: 02, d: 14, b: 000, c: "x", n: "Valentine`s day." },
@@ -410,8 +410,8 @@
 
             { m: 06, d: 10, b: 000, c: "b", n: "12:00 SkyPark BD." },
             { m: 06, d: 02, b: 000, c: "b", n: "PASS chng! BD." },
-            { m: 05, d: 30, b: 000, c: "b", n: "KnowB4 ends! BD." },
             { m: 06, d: 10, b: 000, c: "b", n: "$100 last day CBS" },
+            { m: 07, d: 09, b: 000, c: "b", n: "Test." },
         ];
 
         // =========================================================
@@ -430,9 +430,8 @@
 
             // TODO:
             // REFACTOR SEVEN!!!
-            let aToday = new Date().getDate() + 7;
+            let aToday = new Date().getDate() + 10; // 7 !!!!!
 
-            //let monCurrDay = aToday.getDate();
             let daysCounter = 1;
             let monDate = null;
             let nextMonth = false;
@@ -473,7 +472,8 @@
                                 element.n + '</li>';
                         });
 
-                    div.innerHTML = '<div class="aDate">' + (monDate) + '</div>' +
+                    div.innerHTML =
+                        '<div class="aDate">' + (monDate != null ? monDate : "") + '</div>' +
                         '<ul>' + list + '</ul>';
 
                     if (i === aToday) {
