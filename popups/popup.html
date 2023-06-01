@@ -7,53 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-Up</title>
     <style type="text/css">
-        #pkMask {
-            position: absolute;
-            padding-left: 60px;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            padding-right: 50px;
-            left: 0;
-            top: 0;
-            z-index: 9999;
-            background-color: #808080;
-            display: none;
-        }
-
-        #boxes .pkWindow {
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            background-color: white;
-            border-radius: 10px;
-            border: 2px solid rgb(66, 66, 66);
-            display: none;
-            height: 300px;
-            left: 0;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            width: 580px;
-            z-index: 9999;
-        }
-
-        #boxes #pkDialog {
+        #pkDialog {
             background-color: #ffffff;
-            background-repeat: no-repeat;
-            height: 200px;
-            margin-top: 20px;
-            padding: 30px;
+            border: 2px solid rgb(66, 66, 66);
+            border-radius: 10px;
+            display: none;
+            height: 230px;
+            left: 23rem;
+            padding: 20px 30px;
+            position: absolute;
+            top: .1rem;
             width: 300px;
-        }
-
-        .pkPopupLinks {
-            margin-top: 1rem;
-            color: #2e6da4;
-        }
-
-        .pkPopupHeader {
-            color: black;
-            font-size: large;
-            margin-bottom: 1rem;
+            z-index: 9999;
         }
 
         #pkBtnImage {
@@ -64,8 +29,26 @@
         #pkSubmitBtn {
             padding-bottom: 1rem;
             padding-top: 1rem;
-            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
             text-align: left;
+            width: 100%;
+        }
+
+        .pkPopupLinks {
+            margin-top: 1.1rem;
+        }
+
+        .pkPopupLinks>a {
+            color: #2e6da4;
+            text-decoration: none;
+        }
+
+        .pkPopupHeader {
+            color: black;
+            font-size: large;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
@@ -74,62 +57,194 @@
 </head>
 
 <body>
-
-    <Button ID="myButton">Open Popup</Button>
-
-    <div id="boxes">
-        <div id="pkMask">
-            <div id="pkDialog" class="pkWindow">
-
-                <div class="pkPopupHeader">
-                    Use your passkey
+    <div class="navbar navbar-default clear-bottom">
+        <div class="container-fluid">
+            <div class="row site-header">
+                <div class="mainbodydiv">
+                    <div class="col-md-12">
+                        <div class="nopadding navbar-header navbar-toggle collapsed">
+                            <img alt="menuButton" class="menubutton nopadding " data-toggle="collapse"
+                                data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        </div>
+                    </div>
                 </div>
-
-                <div>
-                    <button id="pkSubmitBtn" type="submit" class="btn btn-primary btn-lg form-actions">
-                        <span id="pkBtnImage"></span>
-                        <img src="/popups/passkey-white2.png" /> &nbsp; Sign in
-                    </button>
+            </div>
+            <div class="row">
+                <div class="main-menu">
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <div class="mainbodydiv">
+                            <div class="col-md-12">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="/">Abcde</a></li>
+                                    <li><a href="/">Abcde</a></li>
+                                    <li><a href="/">Abcde</a></li>
+                                    <li><a href="/">Abcde</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mainbodydiv main-body">
+                <div class="col-md-12">
 
-                <div class="pkPopupLinks" id="pkAnotherDev">
-                    Use another device
-                </div>
-                <div class="pkPopupLinks" id="pkDiffMethod">
-                    Use a different method
+                    <div class="row">
+                        <div class="col-lg-8 col-md-9 col-sm-10 col-xs-12">
+                            <h2>Identity test</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dignissim et eros in
+                                feugiat. Morbi et rutrum turpis. Donec laoreet pulvinar risus ut sollicitudin.
+                                Aenean ultricies ligula diam, vitae laoreet tellus fringilla id. Donec id eros in lectus
+                                sodales tristique.
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8">
+
+                            <div class="row form-group">
+                                <form action="/Authorization" method="post"> <input type="hidden" value="Mobile"
+                                        name="SelectedPhoneType">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                        Mobile
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-nowrap">
+                                        +100****00
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                        <button id="voiceButton" type="submit"
+                                            class="btn btn-small btn-primary form-actions" name="deliveryMethod"
+                                            value="Voice">
+                                            Call me
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                        <button id="voiceButton" type="submit"
+                                            class="btn btn-small btn-primary form-actions" name="deliveryMethod"
+                                            value="Sms">
+                                            Text me
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                            <div class="row form-group">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-nowrap">
+                                    PassKey
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                    <button onclick="showPasskeyPopup()" type="button"
+                                        class="btn btn-small btn-primary form-actions" name="deliveryMethod"
+                                        value="PassKey">Select</button>
+                                </div>
+                            </div>
+
+                            <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                            <div id="pkDialog" style="display: block; opacity: 1;">
+                                <div class="pkPopupHeader">
+                                    Use your passkey
+                                </div>
+                                <form action="/Authorization" id="passkeySignin" method="post"> <input type="hidden"
+                                        value="true" name="SelectedPassKey">
+                                    <div>
+                                        <button id="pkSubmitBtn" type="submit"
+                                            class="btn btn-primary btn-lg form-actions">
+                                            <span id="pkBtnImage"></span>
+                                            <img src="passkey-white2.png"> &nbsp; Sign in
+                                        </button>
+                                    </div>
+                                </form>
+                                <div id="pkDiffMethod" class="pkPopupLinks">
+                                    <a href="#">Use a different method</a>
+                                </div>
+                            </div>
+
+                            <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                            <div class="row form-group">
+                                <form action="/" id="passkeyRegister" method="post"> <input type="hidden" value="true"
+                                        name="SelectedPassKey">
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    </div>
+                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-nowrap">
+                                        PassKey
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                        <button type="submit" class="btn btn-small btn-primary form-actions"
+                                            name="deliveryMethod" value="PassKey">PK register</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <p class="gray">
+                                Choose Text me to receive your access code as a text message,
+                                or Call me to receive it as a voice call.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+
+
+    <Button ID="myButton">Open Popup</Button>
+
+    <div id="pkDialog">
+        <div class="pkPopupHeader">
+            Use your passkey
+        </div>
+        <form id="passkeySignin">
+            <input type="hidden" value="true" name="SelectedPassKey" />
+            <input type="hidden" id="RequestVerificationToken" name="RequestVerificationToken"
+                value="@GetAntiXsrfRequestToken()">
+
+            <div>
+                <button id="pkSubmitBtn" type="submit" class="btn btn-primary btn-lg form-actions">
+                    <span id="pkBtnImage"></span>
+                    <img src="/popups/passkey-white2.png" /> &nbsp; Sign in
+                </button>
+            </div>
+        </form>
+        <div id="pkDiffMethod" class="pkPopupLinks">
+            <a href="#">Use a different method</a>
+        </div>
+    </div>
+
+
+
+
     <script>
-        $(document).ready(function () {
-
-            //$('#myButton').click(function () {
-
-            var id = '#pkDialog';
-
-            var maskHeight = $(document).height();
-            var maskWidth = $(document).width();
-
-            $('#pkMask').css({ 'width': maskWidth, 'height': maskHeight })
-            $('#pkMask').fadeIn(1000);
-            $('#pkMask').fadeTo("slow", 0.8);
-
-            var winH = $(window).height();
-            var winW = $(window).width();
-
-            $(id).css('top', winH / 2 - $(id).height() / 2);
-            $(id).css('left', winW / 2 - $(id).width() / 2);
-            $(id).fadeIn(2000);
-
-            $('.pkWindow #pkDiffMethod').click(function (e) {
+        function showPasskeyPopup() {
+            $('#pkDialog').fadeIn(500);
+            $('#pkDialog').fadeTo("fast", 1);
+            $('#pkDiffMethod').click(function (e) {
                 e.preventDefault();
-                $('#pkMask').hide();
-                $('.pkWindow').hide();
+                $('#pkDialog').hide();
             });
-            //});
-
+        }
+        $(document).ready(function () {
+            showPasskeyPopup();
         });
 
     </script>
