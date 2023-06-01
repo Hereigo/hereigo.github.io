@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-Up</title>
+    <style type="text/css">
+        #pkMask {
+            position: absolute;
+            padding-left: 60px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            padding-right: 50px;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            background-color: #808080;
+            display: none;
+        }
+
+        #boxes .pkWindow {
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            background-color: white;
+            border-radius: 10px;
+            border: 2px solid rgb(66, 66, 66);
+            display: none;
+            height: 300px;
+            left: 0;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            width: 580px;
+            z-index: 9999;
+        }
+
+        #boxes #pkDialog {
+            background-color: #ffffff;
+            background-repeat: no-repeat;
+            height: 200px;
+            margin-top: 20px;
+            padding: 30px;
+            width: 300px;
+        }
+
+        .pkPopupLinks {
+            margin-top: 1rem;
+            color: #2e6da4;
+        }
+
+        .pkPopupHeader {
+            color: black;
+            font-size: large;
+            margin-bottom: 1rem;
+        }
+
+        #pkBtnImage {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        #pkSubmitBtn {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+            width: 100%;
+            text-align: left;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+
+    <Button ID="myButton">Open Popup</Button>
+
+    <div id="boxes">
+        <div id="pkMask">
+            <div id="pkDialog" class="pkWindow">
+
+                <div class="pkPopupHeader">
+                    Use your passkey
+                </div>
+
+                <div>
+                    <button id="pkSubmitBtn" type="submit" class="btn btn-primary btn-lg form-actions">
+                        <span id="pkBtnImage"></span>
+                        <img src="/popups/passkey-white2.png" /> &nbsp; Sign in
+                    </button>
+                </div>
+
+                <div class="pkPopupLinks" id="pkAnotherDev">
+                    Use another device
+                </div>
+                <div class="pkPopupLinks" id="pkDiffMethod">
+                    Use a different method
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            //$('#myButton').click(function () {
+
+            var id = '#pkDialog';
+
+            var maskHeight = $(document).height();
+            var maskWidth = $(document).width();
+
+            $('#pkMask').css({ 'width': maskWidth, 'height': maskHeight })
+            $('#pkMask').fadeIn(1000);
+            $('#pkMask').fadeTo("slow", 0.8);
+
+            var winH = $(window).height();
+            var winW = $(window).width();
+
+            $(id).css('top', winH / 2 - $(id).height() / 2);
+            $(id).css('left', winW / 2 - $(id).width() / 2);
+            $(id).fadeIn(2000);
+
+            $('.pkWindow #pkDiffMethod').click(function (e) {
+                e.preventDefault();
+                $('#pkMask').hide();
+                $('.pkWindow').hide();
+            });
+            //});
+
+        });
+
+    </script>
+</body>
+
+</html>
