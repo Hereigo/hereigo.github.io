@@ -108,7 +108,7 @@
                         <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8">
 
                             <div class="row form-group">
-                                <form action="/Authorization" method="post"> <input type="hidden" value="Mobile"
+                                <form action="/" method="post"> <input type="hidden" value="Mobile"
                                         name="SelectedPhoneType">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                                         Mobile
@@ -154,8 +154,8 @@
                                 <div class="pkPopupHeader">
                                     Use your passkey
                                 </div>
-                                <form action="/Authorization" id="passkeySignin" method="post"> <input type="hidden"
-                                        value="true" name="SelectedPassKey">
+                                <form action="/" id="passkeySignin" method="post"> <input type="hidden" value="true"
+                                        name="SelectedPassKey">
                                     <div>
                                         <button id="pkSubmitBtn" type="submit"
                                             class="btn btn-primary btn-lg form-actions">
@@ -205,11 +205,6 @@
         </div>
     </div>
 
-
-
-
-    <Button ID="myButton">Open Popup</Button>
-
     <div id="pkDialog">
         <div class="pkPopupHeader">
             Use your passkey
@@ -230,9 +225,6 @@
             <a href="#">Use a different method</a>
         </div>
     </div>
-
-
-
 
     <script>
         function showPasskeyPopup() {
