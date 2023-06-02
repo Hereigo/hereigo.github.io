@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pop-Up</title>
     <style type="text/css">
-        #pkDialog {
+        #pkDialog,
+        #pkDialog2 {
             background-color: #ffffff;
             border: 2px solid rgb(66, 66, 66);
             border-radius: 10px;
@@ -19,6 +20,22 @@
             top: 0rem;
             width: 300px;
             z-index: 9999;
+        }
+
+        #pkDialog2 {
+            height: 270px;
+            padding: 15px 25px;
+        }
+
+        #pkDialog2 table {
+            border-spacing: 13px;
+            border-collapse: separate;
+        }
+
+        #pkDialog2 #pkChBoxMessage {
+            margin-top: 1rem;
+            font-size: small;
+            color: dimgrey;
         }
 
         #pkBtnImage {
@@ -33,6 +50,22 @@
             margin-bottom: 1rem;
             text-align: left;
             width: 100%;
+        }
+
+        #pkRegBtn1 {
+            margin-top: 1rem;
+            width: 50%;
+        }
+
+        #pkRegBtn2 {
+            margin-top: 1rem;
+            width: 48%;
+            font-size: small;
+            border: 0;
+        }
+
+        #pkRegBtn2:hover {
+            background-color: #ffffff;
         }
 
         .pkPopupLinks {
@@ -150,12 +183,27 @@
 
                             <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 
-                            <div id="pkDialog" style="display: block; opacity: 1;">
+                            <div class="row form-group">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-nowrap">
+                                    PassKey
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+                                    <button onclick="showPasskeyRegPopup()" type="button"
+                                        class="btn btn-small btn-primary form-actions" name="deliveryMethod"
+                                        value="PassKey">Register</button>
+                                </div>
+                            </div>
+
+                            <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
+                            <div id="pkDialog">
                                 <div class="pkPopupHeader">
                                     Use your passkey
                                 </div>
-                                <form action="/" id="passkeySignin" method="post"> <input type="hidden" value="true"
-                                        name="SelectedPassKey">
+                                <form action="/" id="passkeySignin" method="post">
+                                    <input type="hidden" value="true" name="SelectedPassKey">
                                     <div>
                                         <button id="pkSubmitBtn" type="submit"
                                             class="btn btn-primary btn-lg form-actions">
@@ -171,19 +219,36 @@
 
                             <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 
-                            <div class="row form-group">
-                                <form action="/" id="passkeyRegister" method="post"> <input type="hidden" value="true"
-                                        name="SelectedPassKey">
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                            <div id="pkDialog2">
+
+                                <form action="/" id="passkeyRegister" method="post">
+                                    <table>
+                                        <tr>
+                                            <td><img src="passkey-black.png"></td>
+                                            <td>
+                                                <div class="pkPopupHeader">
+                                                    Faster, safer sign-in with passkeys!
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div>
+                                        <p>
+                                            You can now use your fingerprint, face or device PIN to access the RRRR
+                                            online
+                                            service
+                                        </p>
                                     </div>
-                                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 text-nowrap">
-                                        PassKey
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-                                        <button type="submit" class="btn btn-small btn-primary form-actions"
-                                            name="deliveryMethod" value="PassKey">PK register</button>
-                                    </div>
+                                    <button id="pkRegBtn1" type="submit" class="btn btn-primary btn-md form-actions ">
+                                        Create passkey
+                                    </button>
+                                    <button id="pkRegBtn2" type="submit" class="btn btn-default btn-md form-actions ">
+                                        Not now
+                                    </button>
                                 </form>
+                                <div id="pkChBoxMessage">
+                                    <input type="checkbox" /> Don't show this message again
+                                </div>
                             </div>
 
                             <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
@@ -205,27 +270,6 @@
         </div>
     </div>
 
-    <div id="pkDialog">
-        <div class="pkPopupHeader">
-            Use your passkey
-        </div>
-        <form id="passkeySignin">
-            <input type="hidden" value="true" name="SelectedPassKey" />
-            <input type="hidden" id="RequestVerificationToken" name="RequestVerificationToken"
-                value="@GetAntiXsrfRequestToken()">
-
-            <div>
-                <button id="pkSubmitBtn" type="submit" class="btn btn-primary btn-lg form-actions">
-                    <span id="pkBtnImage"></span>
-                    <img src="/popups/passkey-white2.png" /> &nbsp; Sign in
-                </button>
-            </div>
-        </form>
-        <div id="pkDiffMethod" class="pkPopupLinks">
-            <a href="#">Use a different method</a>
-        </div>
-    </div>
-
     <script>
         function showPasskeyPopup() {
             $('#pkDialog').fadeIn(500);
@@ -235,8 +279,18 @@
                 $('#pkDialog').hide();
             });
         }
+
+        function showPasskeyRegPopup() {
+            $('#pkDialog2').fadeIn(500);
+            $('#pkDialog2').fadeTo("fast", 1);
+            $('#pkRegBtn2').click(function (e) {
+                e.preventDefault();
+                $('#pkDialog2').hide();
+            });
+        }
+
         $(document).ready(function () {
-            showPasskeyPopup();
+            showPasskeyRegPopup();
         });
 
     </script>
