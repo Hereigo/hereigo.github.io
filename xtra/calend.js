@@ -40,10 +40,12 @@ window.onload = function () {
 		monBtnCurrent.classList.add('btn-primary');
 
 		for (let r = 0; r < 6; r++) {
+
 			let row = document.createElement('div');
 			row.classList.add('row');
 			row.classList.add('calendar-week');
 			calend.append(row);
+
 			for (let col = 0; col < 7; col++) {
 				let cell = document.createElement('div');
 				cell.classList.add('col-xs-1');
@@ -67,6 +69,7 @@ window.onload = function () {
 				}
 				else {
 					let monHumanNumber = isNextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+
 					// TODO:
 					// Add importance marks for Celebrations...
 					let notes = '<ul>';

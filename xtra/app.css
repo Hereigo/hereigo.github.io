@@ -17,10 +17,10 @@ form[role="search"] {
  */
 
 .sidebar {
-  position: fixed;
-  top: 0;
   bottom: 0;
   left: 0;
+  position: fixed;
+  top: 0;
   z-index: 100;
   /* Behind the navbar */
   padding: 48px 0 0;
@@ -45,23 +45,23 @@ form[role="search"] {
 }
 
 .sidebar-sticky {
-  position: relative;
-  top: 0;
+  /* Scrollable contents if viewport is shorter than content. */
   height: calc(100vh - 48px);
-  padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto;
-  /* Scrollable contents if viewport is shorter than content. */
+  padding-top: .5rem;
+  position: relative;
+  top: 0;
 }
 
 .sidebar .nav-link {
-  font-weight: 500;
   color: #333;
+  font-weight: 500;
 }
 
 .sidebar .nav-link .feather {
-  margin-right: 4px;
   color: #727272;
+  margin-right: 4px;
 }
 
 .sidebar .nav-link.active {
