@@ -66,6 +66,13 @@
             width: 8rem;
         }
 
+        .menu .monSwitchBtn {
+            font-weight: 600;
+            padding: .3rem;
+            text-align: center;
+            width: 2.4rem;
+        }
+
         .feather {
             height: 18px;
             width: 18px;
@@ -126,7 +133,8 @@
         }
 
         .today {
-            background-color: blanchedalmond;
+            /* background-color: blanchedalmond; */
+            background-color: rgb(255, 243, 191);
             font-weight: 600;
         }
 
@@ -178,6 +186,10 @@
                 font-weight: 600;
                 padding-right: .4rem;
                 text-align: right;
+            }
+
+            .calenDay ul {
+                margin-bottom: 0;
             }
 
             .calenDay.calenDayHeader {
@@ -267,7 +279,7 @@
             <div></div>
             <div></div>
             <div></div>
-            <zero-md src="/LN_Gnome.md"></zero-md>
+            <zero-md src="/md/LN_Gnome.md"></zero-md>
             <div></div>
             <div></div>
             <div></div>
@@ -302,6 +314,11 @@
                     <button onclick="tabSwitch(event, 'linux')">
                         <span data-feather="monitor"></span>&nbsp; Linux
                     </button>
+                </li>
+                <li>
+                    <button id="toPrevMon" class="monSwitchBtn"></button>
+                    <button id="toCurrMon" class="monSwitchBtn"></button>
+                    <button id="toNextMon" class="monSwitchBtn"></button>
                 </li>
             </ul>
         </block>
@@ -404,7 +421,7 @@
             { m: 07, d: 06, b: 160, c: "x", n: "160 (28) Life-M" },
             { m: 07, d: 06, b: 225, c: "b", n: "225 (28) Life-4g" },
             { m: 07, d: 13, b: 000, c: "b", n: "Barno" },
-            { m: 07, d: 14, b: 000, c: "b", n: "Panchen" },
+            { m: 07, d: 14, b: 000, c: "b", n: "Panchen BD" },
             { m: 07, d: 15, b: 000, c: "b", n: "Lazareva BD" },
             { m: 08, d: 13, b: 000, c: "b", n: "Ira's BD" },
             { m: 08, d: 17, b: 000, c: "b", n: "Mom's BD" },
@@ -416,7 +433,6 @@
             { m: 11, d: 30, b: 000, c: "b", n: "Davyd BD" },
             { m: 12, d: 10, b: 000, c: "b", n: "Ula's BD" },
 
-            { m: 06, d: 18, b: 000, c: "b", n: "10:00 MULT BD" },
             { m: 06, d: 18, b: 000, c: "b", n: "18:00 - OSBD" },
             { m: 07, d: 18, b: 000, c: "b", n: "Ula's Travel" },
             { m: 06, d: 21, b: 000, c: "b", n: "Ask for Kitchen!" },
@@ -429,21 +445,32 @@
 
         // =========================================================
 
-        document.addEventListener("DOMContentLoaded", (event) => {
-            let calenTab = document.getElementById("calendar");
+        const aYear = new Date().getFullYear();
+        const _MONTH = new Date().getMonth();
+
+        const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+        // TODO:
+        // REFACTOR SEVEN!!!
+        let aToday = new Date().getDate() + 10; // 7 !!!!!
+
+        function reBuildCalendar(MONTH) {
+
+            let calenTabOld = document.getElementById("calendar");
+            calenTabOld.remove();
+
+            let calenTab = document.createElement('article');
+            calenTab.classList.add('center');
             calenTab.style.display = "grid";
             calenTab.className += " active";
+            calenTab.id = "calendar";
 
-            const aYear = new Date().getFullYear();
-            const MONTH = new Date().getMonth();
-            const monFirstDay = new Date(aYear, MONTH, 1);
-            const monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
-            const monStartWeekDay = monFirstDay.getDay();
-            const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            let Header = document.querySelector('header')
+            Header.insertAdjacentElement('afterend', calenTab)
 
-            // TODO:
-            // REFACTOR SEVEN!!!
-            let aToday = new Date().getDate() + 10; // 7 !!!!!
+            let monFirstDay = new Date(aYear, MONTH, 1);
+            let monLastDay = new Date(aYear, parseInt(MONTH) + 1, 0).getDate();
+            let monStartWeekDay = monFirstDay.getDay();
 
             let daysCounter = 1;
             let monDate = null;
@@ -499,6 +526,32 @@
                 }
                 calenTab.insertAdjacentElement('beforeend', div);
             }
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+
+            reBuildCalendar(_MONTH);
+
+            let prevMon = _MONTH - 1;
+            let nextMon = _MONTH + 1;
+
+            const toNextMon = document.querySelector('#toNextMon');
+            const toPrevMon = document.querySelector('#toPrevMon');
+            const toCurrMon = document.querySelector('#toCurrMon');
+
+            toPrevMon.textContent = '0' + (prevMon + 1) + ' <';
+            toNextMon.textContent = '0' + (nextMon + 1) + ' >';
+            toCurrMon.textContent = '0' + (_MONTH + 1) + ' # ';
+
+            toPrevMon.addEventListener('click', function () {
+                reBuildCalendar(prevMon);
+            });
+            toNextMon.addEventListener('click', function () {
+                reBuildCalendar(nextMon);
+            });
+            toCurrMon.addEventListener('click', function () {
+                reBuildCalendar(_MONTH);
+            });
         });
 
     </script>
