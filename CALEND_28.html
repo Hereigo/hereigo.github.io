@@ -39,14 +39,16 @@
         td {
             font-size: 14px;
             font-weight: 400;
-            /* height: 75px; */
+            height: 50px;
             transition: all 0.3s;
             vertical-align: initial;
             width: 14.285%;
+            /* min-height: 5rem; */
         }
 
         .day {
             position: relative;
+
         }
 
         .day:hover {
@@ -62,9 +64,14 @@
         div.number,
         span.number {
             background-color: aliceblue;
+
             float: right;
-            padding: .5rem;
-            text-align: right;
+            /*
+            text-align: right; */
+            margin-bottom: .5rem;
+            position: absolute;
+            top: 5px;
+            right: 5px;
         }
 
         div.event,
@@ -107,7 +114,9 @@
         <tr>
             <td class="day">
                 <span class="number">31</span>
+                <span class="event"> - Abcdefghjklmn</span>
                 <span class="event"> - Abcdefgh ijklmn</span>
+                <span class="event"> - Abcdefghjklmn</span>
                 <span class="event"> - Abcdefgh ijklmn</span>
                 <span class="event"> - Abcdefgh ijklmn</span>
             </td>
