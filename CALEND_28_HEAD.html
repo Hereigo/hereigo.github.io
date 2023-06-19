@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Calendarium</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./../libs/bootstrap.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 14px;
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav article notes"
+                "footer footer footer";
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            grid-template-columns: 20% 1fr 15%;
+            grid-template-rows: 80px 1fr 70px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header,
+        footer,
+        article,
+        nav,
+        div {
+            padding: 1.2em;
+            background-color: aliceblue;
+            border: 1px gray solid;
+        }
+
+        #pageHeader {
+            grid-area: header;
+        }
+
+        #pageFooter {
+            grid-area: footer;
+        }
+
+        .center {
+            grid-area: article;
+        }
+
+        #mainNav {
+            grid-area: nav;
+        }
+
+        #siteAds {
+            grid-area: notes;
+        }
+
+        /* Stack the layout on small devices/viewports. */
+        @media all and (max-width: 575px) {
+            body {
+                grid-template-areas:
+                    "header"
+                    "article"
+                    "notes"
+                    "nav"
+                    "footer";
+                grid-template-rows: 80px 1fr 70px 1fr 70px;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+<body>
+    <header id="pageHeader">Header</header>
+
+    <!---------------------------- NAV (LEFT) ---------------------------->
+
+    <nav id="mainNav">
+        <ul>
+            <li>
+                <button onclick="tabSwitch(event, 'calendar')">
+                    <span data-feather="calendar"></span>&nbsp; Calendar
+                </button>
+            </li>
+            <li>
+                <button onclick="tabSwitch(event, 'jscript')">
+                    <span data-feather="chrome"></span>&nbsp; JScript
+                </button>
+            </li>
+            <li>
+                <button onclick="tabSwitch(event, 'linux')">
+                    <span data-feather="monitor"></span>&nbsp; Linux
+                </button>
+            </li>
+            <li>
+                <button id="toPrevMon" class="monSwitchBtn">00</button>
+                <button id="toCurrMon" class="monSwitchBtn">00</button>
+                <button id="toNextMon" class="monSwitchBtn">00</button>
+            </li>
+        </ul>
+    </nav>
+
+    <article class="center" id="calendar">CALENDAR</article>
+    <article class="center" id="jscript">JScript</article>
+    <article class="center" id="linux">Linux</article>
+
+    <!---------------------------- NOTES (RIGHT) ---------------------------->
+
+    <div id="siteAds">Notes</div>
+
+
+    <footer id="pageFooter">Footer</footer>
+</body>
+
+<script src="../libs/feather.min.js"></script>
+<script>
+    (function () {
+        'use strict'
+        feather.replace({ 'aria-hidden': 'true' });
+    })();
+
+    // =========================================================
+
+    function tabSwitch(evt, tabName) {
+        var i, tabcontent;
+        tabcontent = document.getElementsByClassName("center");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "grid";
+        evt.currentTarget.className += " active";
+    }
+
+</script>
+
+
+</html>
