@@ -17,10 +17,10 @@
                 "header header header"
                 "nav article notes"
                 "footer footer footer";
-            grid-column-gap: 10px;
-            grid-row-gap: 10px;
-            grid-template-columns: 20% 1fr 15%;
-            grid-template-rows: 80px 1fr 70px;
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            grid-template-columns: 10% 1fr 15%;
+            grid-template-rows: 50px 1fr 50px;
             height: 100vh;
             margin: 0;
         }
@@ -39,21 +39,36 @@
             grid-area: header;
         }
 
-        #pageFooter {
-            grid-area: footer;
+        #pageNav {
+            grid-area: nav;
+        }
+
+        #pageNav li {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        #pageNav li {
+            margin: .8rem 0;
         }
 
         .center {
             grid-area: article;
+            display: none;
         }
 
-        #mainNav {
-            grid-area: nav;
+        .center#calendar {
+            display: grid;
         }
 
-        #siteAds {
+        #pageNotes {
             grid-area: notes;
         }
+
+        #pageFooter {
+            grid-area: footer;
+        }
+
 
         /* Stack the layout on small devices/viewports. */
         @media all and (max-width: 575px) {
@@ -75,7 +90,7 @@
 
     <!---------------------------- NAV (LEFT) ---------------------------->
 
-    <nav id="mainNav">
+    <nav id="pageNav">
         <ul>
             <li>
                 <button onclick="tabSwitch(event, 'calendar')">
@@ -100,13 +115,17 @@
         </ul>
     </nav>
 
+    <!---------------------------- CENTER ---------------------------->
+
     <article class="center" id="calendar">CALENDAR</article>
+
     <article class="center" id="jscript">JScript</article>
+
     <article class="center" id="linux">Linux</article>
 
     <!---------------------------- NOTES (RIGHT) ---------------------------->
 
-    <div id="siteAds">Notes</div>
+    <div id="pageNotes">Notes</div>
 
 
     <footer id="pageFooter">Footer</footer>
