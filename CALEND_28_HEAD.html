@@ -10,27 +10,25 @@
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     <style>
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-family: 'Ubuntu';
             font-size: 14px;
             display: grid;
             grid-template-areas:
                 "header header header"
-                "nav article notes"
+                "nav article aside"
                 "footer footer footer";
             grid-column-gap: 5px;
             grid-row-gap: 5px;
             grid-template-columns: 10% 1fr 15%;
             grid-template-rows: 50px 1fr 50px;
-            height: 100vh;
             margin: 0;
         }
 
-        header,
-        footer,
         article,
-        nav,
-        div {
-            padding: 1.2em;
+        aside,
+        footer,
+        header,
+        nav {
             background-color: aliceblue;
             border: 1px gray solid;
         }
@@ -43,44 +41,107 @@
             grid-area: nav;
         }
 
-        #pageNav li {
+        #pageNav ul {
             list-style-type: none;
-            margin-left: 0;
+            padding-left: 5px;
         }
 
         #pageNav li {
             margin: .8rem 0;
         }
 
-        .center {
-            grid-area: article;
+        article {
             display: none;
+            grid-area: article;
+            padding: 1rem 0 0 0;
+            overflow: scroll;
+            height: 90vh;
         }
 
-        .center#calendar {
+        article#calendar {
+            background-color: white;
+            overflow: visible;
+            border: 0;
             display: grid;
+            padding: 0;
         }
 
         #pageNotes {
-            grid-area: notes;
+            grid-area: aside;
         }
 
         #pageFooter {
             grid-area: footer;
         }
 
+        table {
+            border-collapse: separate;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border-radius: 5px;
+            border: 1px rgb(189, 189, 189) solid;
+            box-sizing: border-box;
+        }
+
+        th {
+            background-color: antiquewhite;
+            font-size: 10px;
+            font-weight: 700;
+            height: 1px;
+            min-height: 1px;
+            max-height: 1px;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        td {
+            font-weight: 400;
+            height: 80px;
+            transition: all 0.3s;
+            vertical-align: initial;
+            width: 14.285%;
+        }
+
+        .day {
+            padding-top: 1.2rem;
+            position: relative;
+        }
+
+        .day:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        div.number {
+            float: right;
+            font-size: 16px;
+            font-weight: 500;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        div.event {
+            padding-left: .5rem;
+        }
 
         /* Stack the layout on small devices/viewports. */
-        @media all and (max-width: 575px) {
+
+        @media all and (max-width: 555px) {
             body {
                 grid-template-areas:
                     "header"
                     "article"
-                    "notes"
+                    "aside"
                     "nav"
                     "footer";
                 grid-template-rows: 80px 1fr 70px 1fr 70px;
                 grid-template-columns: 1fr;
+                font-size: 11px;
             }
         }
     </style>
@@ -115,20 +176,229 @@
         </ul>
     </nav>
 
-    <!---------------------------- CENTER ---------------------------->
+    <!---------------------------- ARTICLE 1 ---------------------------->
 
-    <article class="center" id="calendar">CALENDAR</article>
+    <article class="center" id="calendar">
+        <table>
+            <tr>
+                <th class="day-name">Mon</th>
+                <th class="day-name">Tue</th>
+                <th class="day-name">Wed</th>
+                <th class="day-name">Thu</th>
+                <th class="day-name">Fri</th>
+                <th class="day-name">Sat</th>
+                <th class="day-name">Sun</th>
+            </tr>
+            <!-- ---- C A L E N D A R - B O D Y ---- -->
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                    <div class="event"> - Abcdefghjklmn</div>
+                    <div class="event"> - Abcdefgh ijklmn</div>
+                    <div class="event"> - Abcdefghjklmn</div>
+                    <div class="event"> - Abcdefgh ijklmn</div>
+                    <div class="event"> - Abcdefgh ijklmn</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                    <span class="event"> - Spaniko</span>
+                    <span class="event"> - Spaniko</span>
+                    <span class="event"> - Spaniko</span>
+                    <span class="event"> - Spaniko</span>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                    <div class="event"> - DivvDiv</div>
+                    <div class="event"> - DivvDiv</div>
+                    <div class="event"> - DivvDiv</div>
+                    <div class="event"> - DivvDiv</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+                <td class="day">
+                    <div class="number">31</div>
+                </td>
+            </tr>
+        </table>
+    </article>
+
+    <!---------------------------- ARTICLE 2 ---------------------------->
 
     <article class="center" id="jscript">JScript</article>
 
-    <article class="center" id="linux">Linux</article>
+    <!---------------------------- ARTICLE 3 ---------------------------->
+
+    <article class="center" id="linux">
+        <zero-md src="/md/LN_Aaa_Tips.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Arch.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Bash.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Gnome.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_UbunDeb.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Utilities.md"></zero-md>
+    </article>
 
     <!---------------------------- NOTES (RIGHT) ---------------------------->
 
-    <div id="pageNotes">Notes</div>
+    <aside id="pageNotes">Notes</aside>
 
+    <!------------------------------- FOOTER ------------------------------->
 
     <footer id="pageFooter">Footer</footer>
+
+    <!----------------------------------------------------------------------->
+
 </body>
 
 <script src="../libs/feather.min.js"></script>
