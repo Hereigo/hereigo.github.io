@@ -64,16 +64,23 @@
         article {
             display: none;
             grid-area: article;
-            padding: 1rem 0 0 0;
-            overflow: scroll;
             height: 90vh;
+            overflow: scroll;
+            padding: 1rem 0 0 0;
+        }
+
+        article#jscript {
+            /* TEST !!!!!!!!!!! */
+            display: grid;
+            padding-left: 30px;
+            /* TEST !!!!!!!!!!! */
         }
 
         article#calendar {
             background-color: white;
-            overflow: visible;
             border: 0;
-            display: grid;
+            /* display: grid; */
+            overflow: visible;
             padding: 0;
         }
 
@@ -102,9 +109,8 @@
             font-size: 10px;
             font-weight: 700;
             height: 1px;
-            min-height: 1px;
-            max-height: 1px;
             letter-spacing: 2px;
+            min-height: 1px;
             text-align: center;
             text-transform: uppercase;
         }
@@ -158,9 +164,12 @@
             #pageNav button {
                 width: 31%;
             }
+        }
     </style>
+</head>
 
 <body>
+
     <header id="pageHeader">Header</header>
 
     <!---------------------------- NAV (LEFT) ---------------------------->
@@ -413,28 +422,27 @@
 
     <!----------------------------------------------------------------------->
 
-</body>
+    <script src="../libs/feather.min.js"></script>
+    <script>
+        (function () {
+            'use strict'
+            feather.replace({ 'aria-hidden': 'true' });
+        })();
 
-<script src="../libs/feather.min.js"></script>
-<script>
-    (function () {
-        'use strict'
-        feather.replace({ 'aria-hidden': 'true' });
-    })();
+        // =========================================================
 
-    // =========================================================
-
-    function tabSwitch(evt, tabName) {
-        var i, tabcontent;
-        tabcontent = document.getElementsByClassName("center");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
+        function tabSwitch(evt, tabName) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("center");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "grid";
+            evt.currentTarget.className += " active";
         }
-        document.getElementById(tabName).style.display = "grid";
-        evt.currentTarget.className += " active";
-    }
 
-</script>
+    </script>
 
+</body>
 
 </html>
