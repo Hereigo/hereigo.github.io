@@ -369,7 +369,57 @@
 
     <!---------------------------- ARTICLE 2 ---------------------------->
 
-    <article class="center" id="jscript">JScript</article>
+    <article class="center" id="jscript">
+
+        <style>
+            input[type=text] {
+                width: 4rem;
+            }
+        </style>
+        <p>
+            <input id="i1" type="text">
+            <input id="i2" type="text">
+            <input id="i3" type="text">
+        </p>
+        <script>
+
+            const i1 = document.querySelector('#i1');
+            const i2 = document.querySelector('#i2');
+            const i3 = document.querySelector('#i3');
+            const inputs = document.querySelectorAll('input[type=text]');
+            inputs.forEach(el => {
+                el.addEventListener('keydown', function () {
+                    // Handle keys pressed.
+                    var key = event.keyCode || event.charCode;
+                    // Backspace Key.
+                    if (key === 8) {
+                        if (el.id === 'i2' && el.value.length < 2) {
+                            i2.value = '';
+                            i1.focus();
+                        } else if (el.id === 'i3' && el.value.length < 2) {
+                            i3.value = '';
+                            i2.focus();
+                        }
+                        // Delete Key.
+                    } else if (key !== 46) {
+                        if (el.id === 'i1' && el.value.length > 1) {
+                            i1.value = i1.value.substr(0, 2);
+                            i2.focus();
+                        } else if (el.id === 'i2' && el.value.length > 1) {
+                            i2.value = i2.value.substr(0, 2);
+                            i3.focus();
+                        } else if (el.id === 'i3' && el.value.length > 3) {
+                            i3.value = i3.value.substr(0, 3);
+                        }
+                    }
+                })
+            });
+
+            i1.focus();
+
+        </script>
+
+    </article>
 
     <!---------------------------- ARTICLE 3 ---------------------------->
 
