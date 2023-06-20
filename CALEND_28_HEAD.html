@@ -43,11 +43,22 @@
 
         #pageNav ul {
             list-style-type: none;
-            padding-left: 5px;
+            padding: 0 5px;
         }
 
         #pageNav li {
             margin: .8rem 0;
+        }
+
+        #pageNav button {
+            border-radius: 7px;
+            text-align: left;
+            width: 100%;
+        }
+
+        #pageNav button.monSwitchBtn {
+            text-align: center;
+            width: 31%;
         }
 
         article {
@@ -143,7 +154,10 @@
                 grid-template-columns: 1fr;
                 font-size: 11px;
             }
-        }
+
+            #pageNav button {
+                width: 31%;
+            }
     </style>
 
 <body>
