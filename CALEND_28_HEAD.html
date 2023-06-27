@@ -83,7 +83,7 @@
             width: 30%;
         }
 
-        /* ----------------- CENTER ARTICLES ----------------- */
+        /* ----------------- CENTER ----------------- */
 
         article {
             display: none;
@@ -158,11 +158,13 @@
             padding-left: .5rem;
         }
 
-        /* ----------------- CENTER ARTICLES ----------------- */
+        /* ----------------- RIGHT NOTES ----------------- */
 
         #pageNotes {
             grid-area: aside;
         }
+
+        /* ----------------- FOOTER ----------------- */
 
         #pageFooter {
             grid-area: footer;
@@ -243,7 +245,7 @@
                 <th>Sat</th>
                 <th>Sun</th>
             </tr>
-            <!-- ---- C A L E N D A R - B O D Y ---- -->
+            <!-- ------------ C A L E N D A R - B O D Y ------------ -->
             <tr>
                 <td class="day">
                     <div class="number">31</div>
@@ -389,13 +391,11 @@
     <!---------------------------- ARTICLE 2 ---------------------------->
 
     <article class="center" id="jscript">
-
         <style>
             input[type=text] {
                 width: 4rem;
             }
         </style>
-
         <table>
             <tr>
                 <td>
@@ -414,13 +414,10 @@
                 </td>
             </tr>
         </table>
-
         <script>
-
             const i1 = document.querySelector('#i1');
             const i2 = document.querySelector('#i2');
             const i3 = document.querySelector('#i3');
-
             const inputs = document.querySelectorAll('input[type=text]');
             inputs.forEach(el => {
                 el.addEventListener('keydown', function () {
@@ -449,11 +446,8 @@
                     }
                 })
             });
-
             i1.focus();
-
         </script>
-
     </article>
 
     <!---------------------------- ARTICLE 3 ---------------------------->
@@ -507,6 +501,7 @@
 
     <!----------------------------------------------------------------------->
 
+    <script src="../xtra/search.js"></script>
     <script src="../libs/feather.min.js"></script>
     <script>
         (function () {
