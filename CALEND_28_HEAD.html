@@ -540,6 +540,12 @@
     <script src="../libs/feather.min.js"></script>
     <script>
 
+        // TODO:
+        // 1. Prevent Duplications!
+        // 2. Sort by Time inside a Day.
+
+        // =========================================================
+
         (function () {
             'use strict'
             feather.replace({ 'aria-hidden': 'true' });
@@ -548,12 +554,6 @@
         // =========================================================
 
         document.addEventListener("DOMContentLoaded", (event) => {
-
-            // TODO:
-            // 1. Prevent Duplications!
-            // 2. Sort by Time inside a Day.
-
-            // =========================================================
 
             const _YEAR = new Date().getFullYear();
             const _MONTH = new Date().getMonth();
