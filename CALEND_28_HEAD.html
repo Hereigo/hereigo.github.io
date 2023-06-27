@@ -70,16 +70,13 @@
         }
 
         article#jscript {
-            /* TEST !!!!!!!!!!! */
-            display: grid;
             padding-left: 30px;
-            /* TEST !!!!!!!!!!! */
         }
 
         article#calendar {
             background-color: white;
             border: 0;
-            /* display: grid; */
+            display: grid;
             overflow: visible;
             padding: 0;
         }
@@ -97,13 +94,6 @@
             width: 100%;
         }
 
-        th,
-        td {
-            border-radius: 5px;
-            border: 1px rgb(189, 189, 189) solid;
-            box-sizing: border-box;
-        }
-
         th {
             background-color: antiquewhite;
             font-size: 10px;
@@ -115,9 +105,16 @@
             text-transform: uppercase;
         }
 
+        th,
+        td {
+            border-radius: 5px;
+            border: 1px rgb(189, 189, 189) solid;
+            box-sizing: border-box;
+        }
+
         td {
             font-weight: 400;
-            height: 80px;
+            height: 100px;
             transition: all 0.3s;
             vertical-align: initial;
             width: 14.285%;
@@ -163,6 +160,10 @@
 
             #pageNav button {
                 width: 31%;
+            }
+
+            td {
+                height: 60px;
             }
         }
     </style>
@@ -250,10 +251,10 @@
                 </td>
                 <td class="day">
                     <div class="number">31</div>
-                    <span class="event"> - Spaniko</span>
-                    <span class="event"> - Spaniko</span>
-                    <span class="event"> - Spaniko</span>
-                    <span class="event"> - Spaniko</span>
+                    <div class="event"> - Spaniko</div>
+                    <div class="event"> - Spaniko</div>
+                    <div class="event"> - Spaniko</div>
+                    <div class="event"> - Spaniko</div>
                 </td>
                 <td class="day">
                     <div class="number">31</div>
@@ -376,16 +377,32 @@
                 width: 4rem;
             }
         </style>
-        <p>
-            <input id="i1" type="text">
-            <input id="i2" type="text">
-            <input id="i3" type="text">
-        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <div style="margin: 1rem;">
+                        <div>
+                            <span>Day</span> &nbsp; &nbsp; &nbsp; &nbsp;
+                            <span>Month</span> &nbsp; &nbsp; &nbsp; &nbsp;
+                            <span>Year</span>
+                        </div>
+                        <div>
+                            <span><input id="i1" type="text"></span>
+                            <span><input id="i2" type="text"></span>
+                            <span><input id="i3" type="text"></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
         <script>
 
             const i1 = document.querySelector('#i1');
             const i2 = document.querySelector('#i2');
             const i3 = document.querySelector('#i3');
+
             const inputs = document.querySelectorAll('input[type=text]');
             inputs.forEach(el => {
                 el.addEventListener('keydown', function () {
@@ -408,7 +425,7 @@
                         } else if (el.id === 'i2' && el.value.length > 1) {
                             i2.value = i2.value.substr(0, 2);
                             i3.focus();
-                        } else if (el.id === 'i3' && el.value.length > 3) {
+                        } else if (el.id === 'i3' && el.value.length > 4) {
                             i3.value = i3.value.substr(0, 3);
                         }
                     }
