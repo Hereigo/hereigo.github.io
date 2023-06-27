@@ -7,28 +7,22 @@
     <title>Calendarium</title>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./../libs/bootstrap.min.css">
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+
     <style>
         body {
+            background: aliceblue;
+            display: grid;
             font-family: 'Ubuntu';
             font-size: 14px;
-            display: grid;
             grid-template-areas:
                 "header header header"
                 "nav article aside"
                 "footer footer footer";
             grid-column-gap: 5px;
             grid-row-gap: 5px;
-            grid-template-columns: 10% 1fr 15%;
+            grid-template-columns: 10% 1fr 9rem;
             grid-template-rows: 40px 1fr 40px;
             margin: 0;
-        }
-
-        article,
-        aside,
-        footer {
-            background-color: aliceblue;
-            border: 1px gray solid;
         }
 
         /* ----------------- HEADER ----------------- */
@@ -97,7 +91,6 @@
         }
 
         article#calendar {
-            background-color: white;
             border: 0;
             display: grid;
             overflow: visible;
@@ -120,14 +113,23 @@
             text-transform: uppercase;
         }
 
+        th:nth-child(n+6) {
+            background-color: rgb(255, 195, 195);
+        }
+
         th,
         td {
             border-radius: 5px;
-            border: 1px rgb(189, 189, 189) solid;
+            border: 1px rgb(174, 174, 174) solid;
             box-sizing: border-box;
         }
 
+        td:nth-child(n+6) {
+            background-color: rgb(255, 234, 234);
+        }
+
         td {
+            background-color: white;
             font-weight: 400;
             height: 120px;
             transition: all 0.3s;
@@ -141,7 +143,7 @@
         }
 
         .day:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgb(255, 227, 192);
             cursor: pointer;
         }
 
@@ -164,9 +166,23 @@
             grid-area: aside;
         }
 
+        #pageNotes ul {
+            padding-top: .4rem;
+            padding-left: 1.2rem;
+        }
+
+        #pageNotes li:nth-child(-n+10) {
+            font-weight: 700;
+        }
+
+        #pageNotes hr {
+            margin: .3rem -10px;
+        }
+
         /* ----------------- FOOTER ----------------- */
 
         #pageFooter {
+            background-color: aliceblue;
             grid-area: footer;
         }
 
@@ -177,10 +193,10 @@
                 grid-template-areas:
                     "header"
                     "article"
-                    "aside"
                     "nav"
+                    "aside"
                     "footer";
-                grid-template-rows: 35px 1fr 70px 1fr 70px;
+                grid-template-rows: 35px 1fr;
                 grid-template-columns: 1fr;
                 font-size: 11px;
             }
@@ -191,6 +207,11 @@
 
             #pageNav button {
                 width: 31%;
+            }
+
+            #pageNav button.monSwitchBtn {
+                text-align: center;
+                width: 10%;
             }
 
             td {
@@ -497,11 +518,48 @@
 
     <!---------------------------- NOTES (RIGHT) ---------------------------->
 
-    <aside id="pageNotes">Notes</aside>
+    <aside id="pageNotes">
+        <ul>
+            <li>! iMportant !</li>
+            <hr />
+            <li>Meta-Life-!!!</li>
+            <hr />
+            <li>Only Most -RM</li>
+            <li>Vor-Zhe-Van</li>
+            <li>Clear Videos</li>
+            <li>Clear xTra Drive</li>
+            <li>RM All Senset</li>
+            <hr />
+            <li>car 1.5 csh</li>
+            <li>fla 2 mon</li>
+            <li>foo 7 mon</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1.5 csh</li>
+            <li>flat 1.5 mon</li>
+            <li>food 9 mix</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1 mo</li>
+            <li>foo 8 mix</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1 mo</li>
+            <li>foo 8 mix</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1.5 mo</li>
+            <li>foo 8 mix</li>
+            <li>she 10 csh</li>
+        </ul>
+    </aside>
 
     <!------------------------------- FOOTER ------------------------------->
 
-    <footer id="pageFooter">Footer</footer>
+    <footer id="pageFooter">
+    </footer>
 
     <!----------------------------------------------------------------------->
 
@@ -527,6 +585,7 @@
         }
 
     </script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 
 </body>
 
