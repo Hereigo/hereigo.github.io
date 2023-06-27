@@ -26,8 +26,7 @@
 
         article,
         aside,
-        footer,
-        nav {
+        footer {
             background-color: aliceblue;
             border: 1px gray solid;
         }
@@ -69,7 +68,7 @@
         }
 
         #pageNav li {
-            margin: .8rem 0;
+            margin: .3rem 0 .8rem .5rem;
         }
 
         #pageNav button {
@@ -116,6 +115,7 @@
             font-weight: 700;
             height: 1px;
             letter-spacing: 2px;
+            padding: 0px;
             text-align: center;
             text-transform: uppercase;
         }
@@ -129,7 +129,7 @@
 
         td {
             font-weight: 400;
-            height: 100px;
+            height: 120px;
             transition: all 0.3s;
             vertical-align: initial;
             width: 14.285%;
@@ -180,9 +180,13 @@
                     "aside"
                     "nav"
                     "footer";
-                grid-template-rows: 80px 1fr 70px 1fr 70px;
+                grid-template-rows: 35px 1fr 70px 1fr 70px;
                 grid-template-columns: 1fr;
                 font-size: 11px;
+            }
+
+            .header input[type="search"] {
+                width: 83%;
             }
 
             #pageNav button {
@@ -190,7 +194,7 @@
             }
 
             td {
-                height: 60px;
+                height: 100px;
             }
         }
     </style>
@@ -236,7 +240,7 @@
 
     <article class="center" id="calendar">
         <table>
-            <tr>
+            <thead>
                 <th>Mon</th>
                 <th>Tue</th>
                 <th>Wed</th>
@@ -244,7 +248,7 @@
                 <th>Fri</th>
                 <th>Sat</th>
                 <th>Sun</th>
-            </tr>
+            </thead>
             <!-- ------------ C A L E N D A R - B O D Y ------------ -->
             <tr>
                 <td class="day">
@@ -504,6 +508,7 @@
     <script src="../xtra/search.js"></script>
     <script src="../libs/feather.min.js"></script>
     <script>
+
         (function () {
             'use strict'
             feather.replace({ 'aria-hidden': 'true' });
