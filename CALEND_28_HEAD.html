@@ -137,6 +137,10 @@
             width: 14.285%;
         }
 
+        .aToday {
+            background-color: rgb(254, 242, 177);
+        }
+
         .day {
             padding-top: 1.2rem;
             position: relative;
@@ -577,17 +581,47 @@
 
         document.addEventListener("DOMContentLoaded", (event) => {
 
-            let cells = document.querySelectorAll('table tr td');
-            let i = 1;
-            cells.forEach(function (c) {
-                let x = c.querySelector('.number');
-                if (x) {
-                    x.innerHTML = i;
-                    i++;
-                }
-            });
+            // TODO:
+            // 1. Prevent Duplications!
+            // 2. Sort by Time inside a Day.
+
+            // =========================================================
+
+            const _YEAR = new Date().getFullYear();
+            const _MONTH = new Date().getMonth();
+            const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+            reBuildCalendar(_MONTH, _YEAR);
 
         });
+
+        function reBuildCalendar(MONTH, YEAR) {
+
+            let aToday = new Date().getDate();
+            let monFirstDay = new Date(YEAR, MONTH, 1);
+            let monLastDay = new Date(YEAR, parseInt(MONTH) + 1, 0).getDate();
+            let monStartWeekDay = monFirstDay.getDay();
+            let monthDay = 1;
+
+            console.log(aToday)
+
+            let cells = document.querySelectorAll('table tr td');
+            let i = 0;
+            cells.forEach(function (cell) {
+                let x = cell.querySelector('.number');
+                i++;
+
+                if (monthDay == aToday) {
+                    cell.classList.add('aToday');
+                }
+
+                if (x && i >= monStartWeekDay && monthDay <= monLastDay) {
+                    x.innerHTML = monthDay;
+                    monthDay++;
+                }
+
+            });
+        }
 
         // =========================================================
 
