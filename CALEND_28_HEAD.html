@@ -141,6 +141,11 @@
             background-color: rgb(254, 242, 177);
         }
 
+        .BDay {
+            color: hotpink;
+            font-weight: 600;
+        }
+
         .day {
             padding-top: 1.2rem;
             position: relative;
@@ -159,6 +164,11 @@
             position: absolute;
             right: 7px;
             top: 2px;
+        }
+
+        .event>ul {
+            list-style-type: circle;
+            padding-left: .7rem;
         }
 
         div.event {
@@ -278,141 +288,98 @@
             <!-- ------------ C A L E N D A R - B O D Y ------------ -->
             <tr>
                 <td class="day">
-                    <div class="number"></div>
-                    <div class="event"> - Abcdefgh ijklmn</div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
             <tr>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
             <tr>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
             <tr>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
             <tr>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
             <tr>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
                 <td class="day">
-                    <div class="number"></div>
                 </td>
             </tr>
         </table>
@@ -568,6 +535,7 @@
 
     <!----------------------------------------------------------------------->
 
+    <script src="../xtra/calend.js"></script>
     <script src="../xtra/search.js"></script>
     <script src="../libs/feather.min.js"></script>
     <script>
@@ -601,22 +569,37 @@
             let monFirstDay = new Date(YEAR, MONTH, 1);
             let monLastDay = new Date(YEAR, parseInt(MONTH) + 1, 0).getDate();
             let monStartWeekDay = monFirstDay.getDay();
+
+            // TEMP
+            let nextMonth = false;
+
             let monthDay = 1;
-
-            console.log(aToday)
-
-            let cells = document.querySelectorAll('table tr td');
             let i = 0;
+            let cells = document.querySelectorAll('table tr td');
             cells.forEach(function (cell) {
-                let x = cell.querySelector('.number');
                 i++;
 
                 if (monthDay == aToday) {
                     cell.classList.add('aToday');
                 }
 
-                if (x && i >= monStartWeekDay && monthDay <= monLastDay) {
-                    x.innerHTML = monthDay;
+                if (i >= monStartWeekDay && monthDay <= monLastDay) {
+
+                    let list = '';
+                    let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+
+                    aData.filter(x =>
+                        (x.d === monthDay && x.m === 0) ||
+                        (x.d === monthDay && x.m === monHumanNumber)).forEach(element => {
+                            list +=
+                                '<li' + (element.n.endsWith(' BD') ? ' class="BDay" ' : '') + '>' +
+                                element.n + '</li>';
+                        });
+
+                    cell.innerHTML =
+                        '<div class="number">' + monthDay + '</div>' +
+                        '<div class="event">' + '<ul>' + list + '</ul>' + '</div>';
+
                     monthDay++;
                 }
 
