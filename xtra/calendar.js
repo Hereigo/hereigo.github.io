@@ -87,7 +87,7 @@ function reBuildCalendar(MONTH, YEAR) {
                 (x.d === monthDay && x.m === 0) ||
                 (x.d === monthDay && x.m === monHumanNumber)).forEach(element => {
                     list +=
-                        '<li' + (element.n.endsWith(' BD') ? ' class="BDay" ' : '') + '>' +
+                        '<li' + (element.n.endsWith(' BD') ? ' class="bday" ' : '') + '>' +
                         element.n + '</li>';
                 });
 
