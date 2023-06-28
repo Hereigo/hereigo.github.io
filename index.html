@@ -74,6 +74,10 @@
             width: 100%;
         }
 
+        #pageNav .feather {
+            margin-right: 10px;
+        }
+
         #pageNav button.monSwitchBtn {
             text-align: center;
             width: 30%;
@@ -184,7 +188,7 @@
         }
 
         .day.nextMon {
-            background-color: rgb(229, 238, 238);
+            background-color: rgb(223, 230, 230);
         }
 
         .day.nextMon:hover {
@@ -277,23 +281,23 @@
         <ul>
             <li>
                 <button onclick="tabSwitch(event, 'calendar')">
-                    <span data-feather="calendar"></span>&nbsp; Calendar
+                    <span data-feather="calendar"></span> Calendar
                 </button>
             </li>
             <li>
                 <button onclick="tabSwitch(event, 'jscript')">
-                    <span data-feather="chrome"></span>&nbsp; JScript
+                    <span data-feather="chrome"></span> JScript
                 </button>
             </li>
             <li>
                 <button onclick="tabSwitch(event, 'linux')">
-                    <span data-feather="monitor"></span>&nbsp; Linux
+                    <span data-feather="monitor"></span> Linux
                 </button>
             </li>
             <li>
-                <button id="toPrevMon" class="monSwitchBtn">00</button>
-                <button id="toCurrMon" class="monSwitchBtn">00</button>
-                <button id="toNextMon" class="monSwitchBtn">00</button>
+                <button id="toPrevMon" class="monSwitchBtn"></button>
+                <button id="toCurrMon" class="monSwitchBtn"></button>
+                <button id="toNextMon" class="monSwitchBtn"></button>
             </li>
         </ul>
     </nav>
@@ -510,13 +514,8 @@
     <script src="../xtra/calend.js"></script>
     <script src="../xtra/search.js"></script>
     <script src="../libs/feather.min.js"></script>
+    <script src="index.js"></script>
     <script>
-
-        // TODO:
-        // 1. Prevent Duplications!
-        // 2. Sort by Time inside a Day.
-
-        // =========================================================
 
         (function () {
             'use strict'
@@ -525,15 +524,39 @@
 
         // =========================================================
 
-        document.addEventListener("DOMContentLoaded", (event) => {
+        const _YEAR = new Date().getFullYear();
+        const _MONTH = new Date().getMonth();
+        const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
-            const _YEAR = new Date().getFullYear();
-            const _MONTH = new Date().getMonth();
-            const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        document.addEventListener("DOMContentLoaded", (event) => {
 
             reBuildCalendar(_MONTH, _YEAR);
 
+            let prevMon = _MONTH - 1;
+            let nextMon = _MONTH + 1;
+
+            const toNextMon = document.querySelector('#toNextMon');
+            const toPrevMon = document.querySelector('#toPrevMon');
+            const toCurrMon = document.querySelector('#toCurrMon');
+
+            toPrevMon.textContent = '0' + (prevMon + 1) + ' <';
+            toNextMon.textContent = '0' + (nextMon + 1) + ' >';
+            toCurrMon.textContent = '0' + (_MONTH + 1) + ' # ';
+
+            toPrevMon.addEventListener('click', function () {
+                reBuildCalendar(prevMon, _YEAR);
+            });
+            toNextMon.addEventListener('click', function () {
+                reBuildCalendar(nextMon, _YEAR);
+            });
+            toCurrMon.addEventListener('click', function () {
+                reBuildCalendar(_MONTH, _YEAR);
+            });
         });
+
+        // TODO:
+        // 1. Prevent Duplications!
+        // 2. Sort by Time inside a Day.
 
         function reBuildCalendar(MONTH, YEAR) {
 
@@ -553,24 +576,33 @@
                 hi++
                 if (hi == new Date().getDay()) {
                     c.classList.add('aToday');
+                } else {
+                    c.classList.remove('aToday');
                 }
             });
 
             cells.forEach(function (cell) {
+                cell.innerHTML = '';
                 ci++;
 
-                if (monthDay == aToday) {
-                    cell.classList.add('aToday');
-                }
-
                 if (ci >= monStartWeekDay) {
+
+                    if (monthDay == aToday && _MONTH == MONTH) {
+                        cell.classList.add('aToday');
+                    } else {
+                        cell.classList.remove('aToday');
+                    }
 
                     if (!nextMonth && monthDay > monLastDay) {
                         nextMonth = true;
                         monthDay = 1;
                     }
 
-                    if (nextMonth) cell.classList.add('nextMon');
+                    if (nextMonth) {
+                        cell.classList.add('nextMon');
+                    } else {
+                        cell.classList.remove('nextMon');
+                    }
 
                     let list = '';
                     let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
