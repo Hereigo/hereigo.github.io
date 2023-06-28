@@ -1,286 +1,505 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendarium</title>
-    <link rel="icon" href="./favicon.ico">
-    <link rel="stylesheet" href="./libs/bootstrap.min.css">
-    <link rel="stylesheet" href="./xtra/app.css">
-    <link rel="stylesheet" href="./xtra/calend.css">
+    <link rel="stylesheet" href="./../libs/bootstrap.min.css">
     <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-size: 14px;
+        }
+
+        .main {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .main>* {
+            flex: 1 100%;
+            padding: 10px;
+        }
+
+        /* ----------------- HEADER ----------------- */
+
+        .header {
+            background: lightgray
+        }
+
+        .header form {
+            text-align: center;
+        }
+
+        .header input[type="search"] {
+            border-radius: 7px;
+            padding-left: 1rem;
+            width: 94%;
+        }
+
+        .header input[type="submit"] {
+            border-radius: 5px;
+        }
+
+        /* ----------------- 2 SIDES ----------------- */
+
+        .sides {
+            flex: .4 0 0;
+        }
+
+        .menu ul {
+            margin-left: 0rem;
+        }
+
+        .menu li {
+            list-style-type: none;
+            margin: .8rem 0;
+        }
+
+        .menu button {
+            border-radius: 7px;
+            padding: .3rem .8rem;
+            text-align: left;
+            width: 8rem;
+        }
+
+        .menu .monSwitchBtn {
+            font-weight: 600;
+            padding: .3rem;
+            text-align: center;
+            width: 2.4rem;
+        }
+
+        .feather {
+            height: 18px;
+            width: 18px;
+        }
+
+        .notes ul {
+            padding-left: 1rem;
+        }
+
+        .notes li:nth-child(-n+10) {
+            font-weight: 700;
+        }
+
+        .notes hr {
+            margin: .3rem -10px;
+        }
+
+        /* ----------------- CENTER ----------------- */
+
+        .center {
+            display: none;
+            flex: 3 0px;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: 1fr repeat(7, 5fr);
+            padding: 0;
+            text-align: left;
+        }
+
+        .calenDay.calenDayHeader {
+            border: 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .aDate {
+            color: blue;
+            text-align: right;
+        }
+
+        .calenDay {
+            border-radius: 4px;
+            border: 1px rgb(189, 189, 189) solid;
+            margin: 1px;
+            padding: 0 .5rem;
+        }
+
+        .weekend {
+            background-color: #faeeee;
+        }
+
+        .weekend .aDate {
+            color: red;
+        }
+
+        .prevMonth,
+        .nextMonth {
+            background-color: rgb(206, 226, 226);
+        }
+
+        .today {
+            /* background-color: blanchedalmond; */
+            background-color: rgb(255, 243, 191);
+            font-weight: 600;
+        }
+
+        .BDay {
+            color: red;
+            font-weight: 600;
+        }
+
+        .calenDay:hover {
+            background-color: rgb(228, 252, 252);
+        }
+
+        .calenDay>ul {
+            list-style-type: circle;
+            padding-left: .7rem;
+        }
+
+        .calenDay>li {
+            text-align: left;
+        }
+
+        /* ----------------- MOBILE ----------------- */
+
+        @media all and (max-width: 799px) {
+
+            .header input[type="search"] {
+                width: 80%;
+            }
+
+            .sides {
+                flex: .4 0 0;
+            }
+
+            .menu ul {
+                margin-left: .5rem;
+                padding-left: 0;
+            }
+
+            .menu li {
+                font-size: small;
+            }
+
+            .center {
+                flex: 1 400px;
+            }
+
+            .aDate {
+                color: blue;
+                font-weight: 600;
+                padding-right: .4rem;
+                text-align: right;
+            }
+
+            .calenDay ul {
+                margin-bottom: 0;
+            }
+
+            .calenDay.calenDayHeader {
+                border: 0;
+                font-size: 12px;
+                font-weight: 500;
+                text-align: center;
+            }
+
+            .calenDay,
+            .calenDay>ul {
+                padding: 0;
+            }
+
+            .calenDay>ul>li {
+                font-size: 10px;
+                list-style-type: none;
+                padding: .2rem;
+            }
+        }
+
+        /* ----------------- NOT MOBILE ----------------- */
+
+        @media all and (min-width: 800px) {
+            .menu {
+                order: 1;
+            }
+
+            .center {
+                order: 2;
+            }
+
+            .notes {
+                order: 3;
+            }
+
+            .footer {
+                order: 4;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Calendarium</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div class="main">
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebarMenu" id="nav-tab" role="tablist"
-                class="col-md-2 col-lg-1 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
+        <!---------------------------- HEADER ---------------------------->
 
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" id="nav-calend-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-calend" role="tab" aria-controls="nav-calend" aria-selected="true">
-                                <span data-feather="calendar"></span>
-                                Calend
-                            </a>
-                        </li>
+        <header class="header">
+            <form>
+                <input type="search" placeholder="Search">
+                <input type="submit" value="Search" />
+            </form>
+        </header>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-home-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
-                                <span data-feather="chrome"></span>
-                                JS
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-linux-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-linux" role="tab" aria-controls="nav-linux" aria-selected="false">
-                                <span data-feather="monitor"></span>
-                                Linux
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-powershell-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-powershell" role="tab" aria-controls="nav-powershell"
-                                aria-selected="false">
-                                <span data-feather="command"></span>
-                                PoSh
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-python-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-python" role="tab" aria-controls="nav-python"
-                                aria-selected="false">
-                                <span data-feather="code"></span>
-                                Python
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="database"></span>
-                                Database
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" id="nav-reports-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-reports" role="tab" aria-controls="nav-reports"
-                                aria-selected="false">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                    </ul>
+        <!---------------------------- CENTER ---------------------------->
 
-                </div>
-            </nav>
-
-            <main class="col-md-10 ms-sm-auto col-lg-11 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <!-- <h1 class="h2">Tips & Tricks :</h1> -->
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                    </div>
-                </div>
-                <!---------------- MAIN BLOCK ---------------->
-
-                <div class="tab-content" id="nav-tabContent">
-
-                    <div class="tab-pane fade show active" id="nav-calend" role="tabpanel"
-                        aria-labelledby="nav-calend-tab">
-                        <!-- <div include-html="./calendar.html"></div> -->
-
-                        <div class="row">
-
-                            <!-- CENTER ZONE -->
-                            <div class="col-md-10">
-                                <div class="row">
-                                    <div class="col-1"><button id="mon0" type="button"
-                                            class="btn btn-mon btn-light">Jan</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon1" type="button"
-                                            class="btn btn-mon btn-light">Feb</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon2" type="button"
-                                            class="btn btn-mon btn-light">Mar</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon3" type="button"
-                                            class="btn btn-mon btn-light">Apr</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon4" type="button"
-                                            class="btn btn-mon btn-light">May</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon5" type="button"
-                                            class="btn btn-mon btn-light">Jun</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon6" type="button"
-                                            class="btn btn-mon btn-light">Jul</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon7" type="button"
-                                            class="btn btn-mon btn-light">Aug</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon8" type="button"
-                                            class="btn btn-mon btn-light">Sep</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon9" type="button"
-                                            class="btn btn-mon btn-light">Oct</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon10" type="button"
-                                            class="btn btn-mon btn-light">Nov</button>
-                                    </div>
-                                    <div class="col-1"><button id="mon11" type="button"
-                                            class="btn btn-mon btn-light">Dec</button>
-                                    </div>
-                                </div>
-                                <div class="grid-calendar">
-                                    <div class="row calendar-week-header">
-                                        <div class="col-xs-1 grid-cell">
-                                            <div>Monday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div>Tuesday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div>Wednesday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div>Thurthday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div>Friday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div class="holiHead">Saturday</div>
-                                        </div>
-                                        <div class="col-xs-1 grid-cell">
-                                            <div class="holiHead">Sunday</div>
-                                        </div>
-                                    </div>
-
-                                    <div id="calend">
-                                        <!-- --- C A L E N D A R - G R I D --- -->
-                                    </div>
-
-                                </div>
-                            </div>
+        <article class="center" id="calendar">
+        </article>
 
 
-                            <!-- RUGHT SIDE -->
-                            <div class="col-md-2" id="right-bar">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p>
-                                        <h3>
-                                            Call-Stack below:
-                                        </h3>
-                                        </p>
-                                        <ul>
-                                            <li>! iMportant !</li>
-                                            <hr />
-                                            <li>Meta-Life-!!!</li>
-                                            <hr />
-                                            <li>Only Most -RM</li>
-                                            <li>Vor-Zhe-Van</li>
-                                            <li>Clear Videos</li>
-                                            <li>Clear xTra Drive</li>
-                                            <li>RM All Senset</li>
-                                            <hr />
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <article class="center" id="jscript" style="background-color: antiquewhite;">
+            <h3>JScript</h3>
+            <p>JScript JScript JScript JScript JScript JScript JScript</p>
+        </article>
 
-                    <!--AUTOGENERATOR-->
 
-                    <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                        <!-- <div include-html="./pages/JS.html"></div> -->
-                        <zero-md src="/JS_Simple.md"></zero-md>
-                        <hr />
-                        <hr />
-                    </div>
+        <article class="center" id="linux">
+            <zero-md src="/md/LN_Aaa_Tips.md"></zero-md>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <zero-md src="/md/LN_Arch.md"></zero-md>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <zero-md src="/md/LN_Bash.md"></zero-md>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <zero-md src="/md/LN_Gnome.md"></zero-md>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <zero-md src="/md/LN_UbunDeb.md"></zero-md>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <zero-md src="/md/LN_Utilities.md"></zero-md>
+        </article>
 
-                    <div class="tab-pane fade" id="nav-linux" role="tabpanel" aria-labelledby="nav-linux-tab">
-                        <!-- <div include-html="./pages/LN.html"></div> -->
-                        <zero-md src="/LN_Aaa_Tips.md"></zero-md>
-                        <hr />
-                        <hr />
-                        <zero-md src="/LN_Arch.md"></zero-md>
-                        <hr />
-                        <hr />
-                        <zero-md src="/LN_Bash.md"></zero-md>
-                        <hr />
-                        <hr />
-                        <zero-md src="/LN_Gnome.md"></zero-md>
-                        <hr />
-                        <hr />
-                        <zero-md src="/LN_UbunDeb.md"></zero-md>
-                        <hr />
-                        <hr />
-                        <zero-md src="/LN_Utilities.md"></zero-md>
-                        <hr />
-                        <hr />
-                    </div>
+        <!---------------------------- MENU (SIDES) ---------------------------->
 
-                    <div class="tab-pane fade" id="nav-powershell" role="tabpanel" aria-labelledby="nav-powershell-tab">
-                        <div include-html="./pages/PS.html"></div>
-                    </div>
+        <block class="sides menu">
+            <ul>
+                <li>
+                    <button onclick="tabSwitch(event, 'calendar')">
+                        <span data-feather="calendar"></span>&nbsp; Calendar
+                    </button>
+                </li>
+                <li>
+                    <button onclick="tabSwitch(event, 'jscript')">
+                        <span data-feather="chrome"></span>&nbsp; JScript
+                    </button>
+                </li>
+                <li>
+                    <button onclick="tabSwitch(event, 'linux')">
+                        <span data-feather="monitor"></span>&nbsp; Linux
+                    </button>
+                </li>
+                <li>
+                    <button id="toPrevMon" class="monSwitchBtn"></button>
+                    <button id="toCurrMon" class="monSwitchBtn"></button>
+                    <button id="toNextMon" class="monSwitchBtn"></button>
+                </li>
+            </ul>
+        </block>
 
-                    <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
-                        <div include-html="./pages/PY.html"></div>
-                    </div>
+        <!---------------------------- NOTES (SIDES) ---------------------------->
 
-                    <div class="tab-pane fade" id="nav-reports" role="tabpanel" aria-labelledby="nav-reports-tab">
-                        <div include-html="./pages/XZ.html"></div>
-                    </div>
+        <block class="sides notes">
+            <ul>
+                <li>! iMportant !</li>
+                <hr />
+                <li>Meta-Life-!!!</li>
+                <hr />
+                <li>Only Most -RM</li>
+                <li>Vor-Zhe-Van</li>
+                <li>Clear Videos</li>
+                <li>Clear xTra Drive</li>
+                <li>RM All Senset</li>
+                <hr />
+                <li>car 1.5 csh</li>
+                <li>fla 2 mon</li>
+                <li>foo 7 mon</li>
+                <li>she 8 csh</li>
+                <hr />
+                <li>car 1.5 csh</li>
+                <li>flat 1.5 mon</li>
+                <li>food 9 mix</li>
+                <li>she 8 csh</li>
+                <hr />
+                <li>car 1 mo</li>
+                <li>fla 1 mo</li>
+                <li>foo 8 mix</li>
+                <hr />
+                <li>car 1 mo</li>
+                <li>fla 1 mo</li>
+                <li>foo 8 mix</li>
+                <li>she 8 csh</li>
+                <hr />
+                <li>car 1 mo</li>
+                <li>fla 1.5 mo</li>
+                <li>foo 8 mix</li>
+                <li>she 10 csh</li>
+            </ul>
+        </block>
 
-                </div>
-                <!---------------- MAIN BLOCK ENDED ---------------->
-
-            </main>
-        </div>
     </div>
 
-    <script src="./libs/bootstrap.bundle.min.js"></script>
-    <script src="./libs/include-in-html.js"></script>
-    <script src="./libs/feather.min.js"></script>
-    <script src="./xtra/calend.js"></script>
-    <script src="./xtra/search.js"></script>
+    <script src="../xtra/calend.js"></script>
+    <script src="../libs/feather.min.js"></script>
     <script>
         (function () {
             'use strict'
-            /* globals Chart:false, feather:false */
             feather.replace({ 'aria-hidden': 'true' });
-
-            // const codeTags = document.querySelectorAll('.markdown-body pre>code');
-            // codeTags.forEach(c => c.style.fontSize = '50%');
         })();
+
+        // =========================================================
+
+        function tabSwitch(evt, tabName) {
+            var i, tabcontent;
+            tabcontent = document.getElementsByClassName("center");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "grid";
+            evt.currentTarget.className += " active";
+        }
+
+        // =========================================================
+
+        const _YEAR = new Date().getFullYear();
+        const _MONTH = new Date().getMonth();
+        const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+        // TODO:
+        // REFACTOR SEVEN!!!
+        let aToday = new Date().getDate() + 10; // 7 !!!!!
+
+        function reBuildCalendar(MONTH) {
+
+            let calenTabOld = document.getElementById("calendar");
+            calenTabOld.remove();
+
+            let calenTab = document.createElement('article');
+            calenTab.classList.add('center');
+            calenTab.style.display = "grid";
+            calenTab.className += " active";
+            calenTab.id = "calendar";
+
+            let header = document.querySelector('header');
+            header.insertAdjacentElement('afterend', calenTab);
+
+            // ===== REBUILD DAYS ============
+
+            let monFirstDay = new Date(_YEAR, MONTH, 1);
+            let monLastDay = new Date(_YEAR, parseInt(MONTH) + 1, 0).getDate();
+            let monStartWeekDay = monFirstDay.getDay();
+
+            let daysCounter = 1;
+            let monDate = null;
+            let nextMonth = false;
+
+            for (i = 1; i < 50; i++) {
+                let div = document.createElement('div');
+                div.classList.add('calenDay');
+
+                if (i <= 7) {
+                    div.classList.add('calenDayHeader');
+                    div.innerHTML = '<div>' + weekDays[i - 1] + '</div>';
+                    if (i > 5)
+                        div.classList.add('text-danger');
+                } else {
+
+                    if (i > 7 && i < monStartWeekDay + 7) {
+                        div.classList.add('prevMonth');
+                    }
+                    else if (monDate >= monLastDay || nextMonth) {
+                        div.classList.add('nextMonth');
+                        nextMonth = true;
+                        if (monDate >= monLastDay) monDate = 0;
+                        monDate++;
+                    } else if (!nextMonth) {
+                        if (monDate)
+                            monDate++;
+                        else
+                            monDate = 1;
+                    }
+                    let list = '';
+                    let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+
+                    aData.filter(x =>
+                        (x.d === monDate && x.m === 0) ||
+                        (x.d === monDate && x.m === monHumanNumber)).forEach(element => {
+                            list +=
+                                '<li' + (element.n.endsWith(' BD') ? ' class="BDay" ' : '') + '>' +
+                                element.n + '</li>';
+                        });
+
+                    div.innerHTML =
+                        '<div class="aDate">' + (monDate != null ? monDate : "") + '</div>' +
+                        '<ul>' + list + '</ul>';
+
+                    if (i === aToday && MONTH === _MONTH) {
+                        div.classList.add('today');
+                    }
+
+                    if (i % 7 === 0 || (i + 1) % 7 === 0) {
+                        div.classList.add('weekend');
+                    }
+                }
+                calenTab.insertAdjacentElement('beforeend', div);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+
+            reBuildCalendar(_MONTH);
+
+            let prevMon = _MONTH - 1;
+            let nextMon = _MONTH + 1;
+
+            const toNextMon = document.querySelector('#toNextMon');
+            const toPrevMon = document.querySelector('#toPrevMon');
+            const toCurrMon = document.querySelector('#toCurrMon');
+
+            toPrevMon.textContent = '0' + (prevMon + 1) + ' <';
+            toNextMon.textContent = '0' + (nextMon + 1) + ' >';
+            toCurrMon.textContent = '0' + (_MONTH + 1) + ' # ';
+
+            toPrevMon.addEventListener('click', function () {
+                reBuildCalendar(prevMon);
+            });
+            toNextMon.addEventListener('click', function () {
+                reBuildCalendar(nextMon);
+            });
+            toCurrMon.addEventListener('click', function () {
+                reBuildCalendar(_MONTH);
+            });
+        });
+
     </script>
+
+    <script src="../xtra/search.js"></script>
 
 </body>
 
