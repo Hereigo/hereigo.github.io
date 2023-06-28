@@ -37,6 +37,7 @@ const aData = [
 	{ m: 08, d: 13, b: 000, c: "b", n: "Ira's BD" },
 	{ m: 08, d: 17, b: 000, c: "b", n: "Mom's BD" },
 	{ m: 09, d: 07, b: 000, c: "b", n: "Alla BD" },
+	{ m: 09, d: 16, b: 000, c: "b", n: "LX begin" },
 	{ m: 10, d: 04, b: 000, c: "b", n: "Koval-x2 BD" },
 	{ m: 10, d: 14, b: 000, c: "b", n: "Draganchuk" },
 	{ m: 10, d: 28, b: 000, c: "b", n: "Dzuba" },
