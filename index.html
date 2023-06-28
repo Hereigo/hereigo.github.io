@@ -2,32 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Calendarium</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./../libs/bootstrap.min.css">
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+
     <style>
         body {
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background: aliceblue;
+            display: grid;
+            font-family: 'Ubuntu';
             font-size: 14px;
-        }
-
-        .main {
-            display: flex;
-            flex-flow: row wrap;
-        }
-
-        .main>* {
-            flex: 1 100%;
-            padding: 10px;
+            grid-template-areas:
+                "header header header"
+                "nav article aside"
+                "footer footer footer";
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            grid-template-columns: 10% 1fr 10%;
+            grid-template-rows: 40px 1fr 40px;
+            margin: 0;
         }
 
         /* ----------------- HEADER ----------------- */
 
         .header {
-            background: lightgray
+            background: lightgray;
+            padding: .3rem;
         }
 
         .header form {
@@ -44,334 +46,542 @@
             border-radius: 5px;
         }
 
-        /* ----------------- 2 SIDES ----------------- */
-
-        .sides {
-            flex: .4 0 0;
+        #pageHeader {
+            grid-area: header;
         }
 
-        .menu ul {
-            margin-left: 0rem;
+        /* ----------------- LEFT NAV ----------------- */
+
+        #pageNav {
+            grid-area: nav;
         }
 
-        .menu li {
+        #pageNav ul {
             list-style-type: none;
-            margin: .8rem 0;
+            padding: 0 7px;
+            padding: 0 5px;
         }
 
-        .menu button {
+        #pageNav li {
+            margin: .3rem 0 .8rem .5rem;
+        }
+
+        #pageNav button {
             border-radius: 7px;
-            padding: .3rem .8rem;
             text-align: left;
-            width: 8rem;
+            width: 100%;
         }
 
-        .menu .monSwitchBtn {
-            font-weight: 600;
-            padding: .3rem;
+        #pageNav button.monSwitchBtn {
             text-align: center;
-            width: 2.4rem;
-        }
-
-        .feather {
-            height: 18px;
-            width: 18px;
-        }
-
-        .notes ul {
-            padding-left: 1rem;
-        }
-
-        .notes li:nth-child(-n+10) {
-            font-weight: 700;
-        }
-
-        .notes hr {
-            margin: .3rem -10px;
+            width: 30%;
         }
 
         /* ----------------- CENTER ----------------- */
 
-        .center {
+        article {
+            border: 1px lightgray solid;
             display: none;
-            flex: 3 0px;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: 1fr repeat(7, 5fr);
-            padding: 0;
-            text-align: left;
+            grid-area: article;
+            height: 90vh;
+            overflow: scroll;
         }
 
-        .calenDay.calenDayHeader {
+        article#calendar {
             border: 0;
-            font-weight: 600;
+            display: grid;
+            overflow: visible;
+            padding: 0;
+        }
+
+        article#jscript {
+            background-color: aliceblue;
+        }
+
+        article#linux {
+            padding-left: 8px;
+            padding-top: 3px;
+        }
+
+        table {
+            border-collapse: separate;
+            width: 100%;
+        }
+
+        th {
+            background-color: antiquewhite;
+            font-size: 10px;
+            font-weight: 700;
+            height: 1px;
+            letter-spacing: 2px;
+            padding: 0px;
             text-align: center;
+            text-transform: uppercase;
         }
 
-        .aDate {
-            color: blue;
-            text-align: right;
+        th:nth-child(n+6) {
+            background-color: rgb(255, 216, 216);
         }
 
-        .calenDay {
-            border-radius: 4px;
-            border: 1px rgb(189, 189, 189) solid;
-            margin: 1px;
-            padding: 0 .5rem;
+        th,
+        td {
+            border-radius: 5px;
+            border: 1px rgb(174, 174, 174) solid;
+            box-sizing: border-box;
         }
 
-        .weekend {
-            background-color: #faeeee;
+        td:nth-child(n+6) {
+            background-color: rgb(252, 239, 239);
         }
 
-        .weekend .aDate {
-            color: red;
+        td {
+            background-color: white;
+            font-weight: 400;
+            height: 120px;
+            transition: all 0.3s;
+            vertical-align: initial;
+            width: 14.285%;
         }
 
-        .prevMonth,
-        .nextMonth {
-            background-color: rgb(206, 226, 226);
-        }
-
-        .today {
-            /* background-color: blanchedalmond; */
-            background-color: rgb(255, 243, 191);
-            font-weight: 600;
+        .aToday {
+            background-color: rgb(254, 242, 177);
         }
 
         .BDay {
-            color: red;
+            color: hotpink;
             font-weight: 600;
         }
 
-        .calenDay:hover {
-            background-color: rgb(228, 252, 252);
+        .day {
+            padding-top: 1.2rem;
+            position: relative;
         }
 
-        .calenDay>ul {
+        .day:hover {
+            background-color: rgb(255, 224, 185);
+            cursor: pointer;
+        }
+
+        div.number {
+            color: rgb(0, 0, 166);
+            float: right;
+            font-size: 16px;
+            font-weight: 500;
+            position: absolute;
+            right: 7px;
+            top: 2px;
+        }
+
+        .event>ul {
             list-style-type: circle;
             padding-left: .7rem;
         }
 
-        .calenDay>li {
-            text-align: left;
+        div.event {
+            padding-left: .5rem;
         }
 
-        /* ----------------- MOBILE ----------------- */
+        .day.nextMon {
+            background-color: rgb(229, 238, 238);
+        }
 
-        @media all and (max-width: 799px) {
+        .day.nextMon:hover {
+            background-color: rgb(255, 224, 185);
+        }
+
+        /* ----------------- RIGHT NOTES ----------------- */
+
+        #pageNotes {
+            grid-area: aside;
+        }
+
+        #pageNotes ul {
+            padding-top: .4rem;
+            padding-left: 1.2rem;
+        }
+
+        #pageNotes li:nth-child(-n+10) {
+            font-weight: 700;
+        }
+
+        #pageNotes hr {
+            margin: .3rem -10px;
+        }
+
+        /* ----------------- FOOTER ----------------- */
+
+        #pageFooter {
+            background-color: aliceblue;
+            grid-area: footer;
+        }
+
+        /* ------ Stack the layout on small devices/viewports. ------ */
+
+        @media all and (max-width: 555px) {
+            body {
+                grid-template-areas:
+                    "header"
+                    "article"
+                    "nav"
+                    "aside"
+                    "footer";
+                grid-template-rows: 35px 1fr;
+                grid-template-columns: 1fr;
+                font-size: 10px;
+            }
 
             .header input[type="search"] {
-                width: 80%;
+                width: 83%;
             }
 
-            .sides {
-                flex: .4 0 0;
+            #pageNav button {
+                width: 31%;
             }
 
-            .menu ul {
-                margin-left: .5rem;
+            #pageNav button.monSwitchBtn {
+                text-align: center;
+                width: 10%;
+            }
+
+            td {
+                height: 100px;
+            }
+
+            .event>ul {
                 padding-left: 0;
             }
 
-            .menu li {
-                font-size: small;
-            }
-
-            .center {
-                flex: 1 400px;
-            }
-
-            .aDate {
-                color: blue;
-                font-weight: 600;
-                padding-right: .4rem;
-                text-align: right;
-            }
-
-            .calenDay ul {
-                margin-bottom: 0;
-            }
-
-            .calenDay.calenDayHeader {
-                border: 0;
-                font-size: 12px;
-                font-weight: 500;
-                text-align: center;
-            }
-
-            .calenDay,
-            .calenDay>ul {
-                padding: 0;
-            }
-
-            .calenDay>ul>li {
-                font-size: 10px;
+            .event>ul>li {
                 list-style-type: none;
-                padding: .2rem;
-            }
-        }
-
-        /* ----------------- NOT MOBILE ----------------- */
-
-        @media all and (min-width: 800px) {
-            .menu {
-                order: 1;
-            }
-
-            .center {
-                order: 2;
-            }
-
-            .notes {
-                order: 3;
-            }
-
-            .footer {
-                order: 4;
+                margin-left: -6px;
+                word-wrap: break-word;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="main">
 
-        <!---------------------------- HEADER ---------------------------->
+    <header id="pageHeader" class="header">
+        <form>
+            <input type="search" placeholder="Search">
+            <input type="submit" value="Search" />
+        </form>
+    </header>
 
-        <header class="header">
-            <form>
-                <input type="search" placeholder="Search">
-                <input type="submit" value="Search" />
-            </form>
-        </header>
+    <!---------------------------- NAV (LEFT) ---------------------------->
 
-        <!---------------------------- CENTER ---------------------------->
+    <nav id="pageNav">
+        <ul>
+            <li>
+                <button onclick="tabSwitch(event, 'calendar')">
+                    <span data-feather="calendar"></span>&nbsp; Calendar
+                </button>
+            </li>
+            <li>
+                <button onclick="tabSwitch(event, 'jscript')">
+                    <span data-feather="chrome"></span>&nbsp; JScript
+                </button>
+            </li>
+            <li>
+                <button onclick="tabSwitch(event, 'linux')">
+                    <span data-feather="monitor"></span>&nbsp; Linux
+                </button>
+            </li>
+            <li>
+                <button id="toPrevMon" class="monSwitchBtn">00</button>
+                <button id="toCurrMon" class="monSwitchBtn">00</button>
+                <button id="toNextMon" class="monSwitchBtn">00</button>
+            </li>
+        </ul>
+    </nav>
 
-        <article class="center" id="calendar">
-        </article>
+    <!---------------------------- ARTICLE 1 ---------------------------->
 
+    <article class="center" id="calendar">
+        <table>
+            <thead>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </thead>
+            <!-- ------------ C A L E N D A R - B O D Y ------------ -->
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
+            <tr>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+                <td class="day"></td>
+            </tr>
 
-        <article class="center" id="jscript" style="background-color: antiquewhite;">
-            <h3>JScript</h3>
-            <p>JScript JScript JScript JScript JScript JScript JScript</p>
-        </article>
+        </table>
+    </article>
 
+    <!---------------------------- ARTICLE 2 ---------------------------->
 
-        <article class="center" id="linux">
-            <zero-md src="/md/LN_Aaa_Tips.md"></zero-md>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <zero-md src="/md/LN_Arch.md"></zero-md>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <zero-md src="/md/LN_Bash.md"></zero-md>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <zero-md src="/md/LN_Gnome.md"></zero-md>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <zero-md src="/md/LN_UbunDeb.md"></zero-md>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <zero-md src="/md/LN_Utilities.md"></zero-md>
-        </article>
+    <article class="center" id="jscript">
+        <div style="margin: 1rem;">
+            <div>
+                <span>Day</span> &nbsp; &nbsp; &nbsp; &nbsp;
+                <span>Month</span> &nbsp; &nbsp; &nbsp; &nbsp;
+                <span>Year</span>
+            </div>
+            <div>
+                <span><input id="i1" type="text" style="width:4rem;"></span>
+                <span><input id="i2" type="text" style="width:4rem;"></span>
+                <span><input id="i3" type="text" style="width:4rem;"></span>
+            </div>
+        </div>
+        <script>
+            const i1 = document.querySelector('#i1');
+            const i2 = document.querySelector('#i2');
+            const i3 = document.querySelector('#i3');
+            const inputs = document.querySelectorAll('input[type=text]');
+            inputs.forEach(el => {
+                el.addEventListener('keydown', function () {
+                    // Handle keys pressed.
+                    var key = event.keyCode || event.charCode;
+                    if (key === 8) { // <--- Backspace Key.
+                        if (el.id === 'i2' && el.value.length < 2) {
+                            i2.value = '';
+                            i1.focus();
+                        } else if (el.id === 'i3' && el.value.length < 2) {
+                            i3.value = '';
+                            i2.focus();
+                        }
+                    } else if (key !== 46) { // <--- Delete Key.
+                        if (el.id === 'i1' && el.value.length > 1) {
+                            i1.value = i1.value.substr(0, 2);
+                            i2.focus();
+                        } else if (el.id === 'i2' && el.value.length > 1) {
+                            i2.value = i2.value.substr(0, 2);
+                            i3.focus();
+                        } else if (el.id === 'i3' && el.value.length > 4) {
+                            i3.value = i3.value.substr(0, 3);
+                        }
+                    }
+                })
+            });
+            i1.focus();
+        </script>
+    </article>
 
-        <!---------------------------- MENU (SIDES) ---------------------------->
+    <!---------------------------- ARTICLE 3 ---------------------------->
 
-        <block class="sides menu">
-            <ul>
-                <li>
-                    <button onclick="tabSwitch(event, 'calendar')">
-                        <span data-feather="calendar"></span>&nbsp; Calendar
-                    </button>
-                </li>
-                <li>
-                    <button onclick="tabSwitch(event, 'jscript')">
-                        <span data-feather="chrome"></span>&nbsp; JScript
-                    </button>
-                </li>
-                <li>
-                    <button onclick="tabSwitch(event, 'linux')">
-                        <span data-feather="monitor"></span>&nbsp; Linux
-                    </button>
-                </li>
-                <li>
-                    <button id="toPrevMon" class="monSwitchBtn"></button>
-                    <button id="toCurrMon" class="monSwitchBtn"></button>
-                    <button id="toNextMon" class="monSwitchBtn"></button>
-                </li>
-            </ul>
-        </block>
+    <article class="center" id="linux">
+        <zero-md src="/md/LN_Aaa_Tips.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Arch.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Bash.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Gnome.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_UbunDeb.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <zero-md src="/md/LN_Utilities.md"></zero-md>
+    </article>
 
-        <!---------------------------- NOTES (SIDES) ---------------------------->
+    <!---------------------------- NOTES (RIGHT) ---------------------------->
 
-        <block class="sides notes">
-            <ul>
-                <li>! iMportant !</li>
-                <hr />
-                <li>Meta-Life-!!!</li>
-                <hr />
-                <li>Only Most -RM</li>
-                <li>Vor-Zhe-Van</li>
-                <li>Clear Videos</li>
-                <li>Clear xTra Drive</li>
-                <li>RM All Senset</li>
-                <hr />
-                <li>car 1.5 csh</li>
-                <li>fla 2 mon</li>
-                <li>foo 7 mon</li>
-                <li>she 8 csh</li>
-                <hr />
-                <li>car 1.5 csh</li>
-                <li>flat 1.5 mon</li>
-                <li>food 9 mix</li>
-                <li>she 8 csh</li>
-                <hr />
-                <li>car 1 mo</li>
-                <li>fla 1 mo</li>
-                <li>foo 8 mix</li>
-                <hr />
-                <li>car 1 mo</li>
-                <li>fla 1 mo</li>
-                <li>foo 8 mix</li>
-                <li>she 8 csh</li>
-                <hr />
-                <li>car 1 mo</li>
-                <li>fla 1.5 mo</li>
-                <li>foo 8 mix</li>
-                <li>she 10 csh</li>
-            </ul>
-        </block>
+    <aside id="pageNotes">
+        <ul>
+            <li>! iMportant !</li>
+            <hr />
+            <li>Meta-Life-!!!</li>
+            <hr />
+            <li>Only Most -RM</li>
+            <li>Vor-Zhe-Van</li>
+            <li>Clear Videos</li>
+            <li>Clear xTra Drive</li>
+            <li>RM All Senset</li>
+            <hr />
+            <li>car 1.5 csh</li>
+            <li>fla 2 mon</li>
+            <li>foo 7 mon</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1.5 csh</li>
+            <li>flat 1.5 mon</li>
+            <li>food 9 mix</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1 mo</li>
+            <li>foo 8 mix</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1 mo</li>
+            <li>foo 8 mix</li>
+            <li>she 8 csh</li>
+            <hr />
+            <li>car 1 mo</li>
+            <li>fla 1.5 mo</li>
+            <li>foo 8 mix</li>
+            <li>she 10 csh</li>
+        </ul>
+    </aside>
 
-    </div>
+    <!------------------------------- FOOTER ------------------------------->
+
+    <footer id="pageFooter">
+    </footer>
+
+    <!----------------------------------------------------------------------->
 
     <script src="../xtra/calend.js"></script>
+    <script src="../xtra/search.js"></script>
     <script src="../libs/feather.min.js"></script>
     <script>
+
+        // TODO:
+        // 1. Prevent Duplications!
+        // 2. Sort by Time inside a Day.
+
+        // =========================================================
+
         (function () {
             'use strict'
             feather.replace({ 'aria-hidden': 'true' });
         })();
+
+        // =========================================================
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+
+            const _YEAR = new Date().getFullYear();
+            const _MONTH = new Date().getMonth();
+            const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+            reBuildCalendar(_MONTH, _YEAR);
+
+        });
+
+        function reBuildCalendar(MONTH, YEAR) {
+
+            let aToday = new Date().getDate();
+            let monFirstDay = new Date(YEAR, MONTH, 1);
+            let monLastDay = new Date(YEAR, parseInt(MONTH) + 1, 0).getDate();
+            let monStartWeekDay = monFirstDay.getDay();
+
+            let i = 0;
+            let monthDay = 1;
+            let nextMonth = false;
+            let cells = document.querySelectorAll('table tr td');
+
+            cells.forEach(function (cell) {
+                i++;
+
+                if (monthDay == aToday) {
+                    cell.classList.add('aToday');
+                }
+
+                if (i >= monStartWeekDay) {
+
+                    if (!nextMonth && monthDay > monLastDay) {
+                        nextMonth = true;
+                        monthDay = 1;
+                    }
+
+                    if (nextMonth) cell.classList.add('nextMon');
+
+                    let list = '';
+                    let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+
+                    aData.filter(x =>
+                        (x.d === monthDay && x.m === 0) ||
+                        (x.d === monthDay && x.m === monHumanNumber)).forEach(element => {
+                            list +=
+                                '<li' + (element.n.endsWith(' BD') ? ' class="BDay" ' : '') + '>' +
+                                element.n + '</li>';
+                        });
+
+                    cell.innerHTML = '<div class="number">' + monthDay + '</div>' +
+                        '<div class="event">' + '<ul>' + list + '</ul>' + '</div>';
+
+                    monthDay++;
+                }
+                else {
+                    cell.classList.add('nextMon');
+                }
+            });
+        }
 
         // =========================================================
 
@@ -385,121 +595,8 @@
             evt.currentTarget.className += " active";
         }
 
-        // =========================================================
-
-        const _YEAR = new Date().getFullYear();
-        const _MONTH = new Date().getMonth();
-        const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-
-        // TODO:
-        // REFACTOR SEVEN!!!
-        let aToday = new Date().getDate() + 10; // 7 !!!!!
-
-        function reBuildCalendar(MONTH) {
-
-            let calenTabOld = document.getElementById("calendar");
-            calenTabOld.remove();
-
-            let calenTab = document.createElement('article');
-            calenTab.classList.add('center');
-            calenTab.style.display = "grid";
-            calenTab.className += " active";
-            calenTab.id = "calendar";
-
-            let header = document.querySelector('header');
-            header.insertAdjacentElement('afterend', calenTab);
-
-            // ===== REBUILD DAYS ============
-
-            let monFirstDay = new Date(_YEAR, MONTH, 1);
-            let monLastDay = new Date(_YEAR, parseInt(MONTH) + 1, 0).getDate();
-            let monStartWeekDay = monFirstDay.getDay();
-
-            let daysCounter = 1;
-            let monDate = null;
-            let nextMonth = false;
-
-            for (i = 1; i < 50; i++) {
-                let div = document.createElement('div');
-                div.classList.add('calenDay');
-
-                if (i <= 7) {
-                    div.classList.add('calenDayHeader');
-                    div.innerHTML = '<div>' + weekDays[i - 1] + '</div>';
-                    if (i > 5)
-                        div.classList.add('text-danger');
-                } else {
-
-                    if (i > 7 && i < monStartWeekDay + 7) {
-                        div.classList.add('prevMonth');
-                    }
-                    else if (monDate >= monLastDay || nextMonth) {
-                        div.classList.add('nextMonth');
-                        nextMonth = true;
-                        if (monDate >= monLastDay) monDate = 0;
-                        monDate++;
-                    } else if (!nextMonth) {
-                        if (monDate)
-                            monDate++;
-                        else
-                            monDate = 1;
-                    }
-                    let list = '';
-                    let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
-
-                    aData.filter(x =>
-                        (x.d === monDate && x.m === 0) ||
-                        (x.d === monDate && x.m === monHumanNumber)).forEach(element => {
-                            list +=
-                                '<li' + (element.n.endsWith(' BD') ? ' class="BDay" ' : '') + '>' +
-                                element.n + '</li>';
-                        });
-
-                    div.innerHTML =
-                        '<div class="aDate">' + (monDate != null ? monDate : "") + '</div>' +
-                        '<ul>' + list + '</ul>';
-
-                    if (i === aToday && MONTH === _MONTH) {
-                        div.classList.add('today');
-                    }
-
-                    if (i % 7 === 0 || (i + 1) % 7 === 0) {
-                        div.classList.add('weekend');
-                    }
-                }
-                calenTab.insertAdjacentElement('beforeend', div);
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", (event) => {
-
-            reBuildCalendar(_MONTH);
-
-            let prevMon = _MONTH - 1;
-            let nextMon = _MONTH + 1;
-
-            const toNextMon = document.querySelector('#toNextMon');
-            const toPrevMon = document.querySelector('#toPrevMon');
-            const toCurrMon = document.querySelector('#toCurrMon');
-
-            toPrevMon.textContent = '0' + (prevMon + 1) + ' <';
-            toNextMon.textContent = '0' + (nextMon + 1) + ' >';
-            toCurrMon.textContent = '0' + (_MONTH + 1) + ' # ';
-
-            toPrevMon.addEventListener('click', function () {
-                reBuildCalendar(prevMon);
-            });
-            toNextMon.addEventListener('click', function () {
-                reBuildCalendar(nextMon);
-            });
-            toCurrMon.addEventListener('click', function () {
-                reBuildCalendar(_MONTH);
-            });
-        });
-
     </script>
-
-    <script src="../xtra/search.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
 
 </body>
 
