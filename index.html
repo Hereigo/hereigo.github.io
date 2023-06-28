@@ -21,15 +21,15 @@
             grid-column-gap: 5px;
             grid-row-gap: 5px;
             grid-template-columns: 10% 1fr 10%;
-            grid-template-rows: 40px 1fr 40px;
+            grid-template-rows: 45px 1fr 40px;
             margin: 0;
         }
 
         /* ----------------- HEADER ----------------- */
 
         .header {
-            background: lightgray;
-            padding: .3rem;
+            background: rgb(161, 161, 161);
+            padding: .5rem .3rem;
         }
 
         .header form {
@@ -63,11 +63,13 @@
         }
 
         #pageNav li {
-            margin: .3rem 0 .8rem .5rem;
+            margin: 1rem;
         }
 
         #pageNav button {
             border-radius: 7px;
+            padding-bottom: .3rem;
+            padding-top: .3rem;
             text-align: left;
             width: 100%;
         }
@@ -197,7 +199,7 @@
 
         #pageNotes ul {
             padding-top: .4rem;
-            padding-left: 1.2rem;
+            padding-left: 1.9rem;
         }
 
         #pageNotes li:nth-child(-n+10) {
@@ -540,19 +542,28 @@
             let monLastDay = new Date(YEAR, parseInt(MONTH) + 1, 0).getDate();
             let monStartWeekDay = monFirstDay.getDay();
 
-            let i = 0;
+            let ci = 0;
+            let hi = 0;
             let monthDay = 1;
             let nextMonth = false;
+            let calHeadCells = document.querySelectorAll('table thead th');
             let cells = document.querySelectorAll('table tr td');
 
+            calHeadCells.forEach(function (c) {
+                hi++
+                if (hi == new Date().getDay()) {
+                    c.classList.add('aToday');
+                }
+            });
+
             cells.forEach(function (cell) {
-                i++;
+                ci++;
 
                 if (monthDay == aToday) {
                     cell.classList.add('aToday');
                 }
 
-                if (i >= monStartWeekDay) {
+                if (ci >= monStartWeekDay) {
 
                     if (!nextMonth && monthDay > monLastDay) {
                         nextMonth = true;
