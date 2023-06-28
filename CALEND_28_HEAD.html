@@ -185,6 +185,10 @@
             background-color: rgb(229, 238, 238);
         }
 
+        .day.nextMon:hover {
+            background-color: rgb(255, 224, 185);
+        }
+
         /* ----------------- RIGHT NOTES ----------------- */
 
         #pageNotes {
@@ -223,7 +227,7 @@
                     "footer";
                 grid-template-rows: 35px 1fr;
                 grid-template-columns: 1fr;
-                font-size: 11px;
+                font-size: 10px;
             }
 
             .header input[type="search"] {
@@ -241,6 +245,16 @@
 
             td {
                 height: 100px;
+            }
+
+            .event>ul {
+                padding-left: 0;
+            }
+
+            .event>ul>li {
+                list-style-type: none;
+                margin-left: -6px;
+                word-wrap: break-word;
             }
         }
     </style>
@@ -378,8 +392,7 @@
                 el.addEventListener('keydown', function () {
                     // Handle keys pressed.
                     var key = event.keyCode || event.charCode;
-                    // Backspace Key.
-                    if (key === 8) {
+                    if (key === 8) { // <--- Backspace Key.
                         if (el.id === 'i2' && el.value.length < 2) {
                             i2.value = '';
                             i1.focus();
@@ -387,8 +400,7 @@
                             i3.value = '';
                             i2.focus();
                         }
-                        // Delete Key.
-                    } else if (key !== 46) {
+                    } else if (key !== 46) { // <--- Delete Key.
                         if (el.id === 'i1' && el.value.length > 1) {
                             i1.value = i1.value.substr(0, 2);
                             i2.focus();
