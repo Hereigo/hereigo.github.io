@@ -4,27 +4,38 @@ const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    reBuildCalendar(_MONTH, _YEAR);
+    reBuildCalendar(_MONTH);
 
-    let prevMon = _MONTH - 1;
-    let nextMon = _MONTH + 1;
+    let monthPrev = _MONTH - 1;
+    let monthNext = _MONTH + 1;
 
+    const toCurrMon = document.querySelector('#toCurrMon');
     const toNextMon = document.querySelector('#toNextMon');
     const toPrevMon = document.querySelector('#toPrevMon');
-    const toCurrMon = document.querySelector('#toCurrMon');
 
-    toPrevMon.textContent = '0' + (prevMon + 1) + ' <';
-    toNextMon.textContent = '0' + (nextMon + 1) + ' >';
-    toCurrMon.textContent = '0' + (_MONTH + 1) + ' # ';
+    toCurrMon.textContent = ((_MONTH + 1) > 9) ? (_MONTH + 1) : '0' + (_MONTH + 1);
+    toNextMon.textContent = ((monthNext + 1) > 9) ? (monthNext + 1) : '0' + (monthNext + 1);
+    toPrevMon.textContent = ((monthPrev + 1) > 9) ? (monthPrev + 1) : '0' + (monthPrev + 1);
+
+    toCurrMon.classList.add('monBtnSelected');
 
     toPrevMon.addEventListener('click', function () {
-        reBuildCalendar(prevMon, _YEAR);
+        reBuildCalendar(monthPrev);
+        toCurrMon.classList.remove('monBtnSelected');
+        toNextMon.classList.remove('monBtnSelected');
+        toPrevMon.classList.add('monBtnSelected');
     });
     toNextMon.addEventListener('click', function () {
-        reBuildCalendar(nextMon, _YEAR);
+        reBuildCalendar(monthNext);
+        toCurrMon.classList.remove('monBtnSelected');
+        toNextMon.classList.add('monBtnSelected');
+        toPrevMon.classList.remove('monBtnSelected');
     });
     toCurrMon.addEventListener('click', function () {
-        reBuildCalendar(_MONTH, _YEAR);
+        reBuildCalendar(_MONTH);
+        toCurrMon.classList.add('monBtnSelected');
+        toNextMon.classList.remove('monBtnSelected');
+        toPrevMon.classList.remove('monBtnSelected');
     });
 });
 
@@ -34,11 +45,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // 2. Sort by Time inside a Day.
 
 
-function reBuildCalendar(MONTH, YEAR) {
+function reBuildCalendar(MonthToCalc) {
 
     let aToday = new Date().getDate();
-    let monFirstDay = new Date(YEAR, MONTH, 1);
-    let monLastDay = new Date(YEAR, parseInt(MONTH) + 1, 0).getDate();
+    let monFirstDay = new Date(_YEAR, MonthToCalc, 1);
+    let monLastDay = new Date(_YEAR, parseInt(MonthToCalc) + 1, 0).getDate();
     let monStartWeekDay = monFirstDay.getDay();
 
     let ci = 0;
@@ -63,7 +74,7 @@ function reBuildCalendar(MONTH, YEAR) {
 
         if (ci >= monStartWeekDay) {
 
-            if (monthDay == aToday && _MONTH == MONTH) {
+            if (monthDay == aToday && MonthToCalc == _MONTH) {
                 cell.classList.add('aToday');
             } else {
                 cell.classList.remove('aToday');
@@ -81,7 +92,7 @@ function reBuildCalendar(MONTH, YEAR) {
             }
 
             let list = '';
-            let monHumanNumber = nextMonth ? parseInt(MONTH) + 2 : parseInt(MONTH) + 1;
+            let monHumanNumber = nextMonth ? parseInt(MonthToCalc) + 2 : parseInt(MonthToCalc) + 1;
 
             aData.filter(x =>
                 (x.d === monthDay && x.m === 0) ||
