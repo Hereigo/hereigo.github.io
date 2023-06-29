@@ -143,17 +143,8 @@ td {
     width: 14.285%;
 }
 
-.aToday {
-    background-color: rgb(255, 240, 155);
-}
-
-.bday {
-    color: hotpink;
-    font-weight: 600;
-}
-
 .day {
-    padding-top: 1.2rem;
+    padding-top: 1.5rem;
     position: relative;
 }
 
@@ -167,9 +158,27 @@ div.number {
     float: right;
     font-size: 16px;
     font-weight: 500;
+    padding-left: 4px;
+    padding-right: 4px;
     position: absolute;
     right: 7px;
     top: 2px;
+}
+
+.aToday {
+    background-color: rgb(255, 240, 155);
+}
+
+.aToday .number {
+    border-radius: 3px;
+    border: 1px solid red;
+    color: red;
+    font-weight: 900;
+}
+
+.bday {
+    color: hotpink;
+    font-weight: 600;
 }
 
 .event>ul {

@@ -1,6 +1,7 @@
 const _YEAR = new Date().getFullYear();
 const _MONTH = new Date().getMonth();
 const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
@@ -13,9 +14,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const toNextMon = document.querySelector('#toNextMon');
     const toPrevMon = document.querySelector('#toPrevMon');
 
-    toCurrMon.textContent = ((_MONTH + 1) > 9) ? (_MONTH + 1) : '0' + (_MONTH + 1);
-    toNextMon.textContent = ((monthNext + 1) > 9) ? (monthNext + 1) : '0' + (monthNext + 1);
-    toPrevMon.textContent = ((monthPrev + 1) > 9) ? (monthPrev + 1) : '0' + (monthPrev + 1);
+    toCurrMon.textContent = months[_MONTH];
+    toNextMon.textContent = months[monthNext];
+    toPrevMon.textContent = months[monthPrev];
 
     toCurrMon.classList.add('monBtnSelected');
 
