@@ -62,7 +62,11 @@ function reBuildCalendar(MonthToCalc) {
 
     calHeadCells.forEach(function (c) {
         hi++
-        if (hi == new Date().getDay()) {
+
+        console.log('hi === ', hi)
+        console.log('nextMonth == false', nextMonth == false)
+
+        if (nextMonth == false && hi == new Date().getDay()) {
             c.classList.add('aToday');
         } else {
             c.classList.remove('aToday');

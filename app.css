@@ -166,7 +166,7 @@ div.number {
 }
 
 .aToday {
-    background-color: rgb(255, 240, 155);
+    background-color: rgb(255, 240, 155) !important;
 }
 
 .aToday .number {
