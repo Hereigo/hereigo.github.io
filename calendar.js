@@ -1,5 +1,7 @@
 const _YEAR = new Date().getFullYear();
 const _MONTH = new Date().getMonth();
+let _TODAY = new Date().getDate();
+let _WEEKDAY = new Date().getDay();
 const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -48,30 +50,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 function reBuildCalendar(MonthToCalc) {
 
-    let aToday = new Date().getDate();
     let monFirstDay = new Date(_YEAR, MonthToCalc, 1);
     let monLastDay = new Date(_YEAR, parseInt(MonthToCalc) + 1, 0).getDate();
     let monStartWeekDay = monFirstDay.getDay();
-
     let ci = 0;
     let hi = 0;
     let monthDay = 1;
     let nextMonth = false;
     let calHeadCells = document.querySelectorAll('table thead th');
-    let cells = document.querySelectorAll('table tr td');
 
     calHeadCells.forEach(function (c) {
         hi++
-
-        console.log('hi === ', hi)
-        console.log('nextMonth == false', nextMonth == false)
-
-        if (nextMonth == false && hi == new Date().getDay()) {
+        if (!nextMonth && hi == _WEEKDAY) {
             c.classList.add('aToday');
         } else {
             c.classList.remove('aToday');
         }
     });
+
+    let cells = document.querySelectorAll('table tr td');
 
     cells.forEach(function (cell) {
         cell.innerHTML = '';
@@ -79,7 +76,7 @@ function reBuildCalendar(MonthToCalc) {
 
         if (ci >= monStartWeekDay) {
 
-            if (monthDay == aToday && MonthToCalc == _MONTH) {
+            if (!nextMonth && monthDay == _TODAY) {
                 cell.classList.add('aToday');
             } else {
                 cell.classList.remove('aToday');

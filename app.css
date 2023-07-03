@@ -119,15 +119,15 @@ th {
     text-transform: uppercase;
 }
 
-th:nth-child(n+6) {
-    background-color: rgb(255, 204, 204);
-}
-
 th,
 td {
     border-radius: 5px;
     border: 1px rgb(174, 174, 174) solid;
     box-sizing: border-box;
+}
+
+th:nth-child(n+6) {
+    background-color: rgb(255, 204, 204);
 }
 
 td:nth-child(n+6) {
