@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .popup {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 300ms ease-in, visibility 0ms ease-in 300ms;
+        }
+
+        .popup.show {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 600ms ease-in, visibility 0ms ease-in 0ms;
+        }
+    </style>
+</head>
+
+<body style="margin: 2rem;">
+
+    <div id="toggleSrc" class="popup">
+        <div style="width: 20rem;height: 5rem;background-color: lightskyblue;"></div>
+        <div style="width: 20rem;height: 5rem;background-color: yellow;"></div>
+    </div>
+    <br />
+    <input type="button" onclick="toggle()" value="Press me!">
+
+    <script>
+        const srcBlock = document.querySelector('#toggleSrc');
+
+        function toggle() {
+            if (srcBlock.classList.contains('show')) {
+                srcBlock.classList.remove('show');
+            } else {
+                srcBlock.classList.add('show');
+            }
+        }
+    </script>
+</body>
+
+</html>
