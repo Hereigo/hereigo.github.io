@@ -58,4 +58,6 @@ const aData = [
 
 	{ m: 07, d: 22, b: 000, c: "b", n: "Ula's Travel BD" },
 	{ m: 07, d: 07, b: 000, c: "b", n: "Life Chck GB" },
+	{ m: 07, d: 13, b: 000, c: "b", n: "Privat + Watches" },
+	{ m: 07, d: 14, b: 000, c: "b", n: "Ask 4 Glass wall" },
 ];
