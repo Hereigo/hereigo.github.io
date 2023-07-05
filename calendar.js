@@ -76,7 +76,7 @@ function reBuildCalendar(MonthToCalc) {
 
         if (ci >= monStartWeekDay) {
 
-            if (!nextMonth && monthDay == _TODAY) {
+            if (!nextMonth && monthDay == _TODAY && MonthToCalc == _MONTH) {
                 cell.classList.add('aToday');
             } else {
                 cell.classList.remove('aToday');
