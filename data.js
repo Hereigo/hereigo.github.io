@@ -56,7 +56,7 @@ const aData = [
 
 	{ m: 12, d: 10, n: "Ula's BD" },
 
-	{ m: 07, d: 13, n: "Ask 4 Glass wall" },
+	{ m: 07, d: 12, n: "Ask 4 Glass wall" },
 	{ m: 07, d: 13, n: "FLOW" },
 	{ m: 07, d: 15, n: "FLOW" },
 	{ m: 07, d: 17, n: "Privat + Watches" },
