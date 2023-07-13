@@ -4,9 +4,9 @@ const aData = [
 	{ m: 00, d: 12, n: "170 Voda" },
 	{ m: 00, d: 12, n: "Counters" },
 	{ m: 00, d: 13, n: "150 Penguin YT" },
+	{ m: 00, d: 13, n: "299 Laner" },
+	{ m: 00, d: 13, n: "Flat Bills." },
 	{ m: 00, d: 14, n: "200 KS" },
-	{ m: 00, d: 14, n: "299 Laner" },
-	{ m: 00, d: 15, n: "Flat Bills." },
 	{ m: 00, d: 19, n: "155 U-KS 28-?" },
 	{ m: 00, d: 23, n: "280 Dominiq" },
 	{ m: 00, d: 23, n: "300 Troylana" },
@@ -35,7 +35,7 @@ const aData = [
 	{ m: 06, d: 13, n: "2Geza-99 BD" },
 	{ m: 06, d: 24, n: "Koo BD" },
 
-	{ m: 07, d: 13, n: "Barno" },
+	{ m: 07, d: 13, n: "Barnoff" },
 	{ m: 07, d: 14, n: "Panchen BD" },
 	{ m: 07, d: 15, n: "Lazareva BD" },
 
@@ -56,7 +56,7 @@ const aData = [
 
 	{ m: 12, d: 10, n: "Ula's BD" },
 
-	{ m: 07, d: 15, n: "FLOW" },
+	{ m: 07, d: 15, n: "FLOWS !!!" },
 	{ m: 07, d: 16, n: "Ask 4 Glass wall" },
 	{ m: 07, d: 17, n: "Privat + Watches" },
 	{ m: 07, d: 22, n: "Ula's Travel BD" },
