@@ -2,8 +2,8 @@ const aData = [
 	{ m: 00, d: 01, n: "Fastiv Mon i Count." },
 	{ m: 00, d: 01, n: "MONY." },
 	{ m: 00, d: 12, n: "170 Voda" },
+	{ m: 00, d: 12, n: "Counters" },
 	{ m: 00, d: 13, n: "150 Penguin YT" },
-	{ m: 00, d: 13, n: "Counters" },
 	{ m: 00, d: 14, n: "200 KS" },
 	{ m: 00, d: 14, n: "299 Laner" },
 	{ m: 00, d: 15, n: "Flat Bills." },
@@ -56,10 +56,9 @@ const aData = [
 
 	{ m: 12, d: 10, n: "Ula's BD" },
 
-	{ m: 07, d: 12, n: "Ask 4 Glass wall" },
-	{ m: 07, d: 13, n: "FLOW" },
 	{ m: 07, d: 15, n: "FLOW" },
+	{ m: 07, d: 16, n: "Ask 4 Glass wall" },
 	{ m: 07, d: 17, n: "Privat + Watches" },
 	{ m: 07, d: 22, n: "Ula's Travel BD" },
-	{ m: 08, d: 07, n: "Life Chck GB" },
+	{ m: 08, d: 04, n: "Life Chck GB" },
 ];
