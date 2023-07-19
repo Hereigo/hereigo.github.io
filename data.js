@@ -7,7 +7,7 @@ const aData = [
 	{ m: 00, d: 13, n: "299 Laner" },
 	{ m: 00, d: 13, n: "Flat Bills." },
 	{ m: 00, d: 14, n: "200 KS" },
-	{ m: 00, d: 19, n: "155 U-KS 28-?" },
+	{ m: 00, d: 16, n: "155 U-KS 28-?" },
 	{ m: 00, d: 23, n: "280 Dominiq" },
 	{ m: 00, d: 23, n: "300 Troylana" },
 	{ m: 00, d: 28, n: "160 iLanos" },
