@@ -55,9 +55,8 @@ const aData = [
 	{ m: 11, d: 30, n: "Davyd BD" },
 
 	{ m: 12, d: 10, n: "Ula's BD" },
+	{ m: 12, d: 12, n: "[0525] Filters??" },
 
-	{ m: 07, d: 21, n: "Ask 4 Glass wall" },
-	{ m: 07, d: 20, n: "Privat + Watches" },
-	{ m: 07, d: 22, n: "Ula's Travel BD" },
+	{ m: 08, d: 03, n: "[7:43] Ula's BD" },
 	{ m: 08, d: 04, n: "Life Chck GB" },
 ];
