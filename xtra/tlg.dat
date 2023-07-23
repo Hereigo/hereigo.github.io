@@ -756,6 +756,7 @@ AUX - flibusta_anglysky
 AUX - mir_ak
 AUX - sklad_knig1
 BUX
+BUX - +GPfKqO9xDg5lZGMy
 BUX - FirstBooktg
 BUX - aphoTg
 BUX - arch_prog
@@ -774,11 +775,10 @@ BUX - gobooks
 BUX - knigi_ot_jane
 BUX - knizhnaya_polka_marketologa
 BUX - physmathlit - Фiзмат
+BUX - povstanec
 BUX - soulbookswithus
 BUX - ukrlit
 BUX - yourMustRead
-BUX - https://t.me/+GPfKqO9xDg5lZGMy
-BUX - https://t.me/povstanec
 DEV
 DEV - devJungles
 DEV - devstreasure
@@ -796,55 +796,53 @@ DEV - techn0teka
 FIN
 FIN - beneficiary
 FUN
+FUN - +JnI041E9UC40OThi
+FUN - joinchat/AAAAAFElevcbuyK0EeBX9Q
 FUN - ukrainiatrash
-FUN - https://t.me/+JnI041E9UC40OThi
-FUN - https://t.me/joinchat/AAAAAFElevcbuyK0EeBX9Q
 HLS
+HLS - +JiHjbz1fOEU1YzVi
 HLS - being_fit
-HLS - https://t.me/+JiHjbz1fOEU1YzVi
 INF
+INF - +N5jJ8aU8FTpiYjRi - day in history
+INF - +kSBRypVnH-M1Zjhi - facts
 INF - diarch - Ремонт
+INF - duvan_expert/17776 - шахрайство в неті
 INF - int_planet
 INF - mrlifehacker
 INF - prosvitaUA
 INF - r_porn (Reddit Communities)
 INF - spc_porn - наука
 INF - stroiy_sam
-INF - https://t.me/+MJw9I6J97ns3YTli
-INF - https://t.me/+kSBRypVnH-M1Zjhi
-INF - https://t.me/duvan_expert/17776 - шахрайство в неті
-INF - https://t.me/worldfacts_ua
-INF - https://t.me/+N5jJ8aU8FTpiYjRi
+INF - worldfacts_ua
 IVT
+IVT - +ffe-3erYRmYxYjNi
 IVT - job_IT_Junior
-IVT - https://t.me/+ffe-3erYRmYxYjNi
 KID
+KID - +L14oMfuxoXU4ODU6 - вчителям,батькам
 KID - miniprint
-KID - https://t.me/+L14oMfuxoXU4ODU6 - вчителям,батькам
 LNX
-LNX - endeavourOS
-LNX - fossPost
-LNX - gtk_News
-LNX - gnuLinuxLovers
-LNX - linuxChats
-LNX - linuxTechIndex
-LNX - linuxTrick
-LNX - rhelAG
 LNX - archLinuxTips
 LNX - archlinux
 LNX - archlinuxGroup
 LNX - archlinuxUkraineOfftopic
 LNX - binTree
+LNX - endeavourOS
 LNX - fbytes
+LNX - fossPost
 LNX - foss_Desktop
+LNX - gnuLinuxLovers
 LNX - grouplinux
+LNX - gtk_News
 LNX - guildOfLinux
 LNX - hacking_os
 LNX - letsFoss
 LNX - linuxAdictos
 LNX - linuxArkit
+LNX - linuxChats
 LNX - linuxNewsGram
 LNX - linuxNewsLetter
+LNX - linuxTechIndex
+LNX - linuxTrick
 LNX - linuxUserSpace
 LNX - linux_group
 LNX - linux_n_linus
@@ -853,10 +851,14 @@ LNX - linuxkalii
 LNX - loveLinuxInfo
 LNX - penguin_geek
 LNX - planetArch
+LNX - rhelAG
 LNX - tech_linux
 LNX - techli_nux
 LNX - zettelLinux
 MOV
+MOV - +F7yl88PBPPMyODAy
+MOV - +SfWi8h00RVw5ODZi
+MOV - +o07KK1d5p3M5ZTBi
 MOV - hd_ki_no - Horrors
 MOV - kino_pirat
 MOV - kino_svalka
@@ -865,43 +867,40 @@ MOV - online_kino_ua
 MOV - online_kino_uah
 MOV - ray_kino/975
 MOV - smotretFilmyOnlineBot
-MOV - https://t.me/+F7yl88PBPPMyODAy
-MOV - https://t.me/+SfWi8h00RVw5ODZi
-MOV - https://t.me/+o07KK1d5p3M5ZTBi
 MUS
+MUS - +wDOoPjvuQBBjYzdi
 MUS - chartakmusic - Relax
-MUS - disco90e - 90е.
+MUS - disco90e
 MUS - madeinukrai
 MUS - music_Glory_to_Ukraine
 MUS - muzika_dlya_dushi99
 MUS - pokayfu_muz7
 MUS - stefano_muz
 MUS - ukrmusixx
-MUS - https://t.me/+wDOoPjvuQBBjYzdi
 PSY
+PSY - +1Bt5IEG_yEsyYTdi
+PSY - +BvWWNMgZiEwwNGEy
 PSY - ccoznania
+PSY - light_cinnamoon/2932?single
 PSY - nightyuki
 PSY - xoroshie_otnosheniya
-PSY - https://t.me/+1Bt5IEG_yEsyYTdi
-PSY - https://t.me/+BvWWNMgZiEwwNGEy
-PSY - https://t.me/light_cinnamoon/2932?single
 SEC
 SEC - infosecurity
 SEC - new_everything_free
 SEC - social_engineering
 UAM
+UAM - +_1NwzGaSMNwzZjE6 (Fakel)
 UAM - l_v_kostenko
-UAM - https://t.me/+_1NwzGaSMNwzZjE6 (Fakel)
-UAN - https://t.me/+_j5Uqr4LpOc1OWZi
+UAN - +_j5Uqr4LpOc1OWZi
 UIT
-UIT - https://t.me/+U1y6GhTcu701YWVi
+UIT - +U1y6GhTcu701YWVi
 WOK
+WOK - +NHYOtHb5--40ZTEx (Pracya)
+WOK - +vk_ni8IhmQ8wZTYy (Jobzilla)
 WOK - zaichenkoTeam
-WOK - https://t.me/+NHYOtHb5--40ZTEx (Pracya)
-WOK - https://t.me/+vk_ni8IhmQ8wZTYy (Jobzilla)
 WSH
 WSH - with_love_card
 XTR
 XTR - evrythingGoesHere
-XTR - ukrainianCatalog
 XTR - github.com/goq/telegram-list
+XTR - ukrainianCatalog
