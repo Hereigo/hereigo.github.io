@@ -39,6 +39,14 @@ yay -Qqd | pacman -Rsu --print -
 sudo pacman -S pavucontrol
 ```
 
+### AUR toggle (manjaro)
+```sh
+# to Comment:
+sudo sed -Ei '/EnableAUR/s/^/#/' /etc/pamac.conf
+# to UnComment:
+sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
+```
+
 #### Qemu + KVM
 ```sh
 pacman -S virt-manager qemu-desktop vde2 ebtables dnsmasq bridge-utils openbsd-netcat

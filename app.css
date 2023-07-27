@@ -3,14 +3,14 @@ body {
     display: grid;
     font-family: 'Ubuntu';
     font-size: 14px;
-    grid-template-areas:
-        "header header header"
-        "nav article aside"
-        "footer footer footer";
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     grid-template-columns: 10% 1fr 10%;
     grid-template-rows: 45px 1fr 40px;
+    grid-template-areas:
+        "header header header"
+        "nav article aside"
+        "footer footer footer";
     margin: 0;
 }
 
