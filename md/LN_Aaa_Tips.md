@@ -30,15 +30,6 @@ curl https://fonts.google.com/download?family=JetBrains%20Mono
 curl https://fonts.google.com/download?family=PT%20Mono
 ```
 
-### AUR toggle (manjaro)
-```sh
-# to Comment:
-sudo sed -Ei '/EnableAUR/s/^/#/' /etc/pamac.conf
-# to UnComment:
-sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
-```
-
-
 ### Check Temperatures:
 ```sh
 sensors && sudo hddtemp /dev/sda && sudo hddtemp /dev/sdb
@@ -46,7 +37,6 @@ sensors && sudo hddtemp /dev/sda && sudo hddtemp /dev/sdb
 ls /sys/class/hwmon/hwon2/
 cat /sys/class/hwmon/hwmon2/temp1_input
 ```
-
 
 #### Locale Cfg:
 ```sh
