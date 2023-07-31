@@ -748,7 +748,7 @@
 000 - worldnews_reddit
 000 - wutttttttt
 000 - ya_metro
-AAA
+AUX
 AUX - audiobooks_tg
 AUX - bookai
 AUX - booksau
@@ -757,6 +757,7 @@ AUX - mir_ak
 AUX - sklad_knig1
 BUX
 BUX - +GPfKqO9xDg5lZGMy
+BUX - +_IOrbtOtxsZjZmMy (Paliturka)
 BUX - FirstBooktg
 BUX - aphoTg
 BUX - arch_prog
@@ -774,12 +775,14 @@ BUX - gameDevArchive
 BUX - gobooks
 BUX - knigi_ot_jane
 BUX - knizhnaya_polka_marketologa
+BUX - mmy_books
 BUX - physmathlit - Фiзмат
 BUX - povstanec
 BUX - soulbookswithus
 BUX - ukrlit
 BUX - yourMustRead
 DEV
+DEV - +AnKG6e3ual44MmVi (AdminBooks)
 DEV - devJungles
 DEV - devstreasure
 DEV - it_Books_Library
@@ -798,6 +801,7 @@ FIN
 FIN - beneficiary
 FUN
 FUN - +JnI041E9UC40OThi
+FUN - +WKSd7zMQBZEwMmU6 (ОтО скАзАнУв)
 FUN - joinchat/AAAAAFElevcbuyK0EeBX9Q
 FUN - ukrainiatrash
 HLS
@@ -805,17 +809,21 @@ HLS - +JiHjbz1fOEU1YzVi
 HLS - being_fit
 INF
 INF - +2ghXhIWcBQ9iZDAy - geography
+INF - +9LnfOEcpjqljNTE6 (Modern Galileo)
 INF - +ElbTAmkpcYhhZDUy - over the world
 INF - +N5jJ8aU8FTpiYjRi - day in history
+INF - +e8PFJ8PXVm9lMzBi - men's aliexpress
 INF - +kSBRypVnH-M1Zjhi - facts
 INF - diarch - Ремонт
 INF - duvan_expert/17776 - шахрайство в неті
 INF - int_planet
+INF - korysniporady
 INF - mrlifehacker
 INF - prosvitaUA
 INF - r_porn (Reddit Communities)
 INF - spc_porn - наука
 INF - stroiy_sam
+INF - travelscomua - Travels
 INF - worldfacts_ua
 IVT
 IVT - +ffe-3erYRmYxYjNi
@@ -860,7 +868,9 @@ LNX - techli_nux
 LNX - zettelLinux
 MOV
 MOV - +F7yl88PBPPMyODAy
+MOV - +JVIFFMRcQ9UxY2I6 (Domash Kinot)
 MOV - +SfWi8h00RVw5ODZi
+MOV - +nbpJ7SqtlTY1NjY6 (CineScope_UA)
 MOV - +o07KK1d5p3M5ZTBi
 MOV - hd_ki_no - Horrors
 MOV - kino_pirat
@@ -881,11 +891,13 @@ MUS - pokayfu_muz7
 MUS - stefano_muz
 MUS - ukrmusixx
 PSY
+PSY - +0ruOa3jk_yc1NDYy (Psyhogolik)
 PSY - +1Bt5IEG_yEsyYTdi
 PSY - +BvWWNMgZiEwwNGEy
 PSY - ccoznania
 PSY - light_cinnamoon/2932?single
 PSY - nightyuki
+PSY - scorp1444
 PSY - xoroshie_otnosheniya
 SEC
 SEC - +1jAsfde0eQMwMDdi - tenevie_twosouls
@@ -894,14 +906,11 @@ SEC - infosecurity
 SEC - new_everything_free
 SEC - social_engineering
 SEC - tenevie_twosouls
-SHP
-SHP - +e8PFJ8PXVm9lMzBi - men's aliexpr
 UAM
+UAM - +U1y6GhTcu701YWVi
 UAM - +_1NwzGaSMNwzZjE6 (Fakel)
+UAM - +_j5Uqr4LpOc1OWZi
 UAM - l_v_kostenko
-UAN - +_j5Uqr4LpOc1OWZi
-UIT
-UIT - +U1y6GhTcu701YWVi
 WOK
 WOK - +Il_ZlvDymQBjZWEy (workerua)
 WOK - +NHYOtHb5--40ZTEx (Pracya)

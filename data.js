@@ -38,6 +38,7 @@ const aData = [
 	{ m: 07, d: 13, n: "Barnoff" },
 	{ m: 07, d: 14, n: "Panchen BD" },
 	{ m: 07, d: 15, n: "Lazareva BD" },
+	{ m: 07, d: 25, n: "Tax Declar BD" },
 
 	{ m: 08, d: 03, n: "160 (28) Life-M" },
 	{ m: 08, d: 07, n: "225 (28) Life-4G" },
