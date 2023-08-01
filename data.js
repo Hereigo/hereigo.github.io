@@ -1,5 +1,4 @@
 const aData = [
-	{ m: 00, d: 01, n: "Fastiv Mon i Count." },
 	{ m: 00, d: 01, n: "MONY." },
 	{ m: 00, d: 12, n: "170 Voda" },
 	{ m: 00, d: 12, n: "Counters" },
@@ -11,7 +10,7 @@ const aData = [
 	{ m: 00, d: 23, n: "280 Dominiq" },
 	{ m: 00, d: 23, n: "300 Troylana" },
 	{ m: 00, d: 28, n: "160 iLanos" },
-	{ m: 00, d: 29, n: "Ask Mo 4 Counts" },
+	{ m: 00, d: 29, n: "Counts + Fast" },
 
 	{ m: 01, d: 24, n: "Svyatny" },
 	{ m: 01, d: 30, n: "Kostromin" },
@@ -61,7 +60,8 @@ const aData = [
 
 	{ m: 07, d: 28, n: "SysAdm Day (Last Fri)" },
 
-	{ m: 08, d: 03, n: "[7:43] Ula's BD" },
+	{ m: 08, d: 03, n: "7:43 Ula's BD" },
 	{ m: 08, d: 04, n: "Life Chck GB" },
-	{ m: 08, d: 11, n: "02:47 TRAIN BD" },
+	{ m: 08, d: 11, n: "02:47 Train BD" },
+	{ m: 08, d: 07, n: "24 hours BD" },
 ];

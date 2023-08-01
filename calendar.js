@@ -61,7 +61,7 @@ function reBuildCalendar(MonthToCalc) {
 
     calHeadCells.forEach(function (c) {
         hi++
-        if (!nextMonth && hi == _WEEKDAY) {
+        if (!nextMonth && hi == _WEEKDAY && MonthToCalc == _MONTH) {
             c.classList.add('aToday');
         } else {
             c.classList.remove('aToday');
@@ -73,6 +73,10 @@ function reBuildCalendar(MonthToCalc) {
     cells.forEach(function (cell) {
         cell.innerHTML = '';
         ci++;
+
+        if (MonthToCalc != _MONTH) {
+            cell.classList.remove('aToday');
+        }
 
         if (ci >= monStartWeekDay) {
 
