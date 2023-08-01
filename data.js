@@ -44,9 +44,10 @@ const aData = [
 	{ m: 08, d: 07, n: "225 (28) Life-4G" },
 	{ m: 08, d: 13, n: "Ira's BD" },
 	{ m: 08, d: 17, n: "Mom's BD" },
+	{ m: 08, d: 31, n: "160 (28) Life-M" },
 
 	{ m: 09, d: 07, n: "Alla BD" },
-	{ m: 09, d: 16, n: "LX begin" },
+	{ m: 09, d: 16, n: "LX begin (2019)" },
 
 	{ m: 10, d: 04, n: "Koval-x2 BD" },
 	{ m: 10, d: 14, n: "Draganchuk" },
@@ -62,4 +63,5 @@ const aData = [
 
 	{ m: 08, d: 03, n: "[7:43] Ula's BD" },
 	{ m: 08, d: 04, n: "Life Chck GB" },
+	{ m: 08, d: 11, n: "02:47 TRAIN BD" },
 ];
