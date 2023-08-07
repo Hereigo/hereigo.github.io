@@ -35,7 +35,7 @@ const aData = [
 	{ m: 07, d: 26, n: "SysAdm Day (Last Frid)" },
 	{ m: 08, d: 02, n: "Life Chck GB" },
 	{ m: 08, d: 03, n: "160 (28) Life-M" },
-	{ m: 08, d: 03, n: "PetrovskaLX" },
+	{ m: 08, d: 03, n: "Petrovska LX" },
 	{ m: 08, d: 07, n: "225 (28) Life-4G" },
 	{ m: 08, d: 13, n: "Ira's BD" },
 	{ m: 08, d: 17, n: "Mom's BD" },
