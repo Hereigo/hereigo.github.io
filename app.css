@@ -211,6 +211,7 @@ div.event {
 
 #pageNotes li:nth-child(-n+10) {
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 #pageNotes hr {
