@@ -51,14 +51,13 @@ const aData = [
 	{ m: 00, d: 28, n: "160 iLanos" },
 
 	{ m: 08, d: 08, n: "Listen! LX Dox!" },
-	{ m: 08, d: 09, n: "FLOWERS !!!" },
 	{ m: 08, d: 09, n: "Listen! LX Dox!" },
 	{ m: 08, d: 09, n: "MSG YURA !" },
 	{ m: 08, d: 10, n: "Listen! LX Dox!" },
 	{ m: 08, d: 10, n: "ULI BED" },
 	{ m: 08, d: 11, n: "02:47 - Train BD" },
 	{ m: 08, d: 11, n: "BED upgrade !" },
-	{ m: 08, d: 11, n: "FLOWERS !!!" },
 	{ m: 08, d: 11, n: "Listen! LX Dox!" },
 	{ m: 08, d: 11, n: "ULI BED" },
+	{ m: 08, d: 12, n: "ULI BED" },
 ];

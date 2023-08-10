@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Calendarium</title>
+</head>
+
+<body>
+
+    <p>
+        <input type="checkbox" value="111" /><br />
+        <input type="checkbox" value="222" /><br />
+        <input type="checkbox" value="333" /><br />
+
+        <input type="hidden" value="" id="categories" />
+    </p>
+
+    <script>
+        const categoriesInput = document.querySelector('#categories');
+        let categories = [];
+
+        const chBoxChnged = (e) => {
+            if (e.target.checked) {
+                categories.push(e.target.value);
+            }
+            else {
+                const idx = categories.indexOf(e.target.value);
+                if (idx > -1) {
+                    categories.splice(idx, 1);
+                }
+            }
+            categoriesInput.value = categories;
+        }
+
+        document.querySelectorAll('input[type="checkbox"]').forEach((el) => {
+            el.addEventListener('change', chBoxChnged)
+        })
+    </script>
+
+</body>
+
+</html>
