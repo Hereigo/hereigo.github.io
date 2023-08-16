@@ -1,4 +1,5 @@
 const aData = [
+	// ----- yearly -----
 	{ m: 01, d: 24, n: "Svyatny" },
 	{ m: 01, d: 30, n: "Kostromin" },
 	{ m: 02, d: 14, n: "Valentine`s day." },
@@ -25,9 +26,6 @@ const aData = [
 	{ m: 08, d: 03, n: "Petrovska LX" },
 	{ m: 08, d: 13, n: "ARISHA * BD" },
 	{ m: 08, d: 17, n: "Mom's BD" },
-	{ m: 08, d: 31, n: "160 (28) Life-M" },
-	{ m: 08, d: 31, n: "4G Chck GB" },
-	{ m: 09, d: 03, n: "225 (28) Life-4G" },
 	{ m: 09, d: 07, n: "Alla BD" },
 	{ m: 09, d: 16, n: "LX - !!! - (2019)" },
 	{ m: 10, d: 04, n: "Koval-x2 BD" },
@@ -37,7 +35,7 @@ const aData = [
 	{ m: 11, d: 30, n: "Davyd BD" },
 	{ m: 12, d: 10, n: "Ula's BD" },
 	{ m: 12, d: 12, n: "[0525] Filters??" },
-
+	// ----- monthly -----
 	{ m: 00, d: 01, n: "MONY." },
 	{ m: 00, d: 12, n: "170 Voda" },
 	{ m: 00, d: 12, n: "Counts + Fast" },
@@ -45,11 +43,14 @@ const aData = [
 	{ m: 00, d: 13, n: "299 Laner" },
 	{ m: 00, d: 13, n: "Flat Bills." },
 	{ m: 00, d: 14, n: "200 KS" },
-	{ m: 00, d: 16, n: "155 U-KS 28-?" },
 	{ m: 00, d: 23, n: "280 Dominiq" },
 	{ m: 00, d: 23, n: "300 Troylana" },
 	{ m: 00, d: 28, n: "160 iLanos" },
-
-	{ m: 08, d: 15, n: "MSG YURA !" },
-	{ m: 08, d: 16, n: "MSG YURA !" },
+	// ----- 4weekly -----
+	{ m: 08, d: 17, n: "MSG YURA !" },
+	{ m: 08, d: 18, n: "MSG YURA !" },
+	{ m: 08, d: 31, n: "160 (28) Life-M" },
+	{ m: 08, d: 31, n: "4G Chck GB" },
+	{ m: 09, d: 03, n: "225 (28) Life-4G" },
+	{ m: 09, d: 13, n: "155 U-KS 28-?" },
 ];
