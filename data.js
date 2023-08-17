@@ -55,6 +55,7 @@ const aData = [
 	// ----- only once -----
 	{ m: 08, d: 17, n: "MSG YURA !" },
 	{ m: 08, d: 18, n: "MSG YURA !" },
+	{ m: 08, d: 18, n: "15+ Rozetkava" },
 	{ m: 08, d: 19, n: "MSG YURA !" },
 	{ m: 08, d: 19, n: "ITVDN ask Den!" },
 ];
