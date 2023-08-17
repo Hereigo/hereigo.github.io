@@ -47,11 +47,14 @@ const aData = [
 	{ m: 00, d: 23, n: "300 Troylana" },
 	{ m: 00, d: 28, n: "160 iLanos" },
 	// ----- 4weekly -----
-	{ m: 08, d: 17, n: "MSG YURA !" },
-	{ m: 08, d: 18, n: "MSG YURA !" },
 	{ m: 08, d: 25, n: "HR meet (28)" },
 	{ m: 08, d: 31, n: "160 Life-M (28)" },
 	{ m: 08, d: 31, n: "4G Chck GB (28)" },
 	{ m: 09, d: 03, n: "225 Life-4G (28)" },
 	{ m: 09, d: 13, n: "155 U-KS (28)" },
+	// ----- only once -----
+	{ m: 08, d: 17, n: "MSG YURA !" },
+	{ m: 08, d: 18, n: "MSG YURA !" },
+	{ m: 08, d: 19, n: "MSG YURA !" },
+	{ m: 08, d: 19, n: "ITVDN ask Den!" },
 ];
