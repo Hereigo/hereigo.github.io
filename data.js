@@ -58,4 +58,5 @@ const aData = [
 	{ m: 08, d: 18, n: "15+ Rozetkava" },
 	{ m: 08, d: 19, n: "MSG YURA !" },
 	{ m: 08, d: 19, n: "ITVDN ask Den!" },
+	{ m: 08, d: 23, n: "16 Dantis BD" },
 ];
