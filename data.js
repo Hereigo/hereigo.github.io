@@ -53,10 +53,5 @@ const aData = [
 	{ m: 09, d: 03, n: "225 Life-4G (28)" },
 	{ m: 09, d: 13, n: "155 U-KS (28)" },
 	// ----- only once -----
-	{ m: 08, d: 17, n: "MSG YURA !" },
-	{ m: 08, d: 18, n: "MSG YURA !" },
-	{ m: 08, d: 18, n: "15+ Rozetkava" },
-	{ m: 08, d: 19, n: "MSG YURA !" },
-	{ m: 08, d: 19, n: "ITVDN ask Den!" },
-	{ m: 08, d: 23, n: "16 Dantis BD" },
+	{ m: 08, d: 23, n: "16:00 Dantis BD" },
 ];
