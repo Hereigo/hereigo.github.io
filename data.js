@@ -55,4 +55,5 @@ const aData = [
 	{ m: 08, d: 30, n: "11:00 - Perform Rev BD" },
 	{ m: 08, d: 30, n: "14:00 - Dentis BD" },
 	{ m: 08, d: 31, n: "11:00 - HR meet BD" },
+	{ m: 08, d: 28, n: "Perform Dox BD" },
 ];
