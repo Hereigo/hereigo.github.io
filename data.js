@@ -54,7 +54,7 @@ const aData = [
 	// ----- only once -----
 	{ m: 08, d: 28, n: "15:00 - BARBER !" },
 	{ m: 08, d: 28, n: "KPICLO" },
-	{ m: 08, d: 28, n: "Perform Dox BD" },
+	{ m: 08, d: 29, n: "KPICLO" },
 	{ m: 08, d: 30, n: "11:00 - Perform Rev BD" },
 	{ m: 08, d: 30, n: "14:00 - Dentis" },
 	{ m: 08, d: 30, n: "XX:00 - Dashka" },
