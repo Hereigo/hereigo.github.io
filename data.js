@@ -54,6 +54,6 @@ const aData = [
 	// ----- only once -----
 	{ m: 08, d: 30, n: "11:00 - Perform Rev BD" },
 	{ m: 08, d: 30, n: "14:00 - Dentis" },
-	{ m: 08, d: 30, n: "12:00 - Dashka" },
+	{ m: 08, d: 30, n: "12:00 - Dashka !!! BD" },
 	{ m: 08, d: 31, n: "11:00 - HR meet BD" },
 ];
