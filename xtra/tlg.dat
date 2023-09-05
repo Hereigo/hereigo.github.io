@@ -1,3 +1,4 @@
+
 000 - AAAAAGGHHHH
 000 - ATBGE
 000 - AllTwitter
@@ -786,8 +787,12 @@ BUX - ukrlit
 BUX - yourMustRead
 DEV
 DEV - +AnKG6e3ual44MmVi (AdminBooks)
+DEV - +FprFg7-t7Fg3NTFi - databases
+DEV - cpluscsharp - c#
+DEV - csharp_ci
 DEV - databasebooks
 DEV - dbbooks
+DEV - dblib
 DEV - devJungles
 DEV - devbooksarchive
 DEV - devs_book
@@ -795,15 +800,19 @@ DEV - devstreasure
 DEV - devtechbooks
 DEV - frontbooks
 DEV - frontendbook
+DEV - frontendbooksit
 DEV - it_Books_Library
 DEV - it_boooks
 DEV - itbook_library
 DEV - itbookssArchive
+DEV - javascriptv
 DEV - junior_developer_ua/883
+DEV - linux_read
 DEV - prgbooks_archive
 DEV - programming_books_it
 DEV - pythonKnigi_backup
 DEV - python_books_archive
+DEV - sqlhub
 DEV - sysadmin_library
 DEV - tech_learn_ua
 DEV - techn0teka
@@ -843,41 +852,42 @@ IVT - job_IT_Junior
 KID
 KID - +L14oMfuxoXU4ODU6 - вчителям,батькам
 KID - miniprint
-LNX
-LNX - archLinuxTips
-LNX - archlinux
-LNX - archlinuxGroup
-LNX - archlinuxUkraineOfftopic
-LNX - binTree
-LNX - endeavourOS
-LNX - fbytes
-LNX - fossPost
-LNX - foss_Desktop
-LNX - gnuLinuxLovers
-LNX - grouplinux
-LNX - gtk_News
-LNX - guildOfLinux
-LNX - hacking_os
-LNX - letsFoss
-LNX - linuxAdictos
-LNX - linuxArkit
-LNX - linuxChats
-LNX - linuxNewsGram
-LNX - linuxNewsLetter
-LNX - linuxTechIndex
-LNX - linuxTrick
-LNX - linuxUserSpace
-LNX - linux_group
-LNX - linux_n_linus
-LNX - linux_read
-LNX - linuxkalii
-LNX - loveLinuxInfo
-LNX - penguin_geek
-LNX - planetArch
-LNX - rhelAG
-LNX - tech_linux
-LNX - techli_nux
-LNX - zettelLinux
+LIN
+LIN - +J0CfOmZ751s3NWIy
+LIN - archLinuxTips
+LIN - archlinux
+LIN - archlinuxGroup
+LIN - archlinuxUkraineOfftopic
+LIN - binTree
+LIN - endeavourOS
+LIN - fbytes
+LIN - fossPost
+LIN - foss_Desktop
+LIN - gnuLinuxLovers
+LIN - grouplinux
+LIN - gtk_News
+LIN - guildOfLinux
+LIN - hacking_os
+LIN - letsFoss
+LIN - linuxAdictos
+LIN - linuxArkit
+LIN - linuxChats
+LIN - linuxNewsGram
+LIN - linuxNewsLetter
+LIN - linuxTechIndex
+LIN - linuxTrick
+LIN - linuxUserSpace
+LIN - linux_group
+LIN - linux_n_linus
+LIN - linux_read
+LIN - linuxkalii
+LIN - loveLinuxInfo
+LIN - penguin_geek
+LIN - planetArch
+LIN - rhelAG
+LIN - tech_linux
+LIN - techli_nux
+LIN - zettelLinux
 MOV
 MOV - +nbpJ7SqtlTY1NjY6 (CineScope_UA)
 MOV - films_ukr_new
