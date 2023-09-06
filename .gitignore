@@ -5,7 +5,7 @@ dotnet/Generator/obj
 .vscode/tasks.json
 GIT_IGNORED.json
 /.vs
-config/db.js
+*/config/db.js
 
 # Logs
 logs

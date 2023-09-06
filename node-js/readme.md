@@ -15,3 +15,5 @@ npm run dev
 node server.js # (if Nodeman not installed)
 
 ```
+## Add config/db.js and .gitignore it!
+
