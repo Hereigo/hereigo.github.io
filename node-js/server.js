@@ -44,9 +44,18 @@ async function run() {
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
+
+        const db = client.db("test");
+        require('./app/routes')(app, db);
+
+        app.listen(port, () => {
+            console.log('We are live on ' + port);
+        });
+
     } finally {
         // Ensures that the client will close when you finish/error
-        await client.close();
+
+        // await client.close();
     }
 }
 

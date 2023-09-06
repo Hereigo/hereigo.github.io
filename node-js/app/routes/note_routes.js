@@ -11,17 +11,20 @@ module.exports = function (app, db) {
     //     res.send('Hello')
     // });
 
-    const collection =
-        app.post('/notes', (req, res) => {
-            const note = { text: req.body.body, title: req.body.title };
-            db.collection('notes').insert(note, (err, result) => {
-                if (err) {
-                    console.log(err);
-                    res.send({ 'error': 'An error has occurred' });
-                } else {
-                    res.send(result.ops[0]);
-                }
-            });
+    //const collection =
+    app.post('/notes', (req, res) => {
+        const note = {
+            text: req.body.text,
+            title: req.body.title
+        };
+        db.collection('notes').insertOne(note, (err, result) => {
+            if (err) {
+                console.log(err);
+                res.send({ 'error': 'An error has occurred' });
+            } else {
+                res.send(result.ops[0]);
+            }
         });
+    });
 
 };
