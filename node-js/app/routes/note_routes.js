@@ -13,10 +13,14 @@ module.exports = function (app, db) {
 
     //const collection =
     app.post('/notes', (req, res) => {
+
         const note = {
             text: req.body.text,
             title: req.body.title
         };
+
+        console.log('note - ', note);
+
         db.collection('notes').insertOne(note, (err, result) => {
             if (err) {
                 console.log(err);

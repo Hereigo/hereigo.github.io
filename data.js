@@ -39,7 +39,7 @@ const aData = [
 	{ m: 00, d: 01, n: "MONY." },
 	{ m: 00, d: 12, n: "170 Voda" },
 	{ m: 00, d: 12, n: "Counts + Fast" },
-	{ m: 00, d: 13, n: "150 Penguin YT" },
+	{ m: 00, d: 13, n: "150 Penguin YT BD" },
 	{ m: 00, d: 13, n: "299 Laner" },
 	{ m: 00, d: 13, n: "Flat Bills." },
 	{ m: 00, d: 14, n: "200 KS" },
