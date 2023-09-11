@@ -749,19 +749,17 @@
 000 - wutttttttt
 000 - ya_metro
 AUX
-AUX - @Knigi_v_uhe
-AUX - @ussr_ak
 AUX - audiobooks_tg
 AUX - bookai
 AUX - booksau
 AUX - flibusta_anglysky
+AUX - knigi_v_uhe
 AUX - mir_ak
 AUX - sklad_knig1
+AUX - ussr_ak
 BUX
 BUX - +GPfKqO9xDg5lZGMy
 BUX - +_IOrbtOtxsZjZmMy (Paliturka)
-BUX - @knigi_nya2
-BUX - FirstBooktg
 BUX - aphoTg
 BUX - arch_prog
 BUX - auaknyga
@@ -774,8 +772,10 @@ BUX - bzbook - Бізнес
 BUX - cm_books
 BUX - e_xlibris
 BUX - firstBookTg
+BUX - firstBooktg
 BUX - gameDevArchive
 BUX - gobooks
+BUX - knigi_nya2
 BUX - knigi_ot_jane
 BUX - knizhnaya_polka_marketologa
 BUX - mmy_books
@@ -822,12 +822,42 @@ DEV - techn0teka
 FIN
 FIN - beneficiary
 FUN
+FUN - +0EZkedBdpK84ZWMy (kitPes)
+FUN - +3V2Ao94HeQJhZmZk (kapetsMlynets)
+FUN - +8YECLNdbN9oxZGIy (only smile)
+FUN - +GRZSSC1iGvJjMDFi (bulava)
+FUN - +HhoGVFUv5hQwOWMy (nashaUk) 
 FUN - +JnI041E9UC40OThi
-FUN - +WKSd7zMQBZEwMmU6 (ОтО скАзАнУв)
-FUN - @CastanedaCarlos
-FUN - @soulbookswithus
+FUN - +K_eJsbNXRVRmZTJi (tamDeSmish)
+FUN - +U9wzJR0E5c8xYzcy (prykolyua)
+FUN - +WKSd7zMQBZEwMmU6 (otoSkazanuv)
+FUN - +bGVJXJvzea85NjY6 (kotoshovysche)
+FUN - +czbCMr-p-uI3M2Vi (schekavytsa)
+FUN - +fBt5Zsus3ApiNWEy (GaGaTun)
+FUN - +fQsM7fVQPWwyNjli (koza)
+FUN - +fi5DpfYH_IM1ZDdi
+FUN - +n4NkG2wQrYJkY2Uy (puhnastiLapky)
+FUN - capybaragumor
+FUN - castanedaCarlos
+FUN - godindev
+FUN - gumor_ukraine_50gram
+FUN - gumorjartu (+NhaT4wAHdKNjYjNi)
+FUN - humoureski (+Ra-S3KXnHe6Cu9BP)
+FUN - hymfront (+9su5sM0P5042YzUy)
 FUN - joinchat/AAAAAFElevcbuyK0EeBX9Q
+FUN - memargam
+FUN - memyle4ki
+FUN - programmerjokes
+FUN - r_linuxmemes
+FUN - smixanka
+FUN - soulbookswithus
+FUN - tg_12sec12 (+H6OqBKbbhWRjYjhi)
+FUN - typical_rusofob
+FUN - ukraineGumor
 FUN - ukrainiatrash
+FUN - ukrtgproject
+FUN - valentynaeminova (visnykVeselRuFo)
+FUN - wartimejokes
 HLS
 HLS - +JiHjbz1fOEU1YzVi
 HLS - being_fit
@@ -892,8 +922,11 @@ LIN - tech_linux
 LIN - techli_nux
 LIN - zettelLinux
 MOV
+MOV - +e1nMQg-uhQ9jZDZi
 MOV - +nbpJ7SqtlTY1NjY6 (CineScope_UA)
+MOV - cinescope_ua (+aIrSxhVVj600Zjky)
 MOV - films_ukr_new
+MOV - kavatimes
 MOV - kinozalezhni
 MOV - online_kino_uah
 MOV - ray_kino/975
