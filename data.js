@@ -39,19 +39,19 @@ const aData = [
 	{ m: 00, d: 01, c: "a", n: "MONY." },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
 	{ m: 00, d: 12, c: "a", n: "Counts + Fast" },
-	{ m: 00, d: 13, c: "b", n: "150 Penguin YT" },
+	{ m: 00, d: 12, c: "b", n: "150 Penguin YT ???" },
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
 	{ m: 00, d: 23, c: "a", n: "280 Dominiq" },
 	{ m: 00, d: 23, c: "a", n: "300 Troylana" },
 	{ m: 00, d: 28, c: "a", n: "160 iLanos" },
-	// ----- 4weekly -----
-	{ m: 09, d: 13, c: "a", n: "155 U-KS (28)" },
+	// ----- VARIABLES ---------------------------
+	// ----- 4weekly -----------------------------
 	{ m: 09, d: 27, c: "a", n: "160 Life-M (28)" },
+	{ m: 10, d: 11, c: "a", n: "155 U-KS (28)" },
 	// ----- only once -----
-	{ m: 09, d: 12, c: "b", n: "18:00 Teams" },
-	{ m: 09, d: 15, c: "b", n: "06:00 Tomorrow" },
+	{ m: 09, d: 15, c: "b", n: "06:00 Tomorrow!" },
 	{ m: 09, d: 16, c: "a", n: "08:00 Den4 Test" },
 	{ m: 09, d: 16, c: "b", n: "06:00 777" },
 	{ m: 09, d: 25, c: "a", n: "225 Chck 4G GB (28)" },
