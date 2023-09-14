@@ -23,12 +23,41 @@ systemctl list-unit-files --type=service
 
 ### Fonts
 ```sh
-apt install fonts-cantarel fonts-cascadia-code
+# for ttf-mscorefonts-installer
+add-apt-repository multiverse 
+apt update && sudo apt upgrade -y
 
-curl https://fonts.google.com/download?family=JetBrains%20Mono
+apt install -y fonts-cantarel fonts-cascadia-code ttf-mscorefonts-installer
 
-curl https://fonts.google.com/download?family=PT%20Mono
+dnf install -y 'google-roboto*' 'mozilla-fira*' fira-code-fonts
+
+yay -S --needed ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts ttf-fira-code
+
+wget https://fonts.google.com/download?family=JetBrains%20Mono -O ~/Desktop/jb_mono.zip
+unzip ~/Desktop/jb_mono.zip -d ~/.local/share/fonts/jb_mono/
+# or
+# mkdir /usr/share/fonts/PT-mono/
+# mv -f PTMono-Regular.ttf /usr/share/fonts/PT-mono/
+
+wget https://fonts.google.com/download?family=PT%20Mono -O ~/Desktop/pt_mono.zip
+unzip ~/Desktop/pt_mono.zip -d ~/.local/share/fonts/pt_mono/
+
+wget https://www.fontsquirrel.com/fonts/download/liberation-mono  -O ~/Desktop/liberation-mono.zip
+unzip ~/Desktop/liberation-mono.zip -d ~/.local/share/fonts/liberation-mono/
+
+wget https://fonts.google.com/download?family=Comfortaa -O ~/Desktop/Comfortaa.zip
+unzip ~/Desktop/Comfortaa.zip -d ~/.local/share/fonts/Comfortaa/
+
+fc-cache -fv
+# -f  = Force re-generation cache files, overriding the  timestamp checking.
+# -r  = Erase all existing cache files and rescan.
+# -v  = Display status information while busy.
+# -h  = Show summary of options.
 ```
+https://github.com/loafer-mka/anka-coder-fonts
+https://www.fontsquirrel.com/fonts/download/BPmono
+https://fonts.google.com/specimen/PT+Mono
+https://www.programmingfonts.org
 
 ### Check Temperatures:
 ```sh
