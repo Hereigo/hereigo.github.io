@@ -779,7 +779,7 @@ BUX - knigi_nya2
 BUX - knigi_ot_jane
 BUX - knizhnaya_polka_marketologa
 BUX - mmy_books
-BUX - physmathlit - Фiзмат
+BUX - physmathLit
 BUX - povstanec
 BUX - soulbookswithus
 BUX - ukrlit
@@ -787,10 +787,12 @@ BUX - yourMustRead
 DEV
 DEV - +AnKG6e3ual44MmVi (AdminBooks)
 DEV - +FprFg7-t7Fg3NTFi - databases
+DEV - adminBooks
 DEV - cpluscsharp - c#
 DEV - csharp_1001_notes (+-TTKplUMes83MGZi)
 DEV - csharp_ci
 DEV - databasebooks
+DEV - databaselib
 DEV - dbbooks
 DEV - dblib
 DEV - devJungles
@@ -799,8 +801,10 @@ DEV - devs_book
 DEV - devstreasure
 DEV - devtechbooks
 DEV - frontbooks
+DEV - frontendarchive
 DEV - frontendbook
 DEV - frontendbooksit
+DEV - gamedevarchive
 DEV - it_Books_Library
 DEV - it_boooks
 DEV - it_en_chats
@@ -824,6 +828,7 @@ FIN - beneficiary
 FUN
 FUN - +0EZkedBdpK84ZWMy (kitPes)
 FUN - +3V2Ao94HeQJhZmZk (kapetsMlynets)
+FUN - +3gi827OfGm1iZDJi (regotach)
 FUN - +8YECLNdbN9oxZGIy (only smile)
 FUN - +GRZSSC1iGvJjMDFi (bulava)
 FUN - +HhoGVFUv5hQwOWMy (nashaUk) 
@@ -837,6 +842,7 @@ FUN - +fBt5Zsus3ApiNWEy (GaGaTun)
 FUN - +fQsM7fVQPWwyNjli (koza)
 FUN - +fi5DpfYH_IM1ZDdi
 FUN - +n4NkG2wQrYJkY2Uy (puhnastiLapky)
+FUN - balamut_ua
 FUN - capybaragumor
 FUN - castanedaCarlos
 FUN - godindev
@@ -934,6 +940,7 @@ MOV - smotretFilmyOnlineBot
 MUS
 MUS - +wDOoPjvuQBBjYzdi
 MUS - chartakmusic - Relax
+MUS - discJockeyTasya
 MUS - disco90e
 MUS - madeinukrai
 MUS - music_Glory_to_Ukraine
