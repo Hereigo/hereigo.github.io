@@ -53,4 +53,6 @@ const aData = [
 	// ----- only once -----
 	{ m: 09, d: 20, c: "a", n: "WINDOWS afte Lunch" },
 	{ m: 09, d: 25, c: "a", n: "225 Chck 4G GB (28)" },
+	{ m: 09, d: 26, c: "a", n: "Ask for shelf." },
+	{ m: 10, d: 03, c: "b", n: "Ask for shelf END" },
 ];

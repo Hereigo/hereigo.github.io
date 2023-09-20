@@ -11,7 +11,7 @@ module.exports = function (app, db) {
     //     res.send('Hello')
     // });
 
-    //const collection =
+    // const collection =
     app.post('/notes', (req, res) => {
 
         const note = {
