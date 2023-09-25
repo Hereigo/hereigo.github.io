@@ -49,11 +49,12 @@ const aData = [
 	// ----- VARIABLES ---------------------------
 	// ----- 4weekly -----------------------------
 	{ m: 09, d: 27, c: "a", n: "160 Life-M (28)" },
+	{ m: 09, d: 27, c: "a", n: "225 Chck 4G GB (28)" },
 	{ m: 10, d: 11, c: "a", n: "155 U-KS (28)" },
 	// ----- only once -----
-	{ m: 09, d: 25, c: "a", n: "225 Chck 4G GB (28)" },
+	{ m: 09, d: 25, c: "a", n: "15:00 WINDOWS" },
 	{ m: 09, d: 25, c: "b", n: "17:00 Gorobchyk LX" },
-	{ m: 09, d: 25, c: "b", n: "8:00 call WINDOWS" },
 	{ m: 09, d: 26, c: "a", n: "Ask for shelf." },
+	{ m: 09, d: 26, c: "b", n: "8:00 call WINDOWS" },
 	{ m: 10, d: 03, c: "b", n: "Ask for shelf END" },
 ];
