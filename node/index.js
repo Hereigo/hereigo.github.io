@@ -1,7 +1,10 @@
-// Load modules:
+// Load modules by Node-Require():
+
+const log = require('./log_module');
 
 const express = require("express");
 // import express from "express"; ... ???
+
 const dbcfg = require('./config/db');
 
 const app = express();
@@ -13,6 +16,8 @@ app.get("/", function (req, res) {
 });
 
 app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`);
-    console.log(`A - ${dbcfg.url}!`);
+
+    log.it(`Example app listening on port ${port}!`);
+
+    log.it(`${dbcfg.url.substring(0, 15)}...`);
 });
