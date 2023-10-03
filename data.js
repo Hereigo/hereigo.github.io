@@ -30,7 +30,7 @@ const aData = [
 	{ m: 09, d: 16, c: "a", n: "LX - !!! - (2019)" },
 	{ m: 10, d: 04, c: "b", n: "Koval-x2" },
 	{ m: 10, d: 14, c: "a", n: "Draganchuk" },
-	{ m: 10, d: 28, c: "b", n: "Dzuba" },
+	{ m: 10, d: 28, c: "b", n: "Dzuban" },
 	{ m: 10, d: 30, c: "a", n: "Kelvich" },
 	{ m: 11, d: 30, c: "b", n: "Davyd" },
 	{ m: 12, d: 10, c: "b", n: "Ula's" },
@@ -53,5 +53,5 @@ const aData = [
 	{ m: 10, d: 24, c: "a", n: "225 Chck 4G GB (28)" },
 	{ m: 10, d: 25, c: "a", n: "190 Life-M (28)" },
 	// ----- only once -----
-	{ m: 10, d: 03, c: "b", n: "Ask for shelf END" },
+	{ m: 10, d: 31, c: "a", n: "Hello world." },
 ];
