@@ -1,8 +1,12 @@
 const _YEAR = new Date().getFullYear();
 const _MONTH = new Date().getMonth();
-let _TODAY = new Date().getDate();
+
+// let _TODAY = new Date().getDate();  - ???
+let _TODAY = (new Date().getDate() == 7) ? 0 : new Date().getDate() - 1;
+
 let _WEEKDAY = new Date().getDay();
-const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+// const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 document.addEventListener("DOMContentLoaded", (event) => {
