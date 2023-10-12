@@ -1,9 +1,9 @@
+"use strict";
 
 (function () {
     'use strict'
     feather.replace({ 'aria-hidden': 'true' });
 })();
-
 
 function tabSwitch(evt, tabName) {
     var i, tabcontent;

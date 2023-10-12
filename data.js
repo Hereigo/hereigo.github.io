@@ -56,6 +56,7 @@ const aData = [
 	// ----- only once ---------------------------
 	{ m: 10, d: 12, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 12, c: "a", n: "18:00 Ira's jaket Service" },
+	{ m: 10, d: 13, c: "a", n: "Check Mobile Dates !!!" },
 	{ m: 10, d: 17, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 19, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 24, c: "a", n: "16:00 CyberSec Base" },

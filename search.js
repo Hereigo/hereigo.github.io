@@ -1,3 +1,7 @@
+"use strict";
+
+// num = 123; - ReferenceError: assignment to undeclared variable num ("use strict";)
+
 const mySearch = document.querySelector('input[type="submit"]');
 const mySearchField = document.querySelector('input[type="search"]');
 

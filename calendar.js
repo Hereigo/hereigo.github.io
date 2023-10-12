@@ -1,3 +1,5 @@
+"use strict";
+
 const _YEAR = new Date().getFullYear();
 const _MONTH = new Date().getMonth();
 
