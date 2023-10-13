@@ -37,8 +37,8 @@ const aData = [
 	{ m: 12, d: 12, c: "a", n: "[0525] Filters??" },
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
+	{ m: 00, d: 10, c: "a", n: "Counts + Fast" },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
-	{ m: 00, d: 12, c: "a", n: "Counts + Fast" },
 	{ m: 00, d: 12, c: "b", n: "150 Penguin YT ???" },
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
@@ -50,13 +50,11 @@ const aData = [
 	// ----- VARIABLES ---------------------------
 	// -------------------------------------------
 	// ----- 4weekly -----------------------------
-	{ m: 10, d: 11, c: "a", n: "155 U-KS (28)" },
 	{ m: 10, d: 24, c: "a", n: "225 Chck 4G GB (28)" },
 	{ m: 10, d: 25, c: "a", n: "190 Life-M (28)" },
+	{ m: 11, d: 08, c: "a", n: "150 U-KS (28)" },
 	// ----- only once ---------------------------
 	{ m: 10, d: 12, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 10, d: 12, c: "a", n: "18:00 Ira's jaket Service" },
-	{ m: 10, d: 13, c: "a", n: "Check Mobile Dates !!!" },
 	{ m: 10, d: 17, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 19, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 24, c: "a", n: "16:00 CyberSec Base" },
