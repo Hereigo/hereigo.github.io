@@ -1,10 +1,8 @@
-### 5 useful extensions for Task<T>:
+### > 5 useful extensions for Task<T>:
 
 ```csharp
 
 // 1. FIRE AND FORGET =========================
-
-exception.
 
 public static void FireAndForget(
   this Task task,
@@ -40,7 +38,6 @@ public static async Task<TResult> Retry<TResult>(this Func<Task<TResult>> taskFa
             await Task.Delay(delay).ConfigureAwait(false);
         }
     }
-
     return default(TResult); // Should not be reached
 }
 
