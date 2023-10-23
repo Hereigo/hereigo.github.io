@@ -21,6 +21,12 @@ systemctl list-unit-files --type=service
 #
 ```
 
+### FileSystem
+```sh
+# in root, Dir, Insensitive, NamePart (with out Errors to Null)
+find  /  -type d  -iname  *viber*  2>/dev/null
+```
+
 ### Fonts
 ```sh
 # for ttf-mscorefonts-installer
@@ -48,16 +54,18 @@ unzip ~/Desktop/liberation-mono.zip -d ~/.local/share/fonts/liberation-mono/
 wget https://fonts.google.com/download?family=Comfortaa -O ~/Desktop/Comfortaa.zip
 unzip ~/Desktop/Comfortaa.zip -d ~/.local/share/fonts/Comfortaa/
 
-fc-cache -fv
+fc-cache -fvh
 # -f  = Force re-generation cache files, overriding the  timestamp checking.
 # -r  = Erase all existing cache files and rescan.
 # -v  = Display status information while busy.
 # -h  = Show summary of options.
 ```
+
 https://github.com/loafer-mka/anka-coder-fonts
 https://www.fontsquirrel.com/fonts/download/BPmono
 https://fonts.google.com/specimen/PT+Mono
 https://www.programmingfonts.org
+
 
 ### Check Temperatures:
 ```sh
@@ -151,15 +159,6 @@ sudo systemctl enable ufw # ... ->
 # Created symlink 
 #/etc/systemd/system/multi-user.target.wants/ufw.service → /usr/lib/systemd/system/ufw.service
 sudo ufw status
-```
-
-#### To update FONTS cache:
-```sh
-fc-cache -fvh
-# -f     Force re-generation of apparently up-to-date cache files, overriding timestamp
-# -r     Erase all existing cache files and rescan.
-# -v     Display status information while busy.
-# -h     Show summary of options.
 ```
 
 #### Celluloid (MPV) save video position on close:
