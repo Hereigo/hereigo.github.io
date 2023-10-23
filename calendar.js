@@ -1,28 +1,24 @@
 "use strict";
 
-const _YEAR = new Date().getFullYear();
-const _MONTH = new Date().getMonth();
+const _REAL_YEAR = new Date().getFullYear();
+const _REAL_MONTH = new Date().getMonth();
+const _REAL_WEEKDAY = new Date().getDay();
+const _TODAY = new Date().getDate();
 
-// let _TODAY = new Date().getDate();  - ???
-let _TODAY = (new Date().getDate() == 7) ? 0 : new Date().getDate() - 1;
-
-let _WEEKDAY = new Date().getDay();
-
-// const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    reBuildCalendar(_MONTH);
+    reBuildCalendar(_REAL_MONTH);
 
-    let monthPrev = _MONTH - 1;
-    let monthNext = _MONTH + 1;
+    let monthPrev = _REAL_MONTH - 1;
+    let monthNext = _REAL_MONTH + 1;
 
     const toCurrMon = document.querySelector('#toCurrMon');
     const toNextMon = document.querySelector('#toNextMon');
     const toPrevMon = document.querySelector('#toPrevMon');
 
-    toCurrMon.textContent = months[_MONTH];
+    toCurrMon.textContent = months[_REAL_MONTH];
     toNextMon.textContent = months[monthNext];
     toPrevMon.textContent = months[monthPrev];
 
@@ -41,24 +37,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
         toPrevMon.classList.remove('monBtnSelected');
     });
     toCurrMon.addEventListener('click', function () {
-        reBuildCalendar(_MONTH);
+        reBuildCalendar(_REAL_MONTH);
         toCurrMon.classList.add('monBtnSelected');
         toNextMon.classList.remove('monBtnSelected');
         toPrevMon.classList.remove('monBtnSelected');
     });
 });
 
+function getMonStartWeekDay(monStartDate) {
+    const weekDay = monStartDate.getDay();
+    if (weekDay !== 0)
+        return weekDay;
+    else
+        return 7;
+}
 
 // TODO:
 // 1. Prevent Duplications!
 // 2. Sort by Time inside a Day.
 
-
 function reBuildCalendar(MonthToCalc) {
 
-    let monFirstDay = new Date(_YEAR, MonthToCalc, 1);
-    let monLastDay = new Date(_YEAR, parseInt(MonthToCalc) + 1, 0).getDate();
-    let monStartWeekDay = monFirstDay.getDay();
+    let monLastDayNum = new Date(_REAL_YEAR, parseInt(MonthToCalc) + 1, 0).getDate();
+    let monStartDate = new Date(_REAL_YEAR, MonthToCalc, 1);
+    let monStartWeekDay = getMonStartWeekDay(monStartDate);
     let ci = 0;
     let hi = 0;
     let monthDay = 1;
@@ -67,7 +69,7 @@ function reBuildCalendar(MonthToCalc) {
 
     calHeadCells.forEach(function (c) {
         hi++
-        if (!nextMonth && hi == _WEEKDAY && MonthToCalc == _MONTH) {
+        if (!nextMonth && hi == _REAL_WEEKDAY && MonthToCalc == _REAL_MONTH) {
             c.classList.add('aToday');
         } else {
             c.classList.remove('aToday');
@@ -80,19 +82,19 @@ function reBuildCalendar(MonthToCalc) {
         cell.innerHTML = '';
         ci++;
 
-        if (MonthToCalc != _MONTH) {
+        if (MonthToCalc != _REAL_MONTH) {
             cell.classList.remove('aToday');
         }
 
         if (ci >= monStartWeekDay) {
 
-            if (!nextMonth && monthDay == _TODAY && MonthToCalc == _MONTH) {
+            if (!nextMonth && monthDay == _TODAY && MonthToCalc == _REAL_MONTH) {
                 cell.classList.add('aToday');
             } else {
                 cell.classList.remove('aToday');
             }
 
-            if (!nextMonth && monthDay > monLastDay) {
+            if (!nextMonth && monthDay > monLastDayNum) {
                 nextMonth = true;
                 monthDay = 1;
             }
