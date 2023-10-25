@@ -64,4 +64,5 @@ const aData = [
 	{ m: 10, d: 27, c: "a", n: "9:50 MS Stage" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 10, d: 31, c: "a", n: "Hello world." },
+	{ m: 10, d: 28, c: "8", n: "12:30 Riviera Celebr." },
 ];
