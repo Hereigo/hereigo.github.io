@@ -21,8 +21,9 @@
     <br>
     <div>
         <a href="#" style="text-decoration: none;">
-            <span style="text-decoration: underline;"> Bla-Bla-Bla-Link </span>
-            <span style="text-decoration: none;"> &nbsp; Also_Link </span>
+            <span style="text-decoration: underline;">Some-Link</span>
+            <span style="text-decoration: none;">Not Underlined Link</span>
+            <span style="text-decoration: underline;">Some-Link-Again</span>
         </a>
     </div>
 
@@ -66,32 +67,25 @@
         }
         var myArr = new Array();
 
-        // Fill Array with myObjects:
+        console.log('Array filled with myObjects:');
         for (var i = 0; i < 3; i++) {
             myArr.push(new myObj(i, 'A' + i + i));
         }
-        console.log(myArr[2]); // { id: 2, name: "A22" }
+        console.log(myArr);
 
-        // SPLICE into Array:
-        myArr.splice(2, 0, new myObj(77, 'B77'));
+        setTimeout(function () {
+            console.log('SPLICE into Array:');
+            myArr.splice(2, 0, new myObj(77, 'B77'));
+            console.log(myArr);
+        }, 5000)
 
-        console.log(myArr); // { id: 77, name: "B77" }
-
-        // Get IDs of Objects by MAP():
-        var objIds = myArr.map(function (item) {
-            return item.Id;
-        });
-        console.log(objIds); // [ 0, 1, 77, 2 ]
-
-        //////////////////////////////////////////////////////////////////
-
-        // myArr.forEach(function (curr) {
-        //         curr.doSometh();
-        // });
-        //
-        // var doSometh = function () {
-        //         console.log(this);
-        // }
+        setTimeout(function () {
+            console.log('Get IDs of Objects by MAP():');
+            var objIds = myArr.map(function (item) {
+                return item.Id;
+            });
+            console.log(objIds);
+        }, 5000)
 
     </script>
 </body>
