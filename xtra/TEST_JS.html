@@ -87,6 +87,23 @@
             console.log(objIds);
         }, 5000)
 
+        /////////////////////////////////////
+
+        console.log('sum(1, 2, 3) => ', sum(1, 2, 3))
+        console.log('sum([1, 2, 3]) => ', sum([1, 2, 3]))
+        console.log('sum([1, 2, 3], [1, 2, 3]) => ', sum([1, 2, 3], [1, 2, 3]))
+
+        function sum(...arguments) {
+            if (arguments.length === 1) {
+                const [arr] = arguments;
+                if (arr instanceof Array) {
+                    return sum(...arr);
+                }
+            } else {
+                return arguments.reduce((a, b) => a + b);
+            }
+        }
+
     </script>
 </body>
 
