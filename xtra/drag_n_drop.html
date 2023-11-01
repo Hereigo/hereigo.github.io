@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Drag and Drop Demo</title>
+    <style>
+        .box {
+            border: solid 3px grey;
+            float: left;
+            margin: 10px;
+            height: 200px;
+            width: 200px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .item {
+            background-color: bisque;
+            height: 100px;
+            width: 100px;
+            margin: 49px;
+        }
+
+        .drag-over {
+            border: dashed 3px aqua;
+        }
+
+        span {
+            float: right;
+            margin: .3em;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Selected - A
+        </h1>
+        <div class="drop-targets">
+            <div class="box" id="a">
+                <span>A</span>
+                <div class="item" id="item" draggable="true">
+                </div>
+            </div>
+            <div class="box" id="b">
+                <span>B</span>
+            </div>
+            <div class="box" id="c">
+                <span>C</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const h1 = document.querySelector('h1');
+        const boxes = document.querySelectorAll('.box');
+        const item = document.querySelector('.item');
+
+        // TODO:
+        // IMPLEMENT OVER-BOARDS REMOVING!
+        let latestId = 'a';
+
+        item.addEventListener('dragstart', dragStart);
+
+        boxes.forEach(box => {
+            box.addEventListener('dragenter', dragEnter)
+            box.addEventListener('dragover', dragOver);
+            box.addEventListener('dragleave', dragLeave);
+            box.addEventListener('drop', drop);
+        });
+
+        function dragStart(e) {
+            console.log('dragStart-', e.target.id)
+            e.dataTransfer.setData('text/plain', e.target.id);
+            setTimeout(() => {
+                e.target.classList.add('hide');
+                console.log('dragStartHide-', e.target.id)
+            }, 0);
+            console.log('dragStart2-', e.target.id)
+        }
+
+        function dragEnter(e) {
+            console.log('Enter-', e.target.id)
+            e.preventDefault();
+            e.target.classList.add('drag-over');
+        }
+
+        function dragOver(e) {
+            console.log('dragOver-', e.target.id)
+            e.preventDefault();
+            e.target.classList.add('drag-over');
+        }
+
+        function dragLeave(e) {
+            console.log('dragLeave-', e.target.id)
+            e.target.classList.remove('drag-over');
+        }
+
+        function drop(e) {
+
+            console.log('drop-', e.target.id)
+
+            e.target.classList.remove('drag-over');
+
+            // get the draggable element
+            const id = e.dataTransfer.getData('text/plain');
+            const draggable = document.getElementById(id);
+
+            e.target.appendChild(draggable);
+            draggable.classList.remove('hide');
+            h1.innerText = 'Selected - ' + e.target.id.toUpperCase();
+        }
+
+    </script>
+</body>
+
+</html>
