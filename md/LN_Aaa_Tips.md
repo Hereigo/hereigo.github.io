@@ -61,10 +61,10 @@ fc-cache -fvh
 # -h  = Show summary of options.
 ```
 
-https://github.com/loafer-mka/anka-coder-fonts
-https://www.fontsquirrel.com/fonts/download/BPmono
-https://fonts.google.com/specimen/PT+Mono
-https://www.programmingfonts.org
+- https://github.com/loafer-mka/anka-coder-fonts
+- https://www.fontsquirrel.com/fonts/download/BPmono
+- https://fonts.google.com/specimen/PT+Mono
+- https://www.programmingfonts.org
 
 
 ### Check Temperatures:

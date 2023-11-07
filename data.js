@@ -37,7 +37,6 @@ const aData = [
 	{ m: 12, d: 12, c: "a", n: "[0525] Filters??" },
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
-	{ m: 00, d: 10, c: "a", n: "Counts + Fast" },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
 	{ m: 00, d: 12, c: "b", n: "150 Penguin YT ???" },
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
@@ -45,6 +44,7 @@ const aData = [
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
 	{ m: 00, d: 23, c: "a", n: "280 Dominiq" },
 	{ m: 00, d: 23, c: "a", n: "300 Troylana" },
+	{ m: 00, d: 27, c: "a", n: "Ask Counts (Den.Kris)" },
 	{ m: 00, d: 28, c: "a", n: "160 iLanos" },
 	// -------------------------------------------
 	// ----- VARIABLES ---------------------------

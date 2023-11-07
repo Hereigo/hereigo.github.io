@@ -75,24 +75,31 @@
             box.addEventListener('drop', drop);
         });
 
+        document.addEventListener('mouseup', function () {
+            console.log('onmouseup-', latestId);
+        })
+
         function dragStart(e) {
-            console.log('dragStart-', e.target.id)
+            console.log('111-', e.target.id)
+
             e.dataTransfer.setData('text/plain', e.target.id);
+
             setTimeout(() => {
                 e.target.classList.add('hide');
-                console.log('dragStartHide-', e.target.id)
+                console.log('333-', e.target.id)
             }, 0);
-            console.log('dragStart2-', e.target.id)
+
+            console.log('222-', e.target.id)
         }
 
         function dragEnter(e) {
-            console.log('Enter-', e.target.id)
+            console.log('444-', e.target.id)
             e.preventDefault();
             e.target.classList.add('drag-over');
         }
 
         function dragOver(e) {
-            console.log('dragOver-', e.target.id)
+            console.log('555-', e.target.id)
             e.preventDefault();
             e.target.classList.add('drag-over');
         }
@@ -104,7 +111,7 @@
 
         function drop(e) {
 
-            console.log('drop-', e.target.id)
+            console.log('666-drop-', e.target.id)
 
             e.target.classList.remove('drag-over');
 
