@@ -59,6 +59,6 @@ const aData = [
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 27, c: "a", n: "9:50 MS Stage" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 11, d: 08, c: "a", n: "17:00 <a href='https://youtube.com/live/UulFwCcEyXM'> . YT .</a>" },
-	{ m: 11, d: 30, c: "a", n: "Hello world." },
+	{ m: 11, d: 27, c: "a", n: "Chg Passko" },
+	{ m: 11, d: 28, c: "b", n: "Chg Passko" },
 ];

@@ -816,7 +816,6 @@ BIT - techrocksarchive - techrocks dev.books
 BIT - tg://join?invite=AAAAAEhbsk_VoOQYZww4sQ - (sherwood)
 BIT - tg://join?invite=AAAAAEi8aNPIQG0Xs1dsMg - bzd_channel (bkp)
 BUX
-BUX
 BUX - +GPfKqO9xDg5lZGMy
 BUX - +HiUdYhRVvHY1Y2E6
 BUX - +_IOrbtOtxsZjZmMy (Paliturka)
@@ -827,28 +826,22 @@ BUX - aphotg - Books smart thoughts
 BUX - arch_prog
 BUX - auaknyga
 BUX - aukknygaua
-BUX - aukknygaua
 BUX - b_biblioteka
 BUX - bfbook
 BUX - biblioland
 BUX - biblioua
 BUX - bolshaya_biblioteka
 BUX - boo4you
-BUX - boo4you
 BUX - book2me
-BUX - bookac
 BUX - bookac
 BUX - bookcase_library
 BUX - booksforuskruz
 BUX - boookie_bot
-BUX - boookie_bot?start=p88
 BUX - bzbook - Бізнес
-BUX - c/1321673270/459 - Library keeper
 BUX - chan4you - English
 BUX - chitarik1
 BUX - cm_books
 BUX - code_archive
-BUX - e_xlibris
 BUX - e_xlibris - short stories
 BUX - el_biblioteka
 BUX - eng_books
@@ -859,14 +852,11 @@ BUX - favvbooks
 BUX - fentezibook_s - fentesy 
 BUX - fifty_two_books
 BUX - firstBookTg
-BUX - firstBooktg
-BUX - firstbooktg
 BUX - flibusta_anglysky - ReadKnigi SHORTEN !
 BUX - frontend_hranilishche - not only FrontEnd
 BUX - gameDevArchive
 BUX - gavanknig
 BUX - gobooks
-BUX - gobooks - Books club
 BUX - goodlib_bot - books bot
 BUX - hacckingbook
 BUX - hlfiles
@@ -885,7 +875,6 @@ BUX - librarycafe - Library keeper 2
 BUX - loft_live
 BUX - mirelektronnihknig
 BUX - mmy_books
-BUX - paliturka
 BUX - paliturka/227 - books by ganres
 BUX - physmathLit
 BUX - povstanec
@@ -911,7 +900,6 @@ CHT - joinchat/Dqrdi1JmLm8L856mDbgKUg - Kottans Front-End
 CHT - kottans - Kottans Public
 CHT - letstalkaboutkiev
 CHT - radio_kottans - Kottans Radio
-DEV
 DEV
 DEV - +AnKG6e3ual44MmVi (AdminBooks)
 DEV - +FprFg7-t7Fg3NTFi - databases
@@ -1025,11 +1013,11 @@ ENG - thinkEnglish
 ENG - uaEnglish - English every day.
 ENG - vocabulix - learn English with visual vocabulary quickly and effectively.
 EVT
-EVT - @event_listener_bot
 EVT - afficherkyiv
 EVT - confainua
 EVT - dou_kyiv
 EVT - dou_kyiv_events
+EVT - event_listener_bot
 EVT - events_ua
 EVT - eventskyiv
 EVT - internet_biz_ua
@@ -1083,6 +1071,7 @@ FUN - valentynaeminova (visnykVeselRuFo)
 FUN - wartimejokes
 HLS
 HLS - +JiHjbz1fOEU1YzVi
+HLS - +l3IdGvKv8GBmMDRi
 HLS - being_fit
 HOM
 HOM - +TX30xhvxAFY0MGIy - RadioElectronix
@@ -1090,7 +1079,9 @@ HOM - +uA4EPbEeG40wM2My - RadioElectronix_Chat
 HOM - diarch - Home Master
 HOM - stroiy_sam
 INF
-INF
+INF - +-J0SdKhnVWU2MDNi - science smoothie
+INF - +-MLAOLaUrdA1M2Ey - world around us
+INF - +0PIcqKyfouhkZWEy - facts
 INF - +2ghXhIWcBQ9iZDAy - geography
 INF - +9LnfOEcpjqljNTE6 (Modern Galileo)
 INF - +ElbTAmkpcYhhZDUy - over the world
@@ -1098,6 +1089,7 @@ INF - +N5jJ8aU8FTpiYjRi - day in history
 INF - +e8PFJ8PXVm9lMzBi - men's aliexpress
 INF - +kSBRypVnH-M1Zjhi - facts
 INF - actual_facts
+INF - aliEkspressBaraholka - shops
 INF - bbcukrainian - BBC official
 INF - discoverychan - Discovery!
 INF - dmytro_dubilet - Dubilet
@@ -1123,7 +1115,7 @@ INF - lollaws - Amazing!
 INF - mathru5
 INF - mov_tribunal
 INF - poradnyk
-INF - portablik -   Soft
+INF - portablik - soft
 INF - prosvitaUA
 INF - slovaua
 INF - sovety - VERY useful advices
@@ -1131,12 +1123,9 @@ INF - spc_porn
 INF - textbook_ua
 INF - to_know_ua
 INF - tokar_ua
-INF - torboxbot -   Soft
+INF - torboxbot - soft
 INF - ua_vd_i_vn
 INF - worldfacts_ua
-IVT
-IVT - +ffe-3erYRmYxYjNi
-IVT - job_IT_Junior
 JUR
 JUR - +AVX9Ev7M7T42ZDZi (Блог юриста)
 JUR - +GJI7KRL2iD82MDgy (Територ.Права)
@@ -1153,24 +1142,20 @@ LIN - binTree
 LIN - darklibary
 LIN - debianl
 LIN - debianproject
-LIN - deepin
 LIN - desktop_linux
 LIN - destinationlinux
 LIN - elementary_os
-LIN - endeavourOS
 LIN - fbytes
 LIN - fossPost
 LIN - foss_Desktop
 LIN - fosslinux
 LIN - fosspost
-LIN - gnome_feed
-LIN - gnomeshell
+LIN - gnomeShell
+LIN - gnome_Feed
 LIN - gnuLinuxLovers
-LIN - gnuslashlinux
-LIN - grouplinux
-LIN - grouplinux
+LIN - gnuSlashLinux
+LIN - groupLinux
 LIN - gtk_News
-LIN - gtk_news
 LIN - guildOfLinux
 LIN - hacking_os
 LIN - itsfoss_official
@@ -1192,7 +1177,6 @@ LIN - linux_desktop_tw
 LIN - linux_gram
 LIN - linux_group
 LIN - linux_n_linus
-LIN - linux_read
 LIN - linux_read
 LIN - linux_room
 LIN - linux_sup
@@ -1237,18 +1221,17 @@ LIN - techli_nux
 LIN - tiling_wm_mastery
 LIN - toxblh_linux
 LIN - ubuntu_group
-LIN - ubuntudde
-LIN - usefuldesktop
-LIN - vfiolinux
-LIN - xfce_desktop
-LIN - xfcedevelopment
+LIN - usefulDesktop
+LIN - vfioLinux
+LIN - xfceDevelopment
+LIN - xfce_Desktop
 LIN - xubuntu_and_others_on_xfce
 LIN - xubuntu_runet
 LIN - zerobloat
 LIN - zettelLinux
 MOV
 MOV - +e1nMQg-uhQ9jZDZi
-MOV - +nbpJ7SqtlTY1NjY6 (CineScope_UA)
+MOV - +nbpJ7SqtlTY1NjY6 (CineScope_ua)
 MOV - besthdfilmx
 MOV - bestmovles
 MOV - cinema_room
@@ -1310,25 +1293,26 @@ MUS - +wDOoPjvuQBBjYzdi
 MUS - chartakmusic - Relax
 MUS - discJockeyTasya
 MUS - disco90e
+MUS - dwnmp3bot - YOUTUBE MP3 HQ DOWNLOADER
+MUS - enigmatic_music
+MUS - housemusic_hd - bass boom
 MUS - madeinukrai
+MUS - mp3music_7o_8o_9o
 MUS - music_Glory_to_Ukraine
+MUS - musicherebot - muzic searsh!!! 
 MUS - muzika_dlya_dushi99
+MUS - muzkultura - from shelyagina
+MUS - muztubeua — mp3
+MUS - passiontomusic
 MUS - pokayfu_muz7
+MUS - rootsmusic
 MUS - stefano_muz
 MUS - ukrmusixx
-MUZ
-MUZ - dwnmp3bot - - - YOUTUBE MP3 HQ DOWNLOADER
-MUZ - enigmatic_music
-MUZ - housemusic_hd - bass boom
-MUZ - mp3music_7o_8o_9o
-MUZ - musicherebot - muzic searsh!!! 
-MUZ - muzkultura - from shelyagina
-MUZ - muztubeua — mp3
-MUZ - rootsmusic
 PSY
 PSY - +0ruOa3jk_yc1NDYy (Psyhogolik)
 PSY - +1Bt5IEG_yEsyYTdi
 PSY - +BvWWNMgZiEwwNGEy
+PSY - bemotivateds
 PSY - ccoznania
 PSY - deti_vse - Children improvment
 PSY - light_cinnamoon/2932?single
