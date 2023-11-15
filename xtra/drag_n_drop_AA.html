@@ -8,9 +8,15 @@
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <title>JavaScript - Drag and Drop Demo</title>
     <style>
-        .col-12 {
+        .col-xs-1 {
+            padding: 2rem 1rem;
+            margin: 2px 0;
+            height: 8rem;
+        }
+
+        .col-xs-11 {
             border: 1px solid black;
-            margin: 1rem;
+            margin: 2px 0;
             height: 8rem;
         }
 
@@ -21,7 +27,7 @@
         .items {
             background-color: bisque;
             float: left;
-            margin: 2rem;
+            margin: 2rem 1rem;
             height: 4rem;
             width: 4rem;
         }
@@ -34,13 +40,16 @@
         <h4>Polygon 22</h4>
 
         <div class="row">
-            <div id="box1" class="box col-12"></div>
+            <div class="col-xs-1">Aaaa:</div>
+            <div id="box1" class="box col-xs-11"></div>
         </div>
         <div class="row">
-            <div id="box2" class="box col-12"></div>
+            <div class="col-xs-1">Bbbb:</div>
+            <div id="box2" class="box col-xs-11"></div>
         </div>
         <div class="row">
-            <div id="box4" class="box col-12"></div>
+            <div class="col-xs-1">Cccc:</div>
+            <div id="box3" class="box col-xs-11"></div>
         </div>
 
     </div>
@@ -72,7 +81,7 @@
                         parent = box2;
                         break;
                     default:
-                        parent = box4;
+                        parent = box3;
                         break;
                 }
                 parent.appendChild(el);
@@ -87,7 +96,7 @@
 
             const box1 = document.getElementById('box1');
             const box2 = document.getElementById('box2');
-            const box4 = document.getElementById('box4');
+            const box4 = document.getElementById('box3');
             const boxes = document.querySelectorAll('.box');
             const items = document.querySelectorAll('.items');
 
