@@ -117,18 +117,18 @@ sudo adduser [username] vboxsf
 
 #panel {
     background-color: #000000;
-    
+}    
 .modal-dialog {
     background-color: #000000;    
-
-
+}
 .grouped-window-list-box {
     spacing: 4px;
-    
+}   
 .applet-box {
     padding-left: 8px;
     padding-right: 8px;
-
+}
 .menu-background {
     background-color: #000000;
+}
 ```
