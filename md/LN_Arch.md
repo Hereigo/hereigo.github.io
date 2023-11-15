@@ -110,3 +110,25 @@ sudo sh VBoxLinuxAdditions.run
 # Access to Shared folders:
 sudo adduser [username] vboxsf
 ```
+### Cinnamon
+```css
+/usr/share/cinnamon/theme/cinnamon.css
+---------------------------------------
+
+#panel {
+    background-color: #000000;
+    
+.modal-dialog {
+    background-color: #000000;    
+
+
+.grouped-window-list-box {
+    spacing: 4px;
+    
+.applet-box {
+    padding-left: 8px;
+    padding-right: 8px;
+
+.menu-background {
+    background-color: #000000;
+```
