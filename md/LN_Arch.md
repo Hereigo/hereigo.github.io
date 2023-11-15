@@ -69,3 +69,44 @@ eos-packagelist "Openbox Edition"
 # Install selected edition (ex. Openbox):
 eos-packagelist --install "Openbox Edition"
 ```
+
+### EOS :
+```sh
+
+Install + LTS-kernls!
+
+/liveuser/preinstalled_pkgs.txt
+
+----------------------------------------------------------------------------------
+yay -S thunderbird telegram-desktop signal-desktop keepassxc p7zip flameshot viber
+
+wget https://mega.nz/linux/repo/Arch_Extra/x86_64/megasync-x86_64.pkg.tar.zst && sudo pacman -U "$PWD/megasync-x86_64.pkg.tar.zst"
+
+----------------------------------------------------------------------------------
+nano /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+----------------------------------------------------------------------------------
+# Dump:
+dconf dump /org/cinnamon/ > ~/Desktop/cinnamon.dconf
+dconf dump /org/nemo/ > ~/Desktop/nemo.dconf
+dconf dump /org/gtk/ > ~/Desktop/gtk.dconf
+dconf dump /org/gnome/ > ~/Desktop/gnome.dconf
+# Load:
+dconf load /org/cinnamon/ > ~/Desktop/cinnamon.dconf
+dconf load /org/nemo/ > ~/Desktop/nemo.dconf
+dconf load /org/gtk/ > ~/Desktop/gtk.dconf
+dconf load /org/gnome/ > ~/Desktop/gnome.dconf
+
+----------------------------------------------------------------------------------
+cp ~/.cinnamon/configs - this includes individual applet configs.
+~/.cinnamon/panel-launchers - desktop files for any panel-launchers applets you have
+~/.local/share/cinnamon/applets
+
+----------------------------------------------------------------------------------
+# Guest Additions:
+sudo sh VBoxLinuxAdditions.run
+
+# Access to Shared folders:
+sudo adduser [username] vboxsf
+```

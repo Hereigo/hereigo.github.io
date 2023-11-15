@@ -40,19 +40,25 @@ dnf install -y 'google-roboto*' 'mozilla-fira*' fira-code-fonts
 yay -S --needed ttf-caladea ttf-carlito ttf-dejavu ttf-liberation ttf-linux-libertine-g adobe-source-code-pro-fonts adobe-source-sans-pro-fonts adobe-source-serif-pro-fonts ttf-fira-code
 
 wget https://fonts.google.com/download?family=JetBrains%20Mono -O ~/Desktop/jb_mono.zip
-unzip ~/Desktop/jb_mono.zip -d ~/.local/share/fonts/jb_mono/
-# or
-# mkdir /usr/share/fonts/PT-mono/
-# mv -f PTMono-Regular.ttf /usr/share/fonts/PT-mono/
+mkdir /usr/share/fonts/jb_mono/
+unzip ~/Desktop/jb_mono.zip -d /usr/share/fonts/jb_mono/
 
 wget https://fonts.google.com/download?family=PT%20Mono -O ~/Desktop/pt_mono.zip
-unzip ~/Desktop/pt_mono.zip -d ~/.local/share/fonts/pt_mono/
+mkdir /usr/share/fonts/pt_mono/
+unzip ~/Desktop/pt_mono.zip -d /usr/share/fonts/pt_mono/
 
 wget https://www.fontsquirrel.com/fonts/download/liberation-mono  -O ~/Desktop/liberation-mono.zip
-unzip ~/Desktop/liberation-mono.zip -d ~/.local/share/fonts/liberation-mono/
+mkdir /usr/share/fonts/liberation-mono/
+unzip ~/Desktop/liberation-mono.zip -d /usr/share/fonts/liberation-mono/
 
 wget https://fonts.google.com/download?family=Comfortaa -O ~/Desktop/Comfortaa.zip
-unzip ~/Desktop/Comfortaa.zip -d ~/.local/share/fonts/Comfortaa/
+mkdir /usr/share/fonts/Comfortaa/
+unzip ~/Desktop/Comfortaa.zip -d /usr/share/fonts/Comfortaa/
+
+wget https://github.com/githubnext/monaspace/releases/download/v1.000/monaspace-v1.000.zip -O ~/Desktop/Monaspace.zip
+unzip ~/Desktop/Monaspace.zip -d ~/Desktop/Monaspace/
+mkdir /usr/share/fonts/Monaspace
+mv /home/aaa/Desktop/Monaspace/monaspace-v1.000/fonts/otf/* /usr/share/fonts/Monaspace/
 
 fc-cache -fvh
 # -f  = Force re-generation cache files, overriding the  timestamp checking.
@@ -60,7 +66,6 @@ fc-cache -fvh
 # -v  = Display status information while busy.
 # -h  = Show summary of options.
 ```
-
 - https://github.com/loafer-mka/anka-coder-fonts
 - https://www.fontsquirrel.com/fonts/download/BPmono
 - https://fonts.google.com/specimen/PT+Mono
