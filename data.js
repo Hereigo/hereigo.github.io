@@ -33,6 +33,8 @@ const aData = [
 	{ m: 10, d: 14, c: "a", n: "Draganchuk" },
 	{ m: 10, d: 30, c: "a", n: "Kelvich" },
 	{ m: 11, d: 10, c: "b", n: "Cherednich" },
+	{ m: 11, d: 16, c: "a", n: "JMerilo" },
+	{ m: 11, d: 17, c: "a", n: "KovalVM" },
 	{ m: 11, d: 30, c: "a", n: "Davyd" },
 	{ m: 12, d: 10, c: "b", n: "Ula's" },
 	{ m: 12, d: 12, c: "a", n: "[0525] Filters??" },
@@ -59,6 +61,6 @@ const aData = [
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 27, c: "a", n: "9:50 MS Stage" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 11, d: 27, c: "a", n: "Chg Passko" },
-	{ m: 11, d: 28, c: "b", n: "Chg Passko" },
+	{ m: 11, d: 27, c: "a", n: "Chg Passage" },
+	{ m: 11, d: 28, c: "b", n: "Chg Passage" },
 ];
