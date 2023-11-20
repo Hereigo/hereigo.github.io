@@ -1,0 +1,32 @@
+[desktop]
+computer-icon-visible=true
+font='Comfortaa Bold 10'
+home-icon-visible=true
+network-icon-visible=false
+trash-icon-visible=true
+volumes-visible=true
+
+[preferences]
+date-format='informal'
+detect-content=false
+enable-delete=false
+show-computer-icon-toolbar=true
+show-hidden-files=true
+show-home-icon-toolbar=true
+show-new-folder-icon-toolbar=true
+show-open-in-terminal-toolbar=true
+swap-trash-delete=false
+thumbnail-limit=uint64 104857600
+
+[preferences/menu-config]
+selection-menu-copy-to=true
+selection-menu-duplicate=false
+selection-menu-make-link=true
+selection-menu-move-to=true
+
+[window-state]
+geometry='895x839+512+106'
+maximized=false
+sidebar-bookmark-breakpoint=5
+sidebar-width=198
+start-with-sidebar=true

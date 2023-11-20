@@ -21,6 +21,16 @@ systemctl list-unit-files --type=service
 #
 ```
 
+#### Smart view Drives:
+```sh
+lsblk
+```
+
+#### Network devices:
+```sh
+inxi -Naz
+```
+
 ### FileSystem
 ```sh
 # in root, Dir, Insensitive, NamePart (with out Errors to Null)
@@ -82,17 +92,7 @@ cat /sys/class/hwmon/hwmon2/temp1_input
 
 #### Locale Cfg:
 ```sh
-sudo nano /etc/locale.conf
-```
-
-#### Smart view Drives:
-```sh
-lsblk
-```
-
-#### Network devices:
-```sh
-inxi -Naz
+/etc/locale.conf
 ```
 
 #### TouchPad disable on boot:
@@ -107,6 +107,24 @@ sudo su
 echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
 # or Diactivate
 echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+```
+
+### MyScriptLink.desktop
+```sh
+[Desktop Entry]
+Name=myscript.sh
+Exec=bash ./myscript.sh
+Comment=
+Terminal=true
+Icon=cinnamon-panel-launcher
+Type=Application
+```
+### MyScript.sh
+```sh
+#! /bin/bash
+sudo apt update -y && sudo apt upgrade -y
+$SHELL  
+# $SHELL - is for stay terminal opened.
 ```
 
 #### AutoRun Script on Boot:
