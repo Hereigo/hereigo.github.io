@@ -2,6 +2,14 @@
 
 ```sql
 
+-- Select values from XML:
+
+DECLARE @SomeXml XML = '<root><row id="111"/><row id="222"/><row id="333"/></root>'
+
+SELECT T.c.value('@id', 'int')
+FROM @SomeXml.nodes('root/row') as T(c)
+
+
 -- String as MULTI-PARAMS:
 
 DECLARE @multiParams VARCHAR(100) = 'Alfa,Beta,Gamma';
