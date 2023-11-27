@@ -1,3 +1,7 @@
+:root {
+    --borders-color: darkgray;
+}
+
 body {
     background: aliceblue;
     display: grid;
@@ -26,12 +30,14 @@ body {
 }
 
 .header input[type="search"] {
+    border: 1px solid var(--borders-color);
     border-radius: 7px;
     padding-left: 1rem;
     width: 94%;
 }
 
 .header input[type="submit"] {
+    border: 1px solid var(--borders-color);
     border-radius: 7px;
     padding-bottom: .2rem;
 }
@@ -57,6 +63,7 @@ body {
 }
 
 #pageNav button {
+    border: 1px solid var(--borders-color);
     border-radius: 7px;
     padding-bottom: .3rem;
     padding-top: .3rem;
@@ -80,7 +87,7 @@ body {
 /* ----------------- CENTER ----------------- */
 
 article {
-    border: 1px lightgray solid;
+    border: 1px solid var(--borders-color);
     display: none;
     grid-area: article;
     height: 90vh;
@@ -123,7 +130,7 @@ th {
 th,
 td {
     border-radius: 5px;
-    border: 1px rgb(174, 174, 174) solid;
+    border: 1px solid var(--borders-color);
     box-sizing: border-box;
 }
 
