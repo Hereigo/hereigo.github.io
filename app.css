@@ -2,6 +2,11 @@
     --borders-color: darkgray;
 }
 
+* {
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
 body {
     background: aliceblue;
     display: grid;
