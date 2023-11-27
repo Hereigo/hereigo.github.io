@@ -53,8 +53,8 @@ const aData = [
 	// ----- VARIABLES ---------------------------
 	// -------------------------------------------
 	// ----- Last Month Friday -------------------
-	{ m: 12, d: 22, c: "b", n: "11:00 LX Nata sync" },
 	{ m: 01, d: 26, c: "b", n: "11:00 LX Nata sync" },
+	{ m: 12, d: 22, c: "b", n: "11:00 LX Nata sync" },
 	// ----- 4weekly -----------------------------
 	{ m: 11, d: 20, c: "a", n: "225 (4w) Chck 4G GB" },
 	{ m: 11, d: 22, c: "a", n: "190 (4w) Life-M" },
@@ -64,6 +64,4 @@ const aData = [
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 27, c: "a", n: "9:50 MS Stage" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 11, d: 27, c: "a", n: "Chg Passage" },
-	{ m: 11, d: 28, c: "b", n: "Chg Passage" },
 ];

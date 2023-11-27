@@ -1,7 +1,12 @@
-echo " >>> Start Cleaning deprecated files..."
+echo " >>> Start Cleaning deprecated files:"
+echo " ..."
 
 # Remove orphaned packages
-sudo pacman -Qtdq | sudo pacman -Rns
+if [[ $(sudo pacman -Qtdq ) ]]; then
+    sudo pacman -Qtdq | sudo pacman -Rns
+else
+    echo " >>> Unrequired packages and dependencies not found."
+fi
 
 # Remove backuped packages more then 1 versions in cache
 sudo paccache -rk1 
@@ -37,4 +42,3 @@ if [ -e ~/.cache/spotify ]; then
 fi
 
 echo " >>> Cleaning deprecated files finished."
-
