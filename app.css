@@ -7,6 +7,26 @@
     margin-top: 0;
 }
 
+.container {
+    margin: 0 auto;
+    max-width: 1288px;
+    padding: 0 24px;
+    width: 100%;
+    /* max-width = 1240 + 24 + 24 */
+}
+
+.flex-four-items {
+    flex-basis: calc((100% - 30px) / 4);
+    /* 
+    flex-basis == width of Flex-container-item
+    item width = 100% / 4 (items) but without 3x10px margins between them
+
+    flex elements is predictively calculated before rendering
+    */
+}
+
+/* ------- BEST PRACTICES /\ ABOVE ---------- */
+
 body {
     background: aliceblue;
     display: grid;
