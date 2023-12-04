@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const host = '127.0.0.1';
-const port = 7000;
-
 const app = express();
+
+const sqlite3 = require('sqlite3').verbose();
+const dbName = 'sqlite_tasks.db';
 
 let tasks = [
     { id: 1, text: 'To do a 0.1' },
@@ -42,6 +42,6 @@ app.delete('/tasks/:id', (req, res) => {
     res.status(204).json(tasks);
 });
 
-app.listen(port, host, () => {
-    console.log(`Server listening on http://${host}:${port}`);
+app.listen(() => {
+    console.log(`Server listening on http://localhost:3000`);
 });
