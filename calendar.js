@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     reBuildCalendar(_REAL_MONTH);
 
-    let monthPrev = _REAL_MONTH - 1;
-    let monthNext = _REAL_MONTH + 1;
+    let monthPrev = _REAL_MONTH === 0 ? 11 : _REAL_MONTH - 1;
+    let monthNext = _REAL_MONTH === 11 ? 0 : _REAL_MONTH + 1;
 
     const toCurrMon = document.querySelector('#toCurrMon');
     const toNextMon = document.querySelector('#toNextMon');
@@ -53,13 +53,29 @@ function getMonStartWeekDay(monStartDate) {
 }
 
 // TODO:
-// 1. Prevent Duplications!
+//
+// 1. Prevent Duplications.
 // 2. Sort by Time inside a Day.
+// 3. Calendar Not-Current-Months definition only works for a Jan and Dec - fix it.
 
 function reBuildCalendar(MonthToCalc) {
 
-    let monLastDayNum = new Date(_REAL_YEAR, parseInt(MonthToCalc) + 1, 0).getDate();
-    let monStartDate = new Date(_REAL_YEAR, MonthToCalc, 1);
+    let _calendarYear;
+
+    if (MonthToCalc !== _REAL_MONTH && MonthToCalc === 11) {
+        _calendarYear = _REAL_YEAR - 1;
+    }
+    else if (MonthToCalc !== _REAL_MONTH && MonthToCalc === 0) {
+        _calendarYear = _REAL_YEAR + 1;
+    }
+    else {
+        _calendarYear = _REAL_YEAR;
+    }
+
+    console.log(_calendarYear);
+
+    let monLastDayNum = new Date(_calendarYear, parseInt(MonthToCalc) + 1, 0).getDate();
+    let monStartDate = new Date(_calendarYear, MonthToCalc, 1);
     let monStartWeekDay = getMonStartWeekDay(monStartDate);
     let ci = 0;
     let hi = 0;
@@ -112,8 +128,7 @@ function reBuildCalendar(MonthToCalc) {
                 (x.d === monthDay && x.m === 0) ||
                 (x.d === monthDay && x.m === monHumanNumber)).forEach(element => {
                     list +=
-                        '<li' + (element.c === 'b' ? ' class="bday" ' : '') + '>' +
-                        element.n + '</li>';
+                        '<li' + (element.c === 'b' ? ' class="bday" ' : '') + '>' + element.n + '</li>';
                 });
 
             cell.innerHTML = '<div class="number">' + monthDay + '</div>' +
