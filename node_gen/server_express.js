@@ -6,13 +6,13 @@ const app = express();
 const db = new sqlite3.Database('sqlite_tasks.db');
 const port = 3000;
 
+app.use(bodyParser.json());
+
 const serverErrorHandle = (err, res) => {
     if (err) {
         res.status(500).json({ error: err.message });
     }
 };
-
-app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     db.all('SELECT * FROM tasks', (err, rows) => {
@@ -40,21 +40,18 @@ app.post('/tasks', (req, res) => {
 app.put('/tasks/:id', (req, res) => {
     const { text } = req.body;
     const taskId = parseInt(req.params.id);
-    // const foundTask = tasks.find(t => t.id === taskId);
-    // if (!foundTask) {
-    //     res.status(404).json({ message: 'Task not found.' });
-    // }
-    // foundTask.text = taskToUpdate;
     db.run('UPDATE tasks SET text = ? WHERE id = ?', [text, taskId], (err) => {
         serverErrorHandle(err, res);
-        res.status(201).json({ id: taskId, textAbc: text });
+        res.status(200).json({ id: taskId, textAbc: text });
     });
 });
 
 app.delete('/tasks/:id', (req, res) => {
     const taskId = parseInt(req.params.id);
-    tasks = tasks.filter(t => t.id !== taskId);
-    res.status(204).json(tasks);
+    db.run('DELETE FROM tasks WHERE id = ?', taskId, (err, rows) => {
+        serverErrorHandle(err, res);
+        res.status(204).send();
+    });
 });
 
 app.listen(port, function () {
