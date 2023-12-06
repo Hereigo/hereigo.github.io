@@ -6,6 +6,7 @@ dotnet/Generator/obj
 GIT_IGNORED.json
 /.vs
 */config/db.js
+password
 
 # Logs
 logs

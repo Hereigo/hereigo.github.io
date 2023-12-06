@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "start": "nodemon node server_express.js"
+    "start": "nodemon node server_3_mongo.js"
   },
   "author": "",
   "description": "Some Project description here...",
   "license": "ISC",
-  "main": "server_express.js",
+  "main": "server_3_mongo.js",
   "name": "node_gen",
   "version": "1.0.0",
   "dependencies": {
