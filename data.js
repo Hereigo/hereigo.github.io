@@ -1,5 +1,6 @@
 const aData = [
 	// ----- yearly --------------------------
+	{ m: 01, d: 06, c: "a", n: "Vodohrescha" },
 	{ m: 01, d: 24, c: "a", n: "Svyatny" },
 	{ m: 01, d: 30, c: "a", n: "Kostromin" },
 	{ m: 02, d: 14, c: "a", n: "Valentine`s day." },
@@ -39,6 +40,8 @@ const aData = [
 	{ m: 12, d: 06, c: "b", n: "St.Mykola" },
 	{ m: 12, d: 10, c: "b", n: "Ula's" },
 	{ m: 12, d: 12, c: "a", n: "[0525] Filters??" },
+	{ m: 12, d: 24, c: "a", n: "Sviat Vechir" },
+	{ m: 12, d: 25, c: "a", n: "Rizdvo" },
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
@@ -63,6 +66,5 @@ const aData = [
 	// ----- only once ---------------------------
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
-	{ m: 10, d: 27, c: "a", n: "9:50 MS Stage" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
 ];
