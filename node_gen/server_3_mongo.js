@@ -11,39 +11,32 @@ const { Task } = require('./models/mongoModel.js');
 
 app.use(bodyParser.json());
 
-const checkIfExists = (task, res) => {
-    if (!task) {
-        return res.status(404).json({ message: 'Task not found.' });
-    }
-};
-
-const serverErrorHandle = (err, res) => {
-    if (err) {
-        console.log('Task creation error: ', err);
-        res.status(500).json({ error: err.message });
-    }
-};
-
 app.get('/tasks', async (req, res) => {
     try {
         const tasks = await Task.find({
             isCompleted: false,
             text: { '$ne': 'hidden' } // Not Equal
         });
-        checkIfExists(tasks, res);
+        if (!tasks) {
+            res.status(404).json({ message: 'Task not found.' });
+        }
         res.status(200).json(tasks);
     } catch (error) {
-        serverErrorHandle(error, res);
+        console.log('Task creation error: ', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 app.get('/tasks/:id', async (req, res) => {
     try {
         const task = await Task.findById(req.params.id);
-        checkIfExists(task, res);
+        if (!task) {
+            res.status(404).json({ message: 'Task not found.' });
+        }
         res.status(200).json(task);
     } catch (error) {
-        serverErrorHandle(error, res);
+        console.log('Task creation error: ', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
@@ -53,35 +46,44 @@ app.post('/tasks', async (req, res) => {
         const task = await Task.create({
             text: newTask.text
         });
-        checkIfExists(task, res);
-        return res.status(201).json(task);
+        if (!task) {
+            res.status(404).json({ message: 'Task not found.' });
+        }
+        res.status(201).json(task);
     } catch (error) {
-        serverErrorHandle(error, res);
+        console.log('Task creation error: ', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 app.put('/tasks/:id', async (req, res) => {
     try {
         const { text, isCompleted } = req.body;
-        const taskId = parseInt(req.params.id);
+        const taskId = req.params.id;
         const task = await Task.findByIdAndUpdate(taskId,
             { text, isCompleted },
             { new: true } // means the result TASK is applied AFTER update.
         );
-        checkIfExists(task, res);
-        return res.status(200).json(task);
+        if (!task) {
+            res.status(404).json({ message: 'Task not found.' });
+        }
+        res.status(200).json(task);
     } catch (error) {
-        serverErrorHandle(error, res);
+        console.log('Task creation error: ', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
 app.delete('/tasks/:id', async (req, res) => {
     try {
         const task = await Task.findByIdAndDelete(req.params.id);
-        checkIfExists(task, res); // task before deleting
-        res.status(204).send();
+        if (!task) {
+            res.status(404).json({ message: 'Task not found.' });
+        }
+        res.status(204).json(task);
     } catch (error) {
-        serverErrorHandle(error, res);
+        console.log('Task creation error: ', error);
+        res.status(500).json({ error: error.message });
     }
 });
 
