@@ -1,10 +1,13 @@
-const bodyParser = require('body-parser');
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-
+const bodyParser = require('body-parser');
 const app = express();
-const db = new sqlite3.Database('sqlite_tasks.db');
 const port = 3000;
+
+const db = require('./config/db');
+const mongoose = require('mongoose');
+mongoose.connect(db.URI);
+
+const { Task } = require('./models/mongoModel.js');
 
 app.use(bodyParser.json());
 
@@ -14,44 +17,49 @@ const serverErrorHandle = (err, res) => {
     }
 };
 
-app.get('/', (req, res) => {
-    db.all('SELECT * FROM tasks', (err, rows) => {
-        serverErrorHandle(err, res);
-        res.status(200).json(rows);
-    });
+app.get('/tasks/:id', async (req, res) => {
+    try {
+        const task = await Task.findById(req.params.id);
+        res.status(200).json(task);
+    } catch (error) {
+        console.log('Task obtaining error: ', error);
+        serverErrorHandle(error, res);
+    }
 });
 
-app.get('/tasks/:id', (req, res) => {
-    const taskId = parseInt(req.params.id);
-    db.all('SELECT * FROM tasks WHERE id = ? LIMIT 1', taskId, (err, rows) => {
-        serverErrorHandle(err, res);
-        res.status(200).json(rows);
-    });
+app.get('/tasks', async (req, res) => {
+    try {
+        const tasks = await Task.find({
+            isCompleted: false,
+            text: { '$eq': 'asdrfy' }
+        });
+        res.status(200).json(tasks);
+    } catch (error) {
+        console.log('Task creation error: ', error);
+        serverErrorHandle(error, res);
+    }
 });
 
-app.post('/tasks', (req, res) => {
-    const newTask = req.body;
-    db.run('INSERT INTO tasks (text) VALUES (?)', [newTask.text], (err) => {
-        serverErrorHandle(err, res);
-    });
-    res.status(201).json({ id: this.lastID });
+app.post('/tasks', async (req, res) => {
+    try {
+        const newTask = req.body;
+        const task = await Task.create({
+            text: newTask.text
+        });
+        return res.status(201).json(task);
+    } catch (error) {
+        console.log('Task creation error: ', error);
+        serverErrorHandle(error, res);
+    }
 });
 
 app.put('/tasks/:id', (req, res) => {
     const { text } = req.body;
     const taskId = parseInt(req.params.id);
-    db.run('UPDATE tasks SET text = ? WHERE id = ?', [text, taskId], (err) => {
-        serverErrorHandle(err, res);
-        res.status(200).json({ id: taskId, textAbc: text });
-    });
 });
 
 app.delete('/tasks/:id', (req, res) => {
     const taskId = parseInt(req.params.id);
-    db.run('DELETE FROM tasks WHERE id = ?', taskId, (err, rows) => {
-        serverErrorHandle(err, res);
-        res.status(204).send();
-    });
 });
 
 app.listen(port, function () {
