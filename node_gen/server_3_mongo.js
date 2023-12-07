@@ -31,7 +31,7 @@ app.get('/tasks', async (req, res) => {
     try {
         const tasks = await Task.find({
             isCompleted: false,
-            text: { '$eq': 'asdrfy' }
+            text: { '$ne': 'hidden' } // Not Equal
         });
         res.status(200).json(tasks);
     } catch (error) {
