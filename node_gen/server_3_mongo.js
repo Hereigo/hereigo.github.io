@@ -18,12 +18,12 @@ app.get('/tasks', async (req, res) => {
             text: { '$ne': 'hidden' } // Not Equal
         });
         if (!tasks) {
-            res.status(404).json({ message: 'Task not found.' });
+            return res.status(404).json({ message: 'Task not found.' });
         }
-        res.status(200).json(tasks);
+        return res.status(200).json(tasks);
     } catch (error) {
         console.log('Tasks obtaining error: ', error);
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -31,12 +31,12 @@ app.get('/tasks/:id', async (req, res) => {
     try {
         const task = await Task.findById(req.params.id);
         if (!task) {
-            res.status(404).json({ message: 'Task not found.' });
+            return res.status(404).json({ message: 'Task not found.' });
         }
-        res.status(200).json(task);
+        return res.status(200).json(task);
     } catch (error) {
         console.log('Task obtaining error: ', error);
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -47,12 +47,12 @@ app.post('/tasks', async (req, res) => {
             text: newTask.text
         });
         if (!task) {
-            res.status(404).json({ message: 'Task not found.' });
+            return res.status(404).json({ message: 'Task not found.' });
         }
-        res.status(201).json(task);
+        return res.status(201).json(task);
     } catch (error) {
         console.log('Task creation error: ', error);
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -65,12 +65,12 @@ app.put('/tasks/:id', async (req, res) => {
             { new: true } // means the result TASK is applied AFTER update.
         );
         if (!task) {
-            res.status(404).json({ message: 'Task not found.' });
+            return res.status(404).json({ message: 'Task not found.' });
         }
-        res.status(200).json(task);
+        return res.status(200).json(task);
     } catch (error) {
         console.log('Task updating error: ', error);
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 });
 
@@ -78,12 +78,12 @@ app.delete('/tasks/:id', async (req, res) => {
     try {
         const task = await Task.findByIdAndDelete(req.params.id);
         if (!task) {
-            res.status(404).json({ message: 'Task not found.' });
+            return res.status(404).json({ message: 'Task not found.' });
         }
-        res.status(204).json(task);
+        return res.status(204).json(task);
     } catch (error) {
         console.log('Task deleting error: ', error);
-        res.status(500).json({ error: error.message });
+        return res.status(500).json({ error: error.message });
     }
 });
 
