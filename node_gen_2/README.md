@@ -6,6 +6,8 @@ npm init
 
 npm i mongoose express body-parser #(for json-2-js)
 
+npm i bcrypt #(for hash-ing passwords, etc. )
+
 mkdir config
 echo "const URI = 'mongodb+srv://...';
 module.exports = {URI}" >> ./config/db.js

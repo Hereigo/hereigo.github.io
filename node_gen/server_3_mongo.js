@@ -22,7 +22,7 @@ app.get('/tasks', async (req, res) => {
         }
         res.status(200).json(tasks);
     } catch (error) {
-        console.log('Task creation error: ', error);
+        console.log('Tasks obtaining error: ', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -35,7 +35,7 @@ app.get('/tasks/:id', async (req, res) => {
         }
         res.status(200).json(task);
     } catch (error) {
-        console.log('Task creation error: ', error);
+        console.log('Task obtaining error: ', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -69,7 +69,7 @@ app.put('/tasks/:id', async (req, res) => {
         }
         res.status(200).json(task);
     } catch (error) {
-        console.log('Task creation error: ', error);
+        console.log('Task updating error: ', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -82,7 +82,7 @@ app.delete('/tasks/:id', async (req, res) => {
         }
         res.status(204).json(task);
     } catch (error) {
-        console.log('Task creation error: ', error);
+        console.log('Task deleting error: ', error);
         res.status(500).json({ error: error.message });
     }
 });
