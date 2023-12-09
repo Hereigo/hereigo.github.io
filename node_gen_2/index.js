@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 const app = express();
 const port = 3000;
 const User = require('./models/userModel');
+const checkAuth = require('./middleware/checkAuth');
+const checkAdmin = require('./middleware/checkAdmin');
 
 const db = require('./config/db');
 const mongoose = require('mongoose');
@@ -14,6 +16,7 @@ mongoose.connect(db.URI).then(() => {
 });
 
 app.use(bodyParser.json());
+// app.use(checkAuth); - here is for ALL methods.
 
 app.post('/register', async (req, res) => {
     try {
@@ -57,6 +60,11 @@ app.post('/login', async (req, res) => {
         return res.status(500).json({ error: error.message });
     }
 });
+
+// Using CHECK AUTH:
+app.get('/test', checkAuth, checkAdmin, async (req, res) => {
+    return res.send('You authorized to this area.');
+})
 
 app.listen(port, () => {
     console.log(`Server is listening on http://localhost:${port}`);
