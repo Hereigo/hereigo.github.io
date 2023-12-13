@@ -1,6 +1,7 @@
 ﻿const http = require('http');
 const fs = require('fs');
-const { readFile, appendFile, writeFile } = require('fs/promises');
+
+const { readFile, appendFile, writeFile, rename, unlink } = require('fs/promises');
 // writeFile - can creates a file if not exists.
 
 const testFile = 'hello.txt';
@@ -23,6 +24,25 @@ async function readFileAsync(filePath) {
     }
 }
 
+async function renameFileAsync(filePath, destin) {
+    try {
+        await rename(filePath, destin);
+        console.log('Renamed successfully.');
+    } catch (error) {
+        console.error('File renaming error: ', error);
+    }
+}
+
+// DELETE file:
+async function unlinkFileAsync(filePath) {
+    try {
+        await unlink(filePath);
+        console.log('Removed successfully.');
+    } catch (error) {
+        console.error('File removing error: ', error);
+    }
+}
+
 // FS.OPEN with WRITE and CLOSE chain:
 // --------------------------------------------------
 fs.open(testFile, 'a', (err, file) => {
@@ -40,12 +60,10 @@ fs.open(testFile, 'a', (err, file) => {
     });
 });
 
-// TEST
-appendFileAsync(testFile, 'New appended text...\r\n');
-readFileAsync(testFile);
-
 http.createServer(function (req, res) {
+
     // fs.readFileSync - Not Recommended for Express!!!
+
     fs.readFile(testFile, (err, fileData) => {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.write(fileData);
