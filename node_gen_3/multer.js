@@ -1,12 +1,16 @@
 ﻿const express = require('express');
 const multer = require('multer');
 const xpsApp = express();
-//                                              request form-data KEY
-const upload = multer({ dest: 'uploads/' }).single("demo_image");
 
 xpsApp.get('/', (req, res) => {
     return res.send('Server is running.');
 });
+
+const formdataName = "demo_image";
+const maxFiles = 4;
+
+//                                              
+const upload = multer({ dest: 'uploads/' }).single(formdataName);
 
 xpsApp.post('/img', (req, res) => {
     upload(req, res, (err) => {
@@ -26,6 +30,36 @@ xpsApp.post('/img', (req, res) => {
         //     "size": 641909
         // }
     });
+});
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './uploads');
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+
+const storageUpload = multer({ storage, limits: { fileSize: 3_000_000 } });
+
+xpsApp.post('/img22', (req, res) => {
+    storageUpload(req, res, (err) => {
+        if (err) {
+            console.log(err);
+            return res.status(400).send('Bad request.');
+        }
+        res.send(req.file);
+    });
+});
+
+xpsApp.post('/img44', storageUpload.array(formdataName, maxFiles), (req, res) => {
+    try {
+        res.send(req.files);
+    } catch (error) {
+        console.log(err);
+        return res.status(400).send('Bad request.');
+    }
 });
 
 xpsApp.listen(3000, () => {
