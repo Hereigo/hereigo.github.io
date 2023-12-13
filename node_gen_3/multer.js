@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// To process Static files:
+// Process STATIC files by route 'uploads' for dir 'uploads':
 app.use('/uploads', express.static('uploads'));
 
 app.get('/', (req, res) => {
