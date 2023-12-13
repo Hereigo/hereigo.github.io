@@ -1,8 +1,16 @@
 ﻿const express = require('express');
 const multer = require('multer');
-const xpsApp = express();
+const bodyParser = require('body-parser');
+const UserPix = require('./models/userModel');
+require('./db');
+const app = express();
 
-xpsApp.get('/', (req, res) => {
+app.use(bodyParser.json());
+
+// To process Static files:
+app.use('/uploads', express.static('uploads'));
+
+app.get('/', (req, res) => {
     return res.send('Server is running.');
 });
 
@@ -12,7 +20,7 @@ const limitBytes = 1_000_000; // 1MB
 
 const upload = multer({ dest: 'uploads/' }).single(formdataName);
 
-xpsApp.post('/img', (req, res) => {
+app.post('/img', (req, res) => {
     upload(req, res, (err) => {
         if (err)
             return res.status(400).send('Bad request.');
@@ -43,7 +51,7 @@ const storage = multer.diskStorage({
 
 const uploadDics = multer({ storage, limits: { fileSize: limitBytes } }).single(formdataName);
 
-xpsApp.post('/img22', (req, res) => {
+app.post('/img22', (req, res) => {
     uploadDics(req, res, (err) => {
         if (err) {
             console.log(err);
@@ -53,9 +61,9 @@ xpsApp.post('/img22', (req, res) => {
     });
 });
 
-const uploadDiscMulti = multer({ storage, limits: { fileSize: 3_000_000 } });
+const uploadDiscMulti = multer({ storage, limits: { fileSize: limitBytes } });
 
-xpsApp.post('/img44', uploadDiscMulti.array(formdataName, maxFiles), (req, res) => {
+app.post('/img44', uploadDiscMulti.array(formdataName, maxFiles), (req, res) => {
     try {
         res.send(req.files);
     } catch (error) {
@@ -64,6 +72,33 @@ xpsApp.post('/img44', uploadDiscMulti.array(formdataName, maxFiles), (req, res) 
     }
 });
 
-xpsApp.listen(3000, () => {
+app.post('/user', async (req, res) => {
+    try {
+        const doc = await UserPix.create(req.body);
+        return res.status(200).json(doc);
+
+    } catch (error) {
+        console.log(err);
+        return res.status(400).send('Bad request.');
+    }
+});
+
+const uploadPic = multer({ storage, limits: { fileSize: limitBytes } });
+
+app.put('/user/:id', uploadPic.single(formdataName), async (req, res) => {
+    try {
+        const doc =
+            await UserPix.findByIdAndUpdate(req.params.id,
+                { photo: req.file.filename });
+
+        return res.status(200).json(doc);
+
+    } catch (error) {
+        console.log(err);
+        return res.status(400).send('Bad request.');
+    }
+});
+
+app.listen(3000, () => {
     console.log('Server is listening on http://localhost:3000');
 });
