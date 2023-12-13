@@ -8,8 +8,8 @@ xpsApp.get('/', (req, res) => {
 
 const formdataName = "demo_image";
 const maxFiles = 4;
+const limitBytes = 1_000_000; // 1MB
 
-//                                              
 const upload = multer({ dest: 'uploads/' }).single(formdataName);
 
 xpsApp.post('/img', (req, res) => {
@@ -41,10 +41,10 @@ const storage = multer.diskStorage({
     }
 });
 
-const storageUpload = multer({ storage, limits: { fileSize: 3_000_000 } });
+const uploadDics = multer({ storage, limits: { fileSize: limitBytes } }).single(formdataName);
 
 xpsApp.post('/img22', (req, res) => {
-    storageUpload(req, res, (err) => {
+    uploadDics(req, res, (err) => {
         if (err) {
             console.log(err);
             return res.status(400).send('Bad request.');
@@ -53,7 +53,9 @@ xpsApp.post('/img22', (req, res) => {
     });
 });
 
-xpsApp.post('/img44', storageUpload.array(formdataName, maxFiles), (req, res) => {
+const uploadDiscMulti = multer({ storage, limits: { fileSize: 3_000_000 } });
+
+xpsApp.post('/img44', uploadDiscMulti.array(formdataName, maxFiles), (req, res) => {
     try {
         res.send(req.files);
     } catch (error) {
