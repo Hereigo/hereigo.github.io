@@ -15,4 +15,4 @@ console.log(strBuf.toString()); // Some Best string...
 
 const destinBuf = new Buffer.from('0123456789-0123456789-01');
 strBuf.copy(destinBuf);
-console.log(destinBuf.toString()); // Some Best string...89-01
+console.log(destinBuf.toString());//Some Best string...89-01
