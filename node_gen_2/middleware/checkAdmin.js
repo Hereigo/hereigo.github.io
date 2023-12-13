@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
         }
 
         if (req.user.role !== 'admin') {
-            return res.status(401).send('You dont have permissions.');
+            return res.status(401).send('You dont have permissions to the Admins area.');
         }
 
     } catch (error) {
