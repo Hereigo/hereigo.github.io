@@ -1,6 +1,17 @@
 ﻿const http = require('http');
 const fs = require('fs');
-const { readFile } = require('fs/promises');
+const { readFile, appendFile, writeFile } = require('fs/promises');
+// writeFile - can creates file if not exists.
+
+async function appendFileAsync(filePath, writeData) {
+
+    try {
+        await appendFile(filePath, writeData, { flag: 'a' }); // 'w'
+        console.log('Appended successfully.');
+    } catch (error) {
+        console.error('File appending error: ', error);
+    }
+}
 
 async function readFileAsync(filePath) {
     try {
@@ -12,6 +23,8 @@ async function readFileAsync(filePath) {
 }
 
 // TEST
+readFileAsync('hello.txt');
+appendFileAsync('hello.txt', 'New appended text...\r\n');
 readFileAsync('hello.txt');
 
 http.createServer(function (req, res) {
