@@ -39,7 +39,8 @@ const aData = [
 	{ m: 11, d: 30, c: "a", n: "Davyd" },
 	{ m: 12, d: 06, c: "b", n: "St.Mykola" },
 	{ m: 12, d: 10, c: "b", n: "Ula's" },
-	{ m: 12, d: 12, c: "b", n: "[0525] Filters??" },
+	{ m: 12, d: 16, c: "a", n: "Vynnyk" },
+	{ m: 12, d: 19, c: "b", n: "[0525] Filters??" },
 	{ m: 12, d: 24, c: "a", n: "Sviat Vechir" },
 	{ m: 12, d: 25, c: "a", n: "Rizdvo" },
 	// ----- monthly ---------------------------
