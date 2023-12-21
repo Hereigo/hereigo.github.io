@@ -2,9 +2,9 @@
   "name": "node_gen_3",
   "version": "1.0.0",
   "description": "Nothing special",
-  "main": "multer.js",
+  "main": "index_multer.js",
   "scripts": {
-    "start": "nodemon node multer.js",
+    "start": "nodemon node index_multer.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
