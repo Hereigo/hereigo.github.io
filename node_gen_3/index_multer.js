@@ -7,26 +7,22 @@ const app = express();
 
 app.use(bodyParser.json());
 
-// Process STATIC files by route 'uploads' for dir 'uploads':
+// Middleware to process STATIC files by route '/uploads' for path 'uploads':
 app.use('/uploads', express.static('uploads'));
 
-app.get('/', (req, res) => {
-    return res.send('Server is running.');
-});
-
-const formdataName = "demo_image";
+const formdataImgParam = "demo_image";
 const maxFiles = 4;
 const limitBytes = 1_000_000; // 1MB
 
-const upload = multer({ dest: 'uploads/' }).single(formdataName);
+const uploadSingle = multer({ dest: 'uploads/' }).single(formdataImgParam);
 
 app.post('/img', (req, res) => {
-    upload(req, res, (err) => {
+    uploadSingle(req, res, (err) => {
         if (err)
             return res.status(400).send('Bad request.');
 
         res.send(req.file);
-        // Response File Metadata:
+        //                  Response File Metadata:
         // {
         //     "fieldname": "demo_image",
         //     "originalname": "Bla-bla-bla.png",
@@ -40,6 +36,8 @@ app.post('/img', (req, res) => {
     });
 });
 
+// -------------------------------------------------------------------------
+
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './uploads');
@@ -49,10 +47,10 @@ const storage = multer.diskStorage({
     }
 });
 
-const uploadDics = multer({ storage, limits: { fileSize: limitBytes } }).single(formdataName);
+const uploadDisc = multer({ storage, limits: { fileSize: limitBytes } }).single(formdataImgParam);
 
 app.post('/img22', (req, res) => {
-    uploadDics(req, res, (err) => {
+    uploadDisc(req, res, (err) => {
         if (err) {
             console.log(err);
             return res.status(400).send('Bad request.');
@@ -61,9 +59,11 @@ app.post('/img22', (req, res) => {
     });
 });
 
+// -------------------------------------------------------------------------
+
 const uploadDiscMulti = multer({ storage, limits: { fileSize: limitBytes } });
 
-app.post('/img44', uploadDiscMulti.array(formdataName, maxFiles), (req, res) => {
+app.post('/img44', uploadDiscMulti.array(formdataImgParam, maxFiles), (req, res) => {
     try {
         res.send(req.files);
     } catch (error) {
@@ -85,7 +85,7 @@ app.post('/user', async (req, res) => {
 
 const uploadPic = multer({ storage, limits: { fileSize: limitBytes } });
 
-app.put('/user/:id', uploadPic.single(formdataName), async (req, res) => {
+app.put('/user/:id', uploadPic.single(formdataImgParam), async (req, res) => {
     try {
         const doc =
             await UserPix.findByIdAndUpdate(req.params.id,
@@ -98,6 +98,8 @@ app.put('/user/:id', uploadPic.single(formdataName), async (req, res) => {
         return res.status(400).send('Bad request.');
     }
 });
+
+// -------------------------------------------------------------------------
 
 app.listen(3000, () => {
     console.log('Server is listening on http://localhost:3000');
