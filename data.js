@@ -40,7 +40,7 @@ const aData = [
 	{ m: 12, d: 06, c: "b", n: "St.Mykola" },
 	{ m: 12, d: 10, c: "b", n: "Ula's" },
 	{ m: 12, d: 16, c: "a", n: "Vynnyk" },
-	{ m: 12, d: 19, c: "b", n: "[0525] Filters??" },
+	{ m: 12, d: 26, c: "b", n: "[0525] Filters??" },
 	{ m: 12, d: 24, c: "a", n: "Sviat Vechir" },
 	{ m: 12, d: 25, c: "a", n: "Rizdvo" },
 	// ----- monthly ---------------------------
@@ -59,7 +59,7 @@ const aData = [
 	// -------------------------------------------
 	// ----- Last Month Friday -------------------
 	{ m: 01, d: 26, c: "b", n: "11:00 LX Nata sync" },
-	{ m: 12, d: 22, c: "b", n: "11:00 LX Nata sync" },
+	{ m: 12, d: 29, c: "b", n: "11:00 LX Nata sync" },
 	// ----- 4weekly -----------------------------
 	{ m: 01, d: 03, c: "a", n: "150 (4w) U-KS" },
 	{ m: 01, d: 08, c: "a", n: "225 (-70) (4w) Chck 4G GB" },
