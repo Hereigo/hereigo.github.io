@@ -46,13 +46,16 @@ async function unlinkFileAsync(filePath) {
 // FS.OPEN with WRITE and CLOSE chain:
 // --------------------------------------------------
 fs.open(testFile, 'a', (err, file) => {
+
     // ---- Callback function After Open:
     if (err) throw err;
     fs.write(file, 'FS.OPEN new text...', (err) => {
+
         // ---- Callback function After Write:
         if (err) throw err;
         console.log('Text successfully added.');
         fs.close(file, (err) => {
+
             // ---- Callback function After Close:
             if (err) throw err;
             console.log('Successfully finished.');

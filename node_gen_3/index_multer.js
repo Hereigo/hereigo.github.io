@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const UserPix = require('./models/userModel');
 require('./db');
 const app = express();
+const fs = require('fs');
 
 app.use(bodyParser.json());
 
@@ -14,6 +15,16 @@ const formdataImgParam = "demo_image";
 const maxFiles = 4;
 const limitBytes = 1_000_000; // 1MB
 
+app.get('/', (req, res) => {
+    fs.readFile('index.html', (err, fileData) => {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(fileData);
+        return res.end();
+    })
+});
+
+// --------- Multer Single : -----------------------------
+
 const uploadSingle = multer({ dest: 'uploads/' }).single(formdataImgParam);
 
 app.post('/img', (req, res) => {
@@ -22,7 +33,7 @@ app.post('/img', (req, res) => {
             return res.status(400).send('Bad request.');
 
         res.send(req.file);
-        //                  Response File Metadata:
+        //                 Send a File-Metadata:
         // {
         //     "fieldname": "demo_image",
         //     "originalname": "Bla-bla-bla.png",
@@ -36,7 +47,7 @@ app.post('/img', (req, res) => {
     });
 });
 
-// -------------------------------------------------------------------------
+// --------- Multer DiskStorage (single) : -----------------------------
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -59,11 +70,11 @@ app.post('/img22', (req, res) => {
     });
 });
 
-// -------------------------------------------------------------------------
+// --------- Multer DiskStorage (Multi) : -----------------------------
 
 const uploadDiscMulti = multer({ storage, limits: { fileSize: limitBytes } });
 
-app.post('/img44', uploadDiscMulti.array(formdataImgParam, maxFiles), (req, res) => {
+app.post('/files', uploadDiscMulti.array(formdataImgParam, maxFiles), (req, res) => {
     try {
         res.send(req.files);
     } catch (error) {

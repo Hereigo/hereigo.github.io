@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h2>Hello!</h2>
+    <form id="fileupload" action="/files" method="POST" enctype="multipart/form-data">
+        <div class="form-buttons">
+            <span id="add-files-wrap">
+                <span>Add Files</span>
+                <input id="add-files-btn" type="file" name="files[]" multiple>
+            </span>
+            <button id="upload-btn" type="button" onclick="uploadFiles()" class="btn-disabled">
+                <span>Start Upload</span>
+            </button>
+        </div>
+    </form>
+    <script>
+        let FILES = [];
+
+        function uploadFiles() {
+            uploadFile(FILES.pop());
+        }
+
+        function uploadFile(file) {
+            if (file == null) {
+                console.log("Finished processing files.");
+                return;
+            }
+            $('#fileupload').fileupload('send', { files: [file] })
+                .success(function (result, textStatus, jqXHR) {
+                    console.log("Success...");
+                    uploadFile(FILES.pop());
+                })
+                .error(function (jqXHR, textStatus, errorThrown) {
+                    console.log("Error...");
+                })
+                .complete(function (result, textStatus, jqXHR) {
+                    console.log("Complete...");
+                });
+        }
+    </script>
+</body>
+
+</html>
