@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userPixSchema = mongoose.Schema({
+const userMongoSchema = mongoose.Schema({
     fullName: {
         type: String,
         require: [true, 'Fullname is required!'] // require not work???
@@ -11,6 +11,6 @@ const userPixSchema = mongoose.Schema({
     }
 });
 
-const UserPix = mongoose.model('UserPix', userPixSchema);
+const UserMongo = mongoose.model('UserMongo', userMongoSchema);
 
-module.exports = UserPix;
+module.exports = UserMongo;

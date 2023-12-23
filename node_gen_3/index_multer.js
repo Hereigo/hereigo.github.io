@@ -1,7 +1,7 @@
 ﻿const express = require('express');
 const multer = require('multer');
 const bodyParser = require('body-parser');
-const UserPix = require('./models/userModel');
+const userMongo = require('./models/userModel');
 require('./db');
 const app = express();
 const fs = require('fs');
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Middleware to process STATIC files by route '/uploads' for path 'uploads':
 app.use('/uploads', express.static('uploads'));
 
-const formdataImgParam = "demo_image";
+const formdataImgParam = "files";
 const maxFiles = 4;
 const limitBytes = 1_000_000; // 1MB
 
@@ -85,7 +85,7 @@ app.post('/files', uploadDiscMulti.array(formdataImgParam, maxFiles), (req, res)
 
 app.post('/user', async (req, res) => {
     try {
-        const doc = await UserPix.create(req.body);
+        const doc = await userMongo.create(req.body);
         return res.status(200).json(doc);
 
     } catch (error) {
@@ -99,7 +99,7 @@ const uploadPic = multer({ storage, limits: { fileSize: limitBytes } });
 app.put('/user/:id', uploadPic.single(formdataImgParam), async (req, res) => {
     try {
         const doc =
-            await UserPix.findByIdAndUpdate(req.params.id,
+            await userMongo.findByIdAndUpdate(req.params.id,
                 { photo: req.file.filename });
 
         return res.status(200).json(doc);
