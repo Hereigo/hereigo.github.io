@@ -11,41 +11,45 @@
 
 <body>
     <h2>Hello!</h2>
+
     <form id="fileupload" action="/files" method="POST" enctype="multipart/form-data">
-        <div class="form-buttons">
-            <span id="add-files-wrap">
-                <span>Add Files</span>
-                <input id="add-files-btn" type="file" name="files[]" multiple>
-            </span>
-            <button id="upload-btn" type="button" onclick="uploadFiles()" class="btn-disabled">
-                <span>Start Upload</span>
-            </button>
-        </div>
+
+        <input type="file" id="files" name="files" multiple />
+
+        <button type="submit" id="uploadButton">Upload</button>
     </form>
+
     <script>
-        let FILES = [];
+        // $(document).ready(function () {
+        //     $('#uploadButton').click(function () {
+        //         var files = $('#fileInput').get(0).files; // Get all selected files
 
-        function uploadFiles() {
-            uploadFile(FILES.pop());
-        }
+        //         // Create a new FormData object
+        //         var formData = new FormData();
 
-        function uploadFile(file) {
-            if (file == null) {
-                console.log("Finished processing files.");
-                return;
-            }
-            $('#fileupload').fileupload('send', { files: [file] })
-                .success(function (result, textStatus, jqXHR) {
-                    console.log("Success...");
-                    uploadFile(FILES.pop());
-                })
-                .error(function (jqXHR, textStatus, errorThrown) {
-                    console.log("Error...");
-                })
-                .complete(function (result, textStatus, jqXHR) {
-                    console.log("Complete...");
-                });
-        }
+        //         // Append each file to the FormData object
+        //         for (var i = 0; i < files.length; i++) {
+        //             formData.append('files', files[i]);
+        //         }
+
+        //         // Send the POST request
+        //         $.ajax({
+        //             url: '/files',
+        //             type: 'POST',
+        //             data: formData,
+        //             processData: false, // Prevent jQuery from automatically transforming the data into a query string
+        //             contentType: false, // Let the server handle the content type
+        //             success: function (response) {
+        //                 // Handle the response
+        //                 console.log('Files uploaded successfully');
+        //             },
+        //             error: function (error) {
+        //                 // Handle the error
+        //                 console.log('Error uploading files');
+        //             }
+        //         });
+        //     });
+        // });
     </script>
 </body>
 
