@@ -33,7 +33,8 @@ app.post('/img', (req, res) => {
             return res.status(400).send('Bad request.');
 
         res.send(req.file);
-        //                   Send a File-Metadata:
+
+        // res.send(req.file); ==> Send a File-Metadata:
         // {
         //     "fieldname": "demo_image",
         //     "originalname": "Bla-bla-bla.png",
@@ -67,10 +68,12 @@ app.post('/files', (req, res) => {
             return res.status(400).send('Bad request.');
         }
         res.send(req.file);
+
+        // res.redirect(302, '/uploads/' + req.file.filename);
     });
 });
 
-// --------- Multer DiskStorage (Multi) : -----------------------------
+// --------- Multer DiskStorage (Multi-files) : -----------------------------
 
 const uploadDiscMulti = multer({ storage, limits: { fileSize: limitBytes } });
 
@@ -83,6 +86,8 @@ app.post('/filesMulti', uploadDiscMulti.array(formdataParam, maxFiles), (req, re
     }
 });
 
+// --------- Multer picture upload for Created User : ---------------------
+
 app.post('/user', async (req, res) => {
     try {
         const doc = await userMongo.create(req.body);
@@ -93,8 +98,6 @@ app.post('/user', async (req, res) => {
         return res.status(400).send('Bad request.');
     }
 });
-
-// --------- Multer picture upload : -----------------------------
 
 const uploadPic = multer({ storage, limits: { fileSize: limitBytes } });
 
