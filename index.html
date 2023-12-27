@@ -35,7 +35,7 @@
             </li>
             <li>
                 <button onclick="tabSwitch(event, 'jscript')">
-                    <span data-feather="code"></span> JScript
+                    <span data-feather="code"></span> JavaScript
                 </button>
             </li>
             <li>
@@ -46,6 +46,11 @@
             <li>
                 <button onclick="tabSwitch(event, 'linux')">
                     <span data-feather="monitor"></span> Linux
+                </button>
+            </li>
+            <li>
+                <button onclick="tabSwitch(event, 'posh')">
+                    <span data-feather="grid"></span> PowerShell
                 </button>
             </li>
             <li>
@@ -253,7 +258,21 @@
     <!---------------------------- ARTICLE ---------------------------->
 
     <article class="center" id="sql">
-        <zero-md src="/md/SQL_Tipss.md"></zero-md>
+        <zero-md src="/md/SQL_Tips.md"></zero-md>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <hr />
+        <hr />
+    </article>
+
+    <!---------------------------- ARTICLE ---------------------------->
+
+    <article class="center" id="posh">
+        <zero-md src="/md/PS_Tricks.md"></zero-md>
         <div></div>
         <div></div>
         <div></div>
@@ -294,7 +313,7 @@
 
     <!----------------------------------------------------------------------->
 
-    <script src="../libs/feather.min.js"></script>
+    <script src="../libs/feather.min.js"></script><!-- https://feathericons.com/ -->
     <script src="../search.js"></script>
     <script src="../app.js"></script>
     <script src="../data.js"></script>
