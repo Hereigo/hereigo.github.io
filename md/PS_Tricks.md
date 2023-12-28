@@ -34,4 +34,17 @@ cd Cert:\LocalMachine\Root
 Get-ChildItem | Where Subject -like "*CN=Cert-ISSUED-TO-Name" # -- just for logging name to console
 Get-ChildItem | Where Subject -like "*CN=Cert-ISSUED-TO-Name" | Remove-Item
 echo ". Certificate Cert-ISSUED-TO-Name removed."
+
+# - - - CALL ON REMOTE SERVER - - - :
+param(
+    [string]$Publisher = 'admin',
+    [string]$password = 'password:)'
+)
+$pwdSecureString = $password | ConvertTo-SecureString -AsPlainText -force
+$creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $Publisher, $pwdSecureString
+$appServer = 'my-app-server'
+
+Invoke-Command -ComputerName $appServer -ScriptBlock { Get-service -Name 'WinRM' } -Credential $creds
+
+# Invoke-Command -ComputerName $appServer -ScriptBlock { Get-ChildItem C:\ } -Credential $creds
 ```

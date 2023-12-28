@@ -2,11 +2,8 @@
 000 - ATBGE
 000 - AllTwitter
 000 - AlternateReality
-000 - AnimeHindiMemes
-000 - AssholeDesign
 000 - Asus_Tuf
 000 - Awwducational
-000 - AzurLane_sub
 000 - BetterEveryLoop
 000 - Boku_No_Hero_Academia_Topic
 000 - BrandNewSentence
@@ -297,7 +294,6 @@
 000 - r_PoliticalCompassMemes
 000 - r_PoliticalMemes
 000 - r_Pony_irl
-000 - r_PuppyLinux
 000 - r_Ratorix
 000 - r_RimWorld
 000 - r_SISwimsuitGirls
@@ -506,9 +502,6 @@
 000 - r_leftistvexillology
 000 - r_libertarian
 000 - r_lifeprotips
-000 - r_linux
-000 - r_linuxmemes
-000 - r_linuxmemes_1
 000 - r_listentothis
 000 - r_lostgeneration
 000 - r_lua
@@ -961,8 +954,8 @@ DEV - pro_net
 DEV - prog_hub
 DEV - progersbooks
 DEV - proglibrary
+DEV - programmingTip
 DEV - programming_books_it
-DEV - programmingtip
 DEV - pythonKnigi_backup
 DEV - python_books_archive
 DEV - sWebDev (+M5ylThX6n3c2MmRi)
@@ -976,6 +969,8 @@ DEV - techskill
 DEV - telegadev/105 - web dev
 DEV - terms_it - Few IT channels
 DEV - thecodemedia - The Code Magazine
+DEV - thedevs
+DEV - theprogrammingart
 DEV - tipaproit
 DEV - tproger_official
 DEV - web_craft (+I1EKGH7KiaM0MTQy)
@@ -1061,6 +1056,7 @@ FUN - memargam
 FUN - memyle4ki
 FUN - programmerjokes
 FUN - r_linuxmemes
+FUN - r_linuxmemes_1
 FUN - smixanka
 FUN - soulbookswithus
 FUN - tg_12sec12 (+H6OqBKbbhWRjYjhi)
@@ -1138,7 +1134,6 @@ LIN - +J0CfOmZ751s3NWIy
 LIN - archLinuxTips
 LIN - archlinux
 LIN - archlinuxGroup
-LIN - archlinuxUkraineOfftopic
 LIN - binTree
 LIN - darklibary
 LIN - debianl
@@ -1165,6 +1160,8 @@ LIN - joinchat/AAAAAEJIlclCRzYqrMYwNQ - thedevs.network linux chat
 LIN - joinchat/HYcitEbYSwDAXIchuhpAZw - Termux
 LIN - komYounity
 LIN - letsFoss
+LIN - linux2024 - Linux Course 2023
+LIN - linux9886 - LinuxStudyGroup
 LIN - linuxAdictos
 LIN - linuxArkit
 LIN - linuxChats
@@ -1215,6 +1212,8 @@ LIN - planetArch
 LIN - pro_bash
 LIN - pro_kvm
 LIN - prolinuxua
+LIN - r_PuppyLinux
+LIN - r_linux
 LIN - rhelAG
 LIN - system76_news
 LIN - tech_linux
