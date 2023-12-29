@@ -24,9 +24,21 @@ console.log(Object.entries(parent));// [[ 'name', 'Alexa' ], [ 'age', 50 ]]
 // ================================================
 
 const mergedPerson = Object.assign(parent, child);
-
-// The SAME using SPREAD Operator :
+// the same using SPREAD operator
 const mergedPerson1 = { ...parent, ...child };
 
 // Second has overriden the Same Fields of First.
 console.log(mergedPerson1);  // { name: 'Deniz', age: 50, hobby: 'Toys' }
+
+// OBJECT.FREEZE :
+// ================================================
+
+const frozen = Object.freeze(mergedPerson);
+frozen.name = 'Sub-Zero';   // useless - object frozen
+frozen.weapon = 'sword';    // useless - object frozen
+console.log(frozen);        // { name: 'Deniz', age: 50, hobby: 'Toys' }
+
+const sealed2 = Object.seal(parent);
+sealed2.name = 'Sub-Zero';   // useless - object frozen
+sealed2.weapon = 'sword';    // useless - object frozen
+console.log(sealed2, ' - sealed');
