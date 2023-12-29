@@ -57,7 +57,7 @@ const aData = [
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
-	{ m: 00, d: 23, c: "a", n: "280 Dominiq" },
+	{ m: 00, d: 23, c: "a", n: "300 Dominiq" },
 	{ m: 00, d: 23, c: "a", n: "300 Troylana" },
 	{ m: 00, d: 28, c: "a", n: "160 iLanos" },
 	{ m: 00, d: 28, c: "a", n: "Counters (Den.Kris)" },

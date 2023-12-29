@@ -28,4 +28,5 @@ const mergedPerson = Object.assign(parent, child);
 // The SAME using SPREAD Operator :
 const mergedPerson1 = { ...parent, ...child };
 
+// Second has overriden the Same Fields of First.
 console.log(mergedPerson1);  // { name: 'Deniz', age: 50, hobby: 'Toys' }
