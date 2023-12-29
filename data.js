@@ -53,7 +53,7 @@ const aData = [
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
-	{ m: 00, d: 12, c: "b", n: "150 Penguin YT ???" },
+	{ m: 00, d: 11, c: "b", n: "150 Penguin YT ???" },
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
@@ -75,4 +75,6 @@ const aData = [
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
+	{ m: 01, d: 12, c: "b", n: "299=>300 LaNaTa" },
+
 ];
