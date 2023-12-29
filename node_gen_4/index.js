@@ -30,15 +30,16 @@ const mergedPerson1 = { ...parent, ...child };
 // Second has overriden the Same Fields of First.
 console.log(mergedPerson1);  // { name: 'Deniz', age: 50, hobby: 'Toys' }
 
-// OBJECT.FREEZE :
+// OBJECT.SEAL & OBJECT.FREEZE :
 // ================================================
+const sealed = Object.seal(mergedPerson);
+sealed.name = 'Scorpio';
+sealed.weapon = 'harpoon';  // useless - Sealed can't add New Fields!
+console.log(sealed);        // { name: 'Scorpio', age: 50, hobby: 'Toys' }
 
-const frozen = Object.freeze(mergedPerson);
-frozen.name = 'Sub-Zero';   // useless - object frozen
-frozen.weapon = 'sword';    // useless - object frozen
-console.log(frozen);        // { name: 'Deniz', age: 50, hobby: 'Toys' }
+Object.freeze(mergedPerson);
+mergedPerson.name = 'Sub-Zero'; // useless - object frozen
+mergedPerson.weapon = 'sword';  // useless - object frozen
+console.log(mergedPerson);      // { name: 'Scorpio', age: 50, hobby: 'Toys' }
 
-const sealed2 = Object.seal(parent);
-sealed2.name = 'Sub-Zero';   // useless - object frozen
-sealed2.weapon = 'sword';    // useless - object frozen
-console.log(sealed2, ' - sealed');
+
