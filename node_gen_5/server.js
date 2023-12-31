@@ -1,7 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import './utils/db.js';
-import authRouter from './controllers/authController.js';
+
+// Routes:
+import authRouter from './routes/authRoutes.js';
 
 const app = express();
 const port = 3000;
