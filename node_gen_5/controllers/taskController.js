@@ -17,15 +17,18 @@ export const createTask = async (req, res) => {
 
 export const updateTask = async (req, res) => {
     try {
-        const userId = req.user._id;
-        const taskId = req.params._id;
+        const userId = req.user._id; // !!!
+        const taskId = req.params.id;
 
         const task = await Task.findOneAndUpdate(
-            { _id: taskId, createdBy: userId },
+            {
+                _id: taskId,
+                createdBy: userId
+            },
             req.body,
             {
                 new: true,
-                runValidators: true,
+                runValidators: true
             }
         );
         if (!task) {

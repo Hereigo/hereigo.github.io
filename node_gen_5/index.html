@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <style>
         .box {
             border-radius: 5px;
@@ -21,7 +23,7 @@
     <h2>Hello!</h2>
 
     <div class="box">
-        <form action="/api/register" method="POST" enctype="multipart/form-data">
+        <form action="/api/auth/register" method="POST">
             <table>
                 <tr>
                     <td>userName:</td>
@@ -37,7 +39,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button type="submit">Register</button></td>
+                    <td><input type="button" id="submitButton" value="Register" /></td>
                 </tr>
             </table>
         </form>
@@ -66,50 +68,40 @@
         </form>
     </div>
 
-    <div class="box">
-        <form id="fileupload" action="/files" method="POST" enctype="multipart/form-data">
-            <input type="file" id="files" name="files" multiple />
-            <br /><br />
-            <button type="submit" id="uploadButton">Upload</button>
-        </form>
-    </div>
-
     <script>
 
-        // https://stackoverflow.com/questions/38422520/how-set-authorization-headers-at-html-form-or-at-a-href
-        // https://stackoverflow.com/questions/38422520/how-set-authorization-headers-at-html-form-or-at-a-href
+        $(document).ready(function () {
 
+            $('#submitButton').on('click', function () {
 
-        // $(document).ready(function () {
-        //     $('#uploadButton').click(function () {
-        //         var files = $('#fileInput').get(0).files; // Get all selected files
+                const usr = $('#userName').val();
+                const mail = $('#email').val();
+                const psw = $('#password').val();
+                const base64 = btoa(`${mail}:${psw}`);
 
-        //         // Create a new FormData object
-        //         var formData = new FormData();
+                let test = {
+                    userName: usr,
+                    email: mail,
+                    password: psw
+                };
+                console.log(test);
 
-        //         // Append each file to the FormData object
-        //         for (var i = 0; i < files.length; i++) {
-        //             formData.append('files', files[i]);
-        //         }
-
-        //         // Send the POST request
-        //         $.ajax({
-        //             url: '/files',
-        //             type: 'POST',
-        //             data: formData,
-        //             processData: false, // Prevent jQuery from automatically transforming the data into a query string
-        //             contentType: false, // Let the server handle the content type
-        //             success: function (response) {
-        //                 // Handle the response
-        //                 console.log('Files uploaded successfully');
-        //             },
-        //             error: function (error) {
-        //                 // Handle the error
-        //                 console.log('Error uploading files');
-        //             }
-        //         });
-        //     });
-        // });
+                $.ajax({
+                    url: "http://localhost:3000/api/register",
+                    type: 'POST',
+                    data: {
+                        userName: usr,
+                        email: mail,
+                        password: psw
+                    },
+                    contentType: 'application/json',
+                    headers: {
+                        "Authorization": "Bearer " + base64
+                    },
+                    async: false
+                })
+            });
+        });
     </script>
 </body>
 
