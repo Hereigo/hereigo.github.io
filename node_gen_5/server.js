@@ -1,4 +1,4 @@
-// import fs from 'fs';
+import fs from 'fs';
 import express from 'express';
 import bodyParser from 'body-parser';
 import './utils/db.js';
@@ -17,13 +17,13 @@ app.use(bodyParser.json());
 
 // TODO:
 // Move this into Routes:
-// app.get('/', (req, res) => {
-//     fs.readFile('index.html', (err, fileData) => {
-//         res.writeHead(200, { 'Content-Type': 'text/html' });
-//         res.write(fileData);
-//         return res.end();
-//     })
-// });
+app.get('/', (req, res) => {
+    fs.readFile('index.html', (err, fileData) => {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(fileData);
+        return res.end();
+    })
+});
 
 app.use('/api', authRouter);
 app.use('/api', taskRouter);

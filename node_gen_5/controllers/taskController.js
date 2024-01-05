@@ -10,14 +10,15 @@ export const createTask = async (req, res) => {
         };
         const task = await Task.create(taskObj);
         return res.status(201).json(task);
+
     } catch (error) {
-        res.status(400).json({ message: 'Failed to create the task.' });
+        return res.status(400).json({ message: 'Failed to create the task.' });
     }
 };
 
 export const updateTask = async (req, res) => {
     try {
-        const userId = req.user._id; // !!!
+        const userId = req.user._id; // _id !!!!!!
         const taskId = req.params.id;
 
         const task = await Task.findOneAndUpdate(
@@ -35,26 +36,38 @@ export const updateTask = async (req, res) => {
             return res.status(404).json({ message: 'Task not found!' });
         }
         return res.status(201).json(task);
+
     } catch (error) {
-        res.status(400).json({ message: 'Failed to update the task.' });
+        return res.status(400).json({ message: 'Failed to update the task.' });
     }
 };
 
 export const deleteTask = async (req, res) => {
-    // try {
-    // } catch (error) {
-    //     res.status(400).json({ message: 'Failed to delete the task.' });
-    // }
+    try {
+        return res.status(400).json({ message: 'Failed to delete the task.' });
+    } catch (error) {
+        return res.status(500).json({ message: 'Failed to delete the task.' });
+    }
 };
 
 export const getTasksByUserId = async (req, res) => {
     try {
         const userId = req.user._id;
-
         const tasks = await Task.find({ createdBy: userId });
         return res.status(200).json(tasks);
+
     } catch (error) {
-        res.status(400).json({ message: 'Failed to receive the task.' });
+        return res.status(400).json({ message: 'Failed to receive the task.' });
+    }
+};
+
+export const getAllTasks = async (req, res) => {
+    try {
+        const tasks = await Task.find();
+        return res.status(200).json(tasks);
+
+    } catch (error) {
+        return res.status(400).json({ message: 'Failed to receive the task.' });
     }
 };
 
@@ -68,7 +81,8 @@ export const getTask = async (req, res) => {
             return res.status(404).json({ message: 'Task not found!' });
         }
         return res.status(200).json(task);
+
     } catch (error) {
-        res.status(400).json({ message: 'Failed to receive the task.' });
+        return res.status(400).json({ message: 'Failed to receive the task.' });
     }
 };

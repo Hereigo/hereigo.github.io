@@ -4,7 +4,8 @@ import bcrypt from 'bcrypt';
 // module.exports = async (req, res, next) => { -- CommonJS style!
 export default async (req, res, next) => {
 
-    // SKIP AUTH!
+    // SKIP AUTH for Register!
+
     if (req.url !== '/register') {
 
         if (!req.headers.authorization || req.headers.authorization.indexOf('Basic') === -1) {
