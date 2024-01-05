@@ -1,0 +1,21 @@
+@openapi
+'/api/task':
+  post:
+    tags:
+    - Task
+    summary: Create a task
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              description:
+                type: string
+                default: Buy a book
+    responses:
+      '201':
+        description: Created
+      '400':
+        description: Bad request

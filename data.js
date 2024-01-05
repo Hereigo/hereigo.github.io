@@ -1,10 +1,10 @@
 const aData = [
 	// ----- yearly --------------------------
-	{ m: 01, d: 01, c: "b", n: "LX SomeHol." },
 	{ m: 01, d: 06, c: "a", n: "Vodohrescha" },
+	{ m: 01, d: 07, c: "a", n: "Programmer's Day" },
 	{ m: 01, d: 24, c: "a", n: "Svyatny" },
 	{ m: 01, d: 30, c: "a", n: "Kostromin" },
-	{ m: 02, d: 14, c: "a", n: "Valentine`s day." },
+	{ m: 02, d: 14, c: "b", n: "Valentine`s day." },
 	{ m: 03, d: 01, c: "a", n: "Chg-HLT 2 MailOnly" },
 	{ m: 03, d: 01, c: "a", n: "ML-13.03" },
 	{ m: 03, d: 07, c: "b", n: "Kris" },
