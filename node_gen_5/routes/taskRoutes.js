@@ -7,6 +7,11 @@ const router = express.Router();
 
 router.use(checkAuth);
 
+// Order is IMPORTANT!
+
+router.get('/task', taskController.getTasksByUserId);
+router.get('/task/all', checkAdmin, taskController.getAllTasks);
+router.get('/task/:id', taskController.getTask);
 
 /**
  * @openapi
@@ -15,6 +20,8 @@ router.use(checkAuth);
  *     tags:
  *     - Task
  *     summary: Create a task
+ *     security:
+ *     - basicAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -31,16 +38,10 @@ router.use(checkAuth);
  *       '400':
  *         description: Bad request
  */
-
 router.post('/task', taskController.createTask);
 
 router.put('/task/:id', taskController.updateTask);
 
 router.delete('/task/:id', taskController.deleteTask);
-
-// Order is IMPORTANT!
-router.get('/task', taskController.getTasksByUserId);
-router.get('/task/all', checkAdmin, taskController.getAllTasks);
-router.get('/task/:id', taskController.getTask);
 
 export default router;

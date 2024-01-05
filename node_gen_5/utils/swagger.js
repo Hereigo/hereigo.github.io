@@ -8,6 +8,14 @@ const options = {
             description: 'Task Manager Application',
             version: '1.0.0',
         },
+        components: {
+            securitySchemes: {
+                basicAuth: {
+                    type: 'http',
+                    scheme: 'basic',
+                }
+            }
+        }
     },
     apis: ['./routes/*.js'],
 };

@@ -4,6 +4,8 @@
     tags:
     - Task
     summary: Create a task
+    security:
+    - basicAuth: []
     requestBody:
       required: true
       content:
