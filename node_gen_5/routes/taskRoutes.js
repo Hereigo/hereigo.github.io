@@ -5,10 +5,40 @@ import checkAdmin from '../middlewares/checkAdmin.js';
 
 const router = express.Router();
 
-router.use(checkAuth);
-
 // Order is IMPORTANT!
 
+router.use(checkAuth);
+
+/**
+ * @openapi
+ * '/api/task':
+ *   get:
+ *     tags:
+ *     - Task
+ *     summary: Get task by user id
+ *     security:
+ *     - basicAuth: []
+ *     responses:
+ *       200:
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                   description:
+ *                     type: string
+ *                   completed:
+ *                     type: boolean
+ *                   createdBy:
+ *                     type: string
+ *       400:
+ *         description: Bad request
+ */
 router.get('/task', taskController.getTasksByUserId);
 router.get('/task/all', checkAdmin, taskController.getAllTasks);
 router.get('/task/:id', taskController.getTask);
