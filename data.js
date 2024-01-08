@@ -53,12 +53,10 @@ const aData = [
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
 	{ m: 00, d: 12, c: "a", n: "170 Voda" },
-	{ m: 00, d: 11, c: "b", n: "150 Penguin YT ???" },
 	{ m: 00, d: 13, c: "a", n: "299 Laner" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
 	{ m: 00, d: 23, c: "a", n: "300 Dominiq" },
-	{ m: 00, d: 23, c: "a", n: "300 Troylana" },
 	{ m: 00, d: 28, c: "a", n: "160 iLanos" },
 	{ m: 00, d: 28, c: "a", n: "Counters (Den.Kris)" },
 	// -------------------------------------------
@@ -68,9 +66,9 @@ const aData = [
 	{ m: 01, d: 26, c: "b", n: "11:00 LX Nata sync" },
 	{ m: 02, d: 23, c: "b", n: "11:00 LX Nata sync" },
 	// ----- 4weekly -----------------------------
-	{ m: 01, d: 08, c: "a", n: "225 (-70) (4w) Chck 4G GB" },
 	{ m: 01, d: 17, c: "a", n: "190 (4w) Life-M" },
 	{ m: 01, d: 31, c: "a", n: "150 (4w) U-KS" },
+	{ m: 02, d: 05, c: "a", n: "225 (-70) (4w) Chck 4G GB" },
 	// ----- only once ---------------------------
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
