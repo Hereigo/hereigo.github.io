@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>Popup box</title>
+</head>
+
+<body>
+	<a class="pvi-popup-btn-show">Click here to show the popup</a>
+
+
+	<div class="pvi-popup">
+		<span class="helper"></span>
+		<div>
+			<div class="pvi-pop-btn-close">&times;</div>
+			<p>
+				Yahooo!
+			</p>
+		</div>
+	</div>
+
+
+	<script>
+		$(window).load(function () {
+
+			$('.pvi-popup').show();
+
+			$(".pvi-popup-btn-show").click(function () {
+				$('.pvi-popup').show();
+			});
+			// $('.pvi-popup').click(function () {
+			// 	$('.pvi-popup').hide();
+			// });
+			$('.pvi-pop-btn-close').click(function () {
+				$('.pvi-popup').hide();
+			});
+		});
+	</script>
+</body>
+
+</html>
