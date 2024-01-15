@@ -37,6 +37,12 @@ inxi -Naz
 find  /  -type d  -iname  *viber*  2>/dev/null
 ```
 
+### VirtualBox Shared Folder access:
+```sh
+sudo usermod -a -G vboxsf $USER
+```
+
+
 ### Fonts
 ```sh
 # for ttf-mscorefonts-installer
