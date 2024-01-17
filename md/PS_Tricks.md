@@ -1,6 +1,15 @@
+### Find Your Windows 11/10 Product Key
+
+(in cmd as Admin:)
+wmic path SoftwareLicensingService get OA3xOriginalProductKey
+
 ### PowerShell Tips & Tricks :
 
 ```powershell
+# --- Find Your Windows 11/10 Product Key
+
+(Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
+
 # - - - WRITE FILENAME AS A COMMENT INTO EVERY FILE.SQL IN THE DIRECTORY :
 
 #@("--nameofSP","") +  (Get-Content -path .\procAcquisitionsCampaignsSet.proc.sql) | Set-Content -path.\procAcquisitionsCampaignsSet.proc.sql
