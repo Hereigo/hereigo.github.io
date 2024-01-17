@@ -21,6 +21,11 @@ systemctl list-unit-files --type=service
 #
 ```
 
+### Find (whithout errors)
+```sh
+find / -type d -name .thunderbird 2>/dev/null
+```
+
 #### Smart view Drives:
 ```sh
 lsblk
