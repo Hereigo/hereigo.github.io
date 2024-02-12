@@ -18,28 +18,70 @@ journalctl -o json-pretty >> ~/Desktop/journalctl.json
 
 # SERVICES:
 systemctl list-unit-files --type=service
-#
-```
 
-### Find (whithout errors)
-```sh
-find / -type d -name .thunderbird 2>/dev/null
-```
-
-#### Smart view Drives:
-```sh
-lsblk
-```
-
-#### Network devices:
-```sh
-inxi -Naz
-```
-
-### FileSystem
-```sh
+### FIND:
 # in root, Dir, Insensitive, NamePart (with out Errors to Null)
-find  /  -type d  -iname  *viber*  2>/dev/null
+find / -type d  -iname  *viber*  2>/dev/null
+
+#### DRIVES:
+lsblk
+
+#### NETWORK devices:
+inxi -Naz
+
+#### MEMORY:
+free -m
+
+#### PROCESS KILL unsafety:
+kill -9 proc_id
+
+#### PROCESS Config Re-Read
+kill -1 proc_id
+
+#### REBOOT History
+last reboot
+
+#### FILES OPENED from Dir 
+lsof /home/user1
+
+#### FILES OPENED by Process
+lsof -p proc_id
+
+#### KERNEL Modeles Uploaded 
+lsmod
+
+#### PROCESSES as a Tree 
+pstree
+# or
+ps -e -o pid,args --forest
+
+#### PROCESSES Detailed (snapshot)
+ps -eafw
+
+#### DRIVE SMART availability
+smartctl -i /dev/hda
+
+#### DRIVE SMART start
+smartctl -A /dev/hda
+
+#### PROCESS input\output calls stack (process 'ls')
+strace -c ls >/dev/null
+
+#### PROCESS system calls (process 'ls')
+strace -f -e open ls >/dev/null
+
+#### LOG SYSTEM (last 10)
+tail /var/log/messages
+
+#### LOG KERNEL UPLOAD (last 10)
+tail /var/log/dmesg
+
+#### PROCESSES (realtime)
+top
+
+#### INTERRUPTIONS (realtime)
+watch -n1 'cat /proc/interrupts'
+
 ```
 
 ### VirtualBox Shared Folder access:
@@ -47,8 +89,7 @@ find  /  -type d  -iname  *viber*  2>/dev/null
 sudo usermod -a -G vboxsf $USER
 ```
 
-
-### Fonts
+### FONTS
 ```sh
 # for ttf-mscorefonts-installer
 add-apt-repository multiverse 
@@ -93,22 +134,17 @@ fc-cache -fvh
 - https://www.programmingfonts.org
 
 
+### TOUCHPAD disable on boot:
+```sh
+synclient TouchpadOff=1
+```
+
 ### Check Temperatures:
 ```sh
 sensors && sudo hddtemp /dev/sda && sudo hddtemp /dev/sdb
 # or
 ls /sys/class/hwmon/hwon2/
 cat /sys/class/hwmon/hwmon2/temp1_input
-```
-
-#### Locale Cfg:
-```sh
-/etc/locale.conf
-```
-
-#### TouchPad disable on boot:
-```sh
-synclient TouchpadOff=1
 ```
 
 #### Battery: Conservation Mode:
