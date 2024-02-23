@@ -25,9 +25,25 @@ find / -type d  -iname  *viber*  2>/dev/null
 
 #### DRIVES:
 lsblk
+#
+smartctl -a /dev/sda
+smartctl -a /dev/nvme1n1
+
+#### SPACE USAGE:
+df -h
+#
+du -sh /tmp # tmp dir size
+#
+df -i # see inodes
+
+#### USAGE:
+iotop # current io reads-writes
 
 #### NETWORK devices:
 inxi -Naz
+#
+netstat -tulpn # ports usage
+ss -lntu # similar
 
 #### MEMORY:
 free -m
