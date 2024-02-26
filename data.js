@@ -72,7 +72,7 @@ const aData = [
 	{ m: 03, d: 06, c: "a", n: "150 (4w) U-KS" },
 	{ m: 03, d: 11, c: "a", n: "190 (4w) Life-M" },
 	// ----- only once ---------------------------
-	{ m: 02, d: 13, c: "b", n: "PERF.REVIEW" },
+	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "14:00 E-Solomia" },
 	{ m: 03, d: 07, c: "b", n: "14:00 E-Solomia" },
 	{ m: 03, d: 12, c: "b", n: "14:00 E-Solomia" },

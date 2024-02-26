@@ -297,6 +297,5 @@ div.event {
     .event>ul>li {
         list-style-type: none;
         margin-left: -6px;
-        word-wrap: break-word;
     }
 }
