@@ -13,16 +13,14 @@
         }
 
         .calendar {
-            border-collapse: collapse;
-            margin: 20px auto;
-            max-width: 800px;
             width: 100%;
+            border-collapse: collapse;
         }
 
         .calendar th,
         .calendar td {
-            border: 1px solid #ddd;
             padding: 10px;
+            border: 1px solid #ddd;
             text-align: center;
         }
 
@@ -31,11 +29,21 @@
         }
 
         @media screen and (max-width: 768px) {
-            .calendar {
-                max-width: none;
+            .calendar td {
+                padding: 5px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .calendar th,
+            .calendar td {
+                padding: 3px;
+                font-size: 12px;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -100,6 +108,11 @@
             </tr>
         </tbody>
     </table>
+
+</body>
+
+</html>
+
 
 </body>
 

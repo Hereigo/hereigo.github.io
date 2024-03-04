@@ -3,7 +3,9 @@
 #### MX-Clear:
 
 ```sh
-sudo apt remove -y apt-notifier asunder blueman bluetooth bluez* catfish cleanup-notifier-mx disk-manager featherpad* foliate* galculator gmtp gnome-mahjongg gparted* guvcview* hardinfo htop libreoffice* live-kernel-updater lbreakout2* live-usb-maker luckybackup* magnus mc* mx-iso-template mx-live-usb-maker mx-remaster* mx-snapshot mx-tour mx-viewer mx-welcome* nvidia-detect openjdk* orage* orca* peg-e pdfarranger qpdfview* qdirstat samba* simple-scan strawberry swell-foop synaptic timeshift transmission* vlc* xfburn xfce4-appfinder xfce4-notes* xfce4-sensors* printer-driver*
+# DISABLE grub-themes BEFORE!
+sudo apt remove -y apt-notifier asunder blueman bluetooth bluez* catfish conky* cleanup-notifier-mx cli-installer-mx disk-manager featherpad* foliate* galculator gmtp gnome-mahjongg gparted* grub-themes-mx guvcview* hardinfo htop libreoffice* live-kernel-updater lbreakout2* live-usb-maker luckybackup* magnus mc* mx-conky* mx-iso-template mx-live-usb-maker mx-remaster* mx-snapshot mx-tour mx-viewer mx-welcome* nvidia-detect openjdk* orage* orca* peg-e pdfarranger qpdfview* qdirstat quick-system-info-gui samba* simple-scan strawberry swell-foop synaptic timeshift transmission* vlc* xfburn xfce4-appfinder xfce4-notes* xfce4-sensors* printer-driver*
+sudo apt list --installed linux-*
 
 wget https://mega.nz/linux/repo/Debian_testing/amd64/megasync-Debian_testing_amd64.deb 
 wget https://download.cdn.viber.com/cdn/desktop/Linux/viber.deb
