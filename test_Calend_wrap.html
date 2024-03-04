@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 1920px) {
+            .container {
+                max-width: 1600px;
+            }
+        }
+
+        @media screen and (max-width: 1366px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                max-width: 800px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .column {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Responsive Layout Example</h1>
+    </header>
+
+    <div class="container">
+        <div class="column">
+            <h2>Column 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo turpis nec purus vestibulum luctus.
+            </p>
+        </div>
+        <div class="column">
+            <h2>Column 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo turpis nec purus vestibulum luctus.
+            </p>
+        </div>
+        <div class="column">
+            <h2>Column 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo turpis nec purus vestibulum luctus.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
