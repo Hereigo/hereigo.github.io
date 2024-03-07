@@ -13,6 +13,7 @@ const aData = [
 	{ m: 03, d: 07, c: "b", n: "Kris" },
 	{ m: 03, d: 08, c: "b", n: "Girls Day." },
 	{ m: 03, d: 11, c: "b", n: "Den4i" },
+	{ m: 03, d: 12, c: "b", n: "LX Mykolaichuk" },
 	{ m: 03, d: 20, c: "b", n: "ECP (02.04)" },
 	{ m: 03, d: 25, c: "b", n: "Vlad's" },
 	{ m: 05, d: 01, c: "b", n: "LX SomeHol." },
