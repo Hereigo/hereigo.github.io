@@ -71,9 +71,9 @@ const aData = [
 	{ m: 03, d: 22, c: "b", n: "11:00 LX Nata sync" },
 	{ m: 04, d: 19, c: "b", n: "11:00 LX Nata sync" },
 	// ----- 4weekly -----------------------------
-	{ m: 03, d: 04, c: "a", n: "225 (-70) (4w) Chck 4G GB" },
-	{ m: 03, d: 06, c: "a", n: "150 (4w) U-KS" },
-	{ m: 03, d: 11, c: "a", n: "190 (4w) Life-M" },
+	{ m: 04, d: 01, c: "a", n: "225 (-70) (4w) Chck 4G GB" },
+	{ m: 04, d: 03, c: "a", n: "150 (4w) U-KS" },
+	{ m: 04, d: 08, c: "a", n: "190 (4w) Life-M" },
 	// ----- only once ---------------------------
 	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "14:00 E-Solomia" },
