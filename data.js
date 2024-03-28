@@ -87,10 +87,10 @@ const aData = [
 	{ m: 03, d: 21, c: "b", n: "14:00 E-Solomia" },
 	{ m: 03, d: 26, c: "b", n: "14:00 E-Solomia" },
 	{ m: 03, d: 28, c: "b", n: "14:00 E-Solomia" },
+	{ m: 04, d: 01, c: "b", n: "15:00 Teams Proj Ua" },
+	{ m: 04, d: 03, c: "b", n: "10-12 FLOWERS !!!" },
+	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
-	{ m: 04, d: 01, c: "b", n: "15:00 Teams Proj Ua" },
-	{ m: 04, d: 03, c: "b", n: "10-12 FLOWERS !!!" },
 ];
