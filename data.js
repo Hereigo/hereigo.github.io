@@ -14,7 +14,10 @@ const aData = [
 	{ m: 03, d: 08, c: "b", n: "Girls Day." },
 	{ m: 03, d: 11, c: "b", n: "Den4i" },
 	{ m: 03, d: 12, c: "b", n: "LX Mykolaichuk" },
-	{ m: 03, d: 20, c: "b", n: "ECP (02.04)" },
+	{ m: 03, d: 28, c: "b", n: "ECP (02.04)" },
+	{ m: 03, d: 29, c: "b", n: "ECP (02.04)" },
+	{ m: 03, d: 30, c: "b", n: "ECP (02.04) !!!" },
+	{ m: 03, d: 31, c: "b", n: "ECP (02.04) !!!" },
 	{ m: 03, d: 25, c: "b", n: "Vlad's" },
 	{ m: 05, d: 01, c: "b", n: "LX SomeHol." },
 	{ m: 05, d: 06, c: "b", n: "LX SomeHol." },
@@ -88,4 +91,5 @@ const aData = [
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
 	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
+	{ m: 04, d: 01, c: "b", n: "15:00 Teams Proj Ua" },
 ];
