@@ -2,7 +2,8 @@
 
 #### BKP Thunderbird
 ```sh
-7z a -t7z -ms=on -m0=lzma2 -mx=9 -mhe -p ~/Desktop/Thunderbird.7z ~/.thunderbird/
+7z a -r -t7z -ms=on -m0=lzma2 -mx=9 -mhe -p ~/Desktop/BKP_Thund_Cfgs.7z ~/.thunderbird/ ~/.config/dconf/ ~/.config/gtk-2.0/ ~/.config/gtk-3.0/ ~/.config/gtk-4.0/ ~/.config/gxkb/ ~/.config/libfm/ ~/.config/menus/ ~/.config/MX-Linux/ ~/.config/neofetch/ ~/.config/nomacs ~/.config/sunflower/ ~/.config/Thunar/ ~/.config/xfce4/ ~/.config/xfce-superkey/ ~/.config/apt-notifierrc ~/.config/*.* ~/.fonts/ ~/.restore/
+
 ```
 
 #### Convert webp-images into files.png (libwebp is required)
