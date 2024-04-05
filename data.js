@@ -80,7 +80,6 @@ const aData = [
 	// ----- only once ---------------------------
 	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "14:00 EN-Solomia" },
-	{ m: 04, d: 03, c: "b", n: "10-12 FLOWERS !!!" },
 	{ m: 04, d: 09, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 11, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 16, c: "b", n: "14:00 EN-Solomia" },
