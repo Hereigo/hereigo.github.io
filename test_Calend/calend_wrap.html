@@ -32,14 +32,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin: 10px;
+            margin: 5px;
         }
 
         .column {
             background-color: #ebebeb;
-            padding: 20px;
-            margin-bottom: 10px;
             box-sizing: border-box;
+            margin-bottom: 10px;
+            padding: 20px;
         }
 
         .middle-column {
@@ -51,35 +51,34 @@
             width: 10%;
         }
 
-        .calendar {
-            width: 100%;
-            border-collapse: collapse;
-        }
+        /* *** CALENDAR *** */
 
-        .calendar th,
-        .calendar td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
+        .calendar {
+            border-collapse: collapse;
+            width: 100%;
         }
 
         .calendar th {
             background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
         }
 
-        /* @media screen and (max-width: 1200px) {
-            .middle-column {
-                width: 45%;
-            }
+        .calendar td {
+            border: 1px solid #ddd;
+            padding: 0 5px;
+        }
 
-            .side-column {
-                width: 27.5%;
-            }
+        .calendar td ul {
+            padding-left: 1rem;
+            text-align: left;
+        }
 
-            input[type="search"] {
-                width: 80%;
-            }
-        } */
+        .mon-day {
+            float: right;
+            font-weight: 800;
+        }
 
         @media screen and (max-width: 768px) {
 
@@ -101,8 +100,8 @@
 
             .calendar th,
             .calendar td {
-                padding: 3px;
                 font-size: 12px;
+                padding: 3px;
             }
         }
     </style>
@@ -138,49 +137,294 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
+                        <td>
+                            <span class='mon-day'></span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'></span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'></span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>1</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>2</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>3</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>4</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
+                        <td>
+                            <span class='mon-day'>5</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>6</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>7</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>8</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>9</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>10</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>11</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td>15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
+                        <td>
+                            <span class='mon-day'>12</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>13</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>14</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>15</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>16</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>17</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>18</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>19</td>
-                        <td>20</td>
-                        <td>21</td>
-                        <td>22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
+                        <td>
+                            <span class='mon-day'>19</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>20</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>21</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>22</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>23</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>24</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>25</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
                     </tr>
                     <tr>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                        <td>30</td>
-                        <td>31</td>
-                        <td></td>
+                        <td>
+                            <span class='mon-day'>26</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>27</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>28</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>29</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>30</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'>31</span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span class='mon-day'></span>
+                            <ul>
+                                <li>aaa</li>
+                                <li>bbb</li>
+                                <li>ccc</li>
+                            </ul>
+                        </td>
                     </tr>
                 </tbody>
             </table>
