@@ -59,14 +59,12 @@ const aData = [
 	{ m: 12, d: 28, c: "b", n: "[0525] Filters??" },
 	// ----- monthly ---------------------------
 	{ m: 00, d: 01, c: "a", n: "MONY." },
-	{ m: 00, d: 12, c: "a", n: "170 Voda" },
-	{ m: 00, d: 12, c: "a", n: "300 Laner" },
+	{ m: 00, d: 12, c: "a", n: "200 Voda" },
 	{ m: 00, d: 13, c: "a", n: "Flat Bills." },
 	{ m: 00, d: 14, c: "a", n: "200 KS" },
 	{ m: 00, d: 23, c: "a", n: "300 Dominiq" },
-	{ m: 00, d: 28, c: "a", n: "160 iLanos" },
-	{ m: 00, d: 28, c: "a", n: "Counters (Den.Kris)" },
 	{ m: 00, d: 28, c: "a", n: "125 Home Voda" },
+	{ m: 00, d: 28, c: "a", n: "Counters (Den.Kris)" },
 	// -------------------------------------------
 	// ----- VARIABLES ---------------------------
 	// -------------------------------------------
@@ -84,6 +82,8 @@ const aData = [
 	{ m: 04, d: 11, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 16, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 18, c: "b", n: "14:00 EN-Solomia" },
+	{ m: 04, d: 19, c: "b", n: "15:00 Train from K" },
+	{ m: 04, d: 21, c: "b", n: "21:40 Train to K" },
 	{ m: 04, d: 23, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 25, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
@@ -94,6 +94,4 @@ const aData = [
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 04, d: 19, c: "b", n: "15:00 Train from K" },
-	{ m: 04, d: 21, c: "b", n: "21:40 Train to K" },
 ];
