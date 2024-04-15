@@ -83,17 +83,30 @@
 
         @media screen and (max-width: 768px) {
 
-            .middle-column,
-            .side-column {
-                width: 100%;
+            .container {
+                margin: 5px 0;
             }
 
             .calendar td {
                 padding: 5px;
             }
 
+            .calendar td ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .middle-column,
+            .side-column {
+                width: 100%;
+            }
+
             .middle-column {
                 order: -1;
+            }
+
+            input[type="search"] {
+                width: 80%;
             }
         }
 
