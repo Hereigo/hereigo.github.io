@@ -69,8 +69,8 @@ const aData = [
 	// ----- VARIABLES ---------------------------
 	// -------------------------------------------
 	// ----- Last Month Friday -------------------
-	{ m: 04, d: 19, c: "b", n: "11:00 LX Nata sync" },
-	{ m: 05, d: 24, c: "b", n: "11:00 LX Nata sync" },
+	{ m: 04, d: 19, c: "b", n: "11:00 LX Nata sync ??" },
+	{ m: 05, d: 24, c: "b", n: "11:00 LX Nata sync ??" },
 	// ----- 4weekly -----------------------------
 	{ m: 04, d: 27, c: "a", n: "225 (4w) Chck 4G GB" },
 	{ m: 05, d: 01, c: "a", n: "150 (4w) U-KS" },
@@ -83,7 +83,10 @@ const aData = [
 	{ m: 04, d: 16, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 18, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 19, c: "b", n: "15:00 Train from K" },
+	{ m: 04, d: 19, c: "b", n: "ENGLISH LAB" },
+	{ m: 04, d: 20, c: "b", n: "ENGLISH LAB" },
 	{ m: 04, d: 21, c: "b", n: "21:40 Train to K" },
+	{ m: 04, d: 21, c: "b", n: "ENGLISH LAB" },
 	{ m: 04, d: 23, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 25, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
