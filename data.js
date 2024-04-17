@@ -82,7 +82,7 @@ const aData = [
 	{ m: 04, d: 11, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 16, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 18, c: "b", n: "14:00 EN-Solomia" },
-	{ m: 04, d: 19, c: "b", n: "15:00 Train from K" },
+	{ m: 04, d: 19, c: "b", n: "12:00 Bus from K" },
 	{ m: 04, d: 19, c: "b", n: "ENGLISH LAB" },
 	{ m: 04, d: 20, c: "b", n: "ENGLISH LAB" },
 	{ m: 04, d: 21, c: "b", n: "21:40 Train to K" },
