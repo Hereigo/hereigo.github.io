@@ -951,6 +951,7 @@ DEV - itbook_library
 DEV - itbookssArchive
 DEV - itchannels
 DEV - itlecture
+DEV - itnetnews
 DEV - javascriptv
 DEV - junior_developer_ua/883
 DEV - linux_books
@@ -982,8 +983,10 @@ DEV - thecodemedia - The Code Magazine
 DEV - thedevs
 DEV - theprogrammingart
 DEV - tipaproit
+DEV - tproger_channels
 DEV - tproger_official
 DEV - ukraine_github
+DEV - we_use_js (nodejs)
 DEV - web_craft (+I1EKGH7KiaM0MTQy)
 DEV - webb_dev
 DEV - webprogrammerdiary
@@ -1342,6 +1345,8 @@ REL
 REL - dou_polska - Poland
 SEC
 SEC - +1jAsfde0eQMwMDdi - tenevie_twosouls
+SEC - +C6qqqfBhkvY1ZDdi (Life-Hack/Linux/Secure/Osint)
+SEC - +hw5W0rExyelkZDI6 (Life-Hack/Linux/Secure/Osint)
 SEC - +i__6ED-eRfkwOTYy - infoBez
 SEC - CyberCorsairs
 SEC - DC8044_Info
@@ -1356,6 +1361,7 @@ SEC - linux_kal
 SEC - mycroftintel (osint)
 SEC - new_everything_free
 SEC - social_engineering
+SEC - solar_security
 SEC - tenevie_twosouls
 SHP - +aO7brzXZzAo1NDUy (Radio AliExpress)
 SHP - meblitekhnika
