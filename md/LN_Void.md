@@ -23,7 +23,6 @@ sudo xbps-install -S ttf-ubuntu-font-family freefont-ttf dejavu-fonts-ttf font-a
 # or
 sudo cp fontawesome-webfont.ttf /usr/share/fonts/TTF/ && fc-cache -f -v
 
-
 # Clear packages-cache:
 xbps-remove -yO
 
