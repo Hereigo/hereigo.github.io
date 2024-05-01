@@ -20,7 +20,6 @@ const aData = [
 	{ m: 03, d: 25, c: "b", n: "Vlad's" },
 	{ m: 03, d: 26, c: "b", n: "ECP (28.03) !!!" },
 	{ m: 04, d: 27, c: "b", n: "[0525] 12.28! Filters??" },
-	{ m: 05, d: 01, c: "b", n: "LX SomeHol." },
 	{ m: 05, d: 06, c: "b", n: "LX SomeHol." },
 	{ m: 05, d: 08, c: "b", n: "LX SomeHol." },
 	{ m: 05, d: 15, c: "a", n: "Subota" },
@@ -71,9 +70,9 @@ const aData = [
 	// ----- Last Month Friday -------------------
 	{ m: 05, d: 24, c: "b", n: "11:00 LX Nata sync ??" },
 	// ----- 4weekly -----------------------------
-	{ m: 05, d: 01, c: "a", n: "150 (4w) U-KS" },
 	{ m: 05, d: 06, c: "a", n: "190 (4w) Life-M" },
 	{ m: 05, d: 25, c: "a", n: "225 (4w) Chck 4G GB" },
+	{ m: 05, d: 29, c: "a", n: "150 (4w) U-KS" },
 	// ----- only once ---------------------------
 	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "EN-Solomia Start" },
