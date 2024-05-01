@@ -72,7 +72,7 @@ const aData = [
 	// ----- 4weekly -----------------------------
 	{ m: 05, d: 06, c: "a", n: "190 (4w) Life-M" },
 	{ m: 05, d: 25, c: "a", n: "225 (4w) Chck 4G GB" },
-	{ m: 05, d: 29, c: "a", n: "150 (4w) U-KS" },
+	{ m: 05, d: 29, c: "a", n: "200 (4w) U-KS" },
 	// ----- only once ---------------------------
 	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "EN-Solomia Start" },
