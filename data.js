@@ -70,25 +70,19 @@ const aData = [
 	// ----- Last Month Friday -------------------
 	{ m: 05, d: 24, c: "b", n: "11:00 LX Nata sync ??" },
 	// ----- 4weekly -----------------------------
-	{ m: 05, d: 06, c: "a", n: "190 (4w) Life-M" },
 	{ m: 05, d: 25, c: "a", n: "225 (4w) Chck 4G GB" },
 	{ m: 05, d: 29, c: "a", n: "200 (4w) U-KS" },
+	{ m: 06, d: 03, c: "a", n: "190 (4w) Life-M" },
 	// ----- only once ---------------------------
 	{ m: 02, d: 13, c: "b", n: "PERF. REVIEW" },
 	{ m: 03, d: 05, c: "b", n: "EN-Solomia Start" },
-	{ m: 04, d: 16, c: "b", n: "14:00 EN-Solomia" },
-	{ m: 04, d: 18, c: "b", n: "14:00 EN-Solomia" },
-	{ m: 04, d: 23, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 24, c: "a", n: "Async JS krs end!" },
 	{ m: 04, d: 25, c: "a", n: "Async JS krs end!" },
 	{ m: 04, d: 25, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
-	{ m: 04, d: 30, c: "b", n: "14:00 EN-Solomia" },
-	{ m: 05, d: 02, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 05, d: 07, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 05, d: 09, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },
-	{ m: 05, d: 02, c: "b", n: "11:00 MilMeet" },
 ];
