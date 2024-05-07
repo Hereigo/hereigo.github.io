@@ -20,8 +20,6 @@ const aData = [
 	{ m: 03, d: 25, c: "b", n: "Vlad's" },
 	{ m: 03, d: 26, c: "b", n: "ECP (28.03) !!!" },
 	{ m: 04, d: 27, c: "b", n: "[0525] 12.28! Filters??" },
-	{ m: 05, d: 06, c: "b", n: "LX SomeHol." },
-	{ m: 05, d: 08, c: "b", n: "LX SomeHol." },
 	{ m: 05, d: 15, c: "a", n: "Subota" },
 	{ m: 05, d: 18, c: "b", n: "Irin Day" },
 	{ m: 05, d: 25, c: "a", n: "Danyluk Jash" },
@@ -68,7 +66,7 @@ const aData = [
 	// ----- VARIABLES ---------------------------
 	// -------------------------------------------
 	// ----- Last Month Friday -------------------
-	{ m: 05, d: 24, c: "b", n: "11:00 LX Nata sync ??" },
+	{ m: 05, d: 24, c: "a", n: "11:00 LX Nata sync ??" },
 	// ----- 4weekly -----------------------------
 	{ m: 05, d: 25, c: "a", n: "225 (4w) Chck 4G GB" },
 	{ m: 05, d: 29, c: "a", n: "200 (4w) U-KS" },
@@ -80,7 +78,6 @@ const aData = [
 	{ m: 04, d: 25, c: "a", n: "Async JS krs end!" },
 	{ m: 04, d: 25, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 04, d: 29, c: "a", n: "Should Update Pri.Card?" },
-	{ m: 05, d: 07, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 05, d: 09, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
