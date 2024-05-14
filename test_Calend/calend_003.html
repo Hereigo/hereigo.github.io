@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with CSS Grid</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 10% 80% 10%;
+            grid-template-rows: 25px auto;
+            /* 25px for header, auto for rest of the height */
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            /* Span all columns */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            height: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* Ensure it's above other content */
+        }
+
+        .sidebar-left {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .sidebar-right {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                grid-template-columns: 100%;
+                /* Single column layout for smaller screens */
+            }
+
+            .header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .sidebar-left,
+            .main-content,
+            .sidebar-right {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <!-- Your pinned narrow header menu goes here -->
+            <h1>Header Menu</h1>
+        </div>
+        <div class="sidebar-left">
+            <!-- Left Sidebar Content -->
+            <h2>Left Sidebar</h2>
+        </div>
+        <div class="main-content">
+            <!-- Main Content Area -->
+            <h2>Main Content</h2>
+            <p>This is the main content area.</p>
+        </div>
+        <div class="sidebar-right">
+            <!-- Right Sidebar Content -->
+            <h2>Right Sidebar</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>
