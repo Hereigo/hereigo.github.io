@@ -36,21 +36,21 @@
         }
 
         .header button {
+            background-color: #555;
+            border: none;
+            color: white;
+            cursor: pointer;
             height: 100%;
             padding: 0 10px;
-            background-color: #555;
-            color: white;
-            border: none;
-            cursor: pointer;
         }
 
         .header input[type="text"] {
-            height: 100%;
-            width: 100%;
-            padding: 0 10px;
-            border: none;
             background-color: #eee;
+            border: none;
             box-sizing: border-box;
+            height: 100%;
+            padding: 0 10px;
+            width: 100%;
         }
 
         .sidebar-left {
@@ -59,7 +59,7 @@
         }
 
         .main-content {
-            padding: 20px;
+            padding: 20px 0;
         }
 
         .sidebar-right {
@@ -71,6 +71,7 @@
             .container {
                 grid-template-columns: 100%;
                 /* Single column layout for smaller screens */
+                height: 5vh;
             }
 
             .header {
@@ -79,11 +80,47 @@
                 z-index: 1000;
             }
 
-            .sidebar-left,
-            .main-content,
-            .sidebar-right {
+            .main-content {
+                padding: 0;
                 width: 100%;
+            }
+
+            .sidebar-left,
+            .sidebar-right {
                 padding: 10px;
+                width: 100%;
+            }
+        }
+
+        .calendar {
+            border-collapse: collapse;
+            padding: 0;
+            width: 100%;
+        }
+
+        .calendar th,
+        .calendar td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .calendar th {
+            background-color: #f2f2f2;
+        }
+
+        @media screen and (max-width: 768px) {
+            .calendar td {
+                padding: 5px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .calendar th,
+            .calendar td {
+                padding: 3px;
+                font-size: 12px;
             }
         }
     </style>
@@ -101,9 +138,68 @@
             <h2>Left Sidebar</h2>
         </div>
         <div class="main-content">
-            <!-- Main Content Area -->
-            <h2>Main Content</h2>
-            <p>This is the main content area.</p>
+
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
         <div class="sidebar-right">
             <!-- Right Sidebar Content -->
