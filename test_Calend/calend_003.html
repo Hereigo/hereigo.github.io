@@ -24,13 +24,33 @@
             grid-column: 1 / -1;
             /* Span all columns */
             background-color: #333;
-            color: white;
-            padding: 10px;
+            padding: 5px;
             height: 25px;
             position: sticky;
             top: 0;
             z-index: 1000;
             /* Ensure it's above other content */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header button {
+            height: 100%;
+            padding: 0 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .header input[type="text"] {
+            height: 100%;
+            width: 100%;
+            padding: 0 10px;
+            border: none;
+            background-color: #eee;
+            box-sizing: border-box;
         }
 
         .sidebar-left {
@@ -73,8 +93,8 @@
 
     <div class="container">
         <div class="header">
-            <!-- Your pinned narrow header menu goes here -->
-            <h1>Header Menu</h1>
+            <input type="text" placeholder="Search..." />
+            <button>Button</button>
         </div>
         <div class="sidebar-left">
             <!-- Left Sidebar Content -->
