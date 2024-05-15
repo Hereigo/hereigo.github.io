@@ -15,6 +15,8 @@ sudo pacman -Syu
 sudo pacman -S reflector rsync curl
 # Set Mirrors:
 sudo reflector --verbose --country 'Germany' -l 25 --sort rate --save /etc/pacman.d/mirrorlist
+#
+sudo pacman-mirrors --fasttrack && sudo pacman -Syyu # ???
 
 # Microcodes :
 sudo pacman -S intel-ucode
@@ -28,16 +30,24 @@ sudo pacman -S mesa vulkan-intel vulkan-icd-loader
 # or
 sudo pacman -S mesa vulkan-radeon vulkan-icd-loader
 
-
-
+# GRUB :
 sudo nano /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
+# SSD useful Trim Command enable:
+sudo systemctl enable fstrim.timer
+sudo fstrim -v /
+sudo fstrim -va /
 
-yay gnome-system-monitor skypeforlinux-stable-bin visual-studio-code-bin/
-nomacs p7zip-full exaile smplayer flameshot vokoscreen remmina freerdp
-# + snappy - is viber dependency on Arch.
+# CPUPower
+sudo pacman -S cpupower
+sudo cpupower frequency-set -g performance # setup mode that is until reboot
+# to set it as permanent :
+# /etc/default/cpupower
+# set:
+# governor=performance
+# and
+sudo systemctl enable cpupower
 
 # EOS-Sendlog
 echo '..or any command..' | eos-sendlog

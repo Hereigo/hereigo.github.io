@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight.js Example</title>
+    <!-- Include the Highlight.js CSS from a CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+</head>
+
+<body>
+
+    <pre>
+
+        <code class="html">
+            &lt;!DOCTYPE html&gt;
+            &lt;html lang=&quot;en&quot;&gt;
+            &lt;head&gt;
+                &lt;meta charset=&quot;UTF-8&quot;&gt;
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                &lt;title&gt;Sample Code&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;Hello World&lt;/h1&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+
+        <code class="sql">
+            -- UPDATE or CREATE Procedure:
+
+            USE [aaaMyDatabase]
+            GO
+            IF object_id('dbo.aaaMyProcedure', 'p') is null
+                EXEC ('CREATE PROCEDURE myProcedure AS select 1')
+            GO
+            ALTER PROCEDURE myProcedure AS
+            SET NOCOUNT ON
+              -- real code here. you don't really need BEGIN-END.
+            GO
+        </code>
+
+        <code class="csharp">
+            public class YourController : Controller
+            {
+                private readonly IWebHostEnvironment _webHostEnvironment;
+        
+                public YourController(IWebHostEnvironment webHostEnvironment)
+                {
+                    _webHostEnvironment = webHostEnvironment;
+                }
+        
+                public ActionResult CheckFile()
+                {
+                    string webRootPath = _webHostEnvironment.WebRootPath;
+                    string filePath = Path.Combine(webRootPath, "YourDirectory", "YourFile.txt");
+        
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        // File exists
+                        ViewBag.FileExists = true;
+                    }
+                    else
+                    {
+                        // File does not exist
+                        ViewBag.FileExists = false;
+                    }
+        
+                    return View();
+                }
+            }
+        </code>
+
+    </pre>
+
+    <!-- Include the Highlight.js script from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <!-- Initialize Highlight.js -->
+    <script>hljs.highlightAll();</script>
+
+</body>
+
+</html>
