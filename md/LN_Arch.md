@@ -2,6 +2,34 @@
 
 ```sh
 # First of all:
+
+# Modify ==> /etc/pacman.conf :
+# Uncomment => ParallelDownloads
+# then:
+sudo pacman-key --init
+sudo pacman-key --populate archlinux  # (get keys)
+sudo pacman-key --refresh-keys
+sudo pacman -Syu
+
+# Reflector:
+sudo pacman -S reflector rsync curl
+# Set Mirrors:
+sudo reflector --verbose --country 'Germany' -l 25 --sort rate --save /etc/pacman.d/mirrorlist
+
+# Microcodes :
+sudo pacman -S intel-ucode
+# or
+sudo pacman -S amd-ucode
+# then update initramfs :
+sudo mkinitcpio -P
+
+# Video Drivers :
+sudo pacman -S mesa vulkan-intel vulkan-icd-loader
+# or
+sudo pacman -S mesa vulkan-radeon vulkan-icd-loader
+
+
+
 sudo nano /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
