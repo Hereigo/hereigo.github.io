@@ -40,6 +40,8 @@ rclone config
 # ...
 mkdir ~/UnoDisco
 rclone --vfs-cache-mode writes mount UnoDisco: ~/UnoDisco
+# Add cmd to Startup - to Mount on Login:
+sh -c "rclone --vfs-cache-mode writes mount UnoDisco: ~/UnoDisco"
 ```
 ##### 1Drive.desktop
 ```sh

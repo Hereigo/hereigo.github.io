@@ -87,6 +87,7 @@ const aData = [
 	{ m: 05, d: 23, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 05, d: 28, c: "b", n: "14:00 EN-Solomia" },
 	{ m: 05, d: 30, c: "b", n: "14:00 EN-Solomia" },
+	{ m: 08, d: 15, c: "b", n: "36.K" },
 	{ m: 10, d: 25, c: "a", n: "17:00 AI Beetroot" },
 	{ m: 10, d: 26, c: "a", n: "18:00 Yo Brain Beetroot" },
 	{ m: 10, d: 31, c: "a", n: "16:00 CyberSec Base" },

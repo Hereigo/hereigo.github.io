@@ -18,30 +18,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const toNextMon = document.querySelector('#toNextMon');
     const toPrevMon = document.querySelector('#toPrevMon');
 
-    toCurrMon.textContent = months[_REAL_MONTH];
-    toNextMon.textContent = months[monthNext];
-    toPrevMon.textContent = months[monthPrev];
+    if (toCurrMon && toNextMon && toPrevMon) {
+        toCurrMon.textContent = months[_REAL_MONTH];
+        toNextMon.textContent = months[monthNext];
+        toPrevMon.textContent = months[monthPrev];
 
-    toCurrMon.classList.add('monBtnSelected');
-
-    toPrevMon.addEventListener('click', function () {
-        reBuildCalendar(monthPrev);
-        toCurrMon.classList.remove('monBtnSelected');
-        toNextMon.classList.remove('monBtnSelected');
-        toPrevMon.classList.add('monBtnSelected');
-    });
-    toNextMon.addEventListener('click', function () {
-        reBuildCalendar(monthNext);
-        toCurrMon.classList.remove('monBtnSelected');
-        toNextMon.classList.add('monBtnSelected');
-        toPrevMon.classList.remove('monBtnSelected');
-    });
-    toCurrMon.addEventListener('click', function () {
-        reBuildCalendar(_REAL_MONTH);
         toCurrMon.classList.add('monBtnSelected');
-        toNextMon.classList.remove('monBtnSelected');
-        toPrevMon.classList.remove('monBtnSelected');
-    });
+
+        toPrevMon.addEventListener('click', function () {
+            reBuildCalendar(monthPrev);
+            toCurrMon.classList.remove('monBtnSelected');
+            toNextMon.classList.remove('monBtnSelected');
+            toPrevMon.classList.add('monBtnSelected');
+        });
+        toNextMon.addEventListener('click', function () {
+            reBuildCalendar(monthNext);
+            toCurrMon.classList.remove('monBtnSelected');
+            toNextMon.classList.add('monBtnSelected');
+            toPrevMon.classList.remove('monBtnSelected');
+        });
+        toCurrMon.addEventListener('click', function () {
+            reBuildCalendar(_REAL_MONTH);
+            toCurrMon.classList.add('monBtnSelected');
+            toNextMon.classList.remove('monBtnSelected');
+            toPrevMon.classList.remove('monBtnSelected');
+        });
+    }
 });
 
 function getMonStartWeekDay(monStartDate) {
