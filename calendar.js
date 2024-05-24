@@ -54,12 +54,6 @@ function getMonStartWeekDay(monStartDate) {
         return 7;
 }
 
-// TODO:
-//
-// 1. Prevent Duplications.
-// 2. Sort by Time inside a Day.
-// 3. Calendar Not-Current-Months definition only works for a Jan and Dec - fix it.
-
 function reBuildCalendar(MonthToCalc) {
 
     let _calendarYear;
@@ -73,8 +67,6 @@ function reBuildCalendar(MonthToCalc) {
     else {
         _calendarYear = _REAL_YEAR;
     }
-
-    console.log(_calendarYear);
 
     let monLastDayNum = new Date(_calendarYear, parseInt(MonthToCalc) + 1, 0).getDate();
     let monStartDate = new Date(_calendarYear, MonthToCalc, 1);
@@ -127,8 +119,8 @@ function reBuildCalendar(MonthToCalc) {
             let monHumanNumber = nextMonth ? parseInt(MonthToCalc) + 2 : parseInt(MonthToCalc) + 1;
 
             aData.filter(x =>
-                (x.d === monthDay && x.m === 0) ||
-                (x.d === monthDay && x.m === monHumanNumber)).forEach(element => {
+                (x.d == monthDay && x.m == 0) ||
+                (x.d == monthDay && x.m == monHumanNumber)).forEach(element => {
                     list +=
                         '<li' + (element.c === 'b' ? ' class="bday" ' : '') + '>' + element.n + '</li>';
                 });
