@@ -62,11 +62,7 @@
             padding: 18px 0;
         }
 
-        .sidebar-left {
-            background-color: #f2f2f2;
-            padding-left: 5px;
-        }
-
+        .sidebar-left,
         .sidebar-right {
             background-color: #f2f2f2;
             padding-left: 5px;
@@ -251,7 +247,11 @@
             .sidebar-left,
             .sidebar-right {
                 padding: 10px;
-                width: 100%;
+
+                .sidebar-left {
+                    background-color: #f2f2f2;
+                    padding-left: 5px;
+                }
             }
 
             table,
@@ -267,6 +267,7 @@
             div.event {
                 padding-left: 0;
                 padding-right: 0;
+
             }
 
             div.event>ul {
@@ -276,8 +277,8 @@
                 margin-right: 0;
                 padding-left: 0;
                 padding-right: 0;
+                padding-top: .5rem;
             }
-
         }
 
         @media screen and (max-width: 768px) {
