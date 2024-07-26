@@ -32,7 +32,6 @@ const aData = [
 	{ m: "07", d: "15", c: "a", n: "LX SomeHol." },
 	{ m: "07", d: "15", c: "a", n: "Lazareva" },
 	{ m: "07", d: "25", c: "a", n: "Tax Declar" },
-	{ m: "07", d: "26", c: "a", n: "SysAdm Day (Last Frid)" },
 	{ m: "07", d: "30", c: "b", n: "* ARISHA Wed ???? *" },
 	{ m: "08", d: "03", c: "a", n: "Petrovska LX" },
 	{ m: "08", d: "13", c: "b", n: "* ARISHA *" },
@@ -72,8 +71,10 @@ const aData = [
 	// -------------------------------------------
 	// ------Second Sunday of May ----------------
 	{ m: "05", d: "11", c: "b", n: "Mom's day (2025)" },
-	// ----- Last Month Friday -------------------
+	// ----- Monthly Last Friday -------------------
 	{ m: "05", d: "24", c: "a", n: "11:00 LX Nata sync ??" },
+	// ----- Yearly July Last Friday -------------------
+	{ m: "07", d: "25", c: "a", n: "SysAdm Day (Last Frid)" },
 	// ----- 4weekly -----------------------------
 	{ m: "07", d: "31", c: "a", n: "190 (4w) Life-M" },
 	{ m: "08", d: "05", c: "a", n: "200 (4w) U-KS" },
