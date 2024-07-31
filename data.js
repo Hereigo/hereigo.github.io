@@ -76,10 +76,16 @@ const aData = [
 	// ----- Yearly July Last Friday -------------------
 	{ m: "07", d: "25", c: "a", n: "SysAdm Day (Last Frid)" },
 	// ----- 4weekly -----------------------------
-	{ m: "07", d: "31", c: "a", n: "190 (4w) Life-M" },
+	{ m: "08", d: "02", c: "b", n: "KnowBefore!" },
 	{ m: "08", d: "05", c: "a", n: "200 (4w) U-KS" },
+	{ m: "08", d: "05", c: "b", n: "Trybida Feedback!" },
+	{ m: "08", d: "06", c: "b", n: "KnowBefore!" },
+	{ m: "08", d: "07", c: "b", n: "Trybida Feedback!" },
+	{ m: "08", d: "10", c: "b", n: "Peakon!" },
+	{ m: "08", d: "12", c: "b", n: "Peakon!" },
 	{ m: "08", d: "16", c: "a", n: "160 (4w) ZTE" },
 	{ m: "08", d: "16", c: "a", n: "225 (4w) LTE" },
+	{ m: "08", d: "28", c: "a", n: "190 (4w) Life-M" },
 	// ----- only once ---------------------------
 	{ m: "02", d: "13", c: "a", n: "PERF. REVIEW" },
 	{ m: "06", d: "06", c: "b", n: "OSMOS inst." },
