@@ -19,6 +19,7 @@ const aData = [
 	{ m: "03", d: "24", c: "b", n: "ECP (28.03) !!!" },
 	{ m: "03", d: "25", c: "b", n: "Vlad's" },
 	{ m: "03", d: "26", c: "b", n: "ECP (28.03) !!!" },
+	{ m: "05", d: "06", c: "b", n: "Liushniak Solo" },
 	{ m: "05", d: "15", c: "a", n: "Subota" },
 	{ m: "05", d: "18", c: "b", n: "Irin Day" },
 	{ m: "05", d: "25", c: "a", n: "Danyluk Jash" },
