@@ -87,11 +87,6 @@ const aData = [
 	// ----- only once ---------------------------
 	{ m: "02", d: "13", c: "a", n: "PERF. REVIEW" },
 	{ m: "06", d: "06", c: "b", n: "OSMOS inst." },
-	{ m: "08", d: "03", c: "b", n: "KnowBefore!" },
-	{ m: "08", d: "04", c: "b", n: "KnowBefore!" },
-	{ m: "08", d: "05", c: "b", n: "KnowBefore!" },
-	{ m: "08", d: "06", c: "a", n: "14:00 ENG" },
-	{ m: "08", d: "06", c: "b", n: "KnowBefore!" },
 	{ m: "08", d: "08", c: "a", n: "14:00 ENG" },
 	{ m: "08", d: "13", c: "a", n: "14:00 ENG" },
 	{ m: "08", d: "15", c: "a", n: "14:00 ENG" },
