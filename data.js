@@ -38,6 +38,7 @@ const aData = [
 	{ m: "07", d: "25", c: "a", n: "Tax Declar" },
 	{ m: "07", d: "30", c: "b", n: "* ARISHA Wed ???? *" },
 	{ m: "08", d: "03", c: "a", n: "Petrovska LX" },
+	{ m: "08", d: "10", c: "b", n: "Voda Year End!" },
 	{ m: "08", d: "13", c: "b", n: "* ARISHA *" },
 	{ m: "08", d: "17", c: "b", n: "MOM's" },
 	{ m: "08", d: "26", c: "a", n: "LX SomeHol." },
@@ -60,7 +61,7 @@ const aData = [
 	// ----- monthly ---------------------------
 	{ m: "00", d: "01", c: "a", n: "MONY." },
 	{ m: "00", d: "13", c: "a", n: "Flat Bills." },
-	{ m: "00", d: "14", c: "a", n: "200 KS" },
+	{ m: "00", d: "14", c: "a", n: "250? KS" },
 	{ m: "00", d: "15", c: "a", n: "200 Voda" },
 	{ m: "00", d: "21", c: "a", n: "14:00 TEST-TEST" },
 	{ m: "00", d: "21", c: "a", n: "14:00 bla bla bla bla ..." },
@@ -87,7 +88,6 @@ const aData = [
 	// ----- only once ---------------------------
 	{ m: "02", d: "13", c: "a", n: "PERF. REVIEW" },
 	{ m: "06", d: "06", c: "b", n: "OSMOS inst." },
-	{ m: "08", d: "08", c: "a", n: "14:00 ENG" },
 	{ m: "08", d: "13", c: "a", n: "14:00 ENG" },
 	{ m: "08", d: "15", c: "a", n: "14:00 ENG" },
 	{ m: "08", d: "15", c: "a", n: "36.K" },
