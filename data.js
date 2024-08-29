@@ -56,7 +56,10 @@ const aData = [
 	{ m: "12", d: "24", c: "a", n: "Sviat Vechir" },
 	{ m: "12", d: "25", c: "a", n: "✴ Rizdvo ❄" },
 	// ----- monthly ---------------------------
+	{ m: "00", d: "01", c: "a", n: "Fastiv.Count" },
 	{ m: "00", d: "01", c: "a", n: "MONY." },
+	{ m: "00", d: "02", c: "a", n: "Fastiv.Count" },
+	{ m: "00", d: "03", c: "a", n: "Fastiv.Count" },
 	{ m: "00", d: "12", c: "a", n: "Flat Bills." },
 	{ m: "00", d: "14", c: "a", n: "250? KS" },
 	{ m: "00", d: "21", c: "a", n: "14:00 TEST-TEST" },
