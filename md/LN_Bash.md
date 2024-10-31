@@ -14,6 +14,15 @@ for filename in ~/Documents/*.webp; do
 done
 ```
 
+#### Reduce size of ALL video files in a dir
+```sh
+#!/bin/bash
+for file in ~/Downloads/Test/*.mp4
+do
+  ffmpeg -ss 00:00:00 -to 00:59:59 -i "$file" -c:v libx265 -c:a copy -x265-params crf=25 "${file/OLD_PATH_PART/NEW_PATH_PART}"
+done
+```
+
 #### 72 Networking Commands:
 ```sh
 arp - see your arp table.
