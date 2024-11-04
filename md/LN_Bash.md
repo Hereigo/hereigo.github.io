@@ -17,9 +17,9 @@ done
 #### Reduce size of ALL video files in a dir
 ```sh
 #!/bin/bash
-for file in ~/Downloads/Test/*.mp4
+for file in  /home/_USER_/Downloads/Test/*.mp4
 do
-  ffmpeg -ss 00:00:00 -to 00:59:59 -i "$file" -c:v libx265 -c:a copy -x265-params crf=25 "${file/OLD_PATH_PART/NEW_PATH_PART}"
+  ffmpeg -ss 00:00:00 -to 00:59:59 -i "$file" -c:v libx265 -pix_fmt yuv420p -crf 25 -preset fast -tune animation -c:a aac "${file/OLD_PATH/NEW_PATH}"
 done
 ```
 
