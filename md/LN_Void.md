@@ -2,7 +2,8 @@
 
 https://vbtutorials.gitlab.io/void-linux/
 
-#### ffmpeg :
+#### Init :
+
 ```sh
 sudo xbps-install -S void-repo-nonfree
 # for х32 apps support:

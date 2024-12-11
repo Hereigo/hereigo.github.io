@@ -7,6 +7,13 @@ ffmpeg -i INPUT.mkv -filter:v "crop=1500:900:170:145" OUTPUT.mkv
 
 # split mkv file into parts with duration of 1 hour:
 mkvmerge --split duration:01:00:00.000 input_file.mkv -o split.mkv
+
+## Reduce size of ALL video files in a dir
+#!/bin/bash
+for file in  /home/_USER_/Downloads/Test/*.mp4
+do
+  ffmpeg -ss 00:00:00 -to 00:59:59 -i "$file" -c:v libx265 -pix_fmt yuv420p -crf 25 -preset fast -tune animation -c:a aac "${file/OLD_PATH/NEW_PATH}"
+done
 ```
 
 - [**Video Trimmer**](https://flathub.org/apps/details/org.gnome.gitlab.YaLTeR.VideoTrimmer)
