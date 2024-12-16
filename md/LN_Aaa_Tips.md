@@ -1,5 +1,10 @@
 ### Linux tips.
 
+# 1Drb mount RClone:
+```sh
+sh -c "rclone --vfs-cache-mode writes mount 1DRV: ~/OneDrive"
+```
+
 #### BECAREFUL!
 ```sh
 

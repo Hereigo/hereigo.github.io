@@ -20,3 +20,8 @@ sudo sh -c "apt -y update;apt -y full-upgrade;apt -y autoremove;apt -y autoclean
 ```sh
 grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
 ```
+
+#### xfce4-screenshooter --fullscreen --save
+```sh
+sh -c 'xfce4-screenshooter -f -m -s "$HOME/Desktop/Screen_$(date "+%Y-%m-%d-%H-%M-%S-%3N").png"'
+```

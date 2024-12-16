@@ -1,5 +1,11 @@
 ﻿### Excellent Utilities
 
+### uBlock Origin,
+### for example, may add the following line to the custom filter list to block the popup:
+```
+||accounts.google.com/gsi/iframe/select$subdocument
+```
+
 #### ffmpeg :
 ```sh
 # Crop Skype recorded call:
